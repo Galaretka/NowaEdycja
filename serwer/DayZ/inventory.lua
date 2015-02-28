@@ -101,6 +101,12 @@ inventoryItems = {
 {"British Assault Pack",1},
 {"Czech Backpack",1},
 {"Coyote Backpack",1},
+{"Anarchy Backpack",1}, 
+{"Camp Backpack",1}, 
+{"Ghillie Backpack",1}, 
+{"Military Backpack",1}, 
+{"Kryss Backpack",1}, 
+{"OSPack Backpack",1}, 
 },
 ["Toolbelt"] = {
 {"Night Vision Goggles", 1},
@@ -883,11 +889,83 @@ function onPlayerMoveItemInInventory(itemName, loot)
     setElementData(loot, itemName, getElementData(loot, itemName) - 1)
     itemPlus = 0
   elseif itemName == "Coyote Backpack" then
-    if getElementData(getLocalPlayer(), "MAX_Slots") == 60 then
+    if getElementData(getLocalPlayer(), "MAX_Slots") == 43 then
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Masz już ten plecak!", 255, 22, 0)
+      return
+    end
+    if getElementData(getLocalPlayer(), "MAX_Slots") > 43 then
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Obecny plecak ma więcej miejsca!", 255, 22, 0)
+      return
+    end
+    setElementData(getLocalPlayer(), "MAX_Slots", 43)
+    setElementData(loot, itemName, getElementData(loot, itemName) - 1)
+    itemPlus = 0
+  elseif itemName == "Anarchy Backpack" then
+    if getElementData(getLocalPlayer(), "MAX_Slots") == 52 then
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Masz już ten plecak!", 255, 22, 0)
+      return
+    end
+    if getElementData(getLocalPlayer(), "MAX_Slots") > 52 then
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Obecny plecak ma więcej miejsca!", 255, 22, 0)
+      return
+    end
+    setElementData(getLocalPlayer(), "MAX_Slots", 52)
+    setElementData(loot, itemName, getElementData(loot, itemName) - 1)
+    itemPlus = 0
+  elseif itemName == "Military Backpack" then
+    if getElementData(getLocalPlayer(), "MAX_Slots") == 64 then
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Masz już ten plecak!", 255, 22, 0)
+      return
+    end
+    if getElementData(getLocalPlayer(), "MAX_Slots") > 64 then
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Obecny plecak ma więcej miejsca!", 255, 22, 0)
+      return
+    end
+    setElementData(getLocalPlayer(), "MAX_Slots", 64)
+    setElementData(loot, itemName, getElementData(loot, itemName) - 1)
+    itemPlus = 0
+  elseif itemName == "Camp Backpack" then
+    if getElementData(getLocalPlayer(), "MAX_Slots") == 76 then
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Masz już ten plecak!", 255, 22, 0)
+      return
+    end
+    if getElementData(getLocalPlayer(), "MAX_Slots") > 76 then
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Obecny plecak ma więcej miejsca!", 255, 22, 0)
+      return
+    end
+    setElementData(getLocalPlayer(), "MAX_Slots", 76)
+    setElementData(loot, itemName, getElementData(loot, itemName) - 1)
+    itemPlus = 0
+  elseif itemName == "Kryss Backpack" then
+    if getElementData(getLocalPlayer(), "MAX_Slots") == 88 then
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Masz już ten plecak!", 255, 22, 0)
+      return
+    end
+    if getElementData(getLocalPlayer(), "MAX_Slots") > 88 then
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Obecny plecak ma więcej miejsca!", 255, 22, 0)
+      return
+    end
+    setElementData(getLocalPlayer(), "MAX_Slots", 88)
+    setElementData(loot, itemName, getElementData(loot, itemName) - 1)
+    itemPlus = 0
+  elseif itemName == "Ghillie Backpack" then
+    if getElementData(getLocalPlayer(), "MAX_Slots") == 96 then
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Masz już ten plecak!", 255, 22, 0)
+      return
+    end
+    if getElementData(getLocalPlayer(), "MAX_Slots") > 96 then
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Obecny plecak ma więcej miejsca!", 255, 22, 0)
+      return
+    end
+    setElementData(getLocalPlayer(), "MAX_Slots", 96)
+    setElementData(loot, itemName, getElementData(loot, itemName) - 1)
+    itemPlus = 0
+  elseif itemName == "OSPack Backpack" then
+    if getElementData(getLocalPlayer(), "MAX_Slots") == 110 then
       triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Masz najlepszy plecak!", 255, 22, 0)
       return
     end
-    setElementData(getLocalPlayer(), "MAX_Slots", 60)
+    setElementData(getLocalPlayer(), "MAX_Slots", 110)
     setElementData(loot, itemName, getElementData(loot, itemName) - 1)
     itemPlus = 0
   end

@@ -501,7 +501,7 @@ if ( keyState == "down" ) then
 				disableMenu()
 				return
 			end	
-			if itemName == "Czech Vest Pouch" or itemName == "Patrol Pack" or itemName == "Assault Pack (ACU)" or itemName == "Survival (ACU)" or itemName == "Alice Pack" or itemName == "British Assault Pack" or itemName == "Czech Backpack" or itemName == "Coyote Backpack" then
+			if itemName == "Czech Vest Pouch" or itemName == "Patrol Pack" or itemName == "Assault Pack (ACU)" or itemName == "Survival (ACU)" or itemName == "Alice Pack" or itemName == "British Assault Pack" or itemName == "Czech Backpack" or itemName == "Coyote Backpack" or itemName == "Anarchy Backpack" or itemName == "Military Backpack" or itemName == "Camp Backpack" or itemName == "Kryss Backpack" or itemName == "Ghillie Backpack" or itemName == "OSPack Backpack" then
 				local col = getElementData(getLocalPlayer(),"currentCol")
 				triggerServerEvent("onPlayerTakeItemFromGround",getLocalPlayer(),itemName,col)
 				disableMenu()

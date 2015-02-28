@@ -172,6 +172,9 @@ local itemTable = {
       90,
       6
     },
+	{"Anarchy Backpack",1239,1,0,2}, 
+	{"Camp Backpack",1239,1,0,2}, 
+	{"Ghillie Backpack",1239,1,0,2}, 
     {
       "GPS",
       2976,
@@ -244,6 +247,9 @@ local itemTable = {
       0,
       7
     },
+	{"Military Backpack",1239,1,0,2}, 
+	{"Kryss Backpack",1239,1,0,2}, 
+	{"OSPack Backpack",1239,1,0,2}, 
     {
       "Soda Bottle",
       2647,
@@ -820,6 +826,9 @@ local itemTable = {
       0,
       2
     },
+	{"Anarchy Backpack",1239,1,0,2}, 
+	{"Camp Backpack",1239,1,0,2}, 
+	{"Ghillie Backpack",1239,1,0,2}, 
 	{
       "British Assault Pack",
       2399,
@@ -878,6 +887,9 @@ local itemTable = {
       0,
       3
     },
+	{"Anarchy Backpack",1239,1,0,2}, 
+	{"Camp Backpack",1239,1,0,2}, 
+	{"Ghillie Backpack",1239,1,0,2}, 
     {
       "Tire",
       1073,
@@ -1067,6 +1079,13 @@ local itemTable = {
       0,
       0.5
     },
+	{"Anarchy Backpack",1252,1,0,2}, 
+	{"Camp Backpack",1252,1,0,2}, 
+	{"Ghillie Backpack",1252,1,0,2}, 
+
+	{"Military Backpack",1252,1,0,2}, 
+	{"Kryss Backpack",1252,1,0,2}, 
+	{"OSPack Backpack",1252,1,0,2}, 
 	{
       "Survival (ACU)",
       2407,
@@ -1132,6 +1151,9 @@ local itemTable = {
       0,
       5
     },
+	{"Anarchy Backpack",1239,1,0,2}, 
+	{"Camp Backpack",1239,1,0,2}, 
+	{"Ghillie Backpack",1239,1,0,2}, 
     {
       "G17",
       346,
@@ -1385,6 +1407,10 @@ local itemTable = {
       0.5,
       90
     },
+	
+	{"Military Backpack",1239,1,0,2}, 
+	{"Kryss Backpack",1239,1,0,2}, 
+	{"OSPack Backpack",1239,1,0,2}, 
     {
       "Cooked Meat",
       2806,

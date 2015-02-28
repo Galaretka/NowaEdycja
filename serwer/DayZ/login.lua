@@ -553,6 +553,12 @@ local vehicleDataTable = {
   {
     "Coyote Backpack"
   },
+  {"Anarchy Backpack"}, 
+  {"Camp Backpack"}, 
+  {"Ghillie Backpack"}, 
+  {"Military Backpack"}, 
+  {"Kryss Backpack"}, 
+  {"OSPack Backpack"}, 
   {
     "Radio Device"
   },

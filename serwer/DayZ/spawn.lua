@@ -360,6 +360,12 @@ local vehicleDataTable = {
   {
     "Czech Backpack"
   },
+  {"Anarchy Backpack"}, 
+  {"Camp Backpack"}, 
+  {"Ghillie Backpack"}, 
+  {"Military Backpack"}, 
+  {"Kryss Backpack"}, 
+  {"OSPack Backpack"}, 
   {
     "Machete"
   },
@@ -541,8 +547,21 @@ function kilLDayZPlayer(killer, headshot, weapon)
       setElementData(pedCol, "British Assault Pack", 1)
     elseif backpackSlots == 30 then
       setElementData(pedCol, "Czech Backpack", 1)
-    elseif backpackSlots == 60 then
+    elseif backpackSlots == 43 then
       setElementData(pedCol, "Coyote Backpack", 1)
+	elseif backpackSlots == 52 then
+      setElementData(pedCol, "Anarchy Backpack", 1)
+	elseif backpackSlots == 64 then
+      setElementData(pedCol, "Military Backpack", 1)
+	elseif backpackSlots == 76 then
+      setElementData(pedCol, "Camp Backpack", 1)
+	elseif backpackSlots == 88 then
+      setElementData(pedCol, "Kryss Backpack", 1)
+	elseif backpackSlots == 96 then
+      setElementData(pedCol, "Ghillie Backpack", 1)
+	elseif backpackSlots == 110 then
+      setElementData(pedCol, "OSPack Backpack", 1)
+    end
     end
   end
   setTimer(setElementPosition, 500, 1, source, 6000, 6000, 0)

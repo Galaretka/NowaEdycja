@@ -163,6 +163,12 @@ local vehicleDataTableForTent = {
   {
     "Coyote Backpack"
   },
+  {"Anarchy Backpack"}, 
+  {"Camp Backpack"}, 
+  {"Ghillie Backpack"}, 
+  {"Military Backpack"}, 
+  {"Kryss Backpack"}, 
+  {"OSPack Backpack"}, 
   {
     "British Assault Pack"
   },
@@ -405,8 +411,20 @@ function backPackBack(dataName, oldValue)
       elementBackpack[source] = createObject(2399, x, y, z)
     elseif newValue == 30 then
       elementBackpack[source] = createObject(1575, x, y, z)
-    elseif newValue == 60 then
+    elseif newValue == 43 then
       elementBackpack[source] = createObject(1252, x, y, z)
+	elseif newValue == 52 then
+      elementBackpack[source] = createObject(3105, x, y, z)
+	elseif newValue == 64 then
+      elementBackpack[source] = createObject(3104, x, y, z)
+    elseif newValue == 76 then
+      elementBackpack[source] = createObject(3103, x, y, z)
+    elseif newValue == 88 then
+      elementBackpack[source] = createObject(3102, x, y, z)
+	elseif newValue == 96 then
+      elementBackpack[source] = createObject(3101, x, y, z)
+	elseif newValue == 110 then
+      elementBackpack[source] = createObject(2982, x, y, z)
     elseif newValue == 8 then
       return
     end
