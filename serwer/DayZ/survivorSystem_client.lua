@@ -17,6 +17,45 @@ addEventHandler("onClientResourceStart", getResourceRootElement(), function()
   guiSetPosition(versionLabel, 1 - x, 1 - y * 1.8, true)
   guiSetAlpha(versionLabel, 0.5)
 end)
+
+
+vehicle = engineLoadTXD("mods/barracks.txd")
+engineImportTXD(vehicle, 433)
+vehicle = engineLoadDFF("mods/barracks.dff", 433)
+engineReplaceModel(vehicle, 433)
+
+vehicle = engineLoadTXD("mods/maverick.txd")
+engineImportTXD(vehicle, 487)
+vehicle = engineLoadDFF("mods/maverick.dff", 487)
+engineReplaceModel(vehicle, 487)
+
+vehicle = engineLoadTXD("mods/quad.txd")
+engineImportTXD(vehicle, 471)
+vehicle = engineLoadDFF("mods/quad.dff", 471)
+engineReplaceModel(vehicle, 471)
+
+vehicle = engineLoadTXD("mods/swatvan.txd")
+engineImportTXD(vehicle, 601)
+vehicle = engineLoadDFF("mods/swatvan.dff", 601)
+engineReplaceModel(vehicle, 601)
+
+
+vehicle = engineLoadTXD("mods/sanchez.txd")
+engineImportTXD(vehicle, 468)
+vehicle = engineLoadDFF("mods/sanchez.dff", 468)
+engineReplaceModel(vehicle, 468)
+
+vehicle = engineLoadTXD("mods/bobcat.txd")
+engineImportTXD(vehicle, 422)
+vehicle = engineLoadDFF("mods/bobcat.dff", 422)
+engineReplaceModel(vehicle, 422)
+
+vehicle = engineLoadTXD("mods/sabre.txd")
+engineImportTXD(vehicle, 475)
+vehicle = engineLoadDFF("mods/sabre.dff", 475)
+engineReplaceModel(vehicle, 475)
+
+
 snipertxd = engineLoadTXD("items/Crowbar.txd")
 engineImportTXD(snipertxd, 337)
 sniperdff = engineLoadDFF("items/Crowbar.dff", 337)
