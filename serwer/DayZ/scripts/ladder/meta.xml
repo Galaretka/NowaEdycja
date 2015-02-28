@@ -1,0 +1,7 @@
+<meta>
+	<info author="PrettySweetie" version="1"/>
+	<file src="ladder.dff" />
+	<file src="ladder.col" />
+	<script src="ladder_client.lua" type="client"/>
+	<script src="ladder_server.lua" type="server"/>
+</meta>
