@@ -102,6 +102,12 @@ local vehicleDataTableForTent = {
     "Camouflage Clothing"
   },
   {
+    "Military Clothing"
+  },
+  {
+    "Military Clothing II"
+  },
+  {
     "Ghillie Suit"
   },
   {
@@ -745,6 +751,14 @@ skinTable = {
   {
     "Camouflage Clothing",
     287
+  },
+  {
+    "Military Clothing",
+    288
+  },
+  {
+    "Military Clothing II",
+    289
   },
   {
     "Civilian Clothing",

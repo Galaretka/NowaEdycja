@@ -56,6 +56,17 @@ vehicle = engineLoadDFF("mods/sabre.dff", 475)
 engineReplaceModel(vehicle, 475)
 
 
+snipertxd = engineLoadTXD("mods/military.txd")
+engineImportTXD(snipertxd, 288)
+sniperdff = engineLoadDFF("mods/military.dff", 288)
+engineReplaceModel(sniperdff, 288)
+
+snipertxd = engineLoadTXD("mods/militaryII.txd")
+engineImportTXD(snipertxd, 289)
+sniperdff = engineLoadDFF("mods/militaryII.dff", 289)
+engineReplaceModel(sniperdff, 289)
+
+
 snipertxd = engineLoadTXD("items/Crowbar.txd")
 engineImportTXD(snipertxd, 337)
 sniperdff = engineLoadDFF("items/Crowbar.dff", 337)

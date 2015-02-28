@@ -81,6 +81,8 @@ inventoryItems = {
 {"Tank Parts", 3},
 {"Tent",3,"Montar Tenda"},
 {"Camouflage Clothing",1,"Uzyj Skin"},
+{"Military Clothing",1,"Uzyj Skin"},
+{"Military Clothing II",1,"Uzyj Skin"},
 {"Civilian Clothing",1,"Uzyj Skin"},
 {"Survivor Clothing",1,"Uzyj Skin"},
 {"Ghillie Suit",1,"Uzyj Skin"},

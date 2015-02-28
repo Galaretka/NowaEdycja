@@ -180,6 +180,12 @@ local playerDataTable = {
     "Camouflage Clothing"
   },
   {
+    "Military Clothing"
+  },
+  {
+    "Military Clothing II"
+  },
+  {
     "Ghillie Suit"
   },
   {
@@ -469,6 +475,12 @@ local vehicleDataTable = {
   },
   {
     "Camouflage Clothing"
+  },
+  {
+    "Military Clothing"
+  },
+  {
+    "Military Clothing II"
   },
   {
     "Ghillie Suit"
