@@ -102,6 +102,12 @@ local vehicleDataTableForTent = {
     "Camouflage Clothing"
   },
   {
+    "Sniper Clothing"
+  },
+  {
+    "Sniper Clothing II"
+  },
+  {
     "Military Clothing"
   },
   {
@@ -109,6 +115,12 @@ local vehicleDataTableForTent = {
   },
   {
     "Ghillie Suit"
+  },
+  {
+    "Ghillie Suit II"
+  },
+  {
+    "Ghillie Suit III"
   },
   {
     "Civilian Clothing"
@@ -753,6 +765,14 @@ skinTable = {
     287
   },
   {
+    "Sniper Clothing",
+    290
+  },
+  {
+    "Sniper Clothing II",
+    291
+  },
+  {
     "Military Clothing",
     288
   },
@@ -766,7 +786,15 @@ skinTable = {
   },
   {
     "Ghillie Suit",
+    292
+  },
+  {
+    "Ghillie Suit II",
     285
+  },
+  {
+    "Ghillie Suit III",
+    293
   },
   {
     "Survivor Clothing",

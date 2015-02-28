@@ -66,6 +66,26 @@ engineImportTXD(snipertxd, 289)
 sniperdff = engineLoadDFF("mods/militaryII.dff", 289)
 engineReplaceModel(sniperdff, 289)
 
+snipertxd = engineLoadTXD("mods/sniperskin.txd")
+engineImportTXD(snipertxd, 290)
+sniperdff = engineLoadDFF("mods/sniperskin.dff", 290)
+engineReplaceModel(sniperdff, 290)
+
+snipertxd = engineLoadTXD("mods/sniperskin2.txd")
+engineImportTXD(snipertxd, 291)
+sniperdff = engineLoadDFF("mods/sniperskin2.dff", 291)
+engineReplaceModel(sniperdff, 291)
+
+snipertxd = engineLoadTXD("mods/ghilleII.txd")
+engineImportTXD(snipertxd, 292)
+sniperdff = engineLoadDFF("mods/ghilleII.dff", 292)
+engineReplaceModel(sniperdff, 292)
+
+snipertxd = engineLoadTXD("mods/ghilleIII.txd")
+engineImportTXD(snipertxd, 293)
+sniperdff = engineLoadDFF("mods/ghilleIII.dff", 293)
+engineReplaceModel(sniperdff, 293)
+
 
 snipertxd = engineLoadTXD("items/Crowbar.txd")
 engineImportTXD(snipertxd, 337)

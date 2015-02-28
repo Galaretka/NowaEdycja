@@ -180,6 +180,12 @@ local playerDataTable = {
     "Camouflage Clothing"
   },
   {
+    "Sniper Clothing"
+  },
+  {
+    "Sniper Clothing II"
+  },
+  {
     "Military Clothing"
   },
   {
@@ -187,6 +193,12 @@ local playerDataTable = {
   },
   {
     "Ghillie Suit"
+  },
+  {
+    "Ghillie Suit II"
+  },
+  {
+    "Ghillie Suit III"
   },
   {
     "Civilian Clothing"
@@ -477,6 +489,12 @@ local vehicleDataTable = {
     "Camouflage Clothing"
   },
   {
+    "Sniper Clothing"
+  },
+  {
+    "Sniper Clothing II"
+  },
+  {
     "Military Clothing"
   },
   {
@@ -484,6 +502,12 @@ local vehicleDataTable = {
   },
   {
     "Ghillie Suit"
+  },
+  {
+    "Ghillie Suit II"
+  },
+  {
+    "Ghillie Suit III"
   },
   {
     "Civilian Clothing"

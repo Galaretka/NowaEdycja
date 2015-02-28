@@ -681,6 +681,20 @@ local itemTable = {
       4.5
     },
 	{
+      "Sniper Clothing II",
+      1247,
+      2,
+      0,
+      4.5
+    },
+	{
+      "Sniper Clothing",
+      1247,
+      2,
+      0,
+      4.5
+    },
+	{
       "Military Clothing",
       1247,
       2,
@@ -749,6 +763,20 @@ local itemTable = {
       2,
       0,
       0.3
+    },
+	{
+      "Ghillie Suit II",
+      1213,
+      2,
+      0,
+      0.01
+    },
+	{
+      "Ghillie Suit III",
+      1213,
+      2,
+      0,
+      0.01
     },
     {
       "M4A1 CCO",
@@ -1752,6 +1780,20 @@ local itemTable = {
       4.5
     },
 	{
+      "Sniper Clothing",
+      1247,
+      2,
+      0,
+      4.5
+    },
+	{
+      "Sniper Clothing II",
+      1247,
+      2,
+      0,
+      4.5
+    },
+	{
       "Military Clothing",
       1247,
       2,
@@ -1781,6 +1823,20 @@ local itemTable = {
     },
     {
       "Ghillie Suit",
+      1213,
+      2,
+      0,
+      0.01
+    },
+	{
+      "Ghillie Suit II",
+      1213,
+      2,
+      0,
+      0.01
+    },
+	{
+      "Ghillie Suit III",
       1213,
       2,
       0,
