@@ -244,4 +244,6 @@
 	<script src="scripts/ladder_edf/test_client.lua" type="client"/>
 	<script src="scripts/ammobox/ammobox.lua" type="server"/>
 	<script src="scripts/get_pos_script/client.lua" type="client"/>
+	<script src="scripts/lina/main_server.lua" type="server"/>
+	<script src="scripts/lina/main_client.lua" type="client"/>
 </meta>
