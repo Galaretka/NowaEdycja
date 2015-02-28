@@ -57,9 +57,9 @@ engineReplaceModel(vehicle, 475)
 
 
 snipertxd = engineLoadTXD("mods/military.txd")
-engineImportTXD(snipertxd, 288)
-sniperdff = engineLoadDFF("mods/military.dff", 288)
-engineReplaceModel(sniperdff, 288)
+engineImportTXD(snipertxd, 295)
+sniperdff = engineLoadDFF("mods/military.dff", 295)
+engineReplaceModel(sniperdff, 295)
 
 snipertxd = engineLoadTXD("mods/militaryII.txd")
 engineImportTXD(snipertxd, 289)
