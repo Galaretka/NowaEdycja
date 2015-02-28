@@ -562,7 +562,6 @@ function kilLDayZPlayer(killer, headshot, weapon)
 	elseif backpackSlots == 110 then
       setElementData(pedCol, "OSPack Backpack", 1)
     end
-    end
   end
   setTimer(setElementPosition, 500, 1, source, 6000, 6000, 0)
   triggerClientEvent(source, "onClientPlayerDeathInfo", source)
