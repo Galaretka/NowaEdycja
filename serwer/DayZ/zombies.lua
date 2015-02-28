@@ -803,16 +803,16 @@ function ( dataName )
                             if randdamagee > 4800 then
                             setElementData(ptarget, "pain", true)
                             setPedAnimation ( source, "knife", "KILL_Knife_Player", -1, false, false, true)
-                            setPedAnimation(ptarget, "knife", "KILL_Knife_Ped_Damage", nil, false, false, nil, false)
+                            setPedAnimation(ptarget, "knife", "KILL_Knife_Ped_Damage", 2000, false, false, nil, false)
                             --triggerClientEvent ( "zumbihit", ptarget)
                             setTimer ( Playerthroatbitten, 2300, 1, ptarget, source)
                             end
                                 
                             if randdamagee < 4099 then
                             setPedAnimation ( source, "knife", "KILL_Knife_Player", -1, false, false, true)
-                            setPedAnimation(ptarget, "knife", "KILL_Knife_Ped_Damage", nil, false, false, nil, false) 
+                            setPedAnimation(ptarget, "knife", "KILL_Knife_Ped_Damage", 2000, false, false, nil, false) 
                             --triggerClientEvent ( "zumbihit", ptarget)
-                            --setPedAnimation(ptarget, "BOMBER", "BOM_Plant", nil, false, false, nil, false) 
+                            --setPedAnimation(ptarget, "BOMBER", "BOM_Plant", 2000, false, false, nil, false) 
                             setTimer ( Playerthroatbitten, 2300, 1, ptarget, source)
                             
                             end

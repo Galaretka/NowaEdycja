@@ -716,14 +716,14 @@ function onPlayerRequestChangingStats(itemName, itemInfo, data)
     elseif itemName == "Pasta Can" then
       blood = 200
     end
-    setPedAnimation(source, "FOOD", "EAT_Burger", nil, false, false, nil, false)
+    setPedAnimation(source, "FOOD", "EAT_Burger", 2000, false, false, nil, false)
     setElementData(source, itemName, getElementData(source, itemName) - 1)
     addPlayerStats(source, "blood", blood)
     addPlayerStats(source, data, gameplayVariables.foodrestore)
   elseif data == "thirst" then
     setElementData(source, itemName, getElementData(source, itemName) - 1)
     addPlayerStats(source, data, gameplayVariables.thirstrestore)
-    setPedAnimation(source, "VENDING", "VEND_Drink2_P", nil, false, false, nil, false)
+    setPedAnimation(source, "VENDING", "VEND_Drink2_P", 2000, false, false, nil, false)
     if itemName == "Bouteille" then
       setElementData(source, "Empty Water Bottle", (getElementData(source, "Empty Water Bottle") or 0) + 1)
     end
@@ -735,7 +735,7 @@ addEvent("onPlayerRequestChangingStats", true)
 addEventHandler("onPlayerRequestChangingStats", getRootElement(), onPlayerRequestChangingStats)
 function onPlayerUseMedicObject(itemName)
   local playersource = source
-  setPedAnimation(playersource, "BOMBER", "BOM_Plant", nil, false, false, nil, false)
+  setPedAnimation(playersource, "BOMBER", "BOM_Plant", 2000, false, false, nil, false)
   setTimer(function()
     if itemName == "Bandage" then
       setElementData(playersource, "bleeding", 0)
@@ -765,7 +765,7 @@ addEvent("onPlayerUseMedicObject", true)
 addEventHandler("onPlayerUseMedicObject", getRootElement(), onPlayerUseMedicObject)
 function onPlayerGiveMedicObject(itemName, player)
   local playersource = source
-  setPedAnimation(playersource, "BOMBER", "BOM_Plant", nil, false, false, nil, false)
+  setPedAnimation(playersource, "BOMBER", "BOM_Plant", 2000, false, false, nil, false)
   setTimer(function()
     if itemName == "bandage" then
       setElementData(player, "bleeding", 0)
@@ -872,7 +872,7 @@ function getPointFromDistanceRotation(x, y, dist, angle)
 end
 function onPlayerPitchATent(itemName)
   setElementData(source, itemName, getElementData(source, itemName) - 1)
-  setPedAnimation(source, "BOMBER", "BOM_Plant", nil, false, false, nil, false)
+  setPedAnimation(source, "BOMBER", "BOM_Plant", 2000, false, false, nil, false)
   local source = source
   setTimer(function()
     local x, y, z = getElementPosition(source)
@@ -900,7 +900,7 @@ addEvent("onPlayerPitchATent", true)
 addEventHandler("onPlayerPitchATent", getRootElement(), onPlayerPitchATent)
 function onPlayerBuildAWireFence(itemName)
   setElementData(source, itemName, getElementData(source, itemName) - 1)
-  setPedAnimation(source, "BOMBER", "BOM_Plant", nil, false, false, nil, false)
+  setPedAnimation(source, "BOMBER", "BOM_Plant", 2000, false, false, nil, false)
   local source = source
   setTimer(function()
     local x, y, z = getElementPosition(source)
@@ -941,7 +941,7 @@ addEvent("removeTent", true)
 addEventHandler("removeTent", getRootElement(), removeTent)
 function addPlayerCookMeat()
   local playersource = source
-  setPedAnimation(playersource, "BOMBER", "BOM_Plant", nil, false, false, nil, false)
+  setPedAnimation(playersource, "BOMBER", "BOM_Plant", 2000, false, false, nil, false)
   local meat = getElementData(playersource, "Raw Meat")
   setTimer(function()
     setElementData(playersource, "Raw Meat", 0)
@@ -973,7 +973,7 @@ function onPlayerMakeAFire(itemName)
   setElementData("Wood Pile", "parent", fireCol)
   setElementData(fireCol, "fireplace", true)
   triggerClientEvent(source, "refreshInventoryManual", source)
-  setPedAnimation(playersource, "BOMBER", "BOM_Plant", nil, false, false, nil, false)
+  setPedAnimation(playersource, "BOMBER", "BOM_Plant", 2000, false, false, nil, false)
   setTimer(function()
     destroyElement(fireCol)
     destroyElement(fire)
@@ -1066,14 +1066,14 @@ setTimer(checkBandit, 20000, 0)
 local infoTimer = 240000
 function outputInfo1()
   for i, player in ipairs(getElementsByType("player")) do
-    triggerClientEvent(player, "displayClientInfo", player, "Info", "You can use the middle mouse button or '-' to do certain actions", 200, 200, 22)
+    triggerClientEvent(player, "displayClientInfo", player, "Info", "Możesz użyć środkowego przycisku myszy lub "-", aby wykonać pewne działania", 200, 200, 22)
   end
   setTimer(outputInfo2, infoTimer, 1)
 end
 setTimer(outputInfo1, infoTimer, 1)
 function outputInfo2()
   for i, player in ipairs(getElementsByType("player")) do
-    triggerClientEvent(player, "displayClientInfo", player, "Info", "Need help? Press 'o' to open the support chat - hide yourself first", 200, 200, 22)
+    triggerClientEvent(player, "displayClientInfo", player, "Info", "Potrzebujesz pomocy? Naciśnij 'o', aby otworzyć czat wsparcia.", 200, 200, 22)
   end
   setTimer(outputInfo3, infoTimer, 1)
 end
@@ -1085,13 +1085,13 @@ function outputInfo3()
 end
 function outputInfo4()
   for i, player in ipairs(getElementsByType("player")) do
-    triggerClientEvent(player, "displayClientInfo", player, "Info", "You can enable & disable the debugmonitor by pressing F5", 200, 200, 22)
+    triggerClientEvent(player, "displayClientInfo", player, "Info", "Można włączyć i wyłączyć debugmonitor naciskając klawisz F5.", 200, 200, 22)
   end
   setTimer(outputInfo5, infoTimer, 1)
 end
 function outputInfo5()
   for i, player in ipairs(getElementsByType("player")) do
-    triggerClientEvent(player, "displayClientInfo", player, "Info", "Staff Members online: " .. getTeamMemberOnline(), 200, 200, 22)
+    triggerClientEvent(player, "displayClientInfo", player, "Info", "Personel on-line: " .. getTeamMemberOnline(), 200, 200, 22)
   end
   setTimer(outputInfo1, infoTimer, 1)
 end
@@ -1099,7 +1099,7 @@ function getTeamMemberOnline()
   theTableMembersOnline = ""
   for i, player in ipairs(getElementsByType("player")) do
     local account = getPlayerAccount(player)
-    if not isGuestAccount(account) and (getElementData(player, "supporter") or getElementData(player, "admin")) then
+    if not isGuestAccount(account) and (getElementData(player, "supporter") or getElementData(player, "Admin") or getElementData(player, "Moderator")) then
       theTableMembersOnline = theTableMembersOnline .. "," .. getPlayerName(player)
     end
   end
