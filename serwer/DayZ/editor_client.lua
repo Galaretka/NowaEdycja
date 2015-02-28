@@ -33,7 +33,7 @@ gameplayVariables = {}
 -- ZOMBIE DAMAGE
 	gameplayVariables["zombiedamage"] = math.random(500,800) -- Damage done by zombies - DEFAULT: math.random(400,900), for consistent damage, remove math.random(400,900) and insert value (EXAMPLE: 1000)
 	
-	gameplayVariables["enablenight"] = false -- Whether or not the night should be darker - DEFAULT: true - SET TO false to disable - remember you need to set it in editor_server.lua too.
+	gameplayVariables["enablenight"] = true -- Whether or not the night should be darker - DEFAULT: true - SET TO false to disable - remember you need to set it in editor_server.lua too.
 	
 -- WEAPON DAMAGE
 damageTable = {
@@ -48,7 +48,7 @@ damageTable = {
 --{"M136 Rocket Launcher",0},
 {"Lee Enfield",8000},
 {"Hunting Knife",1500},
-{"Hatchet",1006},
+{"Hatchet",2300},
 {"G17",889},
 {"Makarov SD",1000},
 {"PDW",889},

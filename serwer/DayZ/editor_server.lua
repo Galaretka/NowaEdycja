@@ -12,16 +12,16 @@
 --SERVER OUTPUTS
 shownInfos = {}
 
-	shownInfos["nomag"] = "Sem munição!"
-	shownInfos["youconsumed"] = "Comeu ou Bebeu :"
-	shownInfos["needwatersource"] = "Você precisa estar nadando!"
-	shownInfos["filledup"] = "Você encheu a sua Garrafa de Água!"
-	shownInfos["noradio"] = "Você não Radio Device filho!"
+	shownInfos["nomag"] = "Nie masz amunicji!"
+	shownInfos["youconsumed"] = "Skonsumowałeś: "
+	shownInfos["needwatersource"] = "Musisz być w wodzie!"
+	shownInfos["filledup"] = "Napełnij wodą!"
+	shownInfos["noradio"] = "Nie masz Radio Device!"
 	
 --GAMEPLAY SETUP
 gameplayVariables = {}
 
-	gameplayVariables["zombieblood"] = 1 -- Zombie Blood/Health - DEFAULT: 6000
+	gameplayVariables["zombieblood"] = 2000 -- Zombie Blood/Health - DEFAULT: 6000
 	gameplayVariables["foodrestore"] = math.random(40,100) -- Amount of hunger to be restored when eating - DEFAULT: math.random(40,100) - FOR FULL RESTORE, JUST WRITE 100
 	gameplayVariables["thirstrestore"] = math.random(40,100) -- Amount of hunger to be restored when drinking - DEFAULT: math.random(40,100) - FOR FULL RESTORE, JUST WRITE 100
 	gameplayVariables["loseHunger"] = -1.5 -- Amount of losing hunger per minute - DEFAULT: -1.5
@@ -32,12 +32,12 @@ gameplayVariables = {}
 	gameplayVariables["temperaturesprint"] = 0.005 -- Amount of temperature to be gained when sprinting - DEFAULT: 0.005
 	gameplayVariables["sprintthirst"] = -0.2 -- Amount of losing thirst when sprinting - DEFAULT: -0.2
 	gameplayVariables["enablenight"] = false -- Whether or not the night should be darker - DEFAULT: true - SET TO false to disable - remember you need to set it in editor_client.lua too.
-	gameplayVariables["itemrespawntimer"] = 7200000 -- Number of milliseconds that should elapse before the items will respawn. Note: You can also just do 14400000/2 to make it the half from the current (division).
+	gameplayVariables["itemrespawntimer"] = 10800000 -- Number of milliseconds that should elapse before the items will respawn. Note: You can also just do 14400000/2 to make it the half from the current (division).
 
 	
 -- SERVER BACKUP
 	gameplayVariables["backupenabled"] = true -- Whether or not backup should be enabled. Backup = saves all tents, accounts & vehicles. - DEFAULT: true - Set to false to disable backup.
-	gameplayVariables["backupinterval"] = 86400000 -- Number of milliseconds that should elapse before backup. Minimum: 50. - 1000 milliseconds = 1 second. - DEFAULT: 86400000 (= 24 hours)
+	gameplayVariables["backupinterval"] = 43200000 -- Number of milliseconds that should elapse before backup. Minimum: 50. - 1000 milliseconds = 1 second. - DEFAULT: 86400000 (= 24 hours)
 
 	
 	

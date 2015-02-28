@@ -2275,7 +2275,7 @@ function getItemTablePosition(itema)
   return item, itemString
 end
 function refreshItemLoots()
-  outputChatBox("#ffaa00WARNING! #ffffff - SPAWNPOINTS FOR ITEMS ARE BEING REFRESHED! BEWARE OF MASSIVE LAG!", getRootElement(), 255, 255, 255, true)
+  outputChatBox("#ffaa00UWAGA! #ffffff - RESETOWANIE RESPÓW ITEMÓW! !LAG!", getRootElement(), 255, 255, 255, true)
   for i, loots in ipairs(getElementsByType("colshape")) do
     local itemloot = getElementData(loots, "itemloot")
     if itemloot then
@@ -2300,7 +2300,7 @@ end
 function refreshItemLootPoints()
   local time = getRealTime()
   local hour = time.hour
-  outputChatBox("#ff2200WARNING! #ffffff - SPAWNPOINTS FOR ITEMS WILL BE REFRESHED IN 1 MINUTE! BEWARE OF MASSIVE LAG!", getRootElement(), 255, 255, 255, true)
+  outputChatBox("#ff2200UWAGA! #ffffff - ZA 1 MINUTE BĘDZIE RESPAWN ITEMÓW! BĘDZIE LAG!", getRootElement(), 255, 255, 255, true)
   setTimer(refreshItemLoots, 60000, 1)
 end
 setTimer(refreshItemLootPoints, gameplayVariables.itemrespawntimer, 1)

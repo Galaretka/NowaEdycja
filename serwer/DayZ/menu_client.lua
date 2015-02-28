@@ -67,7 +67,7 @@ end
 if arg1 == "Helicrashsite" then
 	number = number+1
 	guiSetVisible(spalteGuiImage[number],true)
-	guiSetText(spalteGuiText[number],"Gear (Helicrash)")
+	guiSetText(spalteGuiText[number],"Zbierz (Helicrash)")
 	if number == 1 then
 		guiLabelSetColor (spalteGuiText[number],50,255,50)
 		setElementData(spalteGuiText[number],"markedMenuItem",true)
@@ -77,7 +77,7 @@ end
 if arg1 == "Hospitalbox" then
 	number = number+1
 	guiSetVisible(spalteGuiImage[number],true)
-	guiSetText(spalteGuiText[number],"Gear (Hospitalbox)")
+	guiSetText(spalteGuiText[number],"Zbierz (Hospitalbox)")
 	if number == 1 then
 		guiLabelSetColor (spalteGuiText[number],50,255,50)
 		setElementData(spalteGuiText[number],"markedMenuItem",true)
@@ -87,14 +87,14 @@ end
 if arg1 == "Vehicle" then
 	number = number+1
 	guiSetVisible(spalteGuiImage[number],true)
-	guiSetText(spalteGuiText[number],"Gear ("..arg2..")")
+	guiSetText(spalteGuiText[number],"Zbierz ("..arg2..")")
 	guiLabelSetColor (spalteGuiText[number],50,255,50)
 	setElementData(spalteGuiText[number],"markedMenuItem",true)
 	setElementData(spalteGuiText[number],"usedItem","vehicle")
 	if getElementData(getElementData(arg3,"parent"),"tent") then
 		number = number+1
 		guiSetVisible(spalteGuiImage[number],true)
-		guiSetText(spalteGuiText[number],"Remove Tent")
+		guiSetText(spalteGuiText[number],"Zabierz Tent")
 		if number == 1 then
 			guiLabelSetColor (spalteGuiText[number],50,255,50)
 			setElementData(spalteGuiText[number],"markedMenuItem",true)
@@ -106,7 +106,7 @@ if arg1 == "Vehicle" then
 	if getElementHealth(arg3) < 1000 and getElementHealth(arg3) >= 50 and getElementData(getLocalPlayer(),"Toolbox") >= 1 then
 		number = number+1
 		guiSetVisible(spalteGuiImage[number],true)
-		guiSetText(spalteGuiText[number],"Repair ("..arg2..")")
+		guiSetText(spalteGuiText[number],"Napraw ("..arg2..")")
 		setElementData(spalteGuiText[number],"usedItem","repairvehicle")
 	end
 end
@@ -115,7 +115,7 @@ if arg1 == "Player" then
 	if getElementData(arg2,"bleeding") > 0 and getElementData(getLocalPlayer(),"Bandage") >= 1 then
 		number = number+1
 		guiSetVisible(spalteGuiImage[number],true)
-		guiSetText(spalteGuiText[number],"Give Bandage")
+		guiSetText(spalteGuiText[number],"Daj Bandage")
 		guiLabelSetColor (spalteGuiText[1],50,255,50)
 		setElementData(spalteGuiText[1],"markedMenuItem",true)
 		setElementData(spalteGuiText[number],"usedItem","bandage")
@@ -134,7 +134,7 @@ end
 if arg1 == "Dead" then
 	number = number+1
 	guiSetVisible(spalteGuiImage[number],true)
-	guiSetText(spalteGuiText[number],"Gear ("..arg2..")")
+	guiSetText(spalteGuiText[number],"Zbierz ("..arg2..")")
 	if number == 1 then
 		guiLabelSetColor (spalteGuiText[number],50,255,50)
 		setElementData(spalteGuiText[number],"markedMenuItem",true)
@@ -159,7 +159,7 @@ if arg1 == "patrol" then
 	if getElementData(getLocalPlayer(),"Empty Gas Canister") >= 1 then
 		number = number+1
 		guiSetVisible(spalteGuiImage[number],true)
-		guiSetText(spalteGuiText[number],"Refill (Empty Gas Canister)")
+		guiSetText(spalteGuiText[number],"Napełnij (Empty Gas Canister)")
 		if number == 1 then
 			guiLabelSetColor (spalteGuiText[number],50,255,50)
 			setElementData(spalteGuiText[number],"markedMenuItem",true)
@@ -171,7 +171,7 @@ if arg1 == "Wirefence" then
 	if getElementData(getLocalPlayer(),"Toolbox") >= 1 then
 		number = number+1
 		guiSetVisible(spalteGuiImage[number],true)
-		guiSetText(spalteGuiText[number],"Remove Wirefence")
+		guiSetText(spalteGuiText[number],"Usuń Wirefence")
 		if number == 1 then
 			guiLabelSetColor (spalteGuiText[number],50,255,50)
 			setElementData(spalteGuiText[number],"markedMenuItem",true)
@@ -182,7 +182,7 @@ end
 if arg1 == "Gear" then
 	number = number+1
 	guiSetVisible(spalteGuiImage[number],true)
-	guiSetText(spalteGuiText[number],"Gear")
+	guiSetText(spalteGuiText[number],"Zbierz")
 	if number == 1 then
 		guiLabelSetColor (spalteGuiText[number],50,255,50)
 		setElementData(spalteGuiText[number],"markedMenuItem",true)
@@ -283,21 +283,21 @@ if getElementData(source,"parent") == getLocalPlayer() then return end
 			showClientMenuItem("patrol")
 			setElementData(getLocalPlayer(),"currentCol",source)
 			setElementData(getLocalPlayer(),"loot",false)
-			setNewbieInfo (true,"patrolstation","Press '-' or 'middle-mouse' to refill a canister!\n REQUIRED: Empty Gas Canister",source)
+			setNewbieInfo (true,"patrolstation","Naciśnij '-' lub 'środkowy klawisz myski' aby napełnić kalnister!\n Powód: Empty Gas Canister",source)
 			return
 		end
 		if getElementData(source,"wirefence") then
 			showClientMenuItem("Wirefence")
 			setElementData(getLocalPlayer(),"currentCol",source)
 			setElementData(getLocalPlayer(),"loot",false)
-			setNewbieInfo (true,"Wirefence","Press '-' or 'middle-mouse' to remove the fence!\n REQUIRED: Toolbox",source)
+			setNewbieInfo (true,"Wirefence","Naciśnij '-' lub 'środkowy klawisz myski' aby usunąć płotek!\n Powód: Toolbox",source)
 			return
 		end
 		if getElementData(source,"fireplace") then
 			showClientMenuItem("Fireplace")
 			setElementData(getLocalPlayer(),"currentCol",source)
 			setElementData(getLocalPlayer(),"loot",false)
-			setNewbieInfo (true,"Fireplace","Press '-' or 'middle-mouse' to cook meat!\n REQUIRED: Raw Meat",source)
+			setNewbieInfo (true,"Fireplace","Naciśnij '-' lub 'środkowy klawisz myski' aby zjeść!\n Powód: Raw Meat",source)
 			isInFirePlace = true
 			return
 		end
@@ -305,31 +305,31 @@ if getElementData(source,"parent") == getLocalPlayer() then return end
 			showClientMenuItem("Dead",getElementData(source,"playername"))
 			setElementData(getLocalPlayer(),"currentCol",source)
 			setElementData(getLocalPlayer(),"loot",true)
-			setElementData(getLocalPlayer(),"lootname","Gear ("..getElementData(source,"playername")..")")
-			setNewbieInfo (true,"Gear","Press J to access the gear menu!",source)
+			setElementData(getLocalPlayer(),"lootname","Zbierz ("..getElementData(source,"playername")..")")
+			setNewbieInfo (true,"Gear","Naciśnij 'J' aby włączyć menu!",source)
 			return
 		end
 		if getElementData(source,"item") then
 			showClientMenuItem("Take",getElementData(source,"item"))
 			setElementData(getLocalPlayer(),"currentCol",source)
 			setElementData(getLocalPlayer(),"loot",false)
-			setNewbieInfo (true,"Item pickup","Press '-' or 'middle-mouse' to pick this item up!",source)
+			setNewbieInfo (true,"Item pickup","Naciśnij '-' lub 'środkowy klawisz myski' aby podnieść!",source)
 			return
 		end
 		if getElementData(source,"helicrash") then
 			showClientMenuItem("Helicrashsite","helicrash")
 			setElementData(getLocalPlayer(),"currentCol",source)
 			setElementData(getLocalPlayer(),"loot",true)
-			setElementData(getLocalPlayer(),"lootname","Gear (Helicrash)")
-			setNewbieInfo (true,"Gear","Press J to access the gear menu!",source)
+			setElementData(getLocalPlayer(),"lootname","Zbierz (Helicrash)")
+			setNewbieInfo (true,"Gear","Naciśnij 'J' aby włączyć menu!",source)
 			return
 		end
 		if getElementData(source,"hospitalbox") then
 			showClientMenuItem("Hospitalbox","hospitalbox")
 			setElementData(getLocalPlayer(),"currentCol",source)
 			setElementData(getLocalPlayer(),"loot",true)
-			setElementData(getLocalPlayer(),"lootname","Gear (Hospitalbox)")
-			setNewbieInfo (true,"Gear","Press J to access the gear menu!",source)
+			setElementData(getLocalPlayer(),"lootname","Zbierz (Hospitalbox)")
+			setNewbieInfo (true,"Gear","Naciśnij 'J' aby włączyć menu!",source)
 			return
 		end
 		if getElementData(source,"vehicle") then
@@ -337,17 +337,17 @@ if getElementData(source,"parent") == getLocalPlayer() then return end
 			showClientMenuItem("Vehicle",(getVehicleName(getElementData(source,"parent")) or "Tent"),getElementData(source,"parent"))
 			setElementData(getLocalPlayer(),"currentCol",source)
 			setElementData(getLocalPlayer(),"loot",true)
-			setElementData(getLocalPlayer(),"lootname","Gear ("..(getVehicleName(getElementData(source,"parent")) or "Tent")..")")
-			setNewbieInfo (true,"Gear","Press J to acess the gear menu!",source)
+			setElementData(getLocalPlayer(),"lootname","Zbierz ("..(getVehicleName(getElementData(source,"parent")) or "Tent")..")")
+			setNewbieInfo (true,"Gear","Naciśnij 'J' aby włączyć menu!",source)
 			return
 			end
 		end
 		if getElementData(source,"itemloot") then
 			showClientMenuItem("Gear")
 			setElementData(getLocalPlayer(),"loot",true)
-			setElementData(getLocalPlayer(),"lootname","Gear")
+			setElementData(getLocalPlayer(),"lootname","Zbierz")
 			setElementData(getLocalPlayer(),"currentCol",source)
-			setNewbieInfo (true,"Gear","Press J to access the gear menu!",source)
+			setNewbieInfo (true,"Gear","Naciśnij 'J' aby włączyć menu!",source)
 			return
 		end
 	showClientMenuItem("stop")
@@ -412,35 +412,35 @@ if ( keyState == "down" ) then
 		local itemName = getMenuMarkedItem()
 		if itemName == "helicrashsite" then
 			local col = getElementData(getLocalPlayer(),"currentCol")
-			local gearName = "Gear (Helicrash)"
+			local gearName = "Zbierz (Helicrash)"
 			refreshLoot(col,gearName)
 			showInventoryManual()
 			return
 		end
 		if itemName == "itemloot" then
 			local col = getElementData(getLocalPlayer(),"currentCol")
-			local gearName = "Gear"
+			local gearName = "Zbierz"
 			refreshLoot(col,gearName)
 			showInventoryManual()
 			return
 		end
 		if itemName == "wirefence" then
 			local col = getElementData(getLocalPlayer(),"currentCol")
-			local gearName = "Remove Wirefence"
+			local gearName = "Zwiń Wirefence"
 			triggerServerEvent("removeWirefence",getLocalPlayer(),getElementData(col,"parent"))
 			disableMenu()
 			return
 		end
 		if itemName == "hospitalbox" then
 			local col = getElementData(getLocalPlayer(),"currentCol")
-			local gearName = "Gear (Hospitalbox)"
+			local gearName = "Zbierz (Hospitalbox)"
 			refreshLoot(col,gearName)
 			showInventoryManual()
 			return
 		end
 		if itemName == "vehicle" then
 			local col = getElementData(getLocalPlayer(),"currentCol")
-			local gearName = "Gear ("..(getVehicleName(getElementData(col,"parent")) or "Tent")..")"
+			local gearName = "Zbierz ("..(getVehicleName(getElementData(col,"parent")) or "Tent")..")"
 			refreshLoot(col,gearName)
 			showInventoryManual()
 			return
@@ -477,7 +477,7 @@ if ( keyState == "down" ) then
 		end
 		if itemName == "dead" then
 			local col = getElementData(getLocalPlayer(),"currentCol")
-			local gearName = "Gear ("..getElementData(col,"playername")..")"
+			local gearName = "Zbierz ("..getElementData(col,"playername")..")"
 			refreshLoot(col,gearName)
 			showInventoryManual()
 			return
@@ -512,7 +512,7 @@ if ( keyState == "down" ) then
 				triggerServerEvent("onPlayerTakeItemFromGround",getLocalPlayer(),itemName,col)
 				disableMenu()
 			else
-				startRollMessage2("Inventory", "Inventory is full!", 255, 22, 0 )
+				startRollMessage2("Inventory", "Ekwipunek jest pełny!", 255, 22, 0 )
 			end
 	end
 end

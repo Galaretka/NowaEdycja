@@ -591,10 +591,18 @@ function saveallvehicles(ps, command)
 end
 addEventHandler("onResourceStop", getResourceRootElement(getThisResource()), saveallvehicles)
 function doBackup()
-  outputChatBox("Server Backup...", getRootElement(), 27, 89, 224, true)
+  outputChatBox("Trwa robienie kopii zapasowej serwera! MOŻLIWY LAG!", getRootElement(), 27, 89, 224, true)
   saveallvehicles()
-  outputChatBox("Done!", getRootElement(), 27, 89, 224, true)
+  outputChatBox("Gotowe!", getRootElement(), 27, 89, 224, true)
 end
+function doBackup2(ps)
+    if isObjectInACLGroup ( "user." ..getAccountName(getPlayerAccount(ps)), aclGetGroup ( "Admin" ) ) then
+		outputChatBox ("Trwa robienie kopii zapasowej serwera! MOŻLIWY LAG!",getRootElement(),27, 89, 224,true)
+		saveallvehicles()
+		outputChatBox("Gotowe!", getRootElement(), 27, 89, 224, true)
+	end
+end
+addCommandHandler("backup",doBackup2)
 function checkDoBackup()
   if gameplayVariables.backupenabled then
     setTimer(doBackup, gameplayVariables.backupinterval, 0)

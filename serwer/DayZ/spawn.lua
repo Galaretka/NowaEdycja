@@ -432,7 +432,7 @@ function checkBuggedAccount()
     end
     if getElementData(player, "logedin") and getElementModel(player) == 0 then
       spawnDayZPlayer(player)
-      outputChatBox(getPlayerName(player) .. "s Account is buggy and has been reset.", getRootElement(), 22, 255, 22, true)
+      outputChatBox(getPlayerName(player) .. ", konto jest zbugowane! Następuje reset konta..", getRootElement(), 22, 255, 22, true)
     end
   end
 end
@@ -473,7 +473,7 @@ function kilLDayZPlayer(killer, headshot, weapon)
       local time = getRealTime()
       local hours = time.hour
       local minutes = time.minute
-      setElementData(pedCol, "deadreason", getPlayerName(source) .. " is dead. Cause of death: " .. (weapon or "Unknown") .. ". Time of death: " .. hours .. ":" .. minutes .. " o'clock.")
+      setElementData(pedCol, "deadreason", getPlayerName(source) .. " jest partwy. Przyczyna śmierci: " .. (weapon or "Unknown") .. ". Zmarł o: " .. hours .. ":" .. minutes .. ".")
     end
   end
   if killer then
@@ -549,7 +549,7 @@ function kilLDayZPlayer(killer, headshot, weapon)
   triggerClientEvent(source, "onClientPlayerDeathInfo", source)
   setAccountData(account, "isDead", true)
   setElementData(source, "isDead", true)
-  triggerClientEvent("onRollMessageStart", getRootElement(), "#FFFFFF" .. getPlayerName(source) .. " #FFFFFFwas killed", 0, 22, 255, "died")
+  triggerClientEvent("onRollMessageStart", getRootElement(), "#FFFFFF" .. getPlayerName(source) .. " #FFFFFFumarł.", 0, 22, 255, "died")
   destroyElement(getElementData(source, "playerCol"))
   setTimer(spawnDayZPlayer, 5000, 1, source)
 end

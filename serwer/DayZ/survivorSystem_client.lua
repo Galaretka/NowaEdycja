@@ -427,7 +427,7 @@ setElementData(statsLabel["temperature1"],"identifikation","temperature")
 
 
 -- FACEBOOK
-statsLabel["face"] = guiCreateLabel(0.45, 0.88, 0.48, 0.09,"Supriload.com", true, statsWindows)
+statsLabel["face"] = guiCreateLabel(0.45, 0.88, 0.48, 0.09,"DayZ-Polska.pl", true, statsWindows)
 guiSetFont(statsLabel["face"], "default-bold-small")
 guiLabelSetColor(statsLabel["face"], 124, 125, 125)
 
@@ -437,35 +437,35 @@ guiSetFont(statsLabel["debug"], "default-bold-small")
 guiLabelSetColor(statsLabel["debug"], 125, 125, 125)
 
 -- SURVIVOR
-statsLabel["survivor"] = guiCreateLabel(0.07, 0.06, 0.48, 0.09, "[SURVIVOR]", true, statsWindows)
+statsLabel["survivor"] = guiCreateLabel(0.07, 0.06, 0.48, 0.09, "[DayZ MOD]", true, statsWindows)
 guiSetFont(statsLabel["survivor"], "default-bold-small")
 
 --Zombies  Killed
-statsLabel["zombieskilled"] = guiCreateLabel(0.07, 0.25, 0.48, 0.09, "Zombies Mortos:",true,statsWindows)
+statsLabel["zombieskilled"] = guiCreateLabel(0.07, 0.25, 0.48, 0.09, "Zabitych zombie:",true,statsWindows)
 --guiLabelSetHorizontalAlign (statsLabel["zombieskilled"],"center")
 guiSetFont (statsLabel["zombieskilled"], "default-bold-small" )
 guiLabelSetColor(statsLabel["zombieskilled"], 242, 176, 17)
 
 --Headshots
-statsLabel["headshots"] = guiCreateLabel(0.07, 0.34, 0.48, 0.09, "Headshots:",true,statsWindows)
+statsLabel["headshots"] = guiCreateLabel(0.07, 0.34, 0.48, 0.09, "HeadShoty:",true,statsWindows)
 --guiLabelSetHorizontalAlign (statsLabel["headshots"],"center")
 guiSetFont (statsLabel["headshots"], "default-bold-small" )
 guiLabelSetColor(statsLabel["headshots"], 242, 176, 17)
 
 --Murders
-statsLabel["murders"] = guiCreateLabel(0.07, 0.58, 0.48, 0.09, "Matou:",true,statsWindows)
+statsLabel["murders"] = guiCreateLabel(0.07, 0.58, 0.48, 0.09, "Morderstw:",true,statsWindows)
 --guiLabelSetHorizontalAlign (statsLabel["murders"],"center")
 guiSetFont (statsLabel["murders"], "default-bold-small" )
 guiLabelSetColor(statsLabel["murders"], 201, 71, 57)
 
 --Bandits Killed
-statsLabel["banditskilled"] = guiCreateLabel(0.07, 0.51, 0.48, 0.09, "Bandidos Mortos:",true,statsWindows)
+statsLabel["banditskilled"] = guiCreateLabel(0.07, 0.51, 0.48, 0.09, "Zabitych bandytów:",true,statsWindows)
 --guiLabelSetHorizontalAlign (statsLabel["banditskilled"],"center")
 guiSetFont (statsLabel["banditskilled"], "default-bold-small" )
 guiLabelSetColor(statsLabel["banditskilled"], 201, 71, 57)
 
 --Blood
-statsLabel["blood"] = guiCreateLabel(0.07, 0.70, 0.48, 0.09, "Sangue:",true,statsWindows)
+statsLabel["blood"] = guiCreateLabel(0.07, 0.70, 0.48, 0.09, "Krew:",true,statsWindows)
 --guiLabelSetHorizontalAlign (statsLabel["blood"],"center")
 guiSetFont (statsLabel["blood"], "default-bold-small" )
 guiLabelSetColor(statsLabel["blood"], 242, 176, 17)
@@ -483,7 +483,7 @@ guiSetFont (statsLabel["temperature"], "default-bold-small" )
 guiLabelSetColor(statsLabel["temperature"], 242, 176, 17)
 
 --Humanity
-statsLabel["humanity"] = guiCreateLabel(0.07, 0.41, 0.48, 0.10, "Humanidade:",true,statsWindows)
+statsLabel["humanity"] = guiCreateLabel(0.07, 0.41, 0.48, 0.10, "Ludzkość:",true,statsWindows)
 --guiLabelSetHorizontalAlign (statsLabel["humanity"],"center")
 guiSetFont (statsLabel["humanity"], "default-bold-small" )
 guiLabelSetColor(statsLabel["humanity"], 242, 176, 17)
@@ -1259,8 +1259,8 @@ function showDayZDeathScreen()
   setTimer(fadeCamera, 1000, 1, true, 1.5)
   deadBackground = guiCreateStaticImage(0, 0, 1, 1, "images/dead.jpg", true)
   deathText = guiCreateLabel(0, 0.8, 1, 0.2, [[
-You died! 
- You will respawn in 5 seconds.]], false)
+Umarłeś.
+Odczekaj 5 sek.]], false)
   guiLabelSetHorizontalAlign(deathText, "center")
   setTimer(guiSetVisible, 5000, 1, false)
   setTimer(guiSetVisible, 5000, 1, false)
@@ -1343,7 +1343,7 @@ function outputSupportChat(sourcePlayer, text)
   if sourcePlayer == "Sandra" or sourcePlayer == "James" or sourcePlayer == "Paul" then
     name = sourcePlayer .. " (Bot)"
   elseif not getElementData(sourcePlayer, "logedin") then
-    name = string.gsub(getPlayerName(sourcePlayer), "#%x%x%x%x%x%x", "") .. " (Guest)"
+    name = string.gsub(getPlayerName(sourcePlayer), "#%x%x%x%x%x%x", "") .. " (GOŚĆ)"
   elseif getElementData(sourcePlayer, "Admin") then
     name = string.gsub(getPlayerName(sourcePlayer), "#%x%x%x%x%x%x", "") .. " (Admin)"
   elseif getElementData(sourcePlayer, "Moderator") then
@@ -1351,7 +1351,7 @@ function outputSupportChat(sourcePlayer, text)
   elseif getElementData(sourcePlayer, "supporter") then
     name = string.gsub(getPlayerName(sourcePlayer), "#%x%x%x%x%x%x", "") .. " (Supporter)"
   else
-    name = string.gsub(getPlayerName(sourcePlayer), "#%x%x%x%x%x%x", "") .. " (Player)"
+    name = string.gsub(getPlayerName(sourcePlayer), "#%x%x%x%x%x%x", "") .. " (GRACZ)"
   end
   guiGridListSetItemText(supportGridlist, row, nameColumn, name, false, false)
   guiGridListSetItemText(supportGridlist, row, messageColumn, text, false, false)
@@ -1381,7 +1381,7 @@ function setAntiSpamActive()
 end
 function isSpamTimer()
   if isTimer(antiSpamTimer) then
-    outputChatBox("Please do not spam the support chat!", 255, 255, 0, true)
+    outputChatBox("Prosimy nie spammić.", 255, 255, 0, true)
     return true
   else
     return false
@@ -1574,7 +1574,7 @@ function playerPingCheck()
       triggerServerEvent("kickPlayerOnHighPing", getLocalPlayer())
       return
     end
-    startRollMessage2("Ping", "Ping Alto " .. gameplayVariables.ping .. "! (" .. pingFails .. "/5)", 255, 22, 0)
+    startRollMessage2("Ping", "Za wysoki ping " .. gameplayVariables.ping .. "! (" .. pingFails .. "/5)", 255, 22, 0)
     if isTimer(pingTimer) then
       return
     end
@@ -1584,3 +1584,5 @@ function playerPingCheck()
   end
 end
 setTimer(playerPingCheck, 4000, 0)
+
+bindKey("b", "down", "chatbox", "global" )

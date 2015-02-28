@@ -1789,13 +1789,13 @@ function onPlayerEnterDayzVehicle(veh, seat)
     setElementData(col, "Parts_inVehicle", math.random(0, parts))
   end
   if 1 >= (getElementData(col, "fuel") or 0) and not getElementModel(veh) == 509 then
-    triggerClientEvent(source, "displayClientInfo", source, "Vehicle", "No tank left in this vehicle!", 22, 255, 0)
+    triggerClientEvent(source, "displayClientInfo", source, "Vehicle", "Nie ma w tym pojeździe paliwa!", 22, 255, 0)
     setVehicleEngineState(veh, false)
     return
   end
   setVehicleEngineState(veh, true)
   bindKey(source, "k", "down", setEngineStateByPlayer)
-  outputChatBox("Aperte K para Ligar/Desligar o Motor!", source)
+  outputChatBox("Naciśnij 'K' aby włączyć/wyłączyć silnik!", source)
 end
 addEventHandler("onPlayerVehicleEnter", getRootElement(), onPlayerEnterDayzVehicle)
 function onPlayerExitDayzVehicle(veh, seat)
@@ -1841,7 +1841,7 @@ end
 repairTimer = {}
 function repairVehicle(veh)
   if repairTimer[veh] then
-    triggerClientEvent(source, "displayClientInfo", source, "Vehicle", getVehicleName(veh) .. " está sendo reparado!", 255, 22, 0)
+    triggerClientEvent(source, "displayClientInfo", source, "Pojazd", getVehicleName(veh) .. " jest w trakcie naprawy!", 255, 22, 0)
     return
   end
   local health = math.floor(getElementHealth(veh))
@@ -1850,7 +1850,7 @@ function repairVehicle(veh)
   setElementData(veh, "repairer", source)
   setElementData(source, "repairingvehicle", veh)
   setPedAnimation(source, "SCRATCHING", "sclng_r", nil, true, false)
-  triggerClientEvent(source, "displayClientInfo", source, "Vehicle", "Você começou a reparar " .. getVehicleName(veh), 22, 255, 0)
+  triggerClientEvent(source, "displayClientInfo", source, "Vehicle", "Pojazd został naprawiony. -- " .. getVehicleName(veh), 22, 255, 0)
 end
 addEvent("repairVehicle", true)
 addEventHandler("repairVehicle", getRootElement(), repairVehicle)
@@ -1862,7 +1862,7 @@ function fixVehicleDayZ(veh, player)
   repairTimer[veh] = nil
   setElementData(veh, "repairer", nil)
   setElementData(player, "repairingvehicle", nil)
-  triggerClientEvent(player, "displayClientInfo", player, "Vehicle", "Você terminou o conserto " .. getVehicleName(veh), 22, 255, 0)
+  triggerClientEvent(player, "displayClientInfo", player, "Vehicle", "Skońcyzłeś naprawę " .. getVehicleName(veh), 22, 255, 0)
 end
 function stopFixxingWhileMoving()
   local veh = getElementData(source, "repairingvehicle")
@@ -1870,7 +1870,7 @@ function stopFixxingWhileMoving()
   setElementFrozen(veh, false)
   setElementData(veh, "repairer", nil)
   setElementData(source, "repairingvehicle", nil)
-  triggerClientEvent(source, "displayClientInfo", source, "Vehicle", "Você parou de reparar " .. getVehicleName(veh), 255, 22, 0)
+  triggerClientEvent(source, "displayClientInfo", source, "Vehicle", "Przestałeś naprawiać " .. getVehicleName(veh), 255, 22, 0)
   killTimer(repairTimer[veh])
   repairTimer[veh] = nil
 end

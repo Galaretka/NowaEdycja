@@ -794,13 +794,13 @@ function ( dataName )
                             --else
                             --outputChatBox ( "Não tem o capacete, entao leva Mordida", player, 0, 238, 0, true )
                             zmoan(source)
-                            randdamagee = math.random(4000,7500) -- DEFAULT: math.random(2000,5000)
+                            randdamagee = math.random(2000,5000) -- DEFAULT: math.random(2000,5000)
                             setElementData(ptarget, "blood", getElementData(ptarget, "blood") - randdamagee)
                             setElementData(ptarget, "bleeding", 50)
 
                             
 
-                            if randdamagee > 5500 then
+                            if randdamagee > 4800 then
                             setElementData(ptarget, "pain", true)
                             setPedAnimation ( source, "knife", "KILL_Knife_Player", -1, false, false, true)
                             setPedAnimation(ptarget, "knife", "KILL_Knife_Ped_Damage", nil, false, false, nil, false)
@@ -808,7 +808,7 @@ function ( dataName )
                             setTimer ( Playerthroatbitten, 2300, 1, ptarget, source)
                             end
                                 
-                            if randdamagee < 4499 then
+                            if randdamagee < 4099 then
                             setPedAnimation ( source, "knife", "KILL_Knife_Player", -1, false, false, true)
                             setPedAnimation(ptarget, "knife", "KILL_Knife_Ped_Damage", nil, false, false, nil, false) 
                             --triggerClientEvent ( "zumbihit", ptarget)

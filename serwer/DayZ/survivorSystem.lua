@@ -1460,8 +1460,8 @@ function preventCommandSpam(commandName)
 end
 addEventHandler("onPlayerCommand", root, preventCommandSpam)
 function kickPlayerOnHighPing()
-  outputChatBox(getPlayerName(source) .. " was kicked due to high ping!", getRootElement(), 27, 89, 224, true)
-  kickPlayer(source, "Your Ping was straight too high.")
+  outputChatBox(getPlayerName(source) .. " został wyrzucony za duży ping!", getRootElement(), 27, 89, 224, true)
+  kickPlayer(source, "Twój ping jest za duży! (Ponad 800)")
 end
 addEvent("kickPlayerOnHighPing", true)
 addEventHandler("kickPlayerOnHighPing", getRootElement(), kickPlayerOnHighPing)
@@ -1507,6 +1507,26 @@ function funcBindLie(player, key, keyState)
     end
   end
 end
+function globalMessage(thePlayer, cmd, ...)
+    local message = table.concat ( { ... }, " " );
+    local name = getPlayerName(thePlayer);
+	if isPlayerMuted ( thePlayer ) then
+            outputChatBox ("global: jesteś uciszony!", thePlayer, 255, 128, 22, true)
+            return
+    end
+	if isObjectInACLGroup ( "user." ..getAccountName(getPlayerAccount(thePlayer)), aclGetGroup ( "Admin" ) ) then
+		outputChatBox("#FF0000[ADMIN] #990033"..name..": #FFFFFF"..message,v, 255, 255, 255, true)
+		return
+	end
+	if isObjectInACLGroup ( "user." ..getAccountName(getPlayerAccount(thePlayer)), aclGetGroup ( "Moderator" ) ) then
+		outputChatBox("#FF0000[MOD] #00FF00"..name..": #FFFFFF"..message,v, 255, 255, 255, true)
+		return
+	end
+for _,v in ipairs(getElementsByType("player")) do
+    outputChatBox("#CC6600[GLOBAL] #00FF00"..name..": #FFFFFF"..message,v, 255, 255, 255, true)
+    end
+end
+addCommandHandler("global",  globalMessage);
 function bindTheKeys()
   bindKey(source, ",", "down", funcBindHandsup)
   bindKey(source, ".", "down", funcBindSit)

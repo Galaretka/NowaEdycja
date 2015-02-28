@@ -20,6 +20,7 @@
     <script src="zombies_client.lua" type="client" />
     <script src="animals.lua" type="server" />
     <script src="weather.lua" type="server" />
+	<script src="weather_client.lua" type="client" />
     <script src="login.lua" type="server" />
     <script src="tools/jq_server.lua" type="server" />
     <script src="menu_client.lua" type="client" />

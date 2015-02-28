@@ -16,7 +16,7 @@ function addAddonInfo(name, description)
 end
 function nightAddon1()
   if gameplayVariables.enablenight then
-    addAddonInfo("night", "Night time with fading effect.")
+    addAddonInfo("night", "Pora nocna.")
   end
 end
 function nightAddon()

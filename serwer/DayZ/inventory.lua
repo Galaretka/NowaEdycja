@@ -65,25 +65,25 @@ inventoryItems = {
 },
 ["Items"] = {
 {"Wood Pile", 2},
-{"Bandage",1,"Usar Bandage"},
+{"Bandage",1,"Uzyj Bandage"},
 {"Roadflare",1,"Colocar Road Flare"},
 {"Empty Gas Canister",2},
 {"Full Gas Canister",2},
-{"Medic Kit",2,"Usar"},
-{"Heat Pack",1,"Usar"},
-{"Painkiller",1,"Usar"},
-{"Morphine",1,"Usar"},
-{"Blood Bag",1,"Usar"},
+{"Medic Kit",2,"Uzyj"},
+{"Heat Pack",1,"Uzyj"},
+{"Painkiller",1,"Uzyj"},
+{"Morphine",1,"Uzyj"},
+{"Blood Bag",1,"Uzyj"},
 {"Wire Fence",1,"Colocar Wire Fence"},
 {"Raw Meat", 1},
 {"Tire", 2},
 {"Engine", 5},
 {"Tank Parts", 3},
 {"Tent",3,"Montar Tenda"},
-{"Camouflage Clothing",1,"Usar Skin"},
-{"Civilian Clothing",1,"Usar Skin"},
-{"Survivor Clothing",1,"Usar Skin"},
-{"Ghillie Suit",1,"Usar Skin"},
+{"Camouflage Clothing",1,"Uzyj Skin"},
+{"Civilian Clothing",1,"Uzyj Skin"},
+{"Survivor Clothing",1,"Uzyj Skin"},
+{"Ghillie Suit",1,"Uzyj Skin"},
 {"Empty Water Bottle",1,"Você encheu a Garrafa de Water Boottle."},
 {"Empty Soda Cans",1},
 {"Scruffy Burgers",1},
@@ -119,7 +119,7 @@ headline.loot = guiCreateLabel(0.06, 0.05, 0.34, 0.09, "Gear", true, inventoryWi
 guiLabelSetHorizontalAlign(headline.loot, "center")
 guiSetFont(headline.loot, "default-bold-small")
 
-headline.inventory = guiCreateLabel(0.6, 0.05, 0.34, 0.09, "INVENTÁRIO", true, inventoryWindows)
+headline.inventory = guiCreateLabel(0.6, 0.05, 0.34, 0.09, "INWENTARZ", true, inventoryWindows)
 guiLabelSetHorizontalAlign(headline.inventory, "center")
 guiSetFont(headline.inventory, "default-bold-small")
 Inventario[1] = guiCreateStaticImage(0.01, 0.03, 1.99, 100, "images/inventory.png",true,inventoryWindows)
@@ -131,18 +131,18 @@ gridlistItems.loot_colum = guiGridListAddColumn(gridlistItems.loot, "Loot", 0.7)
 gridlistItems.loot_colum_amount = guiGridListAddColumn(gridlistItems.loot, "", 0.2)
 
 gridlistItems.inventory = guiCreateGridList(0.57, 0.11, 0.39, 0.83, true, inventoryWindows)
-gridlistItems.inventory_colum = guiGridListAddColumn(gridlistItems.inventory, "Inventário", 0.7)
+gridlistItems.inventory_colum = guiGridListAddColumn(gridlistItems.inventory, "INWENTARZ", 0.7)
 gridlistItems.inventory_colum_amount = guiGridListAddColumn(gridlistItems.inventory, "", 0.2)
 
 buttonItems.loot = guiCreateButton(0.42, 0.17, 0.04, 0.69, "->", true, inventoryWindows)
 buttonItems.inventory = guiCreateButton(0.53, 0.17, 0.04, 0.69, "<-", true, inventoryWindows)
 
-headline.slots = guiCreateLabel(0.62, 0.94, 0.29, 0.04, "Espaço Total:", true, inventoryWindows)
+headline.slots = guiCreateLabel(0.62, 0.94, 0.29, 0.04, "Slotów:", true, inventoryWindows)
 guiLabelSetHorizontalAlign(headline.slots, "center")
 guiLabelSetVerticalAlign(headline.slots, "center")
 guiSetFont(headline.slots, "default-bold-small")
 
-headline.slots_loot = guiCreateLabel(0.07, 0.94, 0.29, 0.04, "Espaço Total:", true, inventoryWindows)
+headline.slots_loot = guiCreateLabel(0.07, 0.94, 0.29, 0.04, "Slotów:", true, inventoryWindows)
 guiLabelSetHorizontalAlign(headline.slots_loot, "center")
 guiLabelSetVerticalAlign(headline.slots_loot, "center")
 guiSetFont(headline.slots_loot, "default-bold-small")
@@ -203,9 +203,9 @@ if ( gridlistItems["inventory_colum"] ) then --If the column has been created, f
     row1,column1 = guiGridListGetSelectedItem ( gridlistItems["inventory"] )
     guiGridListClear(gridlistItems["inventory"])
             local row = guiGridListAddRow ( gridlistItems["inventory"] )
-            guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"Equipamentos", true, false )
+            guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"Ekwipunek", true, false )
             local row = guiGridListAddRow ( gridlistItems["inventory"] )
-            guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"- Armas Primárias", true, false )
+            guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"1. Pierwsza broń", true, false )
         for id, item in ipairs(inventoryItems["Weapons"]["Primary Weapon"]) do
             if getElementData(getLocalPlayer(),item[1]) and getElementData(getLocalPlayer(),item[1]) >= 1 then
                 local row = guiGridListAddRow ( gridlistItems["inventory"] )
@@ -214,7 +214,7 @@ if ( gridlistItems["inventory_colum"] ) then --If the column has been created, f
             end
         end
                 local row = guiGridListAddRow ( gridlistItems["inventory"] )
-            guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"- Armas Secundárias", true, false )
+            guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"2. Druga broń", true, false )
         for id, item in ipairs(inventoryItems["Weapons"]["Secondary Weapon"]) do
             if getElementData(getLocalPlayer(),item[1]) and getElementData(getLocalPlayer(),item[1]) >= 1 then
                 local row = guiGridListAddRow ( gridlistItems["inventory"] )
@@ -223,7 +223,7 @@ if ( gridlistItems["inventory_colum"] ) then --If the column has been created, f
             end
         end
             local row = guiGridListAddRow ( gridlistItems["inventory"] )
-            guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"- Armas Especiais", true, false )
+            guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"3. Specjalna broń", true, false )
         for id, item in ipairs(inventoryItems["Weapons"]["Specially Weapon"]) do
             if getElementData(getLocalPlayer(),item[1]) and getElementData(getLocalPlayer(),item[1]) >= 1 then
                 local row = guiGridListAddRow ( gridlistItems["inventory"] )
@@ -232,7 +232,7 @@ if ( gridlistItems["inventory_colum"] ) then --If the column has been created, f
             end
         end
             local row = guiGridListAddRow ( gridlistItems["inventory"] )
-            guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"- Munições", true, false )
+            guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"4. Amunicja", true, false )
         for id, item in ipairs(inventoryItems["Ammo"]) do
             if getElementData(getLocalPlayer(),item[1]) and getElementData(getLocalPlayer(),item[1]) >= 1 then
                 local row = guiGridListAddRow ( gridlistItems["inventory"] )
@@ -241,7 +241,7 @@ if ( gridlistItems["inventory_colum"] ) then --If the column has been created, f
             end
         end
             local row = guiGridListAddRow ( gridlistItems["inventory"] )
-            guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"- Comidas e Bebidas", true, false )
+            guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"5. Jedzenie i picie", true, false )
         for id, item in ipairs(inventoryItems["Food"]) do
             if getElementData(getLocalPlayer(),item[1]) and getElementData(getLocalPlayer(),item[1]) >= 1 then
                 local row = guiGridListAddRow ( gridlistItems["inventory"] )
@@ -250,7 +250,7 @@ if ( gridlistItems["inventory_colum"] ) then --If the column has been created, f
             end
         end
             local row = guiGridListAddRow ( gridlistItems["inventory"] )
-            guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"- Items", true, false )
+            guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"6. Inne", true, false )
         for id, item in ipairs(inventoryItems["Items"]) do
             if getElementData(getLocalPlayer(),item[1]) and getElementData(getLocalPlayer(),item[1]) >= 1 then
                 local row = guiGridListAddRow ( gridlistItems["inventory"] )
@@ -259,7 +259,7 @@ if ( gridlistItems["inventory_colum"] ) then --If the column has been created, f
             end
         end
             local row = guiGridListAddRow ( gridlistItems["inventory"] )
-            guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"- Útil", true, false )
+            guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"7. Narzędzia", true, false )
         for id, item in ipairs(inventoryItems["Toolbelt"]) do
             if getElementData(getLocalPlayer(),item[1]) and getElementData(getLocalPlayer(),item[1]) >= 1 then
                 local row = guiGridListAddRow ( gridlistItems["inventory"] )
@@ -270,7 +270,7 @@ if ( gridlistItems["inventory_colum"] ) then --If the column has been created, f
         if row1 and column1 then
             guiGridListSetSelectedItem ( gridlistItems["inventory"], row1,column1)
         end
-        guiSetText(headline["slots"],"Espaço Total: "..getPlayerCurrentSlots().." / "..getPlayerMaxAviableSlots())
+        guiSetText(headline["slots"],"Slotów: "..getPlayerCurrentSlots().." / "..getPlayerMaxAviableSlots())
     end
 end
 
@@ -287,9 +287,9 @@ if ( gridlistItems["loot_colum"] ) then
         guiSetText(headline["loot"],gearName)
     end
             local row = guiGridListAddRow ( gridlistItems["loot"] )
-            guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"Equipamentos", true, false )
+            guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"Ekwipunek", true, false )
             local row = guiGridListAddRow ( gridlistItems["loot"] )
-            guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"- Armas Primárias", true, false )
+            guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"1. Pierwsza broń", true, false )
         for id, item in ipairs(inventoryItems["Weapons"]["Primary Weapon"]) do
             if getElementData(loot,item[1]) and getElementData(loot,item[1]) >= 1 then
                 local row = guiGridListAddRow ( gridlistItems["loot"] )
@@ -298,7 +298,7 @@ if ( gridlistItems["loot_colum"] ) then
             end
         end
                 local row = guiGridListAddRow ( gridlistItems["loot"] )
-            guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"- Armas Secundárias", true, false )
+            guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"2. Druga broń", true, false )
         for id, item in ipairs(inventoryItems["Weapons"]["Secondary Weapon"]) do
             if getElementData(loot,item[1]) and getElementData(loot,item[1]) >= 1 then
                 local row = guiGridListAddRow ( gridlistItems["loot"] )
@@ -307,7 +307,7 @@ if ( gridlistItems["loot_colum"] ) then
             end
         end
             local row = guiGridListAddRow ( gridlistItems["loot"] )
-            guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"- Armas Especiais", true, false )
+            guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"3. Specjalna broń", true, false )
         for id, item in ipairs(inventoryItems["Weapons"]["Specially Weapon"]) do
             if getElementData(loot,item[1]) and getElementData(loot,item[1]) >= 1 then
                 local row = guiGridListAddRow ( gridlistItems["loot"] )
@@ -316,7 +316,7 @@ if ( gridlistItems["loot_colum"] ) then
             end
         end
             local row = guiGridListAddRow ( gridlistItems["loot"] )
-            guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"- Munições", true, false )
+            guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"4. Amunicja", true, false )
         for id, item in ipairs(inventoryItems["Ammo"]) do
             if getElementData(loot,item[1]) and getElementData(loot,item[1]) >= 1 then
                 local row = guiGridListAddRow ( gridlistItems["loot"] )
@@ -325,7 +325,7 @@ if ( gridlistItems["loot_colum"] ) then
             end
         end
             local row = guiGridListAddRow ( gridlistItems["loot"] )
-            guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"- Comidas e Bebidas", true, false )
+            guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"5. Jedzenie i picie", true, false )
         for id, item in ipairs(inventoryItems["Food"]) do
             if getElementData(loot,item[1]) and getElementData(loot,item[1]) >= 1 then
                 local row = guiGridListAddRow ( gridlistItems["loot"] )
@@ -334,7 +334,7 @@ if ( gridlistItems["loot_colum"] ) then
             end
         end
             local row = guiGridListAddRow ( gridlistItems["loot"] )
-            guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"- Útil", true, false )
+            guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"7. Narzędzia", true, false )
         for id, item in ipairs(inventoryItems["Toolbelt"]) do
             if getElementData(loot,item[1]) and getElementData(loot,item[1]) >= 1 then
                 local row = guiGridListAddRow ( gridlistItems["loot"] )
@@ -343,7 +343,7 @@ if ( gridlistItems["loot_colum"] ) then
             end
         end
             local row = guiGridListAddRow ( gridlistItems["loot"] )
-            guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"- Items", true, false )
+            guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"6. Inne", true, false )
         for id, item in ipairs(inventoryItems["Items"]) do
             if getElementData(loot,item[1]) and getElementData(loot,item[1]) >= 1 then
                 local row = guiGridListAddRow ( gridlistItems["loot"] )
@@ -354,7 +354,7 @@ if ( gridlistItems["loot_colum"] ) then
         if row2 and column2 then
             --guiGridListSetSelectedItem ( gridlistItems["loot"], row2,column2)
         end
-        guiSetText(headline["slots_loot"],"Espaço Total: "..getLootCurrentSlots(loot).." / "..(getLootMaxAviableSlots(loot)or 0))
+        guiSetText(headline["slots_loot"],"Slotów: "..getLootCurrentSlots(loot).." / "..(getLootMaxAviableSlots(loot)or 0))
     end
 end
 
@@ -550,7 +550,7 @@ function getVehicleMaxFuel(loot)
 end
 
 function onPlayerMoveItemOutOfInventory ()
-if playerMovedInInventory then startRollMessage2("Inventory", "Se continuar tentando bugar itens você será punido.", 255, 22, 0 ) return end
+if playerMovedInInventory then startRollMessage2("Inventory", "Nie próbuj kopiowaćitemów!", 255, 22, 0 ) return end
 
 local itemName = guiGridListGetItemText ( gridlistItems["inventory"], guiGridListGetSelectedItem ( gridlistItems["inventory"] ), 1 )
     if getElementData(getLocalPlayer(),itemName) and getElementData(getLocalPlayer(),itemName) >= 1 then
@@ -582,7 +582,7 @@ local itemName = guiGridListGetItemText ( gridlistItems["inventory"], guiGridLis
                         playerMovedInInventory = false
                     end,700,1)
                 else
-                    startRollMessage2("Inventory", "Inventário Cheio", 255, 22, 0 )
+                    startRollMessage2("Inventory", "Ekwipunek jest pełny!", 255, 22, 0 )
                     return
                 end
 
@@ -601,7 +601,7 @@ local itemName = guiGridListGetItemText ( gridlistItems["inventory"], guiGridLis
                     playerMovedInInventory = false
                 end,700,1)
             else
-                startRollMessage2("Inventory", "Inventário Cheio", 255, 22, 0 )
+                startRollMessage2("Inventory", "Ekwipunek jest pełny!", 255, 22, 0 )
                 return
             end
         else
@@ -664,7 +664,7 @@ if loot and not getElementData(loot, "itemloot") and getElementType(getElementDa
     if getElementData(loot, "fuel") + 20 < getVehicleMaxFuel(loot) then
       addingfuel = 20
     elseif getElementData(loot, "fuel") + 20 > getVehicleMaxFuel(loot) + 15 then
-      triggerEvent("displayClientInfo", getLocalPlayer(), "Vehicle", "O tanque de combustivel está 100% cheio", 255, 22, 0)
+      triggerEvent("displayClientInfo", getLocalPlayer(), "Vehicle", "Zbiornik paliwa jest napełniony do pełna!", 255, 22, 0)
 	  playSound("sounds/action_refuel.ogg")
       return
     else
@@ -673,7 +673,7 @@ if loot and not getElementData(loot, "itemloot") and getElementType(getElementDa
     setElementData(loot, "fuel", getElementData(loot, "fuel") + addingfuel)
     setElementData(getLocalPlayer(), itemName, getElementData(getLocalPlayer(), itemName) - itemPlus)
     setElementData(getLocalPlayer(), "Empty Gas Canister", (getElementData(getLocalPlayer(), "Empty Gas Canister") or 0) + itemPlus)
-    triggerEvent("displayClientInfo", getLocalPlayer(), "Vehicle", "Você abasteceu alguns litros de combustivel no veículo!", 22, 255, 0)
+    triggerEvent("displayClientInfo", getLocalPlayer(), "Vehicle", "Dolałeś paliwa do samochodu.", 22, 255, 0)
 	playSound("sounds/action_refuel.ogg")
     return
   end
@@ -688,7 +688,7 @@ if loot and not getElementData(loot, "itemloot") and getElementType(getElementDa
     itemName2 = "Tank Parts"
   end
   if 1 > (getElementData(getLocalPlayer(), itemName2) or 0) / itemPlus then
-    triggerEvent("displayClientInfo", getLocalPlayer(), "Inventory", "Não pode deixar esse item!", 255, 22, 0)
+    triggerEvent("displayClientInfo", getLocalPlayer(), "Inventory", "Nie możesz opuścić tę pozycję!", 255, 22, 0)
     return
   end
   if loot then
@@ -734,11 +734,11 @@ if isPlayerInLoot() then
                         playerMovedInInventory = false
                     end,700,1)
                 else
-                    startRollMessage2("Inventory", "Se continuar tentando bugar itens você será punido.", 255, 22, 0 )
+                    startRollMessage2("Inventory", "Nie próbuj kopiować itemów!", 255, 22, 0 )
                     return
                 end
             else
-                startRollMessage2("Inventory", "Inventário Cheio", 255, 22, 0 )
+                startRollMessage2("Inventory", "Ekwipunek jest pełny!", 255, 22, 0 )
                 return
             end
         else
@@ -794,11 +794,11 @@ function onPlayerMoveItemInInventory(itemName, loot)
 
   elseif itemName == "Czech Vest Pouch" then
     if getElementData(getLocalPlayer(), "MAX_Slots") == 10 then
-      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "You are using this backpack already!", 255, 22, 0)
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Masz już ten plecak!", 255, 22, 0)
       return
     end
     if getElementData(getLocalPlayer(), "MAX_Slots") > 10 then
-      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "The currently equipped backpack has more space!", 255, 22, 0)
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Obecny plecak ma więcej miejsca!", 255, 22, 0)
       return
     end
     setElementData(getLocalPlayer(), "MAX_Slots", 10)
@@ -806,11 +806,11 @@ function onPlayerMoveItemInInventory(itemName, loot)
     itemPlus = 0
   elseif itemName == "Patrol Pack" then
     if getElementData(getLocalPlayer(), "MAX_Slots") == 12 then
-      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "You are using this backpack already!", 255, 22, 0)
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Masz już ten plecak!", 255, 22, 0)
       return
     end
     if getElementData(getLocalPlayer(), "MAX_Slots") > 12 then
-      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "The currently equipped backpack has more space!", 255, 22, 0)
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Obecny plecak ma więcej miejsca!", 255, 22, 0)
       return
     end
     setElementData(getLocalPlayer(), "MAX_Slots", 12)
@@ -818,11 +818,11 @@ function onPlayerMoveItemInInventory(itemName, loot)
     itemPlus = 0
   elseif itemName == "Assault Pack (ACU)" then
     if getElementData(getLocalPlayer(), "MAX_Slots") == 14 then
-      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "You are using this backpack already!", 255, 22, 0)
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Masz już ten plecak!", 255, 22, 0)
       return
     end
     if getElementData(getLocalPlayer(), "MAX_Slots") > 14 then
-      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "The currently equipped backpack has more space!", 255, 22, 0)
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Obecny plecak ma więcej miejsca!", 255, 22, 0)
       return
     end
     setElementData(getLocalPlayer(), "MAX_Slots", 14)
@@ -830,11 +830,11 @@ function onPlayerMoveItemInInventory(itemName, loot)
     itemPlus = 0
    elseif itemName == "Survival (ACU)" then
     if getElementData(getLocalPlayer(), "MAX_Slots") == 16 then
-      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "You are using this backpack already!", 255, 22, 0)
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Masz już ten plecak!", 255, 22, 0)
       return
     end
     if getElementData(getLocalPlayer(), "MAX_Slots") > 16 then
-      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "The currently equipped backpack has more space!", 255, 22, 0)
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Obecny plecak ma więcej miejsca!", 255, 22, 0)
       return
     end
     setElementData(getLocalPlayer(), "MAX_Slots", 16)
@@ -842,11 +842,11 @@ function onPlayerMoveItemInInventory(itemName, loot)
     itemPlus = 0
   elseif itemName == "Alice Pack" then
     if getElementData(getLocalPlayer(), "MAX_Slots") == 22 then
-      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "You are using this backpack already!", 255, 22, 0)
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Masz już ten plecak!", 255, 22, 0)
       return
     end
     if getElementData(getLocalPlayer(), "MAX_Slots") > 22 then
-      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "The currently equipped backpack has more space!", 255, 22, 0)
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Obecny plecak ma więcej miejsca!", 255, 22, 0)
       return
     end
     setElementData(getLocalPlayer(), "MAX_Slots", 22)
@@ -854,11 +854,11 @@ function onPlayerMoveItemInInventory(itemName, loot)
     itemPlus = 0
    elseif itemName == "British Assault Pack" then
     if getElementData(getLocalPlayer(), "MAX_Slots") == 26 then
-      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "You are using this backpack already!", 255, 22, 0)
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Masz już ten plecak!", 255, 22, 0)
       return
     end
     if getElementData(getLocalPlayer(), "MAX_Slots") > 26 then
-      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "The currently equipped backpack has more space!", 255, 22, 0)
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Obecny plecak ma więcej miejsca!", 255, 22, 0)
       return
     end
     setElementData(getLocalPlayer(), "MAX_Slots", 26)
@@ -866,11 +866,11 @@ function onPlayerMoveItemInInventory(itemName, loot)
     itemPlus = 0
   elseif itemName == "Czech Backpack" then
     if getElementData(getLocalPlayer(), "MAX_Slots") == 30 then
-      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "You are using this backpack already!", 255, 22, 0)
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Masz już ten plecak!", 255, 22, 0)
       return
     end
     if getElementData(getLocalPlayer(), "MAX_Slots") > 30 then
-      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "The currently equipped backpack has more space!", 255, 22, 0)
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Obecny plecak ma więcej miejsca!", 255, 22, 0)
       return
     end
     setElementData(getLocalPlayer(), "MAX_Slots", 30)
@@ -878,7 +878,7 @@ function onPlayerMoveItemInInventory(itemName, loot)
     itemPlus = 0
   elseif itemName == "Coyote Backpack" then
     if getElementData(getLocalPlayer(), "MAX_Slots") == 60 then
-      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "You already have the best backpack!", 255, 22, 0)
+      triggerEvent(getLocalPlayer(), "displayClientInfo", getLocalPlayer(), "Inventory", "Masz najlepszy plecak!", 255, 22, 0)
       return
     end
     setElementData(getLocalPlayer(), "MAX_Slots", 60)
@@ -903,18 +903,6 @@ function onPlayerMoveItemInInventory(itemName, loot)
 end
 addEvent("onPlayerMoveItemInInventory", true)
 addEventHandler("onPlayerMoveItemInInventory", getRootElement(), onPlayerMoveItemInInventory)
-
-
-
-
-
-
-
-
-
-
-
-
 
 function onClientOpenInventoryStopMenu()
   triggerEvent("disableMenu", getLocalPlayer())
@@ -1044,7 +1032,7 @@ function playerUseItem(itemName, itemInfo)
   elseif itemInfo == "Comer" then
   playSound("sounds/comendo.ogg") 
     triggerServerEvent("onPlayerRequestChangingStats", getLocalPlayer(), itemName, itemInfo, "food")
-  elseif itemInfo == "Usar Skin" then
+  elseif itemInfo == "Uzyj Skin" then
     triggerServerEvent("onPlayerChangeSkin", getLocalPlayer(), itemName)
   elseif itemName == "Empty Water Bottle" then
     triggerServerEvent("onPlayerRefillWaterBottle", getLocalPlayer(), itemName)
@@ -1057,7 +1045,7 @@ function playerUseItem(itemName, itemInfo)
     triggerServerEvent("onPlayerPlaceRoadflare", getLocalPlayer(), itemName)
   elseif itemInfo == "Colocar Fogo" then
     triggerServerEvent("onPlayerMakeAFire", getLocalPlayer(), itemName)
-  elseif itemInfo == "Usar" then
+  elseif itemInfo == "Uzyj" then
     triggerServerEvent("onPlayerUseMedicObject", getLocalPlayer(), itemName)
   elseif itemName == "Bandage" then
     triggerServerEvent("onPlayerUseMedicObject", getLocalPlayer(), itemName)
