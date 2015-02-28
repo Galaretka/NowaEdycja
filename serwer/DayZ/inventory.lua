@@ -85,6 +85,7 @@ inventoryItems = {
 {"Sniper Clothing II",1,"Uzyj Skin"},
 {"Military Clothing",1,"Uzyj Skin"},
 {"Military Clothing II",1,"Uzyj Skin"},
+{"Military Clothing III",1,"Uzyj Skin"},
 {"Civilian Clothing",1,"Uzyj Skin"},
 {"Survivor Clothing",1,"Uzyj Skin"},
 {"Ghillie Suit",1,"Uzyj Skin"},

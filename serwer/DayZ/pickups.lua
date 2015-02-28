@@ -714,6 +714,13 @@ local itemTable = {
       0,
       4.5
     },
+	{
+      "Military Clothing III",
+      1247,
+      2,
+      0,
+      4.5
+    },
     {
       "Civilian Clothing",
       1241,
@@ -1828,6 +1835,13 @@ local itemTable = {
     },
 	{
       "Military Clothing II",
+      1247,
+      2,
+      0,
+      4.5
+    },
+	{
+      "Military Clothing III",
       1247,
       2,
       0,

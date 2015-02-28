@@ -192,6 +192,9 @@ local playerDataTable = {
     "Military Clothing II"
   },
   {
+    "Military Clothing III"
+  },
+  {
     "Ghillie Suit"
   },
   {
@@ -499,6 +502,9 @@ local vehicleDataTable = {
   },
   {
     "Military Clothing II"
+  },
+  {
+    "Military Clothing III"
   },
   {
     "Ghillie Suit"
