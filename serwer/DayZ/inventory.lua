@@ -74,7 +74,8 @@ inventoryItems = {
 {"Painkiller",1,"Uzyj"},
 {"Morphine",1,"Uzyj"},
 {"Blood Bag",1,"Uzyj"},
-{"Wire Fence",1,"Colocar Wire Fence"},
+{"Wire Fence",1,"Postaw drut kolczasty"},
+{"Sandbag",3,"Postaw worki z piaskiem"},
 {"Raw Meat", 1},
 {"Tire", 2},
 {"Engine", 5},
@@ -1124,8 +1125,10 @@ function playerUseItem(itemName, itemInfo)
   elseif itemName == "Tent" then
   playSound("sounds/desmontartenda.ogg")
     triggerServerEvent("onPlayerPitchATent", getLocalPlayer(), itemName)
-  elseif itemInfo == "Colocar Wire Fence" then
+  elseif itemInfo == "Postaw drut kolczasty" then
     triggerServerEvent("onPlayerBuildAWireFence", getLocalPlayer(), itemName)
+  elseif itemInfo == "Postaw worki z piaskiem" then
+    triggerServerEvent("onPlayerBuildASandBag", getLocalPlayer(), itemName)
   elseif itemName == "Roadflare" then
     triggerServerEvent("onPlayerPlaceRoadflare", getLocalPlayer(), itemName)
   elseif itemInfo == "Colocar Fogo" then

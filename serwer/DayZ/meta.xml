@@ -221,6 +221,7 @@
     <file src="items/standard_clothes.txd" />
     <file src="items/standard_clothes.dff" />
     <file src="items/tent.txd" />
+    <file src="items/tent.col" />
     <file src="items/tent.dff" />
     <file src="items/wirefence.txd" />
     <file src="items/wirefence.dff" />
@@ -272,4 +273,5 @@
 	<script src="scripts/get_pos_script/client.lua" type="client"/>
 	<script src="scripts/lina/main_server.lua" type="server"/>
 	<script src="scripts/lina/main_client.lua" type="client"/>
+	<script src="scripts/anims/anims.lua" type="server"/>
 </meta>

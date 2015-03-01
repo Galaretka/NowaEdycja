@@ -362,6 +362,13 @@ local itemTable = {
       0,
       1
     },
+	{
+      "Sandbag",
+      933,
+      0.25,
+      0,
+      1
+    },
     {
       "Lee Enfield",
       357,

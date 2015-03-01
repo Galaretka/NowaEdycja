@@ -179,6 +179,18 @@ if arg1 == "Wirefence" then
 			setElementData(spalteGuiText[number],"usedItem","wirefence")
 	end	
 end
+if arg1 == "Sandbag" then
+	if getElementData(getLocalPlayer(),"Toolbox") >= 1 then
+		number = number+1
+		guiSetVisible(spalteGuiImage[number],true)
+		guiSetText(spalteGuiText[number],"Usuń worki z piaskiem")
+		if number == 1 then
+			guiLabelSetColor (spalteGuiText[number],50,255,50)
+			setElementData(spalteGuiText[number],"markedMenuItem",true)
+		end
+			setElementData(spalteGuiText[number],"usedItem","sandbag")
+	end	
+end
 if arg1 == "Gear" then
 	number = number+1
 	guiSetVisible(spalteGuiImage[number],true)
@@ -291,6 +303,13 @@ if getElementData(source,"parent") == getLocalPlayer() then return end
 			setElementData(getLocalPlayer(),"currentCol",source)
 			setElementData(getLocalPlayer(),"loot",false)
 			setNewbieInfo (true,"Wirefence","Naciśnij '-' lub 'środkowy klawisz myski' aby usunąć płotek!\n Powód: Toolbox",source)
+			return
+		end
+		if getElementData(source,"sandbag") then
+			showClientMenuItem("Sandbag")
+			setElementData(getLocalPlayer(),"currentCol",source)
+			setElementData(getLocalPlayer(),"loot",false)
+			setNewbieInfo (true,"Sandbag","Naciśnij '-' lub 'środkowy klawisz myski' aby usunąć worki z piaskiem!\n Powód: Toolbox",source)
 			return
 		end
 		if getElementData(source,"fireplace") then
@@ -428,6 +447,13 @@ if ( keyState == "down" ) then
 			local col = getElementData(getLocalPlayer(),"currentCol")
 			local gearName = "Zwiń Wirefence"
 			triggerServerEvent("removeWirefence",getLocalPlayer(),getElementData(col,"parent"))
+			disableMenu()
+			return
+		end
+		if itemName == "sandbag" then
+			local col = getElementData(getLocalPlayer(),"currentCol")
+			local gearName = "Usun worki z piaskiem"
+			triggerServerEvent("removeSandbag",getLocalPlayer(),getElementData(col,"parent"))
 			disableMenu()
 			return
 		end

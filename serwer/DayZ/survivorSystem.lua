@@ -77,6 +77,7 @@ local vehicleDataTableForTent = {
   {"Map"},
   {"Toolbox"},
   {"Wire Fence"},
+  {"Sandbag"},
   {"Tire"},
   {"Engine"},
   {"Tank Parts"},
@@ -795,7 +796,7 @@ skinTable = {
   },
   {
     "Military Clothing",
-    288
+    295
   },
   {
     "Military Clothing II",
@@ -924,12 +925,47 @@ function onPlayerBuildAWireFence(itemName)
 end
 addEvent("onPlayerBuildAWireFence", true)
 addEventHandler("onPlayerBuildAWireFence", getRootElement(), onPlayerBuildAWireFence)
+function onPlayerBuildASandBag(itemName)
+  setElementData(source, itemName, getElementData(source, itemName) - 1)
+  setPedAnimation(source, "BOMBER", "BOM_Plant", 2000, false, false, nil, false)
+  local source = source
+  setTimer(function()
+    local x, y, z = getElementPosition(source)
+    local xr, yr, zr = getElementRotation(source)
+    px, py, pz = getElementPosition(source)
+    prot = getPedRotation(source)
+    local offsetRot = math.rad(prot + 90)
+    local vx = px + 1 * math.cos(offsetRot)
+    local vy = py + 1 * math.sin(offsetRot)
+    local vz = pz + 2
+    local vrot = prot + 90
+    tent = createObject(983, vx, vy, pz, xr, yr, vrot)
+    setObjectScale(tent, 1)
+    tentCol = createColSphere(x, y, z, 2)
+    attachElements(tentCol, tent, 0, 0, 0)
+    setElementData(tentCol, "parent", tent)
+    setElementData(tent, "parent", tentCol)
+    setElementData(tentCol, "sandbag", true)
+    triggerClientEvent(source, "refreshInventoryManual", source)
+  end, 1500, 1)
+end
+addEvent("onPlayerBuildASandBag", true)
+addEventHandler("onPlayerBuildASandBag", getRootElement(), onPlayerBuildASandBag)
 function removeWirefence(object)
   destroyElement(getElementData(object, "parent"))
   destroyElement(object)
 end
 addEvent("removeWirefence", true)
 addEventHandler("removeWirefence", getRootElement(), removeWirefence)
+function removeTent(object)
+  local x, y, z = getElementPosition(getElementData(object, "parent"))
+  local item, itemString = getItemTablePosition("Tent")
+  local itemPickup = createItemPickup(item, x, y, z + 1, itemString)
+  destroyElement(getElementData(object, "parent"))
+  destroyElement(object)
+end
+addEvent("removeSandbag", true)
+addEventHandler("removeSandbag", getRootElement(), removeSandbag)
 function removeTent(object)
   local x, y, z = getElementPosition(getElementData(object, "parent"))
   local item, itemString = getItemTablePosition("Tent")
