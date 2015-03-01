@@ -800,7 +800,7 @@ skinTable = {
   },
   {
     "Military Clothing II",
-    289
+    296
   },
   {
     "Military Clothing III",
