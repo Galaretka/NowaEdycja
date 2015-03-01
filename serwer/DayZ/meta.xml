@@ -192,6 +192,9 @@
     <file src="items/pistol_ammo.dff" />
     <file src="items/shotgun_ammo.txd" />
     <file src="items/shotgun_ammo.dff" />
+	<file src="items/sandbags.dff" />
+	<file src="items/sandbags.col" />
+	<file src="items/sandbags.txd" />
     <file src="items/backpack_small.txd" />
     <file src="items/backpack_small.dff" />
 	<file src="items/backpack_czech.txd" />

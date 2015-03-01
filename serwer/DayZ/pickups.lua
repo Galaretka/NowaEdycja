@@ -364,7 +364,7 @@ local itemTable = {
     },
 	{
       "Sandbag",
-      933,
+      2060,
       0.25,
       0,
       1

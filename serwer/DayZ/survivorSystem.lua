@@ -939,7 +939,7 @@ function onPlayerBuildASandBag(itemName)
     local vy = py + 1 * math.sin(offsetRot)
     local vz = pz + 2
     local vrot = prot + 90
-    tent = createObject(983, vx, vy, pz, xr, yr, vrot)
+    tent = createObject(2006, vx, vy, pz, xr, yr, vrot)
     setObjectScale(tent, 1)
     tentCol = createColSphere(x, y, z, 2)
     attachElements(tentCol, tent, 0, 0, 0)
