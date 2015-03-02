@@ -156,11 +156,13 @@ local playerDataTable = {
   {"Engine"},
   {"Tank Parts"},
   {"DMR Mag"},
+  {"SVD Mag"},
   {
     "Lee Enfield Mag"
   },
   {"M4A1 CCO"},
   {"DMR"},
+  {"SVD Camo"},
   {"Satchel"},
   {
     "Infrared Goggles"
@@ -293,11 +295,13 @@ local vehicleDataTable = {
   {"Engine"},
   {"Tank Parts"},
   {"DMR Mag"},
+  {"SVD Mag"},
   {
     "Lee Enfield Mag"
   },
   {"M4A1 CCO"},
   {"DMR"},
+  {"SVD Camo"},
   {"Satchel"},
   {
     "Infrared Goggles"
@@ -517,6 +521,8 @@ function kilLDayZPlayer(killer, headshot, weapon)
       elseif data[1] == "STANAG Mag" then
         plusData = math.floor(getElementData(source, data[1]) / 20)
       elseif data[1] == "DMR Mag" then
+        plusData = math.floor(getElementData(source, data[1]) / 5)
+	  elseif data[1] == "SVD Mag" then
         plusData = math.floor(getElementData(source, data[1]) / 5)
       elseif data[1] == "Lee Enfield Mag" then
         plusData = math.floor(getElementData(source, data[1]) / 10)

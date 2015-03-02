@@ -160,11 +160,13 @@ local playerDataTable = {
     "M136 Rocket"
   },
   {"DMR Mag"},
+  {"SVD Mag"},
   {
     "Lee Enfield Mag"
   },
   {"M4A1 CCO"},
   {"DMR"},
+  {"SVD Camo"},
   {"Satchel"},
   {
     "Infrared Goggles"
@@ -473,11 +475,13 @@ local vehicleDataTable = {
     "M136 Rocket"
   },
   {"DMR Mag"},
+  {"SVD Mag"},
   {
     "Lee Enfield Mag"
   },
   {"M4A1 CCO"},
   {"DMR"},
+  {"SVD Camo"},
   {"Satchel"},
   {
     "Infrared Goggles"

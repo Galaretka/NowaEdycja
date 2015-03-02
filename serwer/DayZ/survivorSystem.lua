@@ -82,11 +82,13 @@ local vehicleDataTableForTent = {
   {"Engine"},
   {"Tank Parts"},
   {"DMR Mag"},
+  {"SVD Mag"},
   {
     "Lee Enfield Mag"
   },
   {"M4A1 CCO"},
   {"DMR"},
+  {"SVD Camo"},
   {"Satchel"},
   {
     "Infrared Goggles"
@@ -231,6 +233,9 @@ weaponAmmoTable = {
   ["DMR Mag"] = {
     {"DMR", 34}
   },
+  ["SVD Mag"] = {
+    {"SVD Camo", 34}
+  },
   ["Lee Enfield Mag"] = {
     {
       "Lee Enfield",
@@ -322,6 +327,11 @@ function getWeaponAmmoType(weaponName, notOthers)
   for i, weaponData in ipairs(weaponAmmoTable["DMR Mag"]) do
     if weaponName == weaponData[1] then
       return "DMR Mag", weaponData[2]
+    end
+  end
+  for i, weaponData in ipairs(weaponAmmoTable["SVD Mag"]) do
+    if weaponName == weaponData[1] then
+      return "SVD Mag", weaponData[2]
     end
   end
   for i, weaponData in ipairs(weaponAmmoTable["Lee Enfield Mag"]) do
@@ -800,7 +810,7 @@ skinTable = {
   },
   {
     "Military Clothing II",
-    296
+    286
   },
   {
     "Military Clothing III",
@@ -937,7 +947,7 @@ function onPlayerBuildASandBag(itemName)
     local offsetRot = math.rad(prot + 90)
     local vx = px + 1 * math.cos(offsetRot)
     local vy = py + 1 * math.sin(offsetRot)
-    local vz = pz + 2
+    local vz = pz
     local vrot = prot + 90
     tent = createObject(2006, vx, vy, pz, xr, yr, vrot)
     setObjectScale(tent, 1)

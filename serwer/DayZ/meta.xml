@@ -192,6 +192,8 @@
     <file src="items/pistol_ammo.dff" />
     <file src="items/shotgun_ammo.txd" />
     <file src="items/shotgun_ammo.dff" />
+    <file src="items/svdcamo.txd" />
+    <file src="items/svdcamo.dff" />
 	<file src="items/sandbags.dff" />
 	<file src="items/sandbags.col" />
 	<file src="items/sandbags.txd" />

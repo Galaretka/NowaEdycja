@@ -10,7 +10,7 @@
 ]]
 
 addEventHandler("onClientResourceStart", getResourceRootElement(), function()
-  dayzVersion = "Supriload 0.85"
+  dayzVersion = "DayZ Polska"
   versionLabel = guiCreateLabel(1, 1, 0.3, 0.3, dayzVersion, true)
   guiSetSize(versionLabel, guiLabelGetTextExtent(versionLabel), guiLabelGetFontHeight(versionLabel), false)
   x, y = guiGetSize(versionLabel, true)
@@ -19,42 +19,6 @@ addEventHandler("onClientResourceStart", getResourceRootElement(), function()
 end)
 
 
-vehicle = engineLoadTXD("mods/barracks.txd")
-engineImportTXD(vehicle, 433)
-vehicle = engineLoadDFF("mods/barracks.dff", 433)
-engineReplaceModel(vehicle, 433)
-
-vehicle = engineLoadTXD("mods/maverick.txd")
-engineImportTXD(vehicle, 487)
-vehicle = engineLoadDFF("mods/maverick.dff", 487)
-engineReplaceModel(vehicle, 487)
-
-vehicle = engineLoadTXD("mods/quad.txd")
-engineImportTXD(vehicle, 471)
-vehicle = engineLoadDFF("mods/quad.dff", 471)
-engineReplaceModel(vehicle, 471)
-
-vehicle = engineLoadTXD("mods/swatvan.txd")
-engineImportTXD(vehicle, 601)
-vehicle = engineLoadDFF("mods/swatvan.dff", 601)
-engineReplaceModel(vehicle, 601)
-
-
-vehicle = engineLoadTXD("mods/sanchez.txd")
-engineImportTXD(vehicle, 468)
-vehicle = engineLoadDFF("mods/sanchez.dff", 468)
-engineReplaceModel(vehicle, 468)
-
-vehicle = engineLoadTXD("mods/bobcat.txd")
-engineImportTXD(vehicle, 422)
-vehicle = engineLoadDFF("mods/bobcat.dff", 422)
-engineReplaceModel(vehicle, 422)
-
-vehicle = engineLoadTXD("mods/sabre.txd")
-engineImportTXD(vehicle, 475)
-vehicle = engineLoadDFF("mods/sabre.dff", 475)
-engineReplaceModel(vehicle, 475)
-
 
 snipertxd = engineLoadTXD("mods/military.txd")
 engineImportTXD(snipertxd, 295)
@@ -62,9 +26,9 @@ sniperdff = engineLoadDFF("mods/military.dff", 295)
 engineReplaceModel(sniperdff, 295)
 
 snipertxd = engineLoadTXD("mods/militaryII.txd")
-engineImportTXD(snipertxd, 296)
-sniperdff = engineLoadDFF("mods/militaryII.dff", 296)
-engineReplaceModel(sniperdff, 296)
+engineImportTXD(snipertxd, 286)
+sniperdff = engineLoadDFF("mods/militaryII.dff", 286)
+engineReplaceModel(sniperdff, 286)
 
 snipertxd = engineLoadTXD("mods/militaryIII.txd")
 engineImportTXD(snipertxd, 294)
@@ -108,6 +72,14 @@ snipertxd = engineLoadTXD("items/backpack_survival.txd")
 engineImportTXD(snipertxd, 2407)
 sniperdff = engineLoadDFF("items/backpack_survival.dff", 2407)
 engineReplaceModel(sniperdff, 2407)
+
+snipertxd = engineLoadTXD("items/svdcamo.txd")
+engineImportTXD(snipertxd, 2016)
+sniperdff = engineLoadDFF("items/svdcamo.dff", 2016)
+engineReplaceModel(sniperdff, 2016)
+
+
+
 snipertxd = engineLoadTXD("items/backpack_patrol.txd")
 engineImportTXD(snipertxd, 2401)
 sniperdff = engineLoadDFF("items/backpack_patrol.dff", 2401)

@@ -14,6 +14,7 @@ inventoryItems = {
 ["Primary Weapon"] = {
 {"M4A1 CCO",3},
 {"DMR",3},
+{"SVD Camo",3},
 {"Winchester 1866",3},
 {"SPAZ-12 Combat Shotgun",3},
 {"Sawn-Off Shotgun",3},
@@ -51,6 +52,7 @@ inventoryItems = {
 {"2Rnd. Slug",0.067},
 {"SPAZ-12 Pellet",0.067},
 {"DMR Mag", 0.1},
+{"SVD Mag", 0.1},
 {"Lee Enfield Mag",0.1},
 },
 ["Food"] = {
@@ -660,11 +662,13 @@ function onPlayerMoveItemOutOFInventory(itemName, loot)
     itemPlus = 7
   elseif itemName == "DMR Mag" then
     itemPlus = 5
+  elseif itemName == "SVD Mag" then
+    itemPlus = 5
   elseif itemName == "Lee Enfield Mag" then
     itemPlus = 10
   elseif itemName == "M136 Rocket" then
     itemPlus = 0
-  elseif itemName == "M4A1 CCO" or itemName == "AKS-74 Kobra" or itemName == "DMR" or itemName == "Winchester 1866" or itemName == "SPAZ-12 Combat Shotgun" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "M136 Rocket Launcher" or itemName == "Lee Enfield" then
+  elseif itemName == "M4A1 CCO" or itemName == "AKS-74 Kobra" or itemName == "SVD Camo" or itemName == "DMR" or itemName == "Winchester 1866" or itemName == "SPAZ-12 Combat Shotgun" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "M136 Rocket Launcher" or itemName == "Lee Enfield" then
     triggerServerEvent("removeBackWeaponOnDrop", getLocalPlayer())
   end
 
@@ -796,6 +800,8 @@ function onPlayerMoveItemInInventory(itemName, loot)
   elseif itemName == "SPAZ-12 Pellet" then
     itemPlus = 7
   elseif itemName == "DMR Mag" then
+    itemPlus = 5
+  elseif itemName == "SVD Mag" then
     itemPlus = 5
   elseif itemName == "Lee Enfield Mag" then
     itemPlus = 10
@@ -1161,6 +1167,7 @@ weaponAmmoTable = {
 ["2Rnd. Slug"] = {{"Sawn-Off Shotgun", 26}},
 ["SPAZ-12 Pellet"] = {{"SPAZ-12 Combat Shotgun", 27}},
 ["DMR Mag"] = {{"DMR", 34}},
+["SVD Mag"] = {{"SVD Camo", 34}},
 ["Lee Enfield Mag"] = {{"Lee Enfield", 33}},
 ["M136 Rocket"] = {{"Heat-Seeking RPG", 36},{"M136 Rocket Launcher", 35}},
 ["others"] = {{"Parachute", 46},{"Satchel", 39},{"Tear Gas", 17},{"M67 Frag Grenade", 16},{"Hunting Knife", 4},{"Hatchet", 8},{"Binoculars", 43},{"Machete", 5},{"Crowbar", 6},{"Golf Club", 2}}
@@ -1225,6 +1232,11 @@ function getWeaponAmmoType2(weaponName)
   for i, weaponData in ipairs(weaponAmmoTable["DMR Mag"]) do
     if weaponName == weaponData[2] then
       return "DMR Mag", weaponData[2]
+    end
+  end
+  for i, weaponData in ipairs(weaponAmmoTable["SVD Mag"]) do
+    if weaponName == weaponData[2] then
+      return "SVD Mag", weaponData[2]
     end
   end
   for i, weaponData in ipairs(weaponAmmoTable["Lee Enfield Mag"]) do
