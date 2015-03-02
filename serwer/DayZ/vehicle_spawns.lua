@@ -1277,7 +1277,7 @@ function spawnDayZVehicles()
   end
    for i, veh in ipairs(fbiSpawns) do
     local x, y, z = veh[1], veh[2], veh[3]
-    veh = createVehicle(490, x, y, z)
+    veh = createVehicle(596, x, y, z)
     vehCol = createColSphere(x, y, z, 2.5)
     attachElements(vehCol, veh, 0, 0, 0)
     setElementData(vehCol, "parent", veh)
@@ -1289,7 +1289,7 @@ function spawnDayZVehicles()
     setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
     setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
     setElementData(vehCol, "spawn", {
-      490,
+      596,
       x,
       y,
       z
@@ -1378,7 +1378,7 @@ function spawnDayZVehicles()
       y,
       z
     })
-setElementData(vehCol, "fuel", 30)
+	setElementData(vehCol, "fuel", 30)
 end
   for i, veh in ipairs(sanchezSpanws) do
     local x, y, z = veh[1], veh[2], veh[3]
@@ -1430,7 +1430,7 @@ end
   end
   for i, veh in ipairs(coachSpawns) do
     local x, y, z = veh[1], veh[2], veh[3]
-    veh = createVehicle(437, x, y, z)
+    veh = createVehicle(431, x, y, z)
     vehCol = createColSphere(x, y, z, 4)
     attachElements(vehCol, veh, 0, 0, 0)
     setElementData(vehCol, "parent", veh)
@@ -1442,7 +1442,7 @@ end
     setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
     setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
     setElementData(vehCol, "spawn", {
-      437,
+      431,
       x,
       y,
       z
@@ -1503,46 +1503,48 @@ end
     setElementData(tentCol, "vehicle", true)
     setElementData(tentCol, "MAX_Slots", 30)
   end
-  local item_id = math.random(table.size(maverikSpawns))
-  local x, y, z = maverikSpawns[item_id][1], maverikSpawns[item_id][2], maverikSpawns[item_id][3]
-  hunter = createVehicle(487, x, y, z)
-  vehCol = createColSphere(x, y, z, 4)
-  attachElements(vehCol, hunter, 0, 0, 0)
-  setElementData(vehCol, "parent", hunter)
-  setElementData(hunter, "parent", vehCol)
-  setElementData(vehCol, "vehicle", true)
-  setElementData(vehCol, "MAX_Slots", 10)
-  local tires, engine, parts = getVehicleAddonInfos(487)
-  setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
-  setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
-  setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
-  setElementData(vehCol, "spawn", {
-    487,
-    x,
-    y,
-    z
-  })
-  setElementData(vehCol, "fuel", 10)
-  local item_id = math.random(table.size(hunterSpawns))
-  local x, y, z = hunterSpawns[item_id][1], hunterSpawns[item_id][2], hunterSpawns[item_id][3]
-  hunter = createVehicle(497, x, y, z)
-  vehCol = createColSphere(x, y, z, 4)
-  attachElements(vehCol, hunter, 0, 0, 0)
-  setElementData(vehCol, "parent", hunter)
-  setElementData(hunter, "parent", vehCol)
-  setElementData(vehCol, "vehicle", true)
-  setElementData(vehCol, "MAX_Slots", 10)
-  local tires, engine, parts = getVehicleAddonInfos(497)
-  setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
-  setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
-  setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
-  setElementData(vehCol, "spawn", {
-    497,
-    x,
-    y,
-    z
-  })
-  setElementData(vehCol, "fuel", 10)
+  for i, veh in ipairs(maverikSpawns) do
+    local x, y, z = veh[1], veh[2], veh[3]
+    veh = createVehicle(487, x, y, z)
+    vehCol = createColSphere(x, y, z, 2)
+    attachElements(vehCol, veh, 0, 0, 0)
+    setElementData(vehCol, "parent", veh)
+    setElementData(veh, "parent", vehCol)
+    setElementData(vehCol, "vehicle", true)
+    setElementData(vehCol, "MAX_Slots", 0)
+    local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh))
+    setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
+    setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
+    setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
+    setElementData(vehCol, "spawn", {
+      487,
+      x,
+      y,
+      z
+    })
+    setElementData(vehCol, "fuel", 0)
+  end
+  for i, veh in ipairs(hunterSpawns) do
+    local x, y, z = veh[1], veh[2], veh[3]
+    veh = createVehicle(497, x, y, z)
+    vehCol = createColSphere(x, y, z, 2)
+    attachElements(vehCol, veh, 0, 0, 0)
+    setElementData(vehCol, "parent", veh)
+    setElementData(veh, "parent", vehCol)
+    setElementData(vehCol, "vehicle", true)
+    setElementData(vehCol, "MAX_Slots", 0)
+    local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh))
+    setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
+    setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
+    setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
+    setElementData(vehCol, "spawn", {
+      497,
+      x,
+      y,
+      z
+    })
+    setElementData(vehCol, "fuel", 0)
+  end
 end
 function spawnVehiclePack(ps, cmd)
   if getElementData(ps, "admin") then
@@ -1584,14 +1586,14 @@ function checkVehicleInWater()
 end
 setTimer(checkVehicleInWater, 1800000, 0)
 function respawnDayZVehicle(id, x, y, z, veh, col, max_slots)
-  if id == 497 then
+ --[[ if id == 497 then
     local item_id = math.random(table.size(hunterSpawns))
     x, y, z = hunterSpawns[item_id][1], hunterSpawns[item_id][2], hunterSpawns[item_id][3]
   end
   if id == 487 then
     local item_id = math.random(table.size(maverikSpawns))
     x, y, z = maverikSpawns[item_id][1], maverikSpawns[item_id][2], maverikSpawns[item_id][3]
-  end
+  end]]--
   destroyElement(veh)
   destroyElement(col)
   veh = createVehicle(id, x, y, z + 1)
