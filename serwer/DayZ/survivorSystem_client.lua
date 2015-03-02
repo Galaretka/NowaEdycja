@@ -10,14 +10,13 @@
 ]]
 
 addEventHandler("onClientResourceStart", getResourceRootElement(), function()
-  dayzVersion = "Supriload 0.85"
+  dayzVersion = "DayZ Polska"
   versionLabel = guiCreateLabel(1, 1, 0.3, 0.3, dayzVersion, true)
   guiSetSize(versionLabel, guiLabelGetTextExtent(versionLabel), guiLabelGetFontHeight(versionLabel), false)
   x, y = guiGetSize(versionLabel, true)
   guiSetPosition(versionLabel, 1 - x, 1 - y * 1.8, true)
   guiSetAlpha(versionLabel, 0.5)
 end)
-
 
 vehicle = engineLoadTXD("mods/bobcat.txd")
 engineImportTXD(vehicle, 422)
@@ -110,9 +109,9 @@ sniperdff = engineLoadDFF("mods/military.dff", 295)
 engineReplaceModel(sniperdff, 295)
 
 snipertxd = engineLoadTXD("mods/militaryII.txd")
-engineImportTXD(snipertxd, 296)
-sniperdff = engineLoadDFF("mods/militaryII.dff", 296)
-engineReplaceModel(sniperdff, 296)
+engineImportTXD(snipertxd, 286)
+sniperdff = engineLoadDFF("mods/militaryII.dff", 286)
+engineReplaceModel(sniperdff, 286)
 
 snipertxd = engineLoadTXD("mods/militaryIII.txd")
 engineImportTXD(snipertxd, 294)
@@ -156,6 +155,14 @@ snipertxd = engineLoadTXD("items/backpack_survival.txd")
 engineImportTXD(snipertxd, 2407)
 sniperdff = engineLoadDFF("items/backpack_survival.dff", 2407)
 engineReplaceModel(sniperdff, 2407)
+
+snipertxd = engineLoadTXD("items/svdcamo.txd")
+engineImportTXD(snipertxd, 2016)
+sniperdff = engineLoadDFF("items/svdcamo.dff", 2016)
+engineReplaceModel(sniperdff, 2016)
+
+
+
 snipertxd = engineLoadTXD("items/backpack_patrol.txd")
 engineImportTXD(snipertxd, 2401)
 sniperdff = engineLoadDFF("items/backpack_patrol.dff", 2401)
