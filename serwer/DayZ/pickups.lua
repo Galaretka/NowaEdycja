@@ -687,7 +687,7 @@ local itemTable = {
       4
     },
     {
-      "Camouflage Clothing",
+      "Military Clothing II",
       1247,
       2,
       0,
@@ -709,13 +709,6 @@ local itemTable = {
     },
 	{
       "Military Clothing",
-      1247,
-      2,
-      0,
-      4.5
-    },
-	{
-      "Military Clothing II",
       1247,
       2,
       0,
@@ -1826,7 +1819,7 @@ local itemTable = {
       4
     },
     {
-      "Camouflage Clothing",
+      "Military Clothing II",
       1247,
       2,
       0,
@@ -1853,13 +1846,7 @@ local itemTable = {
       0,
       4.5
     },
-	{
-      "Military Clothing II",
-      1247,
-      2,
-      0,
-      4.5
-    },
+	
 	{
       "Military Clothing III",
       1247,

@@ -176,10 +176,29 @@ local playerDataTable = {
     "Cooked Meat"
   },
   {
-    "Camouflage Clothing"
+    "Military Clothing II"
+  },
+  {
+    "Sniper Clothing"
+  },
+  {
+    "Sniper Clothing II"
+  },
+  {
+    "Military Clothing"
+  },
+  
+  {
+    "Military Clothing III"
   },
   {
     "Ghillie Suit"
+  },
+  {
+    "Ghillie Suit II"
+  },
+  {
+    "Ghillie Suit III"
   },
   {
     "Civilian Clothing"
@@ -315,10 +334,29 @@ local vehicleDataTable = {
     "Cooked Meat"
   },
   {
-    "Camouflage Clothing"
+    "Military Clothing II"
+  },
+  {
+    "Sniper Clothing"
+  },
+  {
+    "Sniper Clothing II"
+  },
+  {
+    "Military Clothing"
+  },
+  
+  {
+    "Military Clothing III"
   },
   {
     "Ghillie Suit"
+  },
+  {
+    "Ghillie Suit II"
+  },
+  {
+    "Ghillie Suit III"
   },
   {
     "Civilian Clothing"
