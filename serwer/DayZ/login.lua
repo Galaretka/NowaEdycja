@@ -180,7 +180,7 @@ local playerDataTable = {
     "Cooked Meat"
   },
   {
-    "Camouflage Clothing"
+    "Military Clothing II"
   },
   {
     "Sniper Clothing"
@@ -190,9 +190,6 @@ local playerDataTable = {
   },
   {
     "Military Clothing"
-  },
-  {
-    "Military Clothing II"
   },
   {
     "Military Clothing III"
@@ -495,7 +492,7 @@ local vehicleDataTable = {
     "Cooked Meat"
   },
   {
-    "Camouflage Clothing"
+    "Military Clothing II"
   },
   {
     "Sniper Clothing"
@@ -506,9 +503,7 @@ local vehicleDataTable = {
   {
     "Military Clothing"
   },
-  {
-    "Military Clothing II"
-  },
+  
   {
     "Military Clothing III"
   },

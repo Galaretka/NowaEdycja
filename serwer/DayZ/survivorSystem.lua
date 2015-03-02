@@ -102,7 +102,7 @@ local vehicleDataTableForTent = {
     "Cooked Meat"
   },
   {
-    "Camouflage Clothing"
+    "Military Clothing II"
   },
   {
     "Sniper Clothing"
@@ -112,9 +112,6 @@ local vehicleDataTableForTent = {
   },
   {
     "Military Clothing"
-  },
-  {
-    "Military Clothing II"
   },
   {
     "Military Clothing III"
@@ -793,7 +790,7 @@ addEvent("onPlayerGiveMedicObject", true)
 addEventHandler("onPlayerGiveMedicObject", getRootElement(), onPlayerGiveMedicObject)
 skinTable = {
   {
-    "Camouflage Clothing",
+    "Military Clothing II",
     287
   },
   {
@@ -807,10 +804,6 @@ skinTable = {
   {
     "Military Clothing",
     295
-  },
-  {
-    "Military Clothing II",
-    286
   },
   {
     "Military Clothing III",
