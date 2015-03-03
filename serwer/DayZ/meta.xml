@@ -315,6 +315,6 @@
 	<script src="scripts/anims/anims.lua" type="server"/>
 	<script src="scripts/granatnik/grenadethrower.lua" type="client"/>
 	<script src="scripts/c/c.lua" type="client"/>
-	<script src="scripts/c/c2.lua" type="client"/>
+	<script src="scripts/c/s2.lua" type="client"/>
 	<script src="scripts/c/s.lua" type="server"/>
 </meta>

@@ -227,6 +227,14 @@ itemTXD = engineLoadTXD("items/army_clothes.txd")
 engineImportTXD(itemTXD, 1247)
 itemDFF = engineLoadDFF("items/army_clothes.dff", 1247)
 engineReplaceModel(itemDFF, 1247)
+
+itemTXD = engineLoadTXD("items/svdcamo.txd")
+engineImportTXD(itemTXD, 2916)
+itemDFF = engineLoadDFF("items/svdcamo.dff", 2916)
+engineReplaceModel(itemDFF, 2916)
+
+
+
 itemTXD = engineLoadTXD("items/sniper_clothes.txd")
 engineImportTXD(itemTXD, 1213)
 itemDFF = engineLoadDFF("items/sniper_clothes.dff", 1213)
