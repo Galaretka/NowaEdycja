@@ -489,7 +489,6 @@ function weaponSwitchBack(previousWeaponID, currentWeaponID)
     elementWeaponBack[source] = false
   end
 end
-     end
 addEventHandler("onPlayerWeaponSwitch", getRootElement(), weaponSwitchBack)
 function removeBackWeaponOnDrop()
   if elementWeaponBack[source] then
