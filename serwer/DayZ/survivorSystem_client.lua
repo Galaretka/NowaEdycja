@@ -734,6 +734,21 @@ weaponAmmoTable = {
   ["PDW Mag"] = {
     {"PDW", 28}
   },
+  ["30Rnd. SCAR"] = {
+    {"SCAR-H", 31}
+  },
+  ["30Rnd. 74U"] = {
+    {"AK-74U", 31}
+  },
+  ["30Rnd. M16"] = {
+    {"M16A2", 31}
+  },
+  ["SIG50 Mag"] = {
+    {"SIG50", 34}
+  },
+  ["DSR Mag"] = {
+    {"DSR", 34}
+  },
   ["MP5A5 Mag"] = {
     {"MP5A5", 29}
   },
@@ -1477,7 +1492,7 @@ function openSupportChat()
   local showing = guiGetVisible(supportWindow)
   guiSetInputMode("no_binds_when_editing")
   guiSetVisible(supportWindow, not showing)
-  if getElementData(getLocalPlayer(), "supporter") or getElementData(getLocalPlayer(), "Moderator") or getElementData(getLocalPlayer(), "SuperModerator") or getElementData(getLocalPlayer(), "Admin") then
+  if getElementData(getLocalPlayer(), "supporter") or getElementData(getLocalPlayer(), "admin") then
     guiSetVisible(supporterWindow, not showing)
   end
   if showing then
@@ -1521,11 +1536,9 @@ function outputSupportChat(sourcePlayer, text)
   elseif getElementData(sourcePlayer, "Admin") then
     name = string.gsub(getPlayerName(sourcePlayer), "#%x%x%x%x%x%x", "") .. " (Admin)"
   elseif getElementData(sourcePlayer, "Moderator") then
-    name = string.gsub(getPlayerName(sourcePlayer), "#%x%x%x%x%x%x", "") .. " (Mod-CHAT)"
-  elseif getElementData(sourcePlayer, "SuperModerator") then
     name = string.gsub(getPlayerName(sourcePlayer), "#%x%x%x%x%x%x", "") .. " (Moderator)"
   elseif getElementData(sourcePlayer, "supporter") then
-    name = string.gsub(getPlayerName(sourcePlayer), "#%x%x%x%x%x%x", "") .. " (Support)"
+    name = string.gsub(getPlayerName(sourcePlayer), "#%x%x%x%x%x%x", "") .. " (Supporter)"
   else
     name = string.gsub(getPlayerName(sourcePlayer), "#%x%x%x%x%x%x", "") .. " (GRACZ)"
   end

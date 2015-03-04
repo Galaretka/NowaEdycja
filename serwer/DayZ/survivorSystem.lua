@@ -21,6 +21,16 @@ local vehicleDataTableForTent = {
   {
     "Box of Matches"
   },
+  {"30Rnd. SCAR"},
+  {"20Rnd. AK-74U"},
+  {"30Rnd. M16"},
+  {"SIG50 Mag"},
+  {"DSR Mag"},
+  {"SCAR-H"},
+  {"AK-74U"},
+  {"M16A2"},
+  {"SIG50"},
+  {"DSR"},
   {"M911 Mag"},
   {"Makarov SD Mag"},
   {
@@ -188,6 +198,21 @@ weaponAmmoTable = {
   ["G17 Mag"] = {
     {"G17", 22}
   },
+  ["30Rnd. SCAR"] = {
+    {"SCAR-H", 31}
+  },
+  ["30Rnd. 74U"] = {
+    {"AK-74U", 31}
+  },
+  ["30Rnd. M16"] = {
+    {"M16A2", 31}
+  },
+  ["SIG50 Mag"] = {
+    {"SIG50", 34}
+  },
+  ["DSR Mag"] = {
+    {"DSR", 34}
+  },
   ["Makarov SD Mag"] = {
     {"Makarov SD", 23}
   },
@@ -269,6 +294,31 @@ function getWeaponAmmoType(weaponName, notOthers)
       if weaponName == weaponData[1] then
         return weaponData[1], weaponData[2]
       end
+    end
+  end
+  for i, weaponData in ipairs(weaponAmmoTable["30Rnd. SCAR"]) do
+    if weaponName == weaponData[1] then
+      return "30Rnd. SCAR", weaponData[2]
+    end
+  end
+  for i, weaponData in ipairs(weaponAmmoTable["30Rnd. 74U"]) do
+    if weaponName == weaponData[1] then
+      return "30Rnd. 74U", weaponData[2]
+    end
+  end
+  for i, weaponData in ipairs(weaponAmmoTable["30Rnd. M16"]) do
+    if weaponName == weaponData[1] then
+      return "30Rnd. M16", weaponData[2]
+    end
+  end
+  for i, weaponData in ipairs(weaponAmmoTable["SIG50 Mag"]) do
+    if weaponName == weaponData[1] then
+      return "SIG50 Mag", weaponData[2]
+    end
+  end
+  for i, weaponData in ipairs(weaponAmmoTable["DSR Mag"]) do
+    if weaponName == weaponData[1] then
+      return "DSR Mag", weaponData[2]
     end
   end
   for i, weaponData in ipairs(weaponAmmoTable["G17 Mag"]) do
@@ -1141,7 +1191,7 @@ function getTeamMemberOnline()
   theTableMembersOnline = ""
   for i, player in ipairs(getElementsByType("player")) do
     local account = getPlayerAccount(player)
-    if not isGuestAccount(account) and (getElementData(player, "supporter") or getElementData(player, "Admin") or getElementData(player, "Moderator") or getElementData(player, "SuperModerator")) then
+    if not isGuestAccount(account) and (getElementData(player, "supporter") or getElementData(player, "Admin") or getElementData(player, "Moderator")) then
       theTableMembersOnline = theTableMembersOnline .. "," .. getPlayerName(player)
     end
   end
@@ -1173,7 +1223,7 @@ function setGroup(playersource, command, teamName, targetString)
     do
       local foundTargetPlayer = getPlayerWildcard(targetString)
       if foundTargetPlayer then
-        if teamName ~= "Admin" and teamName ~= "supporter" and teamName ~= "Moderator" and teamName ~= "SuperModerator" then
+        if teamName ~= "admin" and teamName ~= "supporter" then
           if teamName == "remove" then
           else
             outputChatBox("#FFFFFFCorrect names are admin, supporter and remove!", playersource, 27, 89, 224, true)
@@ -1481,8 +1531,8 @@ function onServerSupportChatMessage(player2, text)
     if player2 == "Sandra" or player2 == "James" or player2 == "Paul" then
       triggerClientEvent(player, "onSupportChatMessage", player, player2, text)
       notGoOn = true
-    elseif (getElementData(player, "supporter") or getElementData(player, "Admin") or getElementData(player, "Moderator") or getElementData(player, "SuperModerator")) and not getElementData(player2, "Admin") and not getElementData(player2, "Moderator") and not getElementData(player2, "SuperModerator") and not getElementData(player2, "supporter") and not isPlayerMuted(player2) then
-      outputChatBox("#E01BBCNowa wiadomość do supportu od " .. getPlayerName(player2), player, 255, 255, 255, true)
+    elseif (getElementData(player, "supporter") or getElementData(player, "admin")) and not getElementData(player2, "admin") and not getElementData(player2, "supporter") and not isPlayerMuted(player2) then
+      outputChatBox("#E01BBCNew Support Message by " .. getPlayerName(player2), player, 255, 255, 255, true)
     end
     if not notGoOn then
       if not isPlayerMuted(player2) then
@@ -1496,7 +1546,7 @@ function onServerSupportChatMessage(player2, text)
     botCheck(text, player2)
   end
   if mutedmessage then
-    outputChatBox("#2200ddJesteś uciszony!", player2, 255, 255, 255, true)
+    outputChatBox("#2200ddYou are muted!", player2, 255, 255, 255, true)
   end
 end
 addEvent("onServerSupportChatMessage", true)
@@ -1628,15 +1678,11 @@ function globalMessage(thePlayer, cmd, ...)
 		return
 	end
 	if isObjectInACLGroup ( "user." ..getAccountName(getPlayerAccount(thePlayer)), aclGetGroup ( "Moderator" ) ) then
-		outputChatBox("#006600[MOD-CHAT] #00FF00"..name..": #FFFFFF"..message,v, 255, 255, 255, true)
-		return
-	end
-	if isObjectInACLGroup ( "user." ..getAccountName(getPlayerAccount(thePlayer)), aclGetGroup ( "SuperModerator" ) ) then
-		outputChatBox("#00CC00[MODERATOR] #00FF00"..name..": #FFFFFF"..message,v, 255, 255, 255, true)
+		outputChatBox("#FF0000[MOD] #00FF00"..name..": #FFFFFF"..message,v, 255, 255, 255, true)
 		return
 	end
 for _,v in ipairs(getElementsByType("player")) do
-    outputChatBox("#CC6600[GLOBALNY] #00FF00"..name..": #FFFFFF"..message,v, 255, 255, 255, true)
+    outputChatBox("#CC6600[GLOBAL] #00FF00"..name..": #FFFFFF"..message,v, 255, 255, 255, true)
     end
 end
 addCommandHandler("global",  globalMessage);

@@ -105,7 +105,17 @@ local playerDataTable = {
   {
     "Winchester 1866"
   },
+  {"30Rnd. SCAR"},
+  {"20Rnd. AK-74U"},
+  {"30Rnd. M16"},
+  {"SIG50 Mag"},
+  {"DSR Mag"},
   {"PDW"},
+   {"SCAR-H"},
+  {"AK-74U"},
+  {"M16A2"},
+  {"SIG50"},
+  {"DSR"},
   {
     "Hunting Knife"
   },
@@ -283,10 +293,8 @@ function playerLogin(username, pass, player)
     giveWeapon(player, weapID, getElementData(player, ammoData), false)
   end
   setElementModel(player, getElementData(player, "skin"))
-  setElementData(player, "Admin", getAccountData(account, "Admin") or false)
+  setElementData(player, "admin", getAccountData(account, "admin") or false)
   setElementData(player, "supporter", getAccountData(account, "supporter") or false)
-  setElementData(player, "SuperModerator", getAccountData(account, "Moderator") or false)
-  setElementData(player, "Moderator", getAccountData(account, "Mod-CHAT") or false)
   triggerClientEvent(player, "onClientPlayerDayZLogin", player)
 end
 addEvent("onPlayerDayZLogin", true)
@@ -421,6 +429,16 @@ local vehicleDataTable = {
     "Winchester 1866"
   },
   {"PDW"},
+  {"30Rnd. SCAR"},
+  {"20Rnd. AK-74U"},
+  {"30Rnd. M16"},
+  {"SIG50 Mag"},
+  {"DSR Mag"},
+  {"SCAR-H"},
+  {"AK-74U"},
+  {"M16A2"},
+  {"SIG50"},
+  {"DSR"},
   {
     "Hunting Knife"
   },
