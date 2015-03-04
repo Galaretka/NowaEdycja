@@ -1142,7 +1142,7 @@ function getTeamMemberOnline()
   theTableMembersOnline = ""
   for i, player in ipairs(getElementsByType("player")) do
     local account = getPlayerAccount(player)
-    if not isGuestAccount(account) and (getElementData(player, "supporter") or getElementData(player, "Admin") or getElementData(player, "Moderator")) then
+    if not isGuestAccount(account) and (getElementData(player, "supporter") or getElementData(player, "Admin") or getElementData(player, "Moderator") or getElementData(player, "SuperModerator")) then
       theTableMembersOnline = theTableMembersOnline .. "," .. getPlayerName(player)
     end
   end
@@ -1174,7 +1174,7 @@ function setGroup(playersource, command, teamName, targetString)
     do
       local foundTargetPlayer = getPlayerWildcard(targetString)
       if foundTargetPlayer then
-        if teamName ~= "admin" and teamName ~= "supporter" then
+        if teamName ~= "Admin" and teamName ~= "supporter" and teamName ~= "Moderator" and teamName ~= "SuperModerator" then
           if teamName == "remove" then
           else
             outputChatBox("#FFFFFFCorrect names are admin, supporter and remove!", playersource, 27, 89, 224, true)
@@ -1482,8 +1482,8 @@ function onServerSupportChatMessage(player2, text)
     if player2 == "Sandra" or player2 == "James" or player2 == "Paul" then
       triggerClientEvent(player, "onSupportChatMessage", player, player2, text)
       notGoOn = true
-    elseif (getElementData(player, "supporter") or getElementData(player, "admin")) and not getElementData(player2, "admin") and not getElementData(player2, "supporter") and not isPlayerMuted(player2) then
-      outputChatBox("#E01BBCNew Support Message by " .. getPlayerName(player2), player, 255, 255, 255, true)
+    elseif (getElementData(player, "supporter") or getElementData(player, "Admin") or getElementData(player, "Moderator") or getElementData(player, "SuperModerator")) and not getElementData(player2, "Admin") and not getElementData(player2, "Moderator") and not getElementData(player2, "SuperModerator") and not getElementData(player2, "supporter") and not isPlayerMuted(player2) then
+      outputChatBox("#E01BBCNowa wiadomość do supportu od " .. getPlayerName(player2), player, 255, 255, 255, true)
     end
     if not notGoOn then
       if not isPlayerMuted(player2) then
@@ -1497,7 +1497,7 @@ function onServerSupportChatMessage(player2, text)
     botCheck(text, player2)
   end
   if mutedmessage then
-    outputChatBox("#2200ddYou are muted!", player2, 255, 255, 255, true)
+    outputChatBox("#2200ddJesteś uciszony!", player2, 255, 255, 255, true)
   end
 end
 addEvent("onServerSupportChatMessage", true)
@@ -1629,11 +1629,15 @@ function globalMessage(thePlayer, cmd, ...)
 		return
 	end
 	if isObjectInACLGroup ( "user." ..getAccountName(getPlayerAccount(thePlayer)), aclGetGroup ( "Moderator" ) ) then
-		outputChatBox("#FF0000[MOD] #00FF00"..name..": #FFFFFF"..message,v, 255, 255, 255, true)
+		outputChatBox("#006600[MOD-CHAT] #00FF00"..name..": #FFFFFF"..message,v, 255, 255, 255, true)
+		return
+	end
+	if isObjectInACLGroup ( "user." ..getAccountName(getPlayerAccount(thePlayer)), aclGetGroup ( "SuperModerator" ) ) then
+		outputChatBox("#00CC00[MODERATOR] #00FF00"..name..": #FFFFFF"..message,v, 255, 255, 255, true)
 		return
 	end
 for _,v in ipairs(getElementsByType("player")) do
-    outputChatBox("#CC6600[GLOBAL] #00FF00"..name..": #FFFFFF"..message,v, 255, 255, 255, true)
+    outputChatBox("#CC6600[GLOBALNY] #00FF00"..name..": #FFFFFF"..message,v, 255, 255, 255, true)
     end
 end
 addCommandHandler("global",  globalMessage);

@@ -430,7 +430,9 @@ function spawnDayZPlayer(player)
   setAccountData(account, "isDead", false)
   setElementData(player, "isDead", false)
   setElementData(player, "logedin", true)
-  setElementData(player, "admin", getAccountData(account, "admin") or false)
+  setElementData(player, "Admin", getAccountData(account, "Admin") or false)
+  setElementData(player, "Moderator", getAccountData(account, "Mod-CHAT") or false)
+  setElementData(player, "SuperModerator", getAccountData(account, "Moderator") or false)
   setElementData(player, "supporter", getAccountData(account, "supporter") or false)
   for i, data in ipairs(playerDataTable) do
     if data[1] == "Bandage" then
