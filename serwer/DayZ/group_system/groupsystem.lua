@@ -256,7 +256,7 @@ function setGroupVIP (playersource,command,targetString,moreSlots)
 			outputChatBox(targetString.."'s group has now VIP status - new amount of slots: "..getAccountData(getAccount(targetString),"gangslots").." Slots.",getRootElement(),22,255,22,true)
 		end
 	else
-		outputChatBox ("#FFFFFFYou are not an admin!",playersource,27, 89, 224,true)		
+		outputChatBox ("#FFFFFFNie jesteś adminem!!",playersource,27, 89, 224,true)		
 	end
 end
 addCommandHandler("givevip",setGroupVIP)

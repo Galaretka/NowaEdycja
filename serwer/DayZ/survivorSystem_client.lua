@@ -1492,7 +1492,7 @@ function openSupportChat()
   local showing = guiGetVisible(supportWindow)
   guiSetInputMode("no_binds_when_editing")
   guiSetVisible(supportWindow, not showing)
-  if getElementData(getLocalPlayer(), "supporter") or getElementData(getLocalPlayer(), "admin") then
+  if getElementData(getLocalPlayer(), "supporter") or getElementData(getLocalPlayer(), "Moderator") or getElementData(getLocalPlayer(), "SuperModerator") or getElementData(getLocalPlayer(), "Admin") then
     guiSetVisible(supporterWindow, not showing)
   end
   if showing then
@@ -1536,9 +1536,11 @@ function outputSupportChat(sourcePlayer, text)
   elseif getElementData(sourcePlayer, "Admin") then
     name = string.gsub(getPlayerName(sourcePlayer), "#%x%x%x%x%x%x", "") .. " (Admin)"
   elseif getElementData(sourcePlayer, "Moderator") then
-    name = string.gsub(getPlayerName(sourcePlayer), "#%x%x%x%x%x%x", "") .. " (Moderator)"
+    name = string.gsub(getPlayerName(sourcePlayer), "#%x%x%x%x%x%x", "") .. " (MOD-CHAT)"
+  elseif getElementData(sourcePlayer, "SuperModerator") then
+     name = string.gsub(getPlayerName(sourcePlayer), "#%x%x%x%x%x%x", "") .. " (Moderator)"
   elseif getElementData(sourcePlayer, "supporter") then
-    name = string.gsub(getPlayerName(sourcePlayer), "#%x%x%x%x%x%x", "") .. " (Supporter)"
+     name = string.gsub(getPlayerName(sourcePlayer), "#%x%x%x%x%x%x", "") .. " (Supporter)"
   else
     name = string.gsub(getPlayerName(sourcePlayer), "#%x%x%x%x%x%x", "") .. " (GRACZ)"
   end
@@ -1548,7 +1550,7 @@ function outputSupportChat(sourcePlayer, text)
     r, g, b = 255, 30, 120
   elseif sourcePlayer == "James" or sourcePlayer == "Paul" then
     r, g, b = 255, 255, 22
-  elseif getElementData(sourcePlayer, "admin") then
+  elseif getElementData(sourcePlayer, "Admin") then
     r, g, b = 255, 22, 0
   elseif getElementData(sourcePlayer, "supporter") then
     r, g, b = 22, 255, 0

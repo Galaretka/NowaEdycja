@@ -293,7 +293,7 @@ function playerLogin(username, pass, player)
     giveWeapon(player, weapID, getElementData(player, ammoData), false)
   end
   setElementModel(player, getElementData(player, "skin"))
-  setElementData(player, "admin", getAccountData(account, "admin") or false)
+  setElementData(player, "Admin", getAccountData(account, "Admin") or false)
   setElementData(player, "supporter", getAccountData(account, "supporter") or false)
   triggerClientEvent(player, "onClientPlayerDayZLogin", player)
 end
