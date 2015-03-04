@@ -687,7 +687,7 @@ function onPlayerMoveItemOutOFInventory(itemName, loot)
     itemPlus = 10
   elseif itemName == "M136 Rocket" then
     itemPlus = 0
-  elseif itemName == "M4A1 CCO" or itemName == "AKS-74 Kobra" or itemName == "SVD Camo" or  or itemName == "SCAR-H" or itemName == "AK-74U" or itemName == "M16A2" or itemName == "SIG50" or itemName == "DSR" or itemName == "DMR" or itemName == "Winchester 1866" or itemName == "SPAZ-12 Combat Shotgun" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "M136 Rocket Launcher" or itemName == "Lee Enfield" then
+  elseif itemName == "M4A1 CCO" or itemName == "AKS-74 Kobra" or itemName == "SVD Camo" or itemName == "SCAR-H" or itemName == "AK-74U" or itemName == "M16A2" or itemName == "SIG50" or itemName == "DSR" or itemName == "DMR" or itemName == "Winchester 1866" or itemName == "SPAZ-12 Combat Shotgun" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "M136 Rocket Launcher" or itemName == "Lee Enfield" then
     triggerServerEvent("removeBackWeaponOnDrop", getLocalPlayer())
   end
 
