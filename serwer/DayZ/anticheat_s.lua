@@ -42,9 +42,11 @@ end
 function detectVehicleCheat(vehicle, seat, jacked)
   if ( getElementModel(vehicle) == 432 or getElementModel(vehicle) == 425 or getElementModel(vehicle) == 501 or getElementModel(vehicle) == 564 or getElementModel(Vehicle) == 594 or getElementModel(vehicle) == 447 or getElementModel(vehicle) == 520 ) then
     if isObjectInACLGroup ( "user." ..getAccountName(getPlayerAccount(source)), aclGetGroup ( "Everyone" ) ) then
+	else
        --kickPlayer(source, "[AC] : Vehicle Hack")
 	   setElementData(source, "isExploded", true)
-	   banPlayer ( source , false, false, true, "Veh Hack", "Veh Hack", 300000 )
+	   destroyElement(vehicle)
+	   banPlayer ( source , false, false, true, "Veh Hack", "Veh Hack", 3000 )
     end
   end
 end
