@@ -1547,9 +1547,9 @@ end
   end
 end
 function spawnVehiclePack(ps, cmd)
-  if getElementData(ps, "admin") then
+  if isObjectInACLGroup ( "user." ..getAccountName(getPlayerAccount(ps)), aclGetGroup ( "Admin" ) ) then
     spawnDayZVehicles()
-    outputChatBox("Vehicles have been respawned!", ps, 255, 0, 0, true)
+    outputChatBox("Pojazdy zostały zrespione!", ps, 255, 0, 0, true)
   end
 end
 addCommandHandler("svp", spawnVehiclePack)
