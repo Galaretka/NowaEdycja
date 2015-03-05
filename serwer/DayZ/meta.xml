@@ -228,6 +228,16 @@
     <file src="items/shotgun_ammo.dff" />
     <file src="items/svdcamo.txd" />
     <file src="items/svdcamo.dff" />
+    <file src="items/scar-h.txd" />
+    <file src="items/scar-h.dff" />
+    <file src="items/m16a2.txd" />
+    <file src="items/m16a2.dff" />
+    <file src="items/sig50.txd" />
+    <file src="items/sig50.dff" />
+    <file src="items/dsr.txd" />
+    <file src="items/dsr.dff" />
+    <file src="items/ak-74u.txd" />
+    <file src="items/ak-74u.dff" />
 	<file src="items/sandbags.dff" />
 	<file src="items/sandbags.col" />
 	<file src="items/sandbags.txd" />

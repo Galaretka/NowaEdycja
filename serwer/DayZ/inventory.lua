@@ -1337,7 +1337,7 @@ function weaponSwitch(weapon)
         else
         local ammoName, _ = getWeaponAmmoType2(weapon)
             if getElementData(getLocalPlayer(), ammoName) > 0 then
-                setElementData(getLocalPlayer(), ammoName, getElementData(getLocalPlayer(), ammoName) - 0)
+                setElementData(getLocalPlayer(), ammoName, getElementData(getLocalPlayer(), ammoName) - 1)
             end
         end
     end
