@@ -994,7 +994,7 @@ vehicleAddonsInfo = {
     1
   },
   {
-    490,
+    596,
     4,
     1,
     1
@@ -1048,7 +1048,7 @@ vehicleAddonsInfo = {
     1
   },
   {
-    437,
+    431,
     6,
     1,
     1
@@ -1146,9 +1146,9 @@ for i, patrol in ipairs(patrolPoints) do
 end
 dayzVehicles = {}
 function spawnDayZVehicles()
-  if getElementData(getRootElement(), "serverhasloadvehicles") then
-    return
-  end
+  --if getElementData(getRootElement(), "serverhasloadvehicles") then
+  --  return
+ -- end
   for i, veh in ipairs(pickupSpawns) do
     local x, y, z = veh[1], veh[2], veh[3]
     veh = createVehicle(422, x, y, z)
@@ -1650,7 +1650,7 @@ vehicleAddonsInfo = {
     0
   },
   {
-    490,
+    596,
     4,
     1,
     1
@@ -1704,7 +1704,7 @@ vehicleAddonsInfo = {
     1
   },
   {
-    437,
+    431,
     6,
     1,
     1
@@ -1742,21 +1742,21 @@ vehicleAddonsInfo = {
 }
 vehicleFuelInfo = {
   {422, 0.7},
+  {603, 0.2},
+  {531, 0.1},
+  {500, 0.1},
+  {510, 0},
+  {418, 0.1},
   {470, 0.1},
   {471, 0.1},
   {468, 0.1},
   {593, 0.1},
   {433, 0.1},
   {483, 0.1},
-  {418, 0.1},
-  {603, 0.2},
-  {490, 0.2},
-  {500, 0.1},
-  {437, 0.1},
-  {510, 0},
+  {596, 0.2},
+  {431, 0.1},
   {509, 0},
   {487, 0.9},
-  {531, 0.1},
   {497, 0.9},
   {453, 0.1},
 }
