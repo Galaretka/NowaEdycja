@@ -40,13 +40,14 @@ function checkSlots(thePlayer)
 end
 
 function detectVehicleCheat(vehicle, seat, jacked)
-  if ( getElementModel(vehicle) == 432 or getElementModel(vehicle) == 425 or getElementModel(vehicle) == 501 or getElementModel(vehicle) == 564 or getElementModel(Vehicle) == 594 or getElementModel(vehicle) == 447 or getElementModel(vehicle) == 520 ) then
-    if isObjectInACLGroup ( "user." ..getAccountName(getPlayerAccount(source)), aclGetGroup ( "Everyone" ) ) then
+  if ( getElementModel(vehicle) == 422 or getElementModel(vehicle) == 603 or getElementModel(vehicle) == 531 or getElementModel(vehicle) == 500 or getElementModel(Vehicle) == 510 or getElementModel(vehicle) == 418 or getElementModel(vehicle) == 596 or getElementModel(vehicle) == 593 or getElementModel(vehicle) == 483 or getElementModel(vehicle) == 471 or getElementModel(vehicle) == 470 or getElementModel(vehicle) == 468 or getElementModel(vehicle) == 433 or getElementModel(vehicle) == 431 or getElementModel(vehicle) == 453 or getElementModel(vehicle) == 509 or getElementModel(vehicle) == 487 or getElementModel(vehicle) == 497 ) then
+    return true
+  else
        --kickPlayer(source, "[AC] : Vehicle Hack")
-	   setElementData(source, "isExploded", true)
+	   --setElementData(source, "isExploded", true)
 	   destroyElement(vehicle)
-	   banPlayer ( source , false, false, true, "Veh Hack", "Veh Hack", 3000 )
-    end
+	   banPlayer ( source , false, false, true, "Veh Hack", "Veh Hack", 1000 )
+    --end
   end
 end
 addEventHandler("onPlayerVehicleEnter", getRootElement(), detectVehicleCheat)
