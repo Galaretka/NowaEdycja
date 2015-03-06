@@ -1593,7 +1593,8 @@ local itemTable = {
       2,
       0
     },
-	"SCAR-H",
+	{
+	 "SCAR-H",
       2962,
       1,
       90,
