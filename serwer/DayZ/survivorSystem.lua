@@ -1693,7 +1693,7 @@ addCommandHandler("global",  globalMessage);
 function bindTheKeys()
   bindKey(source, ",", "down", funcBindHandsup)
   bindKey(source, ".", "down", funcBindSit)
-  bindKey(source, "l", "down", funcBindLie)
+  bindKey(source, "/", "down", funcBindLie)
 end
 addEventHandler("onPlayerLogin", getRootElement(), bindTheKeys)
 function makeRadioStayOff()
