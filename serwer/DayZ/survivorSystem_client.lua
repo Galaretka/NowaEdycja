@@ -600,8 +600,13 @@ statsLabel = {}
 statsWindows = guiCreateStaticImage(0.80, 0.20, 0.20, 0.22, "images/scrollmenu_1.png",true)
 guiSetAlpha(statsWindows,0.8)
 
+-- Kasa 1
+statsLabel["kasa1"] = guiCreateLabel(0.70, 0.22, 0.20, 0.09,"0", true, statsWindows)
+guiSetFont(statsLabel["kasa1"], "default-bold-small")
+setElementData(statsLabel["kasa1"],"identifikation","zombieskilled")
+
 -- ZOMBIES KILLEDS 1
-statsLabel["zombieskilled1"] = guiCreateLabel(0.70, 0.24, 0.20, 0.09,"0", true, statsWindows)
+statsLabel["zombieskilled1"] = guiCreateLabel(0.70, 0.28, 0.20, 0.09,"0", true, statsWindows)
 guiSetFont(statsLabel["zombieskilled1"], "default-bold-small")
 setElementData(statsLabel["zombieskilled1"],"identifikation","zombieskilled")
 
@@ -649,11 +654,17 @@ guiSetFont(statsLabel["debug"], "default-bold-small")
 guiLabelSetColor(statsLabel["debug"], 125, 125, 125)
 
 -- SURVIVOR
-statsLabel["survivor"] = guiCreateLabel(0.07, 0.06, 0.48, 0.09, "[DayZ MOD]", true, statsWindows)
+statsLabel["survivor"] = guiCreateLabel(0.07, 0.06, 0.48, 0.09, "  [DayZ MOD]", true, statsWindows)
 guiSetFont(statsLabel["survivor"], "default-bold-small")
 
+--Kasa
+statsLabel["kasa"] = guiCreateLabel(0.07, 0.22, 0.48, 0.09, "Kasa:",true,statsWindows)
+--guiLabelSetHorizontalAlign (statsLabel["zombieskilled"],"center")
+guiSetFont (statsLabel["kasa"], "default-bold-small" )
+guiLabelSetColor(statsLabel["kasa"], 242, 176, 17)
+
 --Zombies  Killed
-statsLabel["zombieskilled"] = guiCreateLabel(0.07, 0.25, 0.48, 0.09, "Zabitych zombie:",true,statsWindows)
+statsLabel["zombieskilled"] = guiCreateLabel(0.07, 0.28, 0.48, 0.09, "Zabitych zombie:",true,statsWindows)
 --guiLabelSetHorizontalAlign (statsLabel["zombieskilled"],"center")
 guiSetFont (statsLabel["zombieskilled"], "default-bold-small" )
 guiLabelSetColor(statsLabel["zombieskilled"], 242, 176, 17)
@@ -753,6 +764,7 @@ function refreshDebugMonitor()
         guiSetText(statsLabel["humanity1"]," "..math.round(value,2))
         
         guiSetText(statsLabel["name"]," "..getPlayerName(getLocalPlayer()))
+		guiSetText(statsLabel["kasa1"]," "..getPlayerMoney(getLocalPlayer()))
     end         
 end
 setTimer(refreshDebugMonitor,2000,0)
