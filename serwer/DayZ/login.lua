@@ -632,9 +632,9 @@ function saveallvehicles(ps, command)
         if not account then
           account = addAccount("vehicle_number_" .. counter, "ds4f9$")
         end
-        setAccountData(account, "spawn_x", getElementData(col, "spawn")[2])
-        setAccountData(account, "spawn_y", getElementData(col, "spawn")[3])
-        setAccountData(account, "spawn_z", getElementData(col, "spawn")[4])
+        --setAccountData(account, "spawn_x", getElementData(col, "spawn")[2])
+        --setAccountData(account, "spawn_y", getElementData(col, "spawn")[3])
+        --setAccountData(account, "spawn_z", getElementData(col, "spawn")[4])
         for i, data in ipairs(vehicleDataTable) do
           setAccountData(account, data[1], getElementData(col, data[1]))
         end
