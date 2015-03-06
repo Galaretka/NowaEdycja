@@ -67,7 +67,7 @@ showCursor(true,false)
             --Третая Колонка
             news_box3 = guiCreateStaticImage( 0.73, 0.56, 0.244, 0.2, "images/news.png", true , login_window)
             guiSetAlpha(news_box3,0.4)
-            news3 = guiCreateLabel(0.025, 0.125, 0.9, 0.9,"\n\n\n                                        Na serwerze jest anty cheat!\n",true,news_box3)
+            news3 = guiCreateLabel(0.025, 0.125, 0.9, 0.9,"\n\n\n                                        IP TS3: 185.49.12.243\n",true,news_box3)
             guiSetFont(news3,"default-bold-small")
             guiSetVisible(news_box3_new,false)
 
