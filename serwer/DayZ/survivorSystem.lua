@@ -404,7 +404,7 @@ function rearmPlayerWeapon(weaponName, slot)
   local weapon = getElementData(source, "currentweapon_1")
   if weapon then
   local ammoData, weapID = getWeaponAmmoType(weapon)
-    giveWeapon(source, weapID, getElementData(source, ammoData), true)
+    giveWeapon(source, weapID, getElementData(source, ammoData), false)
   end
   local weapon = getElementData(source, "currentweapon_2")
   if weapon then
@@ -507,45 +507,112 @@ function backpackRemoveQuit()
     destroyElement(elementWeaponBack[source])
     elementWeaponBack[source] = false
   end
+  if elementWeaponRaplace[source] then
+	detachElementFromBone(elementWeaponRaplace[source])
+	destroyElement(elementWeaponRaplace[source])
+	elementWeaponRaplace[source] = false
+end
 end
 addEventHandler("onPlayerQuit", getRootElement(), backpackRemoveQuit)
 elementWeaponBack = {}
-function weaponSwitchBack(previousWeaponID, currentWeaponID)
-  local weapon1 = getElementData(source, "currentweapon_1")
-  if not weapon1 then
-    return
-  end
-  local ammoData1, weapID1 = getWeaponAmmoType(weapon1)
-  local x, y, z = getElementPosition(source)
-  local rx, ry, rz = getElementRotation(source)
-  if previousWeaponID == weapID1 then
-    if elementWeaponBack[source] then
-      setElementID(player, "elementWeaponBack[source]")
-      detachElementFromBone(elementWeaponBack[source])
-      destroyElement(elementWeaponBack[source])
-      elementWeaponBack[source] = false
-    end
-    elementWeaponBack[source] = createObject(getWeaponObjectID(weapID1), x, y, z)
-    setObjectScale(elementWeaponBack[source], 0.875)
-    if elementBackpack[source] then
-      attachElementToBone(elementWeaponBack[source], source, 3, 0.19, -0.31, -0.1, 0, 270, -90)
-    else
-      attachElementToBone(elementWeaponBack[source], source, 3, 0.19, -0.11, -0.1, 0, 270, 10)
-    end
-  elseif currentWeaponID == weapID1 then
-    setElementID(player, "elementWeaponBack[source]")
-    detachElementFromBone(elementWeaponBack[source])
-    destroyElement(elementWeaponBack[source])
-    elementWeaponBack[source] = false
-  end
+function weaponSwitchBack ( previousWeaponID, currentWeaponID )
+local weapon1 = getElementData(source,"currentweapon_1")
+if not weapon1 then return end
+local ammoData1,weapID1 = getWeaponAmmoType(weapon1)
+local x,y,z = getElementPosition(source)
+local rx,ry,rz = getElementRotation(source)
+if previousWeaponID == weapID1 then
+if elementWeaponBack[source] then
+detachElementFromBone(elementWeaponBack[source])
+destroyElement(elementWeaponBack[source])
+elementWeaponBack[source] = false
+end
+if weapon1 == "SCAR-H" then
+elementWeaponRaplace[source] = createObject(2962,x,y,z)
+setObjectScale(elementWeaponBack[source],0.875)
+elseif weapon1 == "AK-74U" then
+elementWeaponRaplace[source] = createObject(2963,x,y,z)
+setObjectScale(elementWeaponBack[source],0.875)
+elseif weapon1 == "M16A2" then
+elementWeaponRaplace[source] = createObject(2964,x,y,z)
+setObjectScale(elementWeaponBack[source],0.875)
+elseif weapon1 == "SIG50" then
+elementWeaponRaplace[source] = createObject(2965,x,y,z)
+setObjectScale(elementWeaponBack[source],0.875)
+elseif weapon1 == "DSR" then
+elementWeaponRaplace[source] = createObject(2979,x,y,z)
+setObjectScale(elementWeaponBack[source],0.875)
+elseif weapon1 == "SVD Camo" then
+elementWeaponRaplace[source] = createObject(2916,x,y,z)
+setObjectScale(elementWeaponBack[source],0.875)
+else
+	elementWeaponBack[source] = createObject(getWeaponObjectID(weapID1),x,y,z)
+setObjectScale(elementWeaponBack[source],0.875)
+end
+if elementBackpack[source] then
+attachElementToBone(elementWeaponBack[source],source,3,0.19,-0.31,-0.1,0,270,-90)
+else
+	attachElementToBone(elementWeaponBack[source],source,3,0.19,-0.11,-0.1,0,270,10)
+end
+elseif currentWeaponID == weapID1 then
+detachElementFromBone(elementWeaponBack[source])
+destroyElement(elementWeaponBack[source])
+elementWeaponBack[source] = false
+end
 end
 addEventHandler("onPlayerWeaponSwitch", getRootElement(), weaponSwitchBack)
+
+elementWeaponRaplace = {}
+function weaponReplace ( previousWeaponID, currentWeaponID )
+--local source = getRootElement()
+local weapon1 = getElementData(source,"currentweapon_1")
+if not weapon1 then return end
+local ammoData1,weapID1 = getWeaponAmmoType(weapon1)
+local x,y,z = getElementPosition(source)
+local rx,ry,rz = getElementRotation(source)
+if currentWeaponID == weapID1 then
+if elementWeaponRaplace[source] then
+detachElementFromBone(elementWeaponRaplace[source])
+destroyElement(elementWeaponRaplace[source])
+elementWeaponRaplace[source] = false
+end
+if weapon1 == "SCAR-H" then
+elementWeaponRaplace[source] = createObject(2962,x,y,z)
+elseif weapon1 == "AK-74U" then
+elementWeaponRaplace[source] = createObject(2963,x,y,z)
+elseif weapon1 == "M16A2" then
+elementWeaponRaplace[source] = createObject(2964,x,y,z)
+elseif weapon1 == "SIG50" then
+elementWeaponRaplace[source] = createObject(2965,x,y,z)
+elseif weapon1 == "DSR" then
+elementWeaponRaplace[source] = createObject(2979,x,y,z)
+elseif weapon1 == "SVD Camo" then
+elementWeaponRaplace[source] = createObject(2916,x,y,z)
+end
+if elementBackpack[source] then
+attachElementToBone(elementWeaponRaplace[source],source,12,0,0,0,180,90,180)
+else
+	attachElementToBone(elementWeaponRaplace[source],source,12,0,0,0,180,90,180)
+end
+elseif previousWeaponID == weapID1 then
+detachElementFromBone(elementWeaponRaplace[source])
+destroyElement(elementWeaponRaplace[source])
+elementWeaponRaplace[source] = false
+end
+end
+addEventHandler ( "onPlayerWeaponSwitch", getRootElement(), weaponReplace )
+
 function removeBackWeaponOnDrop()
   if elementWeaponBack[source] then
     detachElementFromBone(elementWeaponBack[source])
     destroyElement(elementWeaponBack[source])
     elementWeaponBack[source] = false
   end
+  if elementWeaponRaplace[source] then
+	detachElementFromBone(elementWeaponRaplace[source])
+	destroyElement(elementWeaponRaplace[source])
+	elementWeaponRaplace[source] = false
+end
 end
 addEvent("removeBackWeaponOnDrop", true)
 addEventHandler("removeBackWeaponOnDrop", getRootElement(), removeBackWeaponOnDrop)
@@ -562,6 +629,11 @@ function removeAttachedOnDeath()
     destroyElement(elementWeaponBack[source])
     elementWeaponBack[source] = false
   end
+  if elementWeaponRaplace[source] then
+	detachElementFromBone(elementWeaponRaplace[source])
+	destroyElement(elementWeaponRaplace[source])
+	elementWeaponRaplace[source] = false
+end
 end
 addEvent("kilLDayZPlayer", true)
 addEventHandler("kilLDayZPlayer", getRootElement(), removeAttachedOnDeath)
