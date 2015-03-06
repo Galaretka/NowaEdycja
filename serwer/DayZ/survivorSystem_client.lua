@@ -186,6 +186,15 @@ engineImportTXD(snipertxd, 2979)
 sniperdff = engineLoadDFF("items/dsr.dff", 2979)
 engineReplaceModel(sniperdff, 2979)
 
+snipertxd = engineLoadTXD("items/m4.txd")
+engineImportTXD(snipertxd, 356)
+sniperdff = engineLoadDFF("items/m4.dff", 356)
+engineReplaceModel(sniperdff, 356)
+
+snipertxd = engineLoadTXD("items/ak47.txd")
+engineImportTXD(snipertxd, 355)
+sniperdff = engineLoadDFF("items/ak47.dff", 355)
+engineReplaceModel(sniperdff, 355)
 
 
 snipertxd = engineLoadTXD("items/backpack_patrol.txd")

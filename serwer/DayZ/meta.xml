@@ -238,6 +238,10 @@
     <file src="items/dsr.dff" />
     <file src="items/ak-74u.txd" />
     <file src="items/ak-74u.dff" />
+    <file src="items/ak47.txd" />
+    <file src="items/ak47.dff" />
+    <file src="items/m4.txd" />
+    <file src="items/m4.dff" />
 	<file src="items/sandbags.dff" />
 	<file src="items/sandbags.col" />
 	<file src="items/sandbags.txd" />
