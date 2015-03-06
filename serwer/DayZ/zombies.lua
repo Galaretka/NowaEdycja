@@ -794,7 +794,7 @@ function ( dataName )
                             --else
                             --outputChatBox ( "Não tem o capacete, entao leva Mordida", player, 0, 238, 0, true )
                             zmoan(source)
-                            randdamagee = math.random(2000,5000) -- DEFAULT: math.random(2000,5000)
+                            randdamagee = math.random(800,3000) -- DEFAULT: math.random(2000,5000)
                             setElementData(ptarget, "blood", getElementData(ptarget, "blood") - randdamagee)
                             setElementData(ptarget, "bleeding", 50)
 
