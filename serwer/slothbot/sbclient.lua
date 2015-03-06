@@ -37,7 +37,7 @@ function chase_aim(ped)
         if (getElementData ( ped, "status" ) ==  "chasing" ) and (isElement(player)) and (getElementData (ped, "slothbot") == true) then
             if getElementType(player) == "player" then
                 local pedhp = getElementHealth ( ped )
-                if pedhp > 0 and (isPedDead(player) == false) then
+                if pedhp > 0 and (isPlayerDead(player) == false) then
                     local x,y,z = getElementPosition( player )
                     local ex,ey,ez = getElementPosition( ped )
                     local isclear = isLineOfSightClear (ex, ey, ez+.6, x, y, z+.6, true, false, false, true, false, false, false) 
@@ -629,7 +629,7 @@ function follow_aim(ped)
             if (isElement(enemy)) then
                 if getElementType(enemy) == "player" then -- if the enemy is a player
                     local pedhp = getElementHealth ( ped )
-                    if pedhp > 0 and (isPedDead(enemy) == false) then -- if both parties are alive
+                    if pedhp > 0 and (isPlayerDead(enemy) == false) then -- if both parties are alive
                         local x,y,z = getElementPosition( enemy )
                         local ex,ey,ez = getElementPosition( ped )
                         local isclear = isLineOfSightClear (ex, ey, ez+.6, x, y, z+.6, true, false, false, true, false, false, false) 
@@ -691,7 +691,7 @@ function follow_enemy_check (ped)
                     local enemies = getElementsByType ( "player" )
                     local foundone = 0
                     for theKey,thePlayer in ipairs(enemies) do
-                        if (isPedDead(thePlayer) == false) then
+                        if (isPlayerDead(thePlayer) == false) then
                             local x,y,z = getElementPosition( thePlayer )
                             local isclear = isLineOfSightClear (Px, Py, Pz+.6, x, y, z +.6, true, false, false, true, false, false, false ) 
                             local distance = (getDistanceBetweenPoints3D (Px, Py, Pz, x, y, z))
@@ -900,7 +900,7 @@ function noiseradiusalert (theElement)
                 if (getElementType ( theElement ) == "player") and (getElementHealth(thePed)>0) and (getElementData (thePed, "slothbot") == true) then
                     local Ax,Ay,Az = getElementPosition( thePed )
                     local distance = (getDistanceBetweenPoints3D (Px, Py, Pz, Ax, Ay, Az))
-                    if (distance < 20) and ( isPedDead (theElement) == false ) then
+                    if (distance < 20) and ( isPlayerDead (theElement) == false ) then
                         if getPlayerTeam(theElement) == false then
                             triggerServerEvent ( "onBotFindEnemy", thePed, theElement)
                         elseif (getElementData ( thePed, "BotTeam" ) ~= getPlayerTeam (theElement)) then
@@ -982,7 +982,7 @@ function wait_enemy_check (ped)
                 local enemies = getElementsByType ( "player" )
                 local foundone = 0
                 for theKey,thePlayer in ipairs(enemies) do
-                    if (isPedDead(thePlayer) == false) then
+                    if (isPlayerDead(thePlayer) == false) then
                         local x,y,z = getElementPosition( thePlayer )
                         local isclear = isLineOfSightClear (Px, Py, Pz+.6, x, y, z +.6, true, false, false, true, false, false, false ) 
                         local distance = (getDistanceBetweenPoints3D (Px, Py, Pz, x, y, z))
@@ -1055,7 +1055,7 @@ function guard_enemy_check (ped)
                     local enemies = getElementsByType ( "player" )
                     local foundone = 0
                     for theKey,thePlayer in ipairs(enemies) do
-                        if (isPedDead(thePlayer) == false) then
+                        if (isPlayerDead(thePlayer) == false) then
                             local x,y,z = getElementPosition( thePlayer )
                             local isclear = isLineOfSightClear (Px, Py, Pz+.6, x, y, z +.6, true, false, false, true, false, false, false ) 
                             local distance = (getDistanceBetweenPoints3D (Px, Py, Pz, x, y, z))

@@ -2510,15 +2510,15 @@ vehicleFuelTable = {
   {468, 30},
   {500, 60},
   {603, 60},
-  {490, 80},
+  {596, 80},
   {510, 0},
   {433, 140},
-  {437, 140},
+  {431, 140},
   {509, 0},
   {487, 60},
   {497, 60},
   {531, 80},
-  {453, 60}
+  {453, 60},
 }
 function getVehicleMaxFuel(loot)
   local modelID = getElementModel(getElementData(loot, "parent"))

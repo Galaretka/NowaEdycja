@@ -302,7 +302,7 @@ end
 function refreshLoot(loot,gearName)
 if loot == false then
     guiGridListClear(gridlistItems["loot"])
-    guiSetText(headline["loot"],"Vazio")
+    guiSetText(headline["loot"],"PRZECIWNIK")
     return
 end
 if ( gridlistItems["loot_colum"] ) then
@@ -541,27 +541,24 @@ end
 
 --OTHER ITEM STUFF
 vehicleFuelTable = {
-{471,30},
-{531,80},
-{483,80},
-{593,60},
-{500,60},
-{490,80},
-{510,0},
-{418,60},
-{603,60},
-
--- VVVVVVVVVVVVVVVVVVVVVVVVVVVVV
--- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-{422,80},
-{470,100},
-{468,30},
-{433,140},
-{437,140},
-{509,0},
-{487,60},
-{497,60},
-{453,60},
+  {422, 80},
+  {470, 100},
+  {593, 60},
+  {418, 60},
+  {483, 80},
+  {471, 30},
+  {468, 30},
+  {500, 60},
+  {603, 60},
+  {596, 80},
+  {510, 0},
+  {433, 140},
+  {431, 140},
+  {509, 0},
+  {487, 60},
+  {497, 60},
+  {531, 80},
+  {453, 60},
 }
 
 function getVehicleMaxFuel(loot)

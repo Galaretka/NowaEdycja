@@ -329,7 +329,4 @@
 	<script src="scripts/lina/main_server.lua" type="server"/>
 	<script src="scripts/lina/main_client.lua" type="client"/>
 	<script src="scripts/granatnik/grenadethrower.lua" type="client"/>
-	<script src="scripts/c/c.lua" type="client"/>
-	<script src="scripts/c/s2.lua" type="client"/>
-	<script src="scripts/c/s.lua" type="server"/>
 </meta>
