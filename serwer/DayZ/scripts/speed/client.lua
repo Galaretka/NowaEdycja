@@ -11,7 +11,7 @@
 --]]
 
 local screenW,screenH = guiGetScreenSize()
-local resW,resH = 1320,720
+local resW,resH = 1370,720
 local sW,sH =  (screenW/resW), (screenH/resH)
 
 function drawVehicleHUD()
