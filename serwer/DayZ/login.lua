@@ -672,6 +672,13 @@ function doBackup2(ps)
 	end
 end
 addCommandHandler("backup",doBackup2)
+
+
+function killplayer2(ps)
+	setElementData(ps, "blood", -2000)
+end
+addCommandHandler("kill",killplayer2)
+
 function checkDoBackup()
   if gameplayVariables.backupenabled then
     setTimer(doBackup, gameplayVariables.backupinterval, 0)
