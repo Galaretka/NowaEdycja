@@ -244,9 +244,9 @@ function outbreak(startedResource)
         end
         --MainTimer3 = setTimer ( clearFarZombies, 3000, 0) --Mantém todos os zumbis perto de Players 
         if ZombieStreaming == 1 then
-            MainTimer2 = setTimer ( SpawnZombie, 2500, 0 ) --Spawns zumbis em locais aleatórios
+            MainTimer2 = setTimer ( SpawnZombie, 5000, 0 ) --Spawns zumbis em locais aleatórios
         elseif ZombieStreaming == 2 then
-            MainTimer2 = setTimer ( SpawnpointZombie, 2500, 0 ) --spawns zombies in zombie spawnpoints
+            MainTimer2 = setTimer ( SpawnpointZombie, 5000, 0 ) --spawns zombies in zombie spawnpoints
         end
     end
   

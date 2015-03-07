@@ -53,7 +53,7 @@ cancelEvent()
 			for i, player in ipairs(getPlayersByGang(getElementData(source,"gang"))) do
 				if getElementData(player,"gang") == "None" then break end
 				if getElementData(player,"gang") == getElementData(source,"gang") then
-					outputChatBox("[GROUP]"..getPlayerName(source)..": "..message,player,9,249,17,true)
+					outputChatBox("[GRUPA]"..getPlayerName(source)..": "..message,player,9,249,17,true)
 				end	
 			end
 	end	
@@ -102,7 +102,7 @@ invited,gangName,inviter = isPlayerGangInvited(source)
 if invited then
 	if #getGangMembers(getElementData(inviter,"gang"))+1 > getGangSlots(getElementData(inviter,"gang")) then outputChatBox(getPlayerName(source)..", #22ff22This group is full!",source,22,255,22,true) return end
 	addGangMember(gangName,getAccountName(getPlayerAccount(source)),"Leader")
-	outputChatBox(getPlayerName(source).." #22ff22 joined the group "..gangName.."!",getRootElement(),22,255,22,true)
+	outputChatBox(getPlayerName(source).." #22ff22 dołączył do grupy "..gangName.."!",getRootElement(),22,255,22,true)
 end
 end
 addEvent("acceptGroupInvite",true)
@@ -114,10 +114,10 @@ function destroyGroup ()
 		for i,gangmember in pairs(getGangMembers(getElementData(source,"gang"))) do
 			removeGangMember(getAccountGang(getAccount(gangmember["member_account"])),gangmember["member_account"])
 		end
-		outputChatBox(getPlayerName(source).." #22ff22 closed his group: "..getElementData(source,"gang")"!",getRootElement(),22,255,22,true)
+		outputChatBox(getPlayerName(source).." #22ff22 zamkną grupę: "..getElementData(source,"gang")"!",getRootElement(),22,255,22,true)
 		removeGang(getAccountGang(getAccountName(getPlayerAccount(source))))
 	else
-		outputChatBox(getPlayerName(source)..", #22ff22you can't close this group!",source,22,255,22,true)
+		outputChatBox(getPlayerName(source)..", #22ff22nie możesz zamknąć tej grupy!",source,22,255,22,true)
 	end
 end
 addEvent("destroyGroup",true)
@@ -127,7 +127,7 @@ function leaveGroup ()
 	if getElementData(source,"gang") == "None" then return end
 		local groupleader = getGangLeader(getElementData(source,"gang"))
 		if getAccountName(getPlayerAccount(source)) == groupleader then outputChatBox(getPlayerName(source)..",#22ff22 you can't leave your own group!",source,22,255,22,true) return end
-		outputChatBox(getPlayerName(source).." #22ff22 left the group: "..getElementData(source,"gang").."!" ,getRootElement(),22,255,22,true)
+		outputChatBox(getPlayerName(source).." #22ff22 opuścił grupę: "..getElementData(source,"gang").."!" ,getRootElement(),22,255,22,true)
 		removeGangMember(getAccountGang(getAccountName(getPlayerAccount(source))),getAccountName(getPlayerAccount(source)))
 end
 addEvent("leaveGroup",true)
@@ -139,10 +139,10 @@ function kickGroupMember (playerName)
 	--if getPlayerName(source) == playerName then return end
 		local groupleader = getGangLeader(getElementData(source,"gang"))
 		if getAccountName(getPlayerAccount(source)) == groupleader or isGangSubLeader(getElementData(source,"gang"),getAccountName(getPlayerAccount(source))) then
-			outputChatBox(playerName.." #22ff22 was kicked out of "..getElementData(source,"gang").."!",getRootElement(),22,255,22,true)
+			outputChatBox(playerName.." #22ff22 został wywalony z grupy "..getElementData(source,"gang").."!",getRootElement(),22,255,22,true)
 			removeGangMember(getElementData(source,"gang"),playerName,getPlayerName(source))
 		else
-			outputChatBox(getPlayerName(source)..",#22ff22 you cannot kick members!",source,22,255,22,true)
+			outputChatBox(getPlayerName(source)..",#22ff22 niemożesz go wywalić!",source,22,255,22,true)
 		end
 end
 addEvent("kickGroupMember",true)
@@ -155,10 +155,10 @@ function addGroupSubLeader (playerName)
 		if getAccountName(getPlayerAccount(source)) == groupleader then
 			if not getAccountPlayer(getAccount(playerName)) then outputChatBox(playerName.." #22ff22 needs to be online!",source,22,255,22,true) return end
 			triggerEvent ( "gangSystem:addSubLeader", source, getPlayerName(getAccountPlayer(getAccount(playerName))) )
-			outputChatBox(playerName.." #22ff22 is now a subleader!",source,22,255,22,true)
-			outputChatBox("You are now a subleader!",getAccountPlayer(getAccount(playerName)),22,255,22,true)
+			outputChatBox(playerName.." #22ff22 jest teraz sub-liderem!",source,22,255,22,true)
+			outputChatBox("Jesteś teraz sub-liderem!",getAccountPlayer(getAccount(playerName)),22,255,22,true)
 		else
-			outputChatBox(getPlayerName(source)..",#22ff22 you are not the groupleader!",source,22,255,22,true)
+			outputChatBox(getPlayerName(source)..",#22ff22 nie jesteś liderem!",source,22,255,22,true)
 		end
 end
 addEvent("addGroupSubLeader",true)
@@ -169,15 +169,15 @@ function removeGroupSubLeader (playerName)
 	if string.find(playerName,"(Leader)") then return end
 		local groupleader = getGangLeader(getElementData(source,"gang"))
 		if getAccountName(getPlayerAccount(source)) == groupleader then
-			if not getAccountPlayer(getAccount(playerName)) then outputChatBox(playerName..", #22ff22 needs to be online!",source,22,255,22,true) return end
+			if not getAccountPlayer(getAccount(playerName)) then outputChatBox(playerName..", #22ff22 musi być On-Line!",source,22,255,22,true) return end
 			if isGangSubLeader(getElementData(source,"team"),playerName) then
 				triggerEvent ( "gangSystem:removeSubLeader", source, getPlayerName(getAccountPlayer(getAccount(playerName))) )
-				outputChatBox(playerName..", #22ff22 is not a subleader anymore!",source,22,255,22,true)
+				outputChatBox(playerName..", #22ff22 nie jest już sub-liderem!",source,22,255,22,true)
 			else	
-				outputChatBox(playerName..", #22ff22 is not a subleader!",source,22,255,22,true)
+				outputChatBox(playerName..", #22ff22 nie jest sub-liderem!",source,22,255,22,true)
 			end	
 		else
-			outputChatBox(getPlayerName(source).." #22ff22, you are not the groupleader!",source,22,255,22,true)
+			outputChatBox(getPlayerName(source).." #22ff22, nie jesteś już sub-liderem!",source,22,255,22,true)
 		end
 end
 addEvent("removeGroupSubLeader",true)
@@ -192,16 +192,16 @@ function invitePlayerToGroup (playerName)
 				if getElementData(getPlayerFromName(playerName),"gang") == "None" then
 					triggerEvent ( "gangSystem:invitePlayer", source, playerName )
 				else
-					outputChatBox(playerName.." #22ff22 is in a group already!",source,22,255,22,true)
+					outputChatBox(playerName.." #22ff22 jest już w grupie!",source,22,255,22,true)
 				end	
 			else
-				outputChatBox(playerName.."#22ff22 is not online!",source,22,255,22,true)
+				outputChatBox(playerName.."#22ff22 nie jest On-Line!",source,22,255,22,true)
 			end
 			else
-				outputChatBox(getPlayerName(source)..", #22ff22 your group is full!",source,22,255,22,true)
+				outputChatBox(getPlayerName(source)..", #22ff22 twoja grupa jest pełna!",source,22,255,22,true)
 			end
 		else
-			outputChatBox(getPlayerName(source)..", #22ff22 you need to be the leader of this group!",source,22,255,22,true)
+			outputChatBox(getPlayerName(source)..", #22ff22 trzeba być liderem tej grupy!",source,22,255,22,true)
 		end
 end
 addEvent("invitePlayerToGroup",true)
@@ -212,7 +212,7 @@ if cmd == "creategang" then
 	cancelEvent()
 elseif cmd == "accept" then
 	cancelEvent()
-	outputChatBox("Press F1 to accept the group invitation!",source,255,255,255,true)
+	outputChatBox("Naciśnij F1 i akceptuj zaproszenie!",source,255,255,255,true)
 elseif cmd == "gangs" then
 	cancelEvent()
 end
@@ -235,15 +235,15 @@ function createGroupForPlayer (playersource,command,...)
 			if not isGangExisting (teamName) then
 			addGang (teamName,getAccountName(getPlayerAccount(playersource)))
 			setAccountData(getPlayerAccount(playersource),"gangslots",12)
-			outputChatBox ("#FFFFFFYou successfully created your group with the name of: "..teamName..".",playersource,27, 89, 224,true)	
+			outputChatBox ("#FFFFFFTwoja grupa została założona, nazwa: "..teamName..".",playersource,27, 89, 224,true)	
 			else
-				outputChatBox ("#FFFFFFThere is a group with this name already!",playersource,27, 89, 224,true)	
+				outputChatBox ("#FFFFFFIstnieje grupa o takiej nazwie",playersource,27, 89, 224,true)	
 			end
 		else
-			outputChatBox ("#FFFFFFSyntax is /creategroup <name>!",playersource,27, 89, 224,true)	
+			outputChatBox ("#FFFFFFUżyj /creategroup <name>!",playersource,27, 89, 224,true)	
 		end
 	else
-		outputChatBox ("#FFFFFFYou are in a group already!",playersource,27, 89, 224,true)		
+		outputChatBox ("#FFFFFFJesteś już w grupie!",playersource,27, 89, 224,true)		
 	end
 end
 addCommandHandler("creategroup",createGroupForPlayer)
@@ -253,10 +253,10 @@ function setGroupVIP (playersource,command,targetString,moreSlots)
 		if getAccount(targetString) then
 			local oldData = getAccountData(getAccount(targetString),"gangslots") or 0
 			setAccountData(getAccount(targetString),"gangslots",oldData+moreSlots)
-			outputChatBox(targetString.."'s group has now VIP status - new amount of slots: "..getAccountData(getAccount(targetString),"gangslots").." Slots.",getRootElement(),22,255,22,true)
+			outputChatBox(targetString.." jest obecnie grupą VIP. Aktualna liczba slotów: "..getAccountData(getAccount(targetString),"gangslots")..".",getRootElement(),22,255,22,true)
 		end
 	else
-		outputChatBox ("#FFFFFFNie jesteś adminem!!",playersource,27, 89, 224,true)		
+		outputChatBox ("#FFFFFFNie jesteś adminem!",playersource,27, 89, 224,true)		
 	end
 end
 addCommandHandler("givevip",setGroupVIP)

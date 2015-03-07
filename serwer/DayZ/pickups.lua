@@ -476,7 +476,7 @@ local itemTable = {
     }
   },
   military = {
-   {
+--[[   {
       "SCAR-H",
       2962,
       1,
@@ -540,7 +540,7 @@ local itemTable = {
       2358,
       2,
       0
-    },
+    },]]--
     {
       "Box of Matches",
       328,
@@ -555,13 +555,13 @@ local itemTable = {
       90,
       5
     },
-    {
+  --[[  {
       "Makarov SD",
       347,
       1,
       90,
       4
-    },
+    },]]--
     {
       "Winchester 1866",
       349,
@@ -1586,7 +1586,7 @@ local itemTable = {
       2,
       0
     },
-	{
+--[[	{
 	 "SCAR-H",
       2962,
       1,
@@ -1614,7 +1614,7 @@ local itemTable = {
       90,
       0.4
     },
-    {
+   {
       "DSR",
       2979,
       1,
@@ -1650,7 +1650,7 @@ local itemTable = {
       2358,
       2,
       0
-    },
+    },]]--
     {
       "Lee Enfield Mag",
       2358,
