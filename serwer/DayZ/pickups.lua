@@ -909,13 +909,6 @@ local itemTable = {
 	{"Camp Backpack",1239,1,0,2}, 
 	--{"Ghillie Backpack",1239,1,0,2}, 
 	{"OSPack Backpack",1239,1,0,2}, 
-	{
-      "British Assault Pack",
-      2399,
-      1,
-      0,
-      3
-    },
     {
       "Radio Device",
       330,
