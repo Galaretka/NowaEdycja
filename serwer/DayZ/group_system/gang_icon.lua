@@ -7,14 +7,14 @@ function cheackResourceRequirements ( res )
 	if not string.find(getServerName(),"| DayZ-Polska.pl |",0,true) then
 		reason = "Servername incorrect! Prefix #1 is missing (| DayZ-Polska.pl |)"
 	end
-	if getMaxPlayers() > 60 then
-		reason = "Too many slots (maximum: 60), stopping resource..."
+	if getMaxPlayers() > 80 then
+		reason = "Too many slots (maximum: 80), stopping resource..."
 	end
-	if getResourceName(getThisResource()) == "DayZ" then
+	--[[if getResourceName(getThisResource()) == "DayZ" then
 		--nothing
 	else
 		reason = "Name of resource does not match (DayZ)!"
-	end
+	end]]--
 	if reason ~= false then
 		cancelEvent()
 		outputServerLog("Resource " .. getResourceName(res) .. " wasn't started: ("..reason..").")

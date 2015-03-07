@@ -48,7 +48,6 @@
     <script src="group_system/groupsystem.lua" type="server" />
     <script src="group_system/groupsystem_client.lua" type="client" />
     <export function="addGang" type="server" />
-    <!-- Addon: Exported Functions -->
     <export function="addAddonInfo" type="server" />
     <settings>
         <setting name="*column_name" value="Group" />
