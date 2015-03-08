@@ -1,54 +1,32 @@
-local itens = {
-  { "M4" },
-  { "CZ 550" },
-  { "AK-47" },
-  { "PDW" },
-  { "Grenade" },
-  { "PDW Mag" },
-  { "AK Mag" },
-  { "M4 Mag" },
-  { "CZ 550 Mag" },
-
-}
-
-function tamanho( tabela )
-  local count = 0
-  for a in pairs( tabela ) do
-    count = count + 1
-  end
-  return count
+function tentadayz(thePlayer)
+accountname = getAccountName(getPlayerAccount(thePlayer))
+if isObjectInACLGroup("user." .. accountname, aclGetGroup("Admin")) then
+do
+local x, y, z = getElementPosition(thePlayer)
+tent = createObject(2359, x + 5, y, z - 1)
+setObjectScale(tent, 0.5)
+tentCol = createColSphere(x + 5, y, z, 4)
+local myBlip = createBlip( x, y, z, 47, 0, 0, 0, 255)
+attachElements(tentCol, tent, 0, 0, 0)
+setElementData(tentCol, "parent", tent)
+setElementData(tent, "parent", tentCol)
+setElementData(tentCol, "tent", true)
+setElementData(tentCol, "vehicle", true)
+setElementData(tentCol, "MAX_Slots", 0)
+setElementData(tentCol, "AKS-74 Kobra", 5)
+setElementData(tentCol, "30Rnd. AKS", 150)
+setElementData(tentCol, "DMR", 2)
+setElementData(tentCol, "DMR Mag", 30)
+setElementData(tentCol, "Medic Kit", 5)
+setElementData(tentCol, "Bandage", 5)
+setElementData(tentCol, "Ghillie Suit III", 1)
+setElementData(tentCol, "Ghillie Suit II", 1)
+setElementData(tentCol, "Ghillie Suit", 1)
+setElementData(tentCol, "OSPack Backpack", 2)
+setElementData(tentCol, "Toolbox", 2)
+outputChatBox ( "Wykonany zostal zrzut! Litera Z na mapie", getRootElement(), 255, 255, 255, true )
 end
-
-function AmmoAndWeaponBox( source, comando, quantmax )
-    if isObjectInACLGroup ( "user."..getAccountName(getPlayerAccount(source)), aclGetGroup (  "Admin" ) ) and quantmax ~= nil then
- 
-        local x, y, z = getElementPosition(source)
-        local xr, yr, zr = getElementRotation(source)
-        px, py, pz = getElementPosition(source)
-        prot = getPedRotation(source)
-        local offsetRot = math.rad(prot + 90)
-        local vx = px + 5 * math.cos(offsetRot)
-        local vy = py + 5 * math.sin(offsetRot)
-        local vz = pz + 2
-        local vrot = prot + 180
-		createBlip ( px, py, pz, 5)
-        tent = createObject(2359, vx, vy, z - 0.6, 0, 0, vrot)
-        setObjectScale(tent, 1.3)
-        tentCol = createColSphere(x, y, z, 4)
-        attachElements(tentCol, tent, 0, 0, 0)
-        setElementData(tentCol, "parent", tent)
-        setElementData(tent, "parent", tentCol)
-        setElementData(tentCol, "tent", true)
-        setElementData(tentCol, "vehicle", true)
-        setElementData(tentCol, "MAX_Slots", (tamanho(itens)*quantmax))
-		
-       outputChatBox ( "#FF0000Zostal wykonany zrzut skrzyni! Ikona samolotu na mapie ", getRootElement(), 255, 255, 255, true )
-       local i = 1
-      
-       for mtaz in pairs( itens ) do    
-         setElementData(tentCol, itens[i][1], tonumber(quantmax))
-         i = i + 1
-       end
-   end
+else
 end
-addCommandHandler("weaponbox", AmmoAndWeaponBox)
+end
+addCommandHandler("zrzut", tentadayz)
