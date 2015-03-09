@@ -3,8 +3,8 @@ accountname = getAccountName(getPlayerAccount(thePlayer))
 if isObjectInACLGroup("user." .. accountname, aclGetGroup("Admin")) then
 do
 local x, y, z = getElementPosition(thePlayer)
-tent = createObject(2359, x + 5, y, z - 1)
-setObjectScale(tent, 0.5)
+tent = createObject(2358, x + 5, y, z)
+setObjectScale(tent, 2)
 tentCol = createColSphere(x + 5, y, z, 4)
 local myBlip = createBlip( x, y, z, 47, 0, 0, 0, 255)
 attachElements(tentCol, tent, 0, 0, 0)
@@ -14,9 +14,9 @@ setElementData(tentCol, "tent", true)
 setElementData(tentCol, "vehicle", true)
 setElementData(tentCol, "MAX_Slots", 0)
 setElementData(tentCol, "AKS-74 Kobra", 5)
-setElementData(tentCol, "30Rnd. AKS", 150)
+setElementData(tentCol, "30Rnd. AKS", 10)
 setElementData(tentCol, "DMR", 2)
-setElementData(tentCol, "DMR Mag", 30)
+setElementData(tentCol, "DMR Mag", 10)
 setElementData(tentCol, "Medic Kit", 5)
 setElementData(tentCol, "Bandage", 5)
 setElementData(tentCol, "Ghillie Suit III", 1)
@@ -25,6 +25,10 @@ setElementData(tentCol, "Ghillie Suit", 1)
 setElementData(tentCol, "OSPack Backpack", 2)
 setElementData(tentCol, "Toolbox", 2)
 outputChatBox ( "Wykonany zostal zrzut! Litera Z na mapie", getRootElement(), 255, 255, 255, true )
+setTimer ( function(), 600000, 1, 
+destroyElement(tentCol) 
+destroyElement(tent) 
+)
 end
 else
 end
