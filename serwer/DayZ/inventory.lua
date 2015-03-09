@@ -15,11 +15,6 @@ inventoryItems = {
 {"M4A1 CCO",3},
 {"DMR",3},
 {"SVD Camo",3},
-{"SCAR-H",3},
-{"AK-74U",3},
-{"M16A2",3},
-{"SIG50",3},
-{"DSR",3},
 {"Winchester 1866",3},
 {"SPAZ-12 Combat Shotgun",3},
 {"Sawn-Off Shotgun",3},
@@ -59,11 +54,6 @@ inventoryItems = {
 {"DMR Mag", 0.1},
 {"SVD Mag", 0.1},
 {"Lee Enfield Mag",0.1},
-{"30Rnd. SCAR",0.035},
-{"30Rnd. 74U",0.035},
-{"30Rnd. M16",0.035},
-{"SIG50 Mag", 0.1},
-{"DSR Mag", 0.1},
 },
 ["Food"] = {
 {"Water Bottle",1},
@@ -652,16 +642,6 @@ function onPlayerMoveItemOutOFInventory(itemName, loot)
     itemPlus = 15
   elseif itemName == ".45 ACP" then
     itemPlus = 7
-  elseif itemName == "30Rnd. SCAR" then
-    itemPlus = 30
-  elseif itemName == "30Rnd. 74U" then
-    itemPlus = 30
-  elseif itemName == "30Rnd. M16" then
-    itemPlus = 30
-  elseif itemName == "SIG50 Mag" then
-    itemPlus = 9
-  elseif itemName == "DSR Mag" then
-    itemPlus = 7
   elseif itemName == "PDW Mag" then
     itemPlus = 30
   elseif itemName == "MP5A5 Mag" then
@@ -684,7 +664,7 @@ function onPlayerMoveItemOutOFInventory(itemName, loot)
     itemPlus = 10
   elseif itemName == "M136 Rocket" then
     itemPlus = 0
-  elseif itemName == "M4A1 CCO" or itemName == "AKS-74 Kobra" or itemName == "SVD Camo" or itemName == "SCAR-H" or itemName == "AK-74U" or itemName == "M16A2" or itemName == "SIG50" or itemName == "DSR" or itemName == "DMR" or itemName == "Winchester 1866" or itemName == "SPAZ-12 Combat Shotgun" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "M136 Rocket Launcher" or itemName == "Lee Enfield" then
+  elseif itemName == "M4A1 CCO" or itemName == "AKS-74 Kobra" or itemName == "SVD Camo" or itemName == "DMR" or itemName == "Winchester 1866" or itemName == "SPAZ-12 Combat Shotgun" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "M136 Rocket Launcher" or itemName == "Lee Enfield" then
     triggerServerEvent("removeBackWeaponOnDrop", getLocalPlayer())
   end
 
@@ -1172,12 +1152,7 @@ end
 
 
 weaponAmmoTable = {
-["30Rnd. STANAG"] = {{"M4A1", 31}},
-["30Rnd. SCAR"] = {{"SCAR-H", 31}},
-["30Rnd. 74U"] = {{"AK-74U", 31}},
-["30Rnd. M16"] = {{"M16A2", 31}},
-["SIG50 Mag"] = {{"SIG50", 34}},
-["DSR Mag"] = {{"DSR", 34}},
+
 
 ["G17 Mag"] = {{"G17", 22}},
 ["Makarov SD Mag"] = {{"Makarov SD", 23}},
@@ -1200,31 +1175,6 @@ function getWeaponAmmoType2(weaponName)
   for i, weaponData in ipairs(weaponAmmoTable.others) do
     if weaponName == weaponData[2] then
       return weaponData[1], weaponData[2]
-    end
-  end
-  for i, weaponData in ipairs(weaponAmmoTable["30Rnd. SCAR"]) do
-    if weaponName == weaponData[2] then
-      return "30Rnd. SCAR", weaponData[2]
-    end
-  end
-  for i, weaponData in ipairs(weaponAmmoTable["30Rnd. 74U"]) do
-    if weaponName == weaponData[2] then
-      return "30Rnd. 74U", weaponData[2]
-    end
-  end
-  for i, weaponData in ipairs(weaponAmmoTable["30Rnd. M16"]) do
-    if weaponName == weaponData[2] then
-      return "30Rnd. M16", weaponData[2]
-    end
-  end
-  for i, weaponData in ipairs(weaponAmmoTable["SIG50 Mag"]) do
-    if weaponName == weaponData[2] then
-      return "SIG50 Mag", weaponData[2]
-    end
-  end
-  for i, weaponData in ipairs(weaponAmmoTable["DSR Mag"]) do
-    if weaponName == weaponData[2] then
-      return "DSR Mag", weaponData[2]
     end
   end
   for i, weaponData in ipairs(weaponAmmoTable["G17 Mag"]) do
@@ -1303,33 +1253,13 @@ end
 function weaponSwitch(weapon)
     local current_1 = getElementData(getLocalPlayer(),"currentweapon_1")
     if source == getLocalPlayer() then
-        if current_1 == "M4A1" then
+        if current_1 == "M4A1 CCO" then
             if getElementData(getLocalPlayer(),"30Rnd. STANAG") > 0 then
                 setElementData(getLocalPlayer(),"30Rnd. STANAG",getElementData(getLocalPlayer(),"30Rnd. STANAG")-1)
             end
-        elseif current_1 == "SCAR-H" then
-            if getElementData(getLocalPlayer(),"30Rnd. SCAR") > 0 then
-                setElementData(getLocalPlayer(),"30Rnd. SCAR",getElementData(getLocalPlayer(),"30Rnd. SCAR")-1)
-            end
-        elseif current_1 == "AK-74U" then
-            if getElementData(getLocalPlayer(),"30Rnd. 74U") > 0 then
-                setElementData(getLocalPlayer(),"30Rnd. 74U",getElementData(getLocalPlayer(),"30Rnd. 74U")-1)
-            end
-        elseif current_1 == "M16A2" then
-            if getElementData(getLocalPlayer(),"30Rnd. M16") > 0 then
-                setElementData(getLocalPlayer(),"30Rnd. M16",getElementData(getLocalPlayer(),"30Rnd. M16")-1)
-            end
-        elseif current_1 == "SIG50" then
-            if getElementData(getLocalPlayer(),"SIG50 Mag") > 0 then
-                setElementData(getLocalPlayer(),"SIG50 Mag",getElementData(getLocalPlayer(),"SIG50 Mag")-1)
-            end
-		elseif current_1 == "SVD Camo" then
+      		elseif current_1 == "SVD Camo" then
             if getElementData(getLocalPlayer(),"SVD Mag") > 0 then
                 setElementData(getLocalPlayer(),"SVD Mag",getElementData(getLocalPlayer(),"SVD Mag")-1)
-            end
-        elseif current_1 == "DSR" then
-            if getElementData(getLocalPlayer(),"DSR Mag") > 0 then
-                setElementData(getLocalPlayer(),"DSR Mag",getElementData(getLocalPlayer(),"DSR Mag")-1)
             end
         else
         local ammoName, _ = getWeaponAmmoType2(weapon)

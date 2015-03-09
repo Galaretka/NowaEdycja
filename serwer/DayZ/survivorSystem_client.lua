@@ -161,30 +161,6 @@ engineImportTXD(snipertxd, 2016)
 sniperdff = engineLoadDFF("items/svdcamo.dff", 2016)
 engineReplaceModel(sniperdff, 2016)
 
-snipertxd = engineLoadTXD("items/scar-h.txd")
-engineImportTXD(snipertxd, 2962)
-sniperdff = engineLoadDFF("items/scar-h.dff", 2962)
-engineReplaceModel(sniperdff, 2962)
-
-snipertxd = engineLoadTXD("items/ak-74u.txd")
-engineImportTXD(snipertxd, 2963)
-sniperdff = engineLoadDFF("items/ak-74u.dff", 2963)
-engineReplaceModel(sniperdff, 2963)
-
-snipertxd = engineLoadTXD("items/m16a2.txd")
-engineImportTXD(snipertxd, 2964)
-sniperdff = engineLoadDFF("items/m16a2.dff", 2964)
-engineReplaceModel(sniperdff, 2964)
-
-snipertxd = engineLoadTXD("items/sig50.txd")
-engineImportTXD(snipertxd, 2965)
-sniperdff = engineLoadDFF("items/sig50.dff", 2965)
-engineReplaceModel(sniperdff, 2965)
-
-snipertxd = engineLoadTXD("items/dsr.txd")
-engineImportTXD(snipertxd, 2979)
-sniperdff = engineLoadDFF("items/dsr.dff", 2979)
-engineReplaceModel(sniperdff, 2979)
 
 snipertxd = engineLoadTXD("items/m4.txd")
 engineImportTXD(snipertxd, 356)
@@ -784,21 +760,7 @@ weaponAmmoTable = {
   ["PDW Mag"] = {
     {"PDW", 28}
   },
-  ["30Rnd. SCAR"] = {
-    {"SCAR-H", 31}
-  },
-  ["30Rnd. 74U"] = {
-    {"AK-74U", 31}
-  },
-  ["30Rnd. M16"] = {
-    {"M16A2", 31}
-  },
-  ["SIG50 Mag"] = {
-    {"SIG50", 34}
-  },
-  ["DSR Mag"] = {
-    {"DSR", 34}
-  },
+  
   ["MP5A5 Mag"] = {
     {"MP5A5", 29}
   },
