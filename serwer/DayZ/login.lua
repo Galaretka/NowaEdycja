@@ -105,17 +105,6 @@ local playerDataTable = {
   {
     "Winchester 1866"
   },
-  {"30Rnd. SCAR"},
-  {"20Rnd. AK-74U"},
-  {"30Rnd. M16"},
-  {"SIG50 Mag"},
-  {"DSR Mag"},
-  {"PDW"},
-   {"SCAR-H"},
-  {"AK-74U"},
-  {"M16A2"},
-  {"SIG50"},
-  {"DSR"},
   {
     "Hunting Knife"
   },
@@ -429,16 +418,6 @@ local vehicleDataTable = {
     "Winchester 1866"
   },
   {"PDW"},
-  {"30Rnd. SCAR"},
-  {"20Rnd. AK-74U"},
-  {"30Rnd. M16"},
-  {"SIG50 Mag"},
-  {"DSR Mag"},
-  {"SCAR-H"},
-  {"AK-74U"},
-  {"M16A2"},
-  {"SIG50"},
-  {"DSR"},
   {
     "Hunting Knife"
   },

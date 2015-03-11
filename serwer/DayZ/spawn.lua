@@ -71,16 +71,7 @@ local playerDataTable = {
   {
     "banditskilled"
   },
-  {"30Rnd. SCAR"},
-  {"20Rnd. AK-74U"},
-  {"30Rnd. M16"},
-  {"SIG50 Mag"},
-  {"DSR Mag"},
-   {"SCAR-H"},
-  {"AK-74U"},
-  {"M16A2"},
-  {"SIG50"},
-  {"DSR"},
+  
   {"Wood Pile"},
   {"Bandage"},
   {
@@ -252,16 +243,7 @@ local vehicleDataTable = {
   {
     "Box of Matches"
   },
-  {"30Rnd. SCAR"},
-  {"20Rnd. AK-74U"},
-  {"30Rnd. M16"},
-  {"SIG50 Mag"},
-  {"DSR Mag"},
-  {"SCAR-H"},
-  {"AK-74U"},
-  {"M16A2"},
-  {"SIG50"},
-  {"DSR"},
+  
   {"G17 Mag"},
   {"G17"},
   {"Makarov SD"},
@@ -555,16 +537,7 @@ function kilLDayZPlayer(killer, headshot, weapon)
       local plusData = getElementData(source, data[1])
       if data[1] == "G17 Mag" then
         plusData = math.floor(getElementData(source, data[1]) / 7)
-	  elseif data[1] == "30Rnd. SCAR" then
-        plusData = math.floor(getElementData(source, data[1]) / 30)
-      elseif data[1] == "30Rnd. 74U" then
-        plusData = math.floor(getElementData(source, data[1]) / 30)
-      elseif data[1] == "30Rnd. M16" then
-        plusData = math.floor(getElementData(source, data[1]) / 30)
-      elseif data[1] == "SIG50 Mag" then
-        plusData = math.floor(getElementData(source, data[1]) / 9)
-      elseif data[1] == "DSR Mag" then
-        plusData = math.floor(getElementData(source, data[1]) / 7)
+	
 
       elseif data[1] == "Makarov SD Mag" then
         plusData = math.floor(getElementData(source, data[1]) / 15)

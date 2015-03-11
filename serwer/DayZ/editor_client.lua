@@ -38,11 +38,7 @@ gameplayVariables = {}
 -- WEAPON DAMAGE
 damageTable = {
 -- {"WEAPON NAME",DAMAGE},
-{"SCAR-H",4000}, -- M4
-{"AK-74U",3500}, -- AK
-{"M16A2",3500}, -- M4
-{"SIG50",30000}, -- CZ 500
-{"DSR",50000}, -- CZ 500
+
 {"M4A1 CCO",4555},
 {"DMR",13000},
 {"Winchester 1866",4500},
