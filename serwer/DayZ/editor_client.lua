@@ -40,7 +40,9 @@ damageTable = {
 -- {"WEAPON NAME",DAMAGE},
 
 {"M4A1 CCO",4555},
-{"DMR",13000},
+{"DMR",8000},
+{"SVD Camo",13000},
+{"M107",13000},
 {"Winchester 1866",4500},
 {"MP5A5",889},
 {"SPAZ-12 Combat Shotgun",2300},

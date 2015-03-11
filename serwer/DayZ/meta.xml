@@ -228,6 +228,8 @@
     <file src="items/shotgun_ammo.dff" />
     <file src="items/svdcamo.txd" />
     <file src="items/svdcamo.dff" />
+    <file src="items/m107.txd" />
+    <file src="items/m107.dff" />
     <file src="items/ak47.txd" />
     <file src="items/ak47.dff" />
     <file src="items/m4.txd" />

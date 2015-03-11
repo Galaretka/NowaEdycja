@@ -84,12 +84,14 @@ local vehicleDataTableForTent = {
   {"Tank Parts"},
   {"DMR Mag"},
   {"SVD Mag"},
+  {"M107 Mag"},
   {
     "Lee Enfield Mag"
   },
   {"M4A1 CCO"},
   {"DMR"},
   {"SVD Camo"},
+  {"M107"}
   {"Satchel"},
   {
     "Infrared Goggles"
@@ -235,6 +237,9 @@ weaponAmmoTable = {
   ["SVD Mag"] = {
     {"SVD Camo", 34}
   },
+  ["M107 Mag"] = {
+    {"M107", 34}
+  },
   ["Lee Enfield Mag"] = {
     {
       "Lee Enfield",
@@ -331,6 +336,11 @@ function getWeaponAmmoType(weaponName, notOthers)
   for i, weaponData in ipairs(weaponAmmoTable["SVD Mag"]) do
     if weaponName == weaponData[1] then
       return "SVD Mag", weaponData[2]
+    end
+  end
+  for i, weaponData in ipairs(weaponAmmoTable["M107 Mag"]) do
+    if weaponName == weaponData[1] then
+      return "M107 Mag", weaponData[2]
     end
   end
   for i, weaponData in ipairs(weaponAmmoTable["Lee Enfield Mag"]) do
@@ -477,6 +487,13 @@ function weaponSwitchBack(previousWeaponID, currentWeaponID)
       destroyElement(elementWeaponBack[source])
       elementWeaponBack[source] = false
     end
+	if weapon1 == "SVD Camo" then
+	elementWeaponBack[source] = createObject(2916, x, y, z)
+    setObjectScale(elementWeaponBack[source], 0.875)
+	elseif weapon1 == "M107" then
+	elementWeaponBack[source] = createObject(2917, x, y, z)
+    setObjectScale(elementWeaponBack[source], 0.875)
+	else
     elementWeaponBack[source] = createObject(getWeaponObjectID(weapID1), x, y, z)
     setObjectScale(elementWeaponBack[source], 0.875)
     if elementBackpack[source] then

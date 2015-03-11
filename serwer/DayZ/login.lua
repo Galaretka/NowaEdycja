@@ -160,12 +160,14 @@ local playerDataTable = {
   },
   {"DMR Mag"},
   {"SVD Mag"},
+  {"M107 Mag"},
   {
     "Lee Enfield Mag"
   },
   {"M4A1 CCO"},
   {"DMR"},
   {"SVD Camo"},
+  {"M107"},
   {"Satchel"},
   {
     "Infrared Goggles"
@@ -472,12 +474,14 @@ local vehicleDataTable = {
   },
   {"DMR Mag"},
   {"SVD Mag"},
+  {"M107 Mag"},
   {
     "Lee Enfield Mag"
   },
   {"M4A1 CCO"},
   {"DMR"},
   {"SVD Camo"},
+  {"M107"},
   {"Satchel"},
   {
     "Infrared Goggles"
