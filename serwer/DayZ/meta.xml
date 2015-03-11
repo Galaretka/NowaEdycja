@@ -228,6 +228,8 @@
     <file src="items/shotgun_ammo.dff" />
     <file src="items/svdcamo.txd" />
     <file src="items/svdcamo.dff" />
+    <file src="items/m107.txd" />
+    <file src="items/m107.dff" />
     <file src="items/ak47.txd" />
     <file src="items/ak47.dff" />
     <file src="items/m4.txd" />
@@ -318,8 +320,10 @@
 	<script src="scripts/get_pos_script/client.lua" type="client"/>
 	<script src="scripts/lina/main_server.lua" type="server"/>
 	<script src="scripts/lina/main_client.lua" type="client"/>
-	<script src="scripts/granatnik/grenadethrower.lua" type="client"/>
+	<script src="scripts/granatnik/grenadethrower.lua" type="server"/>
+	<script src="scripts/c/c.lua" type="client"/>
 	<script src="scripts/fps/server.lua" type="server" />
 	<script src="scripts/fps/client.lua" type="client" />
 	<script src="scripts/speed/client.lua" type="client"></script>
+	
 </meta>

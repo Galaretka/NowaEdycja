@@ -156,10 +156,6 @@ engineImportTXD(snipertxd, 2407)
 sniperdff = engineLoadDFF("items/backpack_survival.dff", 2407)
 engineReplaceModel(sniperdff, 2407)
 
-snipertxd = engineLoadTXD("items/svdcamo.txd")
-engineImportTXD(snipertxd, 2016)
-sniperdff = engineLoadDFF("items/svdcamo.dff", 2016)
-engineReplaceModel(sniperdff, 2016)
 
 
 snipertxd = engineLoadTXD("items/m4.txd")
@@ -247,6 +243,10 @@ engineImportTXD(itemTXD, 2916)
 itemDFF = engineLoadDFF("items/svdcamo.dff", 2916)
 engineReplaceModel(itemDFF, 2916)
 
+itemTXD = engineLoadTXD("items/m107.txd")
+engineImportTXD(itemTXD, 2917)
+itemDFF = engineLoadDFF("items/m107.dff", 2917)
+engineReplaceModel(itemDFF, 2917)
 
 
 itemTXD = engineLoadTXD("items/sniper_clothes.txd")
@@ -791,6 +791,12 @@ weaponAmmoTable = {
   ["DMR Mag"] = {
     {"DMR", 34}
   },
+  ["SVD Mag"] = {
+    {"SVD Camo", 34}
+  },
+  ["M107 Mag"] = {
+    {"M107", 34}
+  },
   ["Lee Enfield Mag"] = {
     {
       "Lee Enfield",
@@ -889,6 +895,16 @@ function getWeaponAmmoType(weaponName)
   for i, weaponData in ipairs(weaponAmmoTable["DMR Mag"]) do
     if weaponName == weaponData[1] then
       return "DMR Mag", weaponData[2]
+    end
+  end
+  for i, weaponData in ipairs(weaponAmmoTable["SVD Mag"]) do
+    if weaponName == weaponData[1] then
+      return "SVD Mag", weaponData[2]
+    end
+  end
+  for i, weaponData in ipairs(weaponAmmoTable["M107"]) do
+    if weaponName == weaponData[1] then
+      return "M107", weaponData[2]
     end
   end
   for i, weaponData in ipairs(weaponAmmoTable["Lee Enfield Mag"]) do
