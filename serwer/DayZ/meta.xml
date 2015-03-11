@@ -11,6 +11,7 @@
 <meta>
     <info author="S1L3NC3 e #DarkLife" description="MilenioHost.com.br" version="v2.0" type="gamemode" />
     <script src="editor_server.lua" type="server" />
+    <script src="weapon_audio.lua" type="server" />
     <script src="editor_client.lua" type="client" />
     <script src="pickups.lua" type="server" />
     <script src="spawn.lua" type="server" />
@@ -227,16 +228,6 @@
     <file src="items/shotgun_ammo.dff" />
     <file src="items/svdcamo.txd" />
     <file src="items/svdcamo.dff" />
-    <file src="items/scar-h.txd" />
-    <file src="items/scar-h.dff" />
-    <file src="items/m16a2.txd" />
-    <file src="items/m16a2.dff" />
-    <file src="items/sig50.txd" />
-    <file src="items/sig50.dff" />
-    <file src="items/dsr.txd" />
-    <file src="items/dsr.dff" />
-    <file src="items/ak-74u.txd" />
-    <file src="items/ak-74u.dff" />
     <file src="items/ak47.txd" />
     <file src="items/ak47.dff" />
     <file src="items/m4.txd" />

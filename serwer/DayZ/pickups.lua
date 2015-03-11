@@ -476,71 +476,7 @@ local itemTable = {
     }
   },
   military = {
---[[   {
-      "SCAR-H",
-      2962,
-      1,
-      90,
-      2.2
-    },
-    {
-      "AK-74U",
-      2963,
-      1,
-      90,
-      3.0
-    },
-    {
-      "M16A2",
-      2964,
-      1,
-      90,
-      2.2
-    },
-    {
-      "SIG50",
-      2965,
-      1,
-      90,
-      0.4
-    },
-    {
-      "DSR",
-      2979,
-      1,
-      90,
-      0.4
-    },
-	{
-      "30Rnd. SCAR",
-      2358,
-      2,
-      0
-    },
-    {
-      "20Rnd. AK-74U",
-      2358,
-      2,
-      0
-    },
-    {
-      "30Rnd. M16",
-      2358,
-      2,
-      0
-    },
-    {
-      "SIG50 Mag",
-      2358,
-      2,
-      0
-    },
-    {
-      "DSR Mag",
-      2358,
-      2,
-      0
-    },]]--
+
     {
       "Box of Matches",
       328,
@@ -555,13 +491,13 @@ local itemTable = {
       90,
       5
     },
-  --[[  {
+    {
       "Makarov SD",
       347,
       1,
       90,
       4
-    },]]--
+    },
     {
       "Winchester 1866",
       349,
@@ -1586,71 +1522,6 @@ local itemTable = {
       2,
       0
     },
---[[	{
-	 "SCAR-H",
-      2962,
-      1,
-      90,
-      2.2
-    },
-    {
-      "AK-74U",
-      2963,
-      1,
-      90,
-      3.0
-    },
-    {
-      "M16A2",
-      2964,
-      1,
-      90,
-      2.2
-    },
-    {
-      "SIG50",
-      2965,
-      1,
-      90,
-      0.4
-    },
-   {
-      "DSR",
-      2979,
-      1,
-      90,
-      0.4
-    },
-	{
-      "30Rnd. SCAR",
-      2358,
-      2,
-      0
-    },
-    {
-      "20Rnd. AK-74U",
-      2358,
-      2,
-      0
-    },
-    {
-      "30Rnd. M16",
-      2358,
-      2,
-      0
-    },
-    {
-      "SIG50 Mag",
-      2358,
-      2,
-      0
-    },
-    {
-      "DSR Mag",
-      2358,
-      2,
-      0
-    },]]--
     {
       "Lee Enfield Mag",
       2358,
@@ -2140,21 +2011,7 @@ local itemTable = {
   }
 }
 weaponAmmoTable = {
- ["30Rnd. SCAR"] = {
-    {"SCAR-H", 31}
-  },
-  ["30Rnd. 74U"] = {
-    {"AK-74U", 30}
-  },
-  ["30Rnd. M16"] = {
-    {"M16A2", 31}
-  },
-  ["SIG50 Mag"] = {
-    {"SIG50", 34}
-  },
-  ["DSR Mag"] = {
-    {"DSR", 34}
-  },
+ 
   ["G17 Mag"] = {
     {"G17", 22}
   },
@@ -2248,31 +2105,6 @@ function getWeaponAmmoType(weaponName, notOthers)
       if weaponName == weaponData[1] then
         return weaponData[1], weaponData[2]
       end
-    end
-  end
-  for i, weaponData in ipairs(weaponAmmoTable["30Rnd. SCAR"]) do
-    if weaponName == weaponData[1] then
-      return "30Rnd. SCAR", weaponData[2]
-    end
-  end
-  for i, weaponData in ipairs(weaponAmmoTable["30Rnd. 74U"]) do
-    if weaponName == weaponData[1] then
-      return "30Rnd. 74U", weaponData[2]
-    end
-  end
-  for i, weaponData in ipairs(weaponAmmoTable["30Rnd. M16"]) do
-    if weaponName == weaponData[1] then
-      return "30Rnd. M16", weaponData[2]
-    end
-  end
-  for i, weaponData in ipairs(weaponAmmoTable["SIG50 Mag"]) do
-    if weaponName == weaponData[1] then
-      return "SIG50 Mag", weaponData[2]
-    end
-  end
-  for i, weaponData in ipairs(weaponAmmoTable["DSR Mag"]) do
-    if weaponName == weaponData[1] then
-      return "DSR Mag", weaponData[2]
     end
   end
   for i, weaponData in ipairs(weaponAmmoTable["G17 Mag"]) do
@@ -2526,16 +2358,6 @@ function onPlayerTakeItemFromGround(itemName, col)
   itemPlus = 1
   if itemName == "G17 Mag" then
     itemPlus = 7
-  elseif itemName == "30Rnd. SCAR" then
-    itemPlus = 30
-  elseif itemName == "30Rnd. 74U" then
-    itemPlus = 30
-  elseif itemName == "30Rnd. M16" then
-    itemPlus = 30
-  elseif itemName == "SIG50 Mag" then
-    itemPlus = 9
-  elseif itemName == "DSR Mag" then
-    itemPlus = 7
   elseif itemName == "Makarov SD Mag" then
     itemPlus = 15
   elseif itemName == ".45 ACP" then
@@ -2562,7 +2384,7 @@ function onPlayerTakeItemFromGround(itemName, col)
     itemPlus = 10
   elseif itemName == "M136 Rocket" then
     itemPlus = 0
-  elseif itemName == "M4A1 CCO" or itemName == "AKS-74 Kobra" or itemName == "SCAR-H" or itemName == "AK-74U" or itemName == "M16A2" or itemName == "SIG50" or itemName == "DSR"  or itemName == "SVD Camo" or itemName == "DMR" or itemName == "Winchester 1866" or itemName == "SPAZ-12 Combat Shotgun" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "M136 Rocket Launcher" or itemName == "Lee Enfield" then
+  elseif itemName == "M4A1 CCO" or itemName == "AKS-74 Kobra" or itemName == "SVD Camo" or itemName == "DMR" or itemName == "Winchester 1866" or itemName == "SPAZ-12 Combat Shotgun" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "M136 Rocket Launcher" or itemName == "Lee Enfield" then
     removeBackWeaponOnDrop()
   end
   local x, y, z = getElementPosition(source)

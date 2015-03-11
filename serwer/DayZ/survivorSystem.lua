@@ -21,16 +21,7 @@ local vehicleDataTableForTent = {
   {
     "Box of Matches"
   },
-  {"30Rnd. SCAR"},
-  {"20Rnd. AK-74U"},
-  {"30Rnd. M16"},
-  {"SIG50 Mag"},
-  {"DSR Mag"},
-  {"SCAR-H"},
-  {"AK-74U"},
-  {"M16A2"},
-  {"SIG50"},
-  {"DSR"},
+  
   {"M911 Mag"},
   {"Makarov SD Mag"},
   {
@@ -198,21 +189,7 @@ weaponAmmoTable = {
   ["G17 Mag"] = {
     {"G17", 22}
   },
-  ["30Rnd. SCAR"] = {
-    {"SCAR-H", 31}
-  },
-  ["30Rnd. 74U"] = {
-    {"AK-74U", 31}
-  },
-  ["30Rnd. M16"] = {
-    {"M16A2", 31}
-  },
-  ["SIG50 Mag"] = {
-    {"SIG50", 34}
-  },
-  ["DSR Mag"] = {
-    {"DSR", 34}
-  },
+  
   ["Makarov SD Mag"] = {
     {"Makarov SD", 23}
   },
@@ -294,31 +271,6 @@ function getWeaponAmmoType(weaponName, notOthers)
       if weaponName == weaponData[1] then
         return weaponData[1], weaponData[2]
       end
-    end
-  end
-  for i, weaponData in ipairs(weaponAmmoTable["30Rnd. SCAR"]) do
-    if weaponName == weaponData[1] then
-      return "30Rnd. SCAR", weaponData[2]
-    end
-  end
-  for i, weaponData in ipairs(weaponAmmoTable["30Rnd. 74U"]) do
-    if weaponName == weaponData[1] then
-      return "30Rnd. 74U", weaponData[2]
-    end
-  end
-  for i, weaponData in ipairs(weaponAmmoTable["30Rnd. M16"]) do
-    if weaponName == weaponData[1] then
-      return "30Rnd. M16", weaponData[2]
-    end
-  end
-  for i, weaponData in ipairs(weaponAmmoTable["SIG50 Mag"]) do
-    if weaponName == weaponData[1] then
-      return "SIG50 Mag", weaponData[2]
-    end
-  end
-  for i, weaponData in ipairs(weaponAmmoTable["DSR Mag"]) do
-    if weaponName == weaponData[1] then
-      return "DSR Mag", weaponData[2]
     end
   end
   for i, weaponData in ipairs(weaponAmmoTable["G17 Mag"]) do
