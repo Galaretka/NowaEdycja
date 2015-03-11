@@ -91,7 +91,7 @@ local vehicleDataTableForTent = {
   {"M4A1 CCO"},
   {"DMR"},
   {"SVD Camo"},
-  {"M107"}
+  {"M107"},
   {"Satchel"},
   {
     "Infrared Goggles"
@@ -496,6 +496,7 @@ function weaponSwitchBack(previousWeaponID, currentWeaponID)
 	else
     elementWeaponBack[source] = createObject(getWeaponObjectID(weapID1), x, y, z)
     setObjectScale(elementWeaponBack[source], 0.875)
+	end
     if elementBackpack[source] then
       attachElementToBone(elementWeaponBack[source], source, 3, 0.19, -0.31, -0.1, 0, 270, -90)
     else

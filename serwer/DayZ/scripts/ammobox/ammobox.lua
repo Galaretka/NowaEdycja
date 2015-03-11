@@ -25,10 +25,13 @@ setElementData(tentCol, "Ghillie Suit", 1)
 setElementData(tentCol, "OSPack Backpack", 2)
 setElementData(tentCol, "Toolbox", 2)
 outputChatBox ( "Wykonany zostal zrzut! Litera Z na mapie", getRootElement(), 255, 255, 255, true )
-setTimer ( function(), 600000, 1, destroyElement(tentCol), destroyElement(tent), destroyElement(myBlip)) 
-)
+setTimer(delBlip, 600000, 0)
 end
 else
 end
+end
+
+function delBlip()
+	destroyElement(myBlip)
 end
 addCommandHandler("zrzut", tentadayz)
