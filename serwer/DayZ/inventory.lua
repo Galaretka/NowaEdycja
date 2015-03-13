@@ -20,6 +20,7 @@ inventoryItems = {
 {"SPAZ-12 Combat Shotgun",3},
 {"Sawn-Off Shotgun",3},
 {"AKS-74 Kobra",3},
+{"PKM",3},
 {"Lee Enfield",3},
 },
 ["Secondary Weapon"] = {
@@ -48,6 +49,7 @@ inventoryItems = {
 {"PDW Mag",0.025},
 {"MP5A5 Mag",0.025},
 {"30Rnd. AKS",0.035},
+{"PKM Mag",0.035},
 {"STANAG Mag",0.035},
 {"1866 Slug",0.067},
 {"2Rnd. Slug",0.067},
@@ -650,6 +652,8 @@ function onPlayerMoveItemOutOFInventory(itemName, loot)
     itemPlus = 20
   elseif itemName == "30Rnd. AKS" then
     itemPlus = 30
+  elseif itemName == "PKM Mag" then
+    itemPlus = 30
   elseif itemName == "STANAG Mag" then
     itemPlus = 20
   elseif itemName == "1866 Slug" then
@@ -668,7 +672,7 @@ function onPlayerMoveItemOutOFInventory(itemName, loot)
     itemPlus = 10
   elseif itemName == "M136 Rocket" then
     itemPlus = 0
-  elseif itemName == "M4A1 CCO" or itemName == "AKS-74 Kobra" or itemName == "SVD Camo" or itemName == "M107" or itemName == "DMR" or itemName == "Winchester 1866" or itemName == "SPAZ-12 Combat Shotgun" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "M136 Rocket Launcher" or itemName == "Lee Enfield" then
+  elseif itemName == "M4A1 CCO" or itemName == "AKS-74 Kobra" or itemName == "PKM Mag" or itemName == "SVD Camo" or itemName == "M107" or itemName == "DMR" or itemName == "Winchester 1866" or itemName == "SPAZ-12 Combat Shotgun" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "M136 Rocket Launcher" or itemName == "Lee Enfield" then
     triggerServerEvent("removeBackWeaponOnDrop", getLocalPlayer())
   end
 
@@ -790,6 +794,8 @@ function onPlayerMoveItemInInventory(itemName, loot)
   elseif itemName == "MP5A5 Mag" then
     itemPlus = 20
   elseif itemName == "30Rnd. AKS" then
+    itemPlus = 30
+  elseif itemName == "PKM Mag" then
     itemPlus = 30
   elseif itemName == "STANAG Mag" then
     itemPlus = 20
@@ -1166,6 +1172,7 @@ weaponAmmoTable = {
 ["PDW Mag"] = {{"PDW", 28}},
 ["MP5A5 Mag"] = {{"MP5A5", 29}},
 ["30Rnd. AKS"] = {{"AKS-74 Kobra", 30}},
+["PKM Mag"] = {{"PKM", 30}},
 ["STANAG Mag"] = {{"M4A1 CCO", 31}},
 ["1866 Slug"] = {{"Winchester 1866", 25}},
 ["2Rnd. Slug"] = {{"Sawn-Off Shotgun", 26}},
@@ -1212,6 +1219,11 @@ function getWeaponAmmoType2(weaponName)
   for i, weaponData in ipairs(weaponAmmoTable["30Rnd. AKS"]) do
     if weaponName == weaponData[2] then
       return "30Rnd. AKS", weaponData[2]
+    end
+  end
+  for i, weaponData in ipairs(weaponAmmoTable["PKM Mag"]) do
+    if weaponName == weaponData[2] then
+      return "PKM Mag", weaponData[2]
     end
   end
   for i, weaponData in ipairs(weaponAmmoTable["STANAG Mag"]) do
@@ -1272,6 +1284,10 @@ function weaponSwitch(weapon)
       		elseif current_1 == "SVD Camo" then
             if getElementData(getLocalPlayer(),"SVD Mag") > 0 then
                 setElementData(getLocalPlayer(),"SVD Mag",getElementData(getLocalPlayer(),"SVD Mag")-1)
+            end
+			elseif current_1 == "PKM" then
+            if getElementData(getLocalPlayer(),"PKM Mag") > 0 then
+                setElementData(getLocalPlayer(),"PKM Mag",getElementData(getLocalPlayer(),"PKM Mag")-1)
             end
         else
         local ammoName, _ = getWeaponAmmoType2(weapon)
