@@ -235,7 +235,6 @@
     <file src="items/m4.dff" />
     <file src="items/sniper.txd" />
     <file src="items/sniper.dff" />
-<<<<<<< HEAD
     <file src="items/snipa_fake.txd" />
     <file src="items/snipa_fake.dff" />
     <file src="items/pkm.txd" />
@@ -244,8 +243,6 @@
     <file src="items/chromegun.dff" />
     <file src="items/cuntgun.txd" />
     <file src="items/cuntgun.dff" />
-=======
->>>>>>> parent of 06cbb33... Zrobilem bronie :D
 	<file src="items/sandbags.dff" />
 	<file src="items/sandbags.col" />
 	<file src="items/sandbags.txd" />
