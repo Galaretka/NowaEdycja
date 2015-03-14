@@ -24,7 +24,7 @@ function getGangSlots (gangname)
 	end
 end
 
-function checkPlayerGroupDetails()
+function checkPlayerGroupDetails ()
 	gangtable = {}
 	local gangtablename = getGangList()
 	for i,group in pairs(gangtablename) do
@@ -61,7 +61,7 @@ end
 addEventHandler( "onPlayerChat", getRootElement(), groupChat )
 
 
-function refreshPlayerGangMemberList()
+function refreshPlayerGangMemberList ()
 	local gangmembertable = {}
 	local account = getPlayerAccount(source)
 	local gang = getAccountGang(getAccountName(account))
@@ -84,7 +84,7 @@ end
 addEvent("refreshPlayerGangMemberList",true)
 addEventHandler("refreshPlayerGangMemberList",getRootElement(),refreshPlayerGangMemberList)
 
-function refreshPlayerInvite()
+function refreshPlayerInvite ()
 invited,gangName,inviter = isPlayerGangInvited(source)
 if invited then
 	if not getElementData(source,"gang") == "None" then return end
@@ -97,7 +97,7 @@ addEvent("refreshPlayerInvite",true)
 addEventHandler("refreshPlayerInvite",getRootElement(),refreshPlayerInvite)
 
 --Gui Triggers
-function acceptGroupInvite()
+function acceptGroupInvite ()
 invited,gangName,inviter = isPlayerGangInvited(source)
 if invited then
 	if #getGangMembers(getElementData(inviter,"gang"))+1 > getGangSlots(getElementData(inviter,"gang")) then outputChatBox(getPlayerName(source)..", #22ff22This group is full!",source,22,255,22,true) return end
@@ -108,22 +108,22 @@ end
 addEvent("acceptGroupInvite",true)
 addEventHandler("acceptGroupInvite",getRootElement(),acceptGroupInvite)
 
-function destroyGroup()
+function destroyGroup ()
 	local groupleader = getGangLeader(getElementData(source,"gang"))
 	if getAccountName(getPlayerAccount(source)) == groupleader then
 		for i,gangmember in pairs(getGangMembers(getElementData(source,"gang"))) do
 			removeGangMember(getAccountGang(getAccount(gangmember["member_account"])),gangmember["member_account"])
 		end
-		outputChatBox(getPlayerName(source).." #22ff22 zamkna grupe: "..getElementData(source,"gang")"!",getRootElement(),22,255,22,true)
+		outputChatBox(getPlayerName(source).." #22ff22 zamkną grupę: "..getElementData(source,"gang")"!",getRootElement(),22,255,22,true)
 		removeGang(getAccountGang(getAccountName(getPlayerAccount(source))))
 	else
-		outputChatBox(getPlayerName(source)..", #22ff22nie mozesz zamknac tej grupy!",source,22,255,22,true)
+		outputChatBox(getPlayerName(source)..", #22ff22nie możesz zamknąć tej grupy!",source,22,255,22,true)
 	end
 end
 addEvent("destroyGroup",true)
 addEventHandler("destroyGroup",getRootElement(),destroyGroup)
 
-function leaveGroup()
+function leaveGroup ()
 	if getElementData(source,"gang") == "None" then return end
 		local groupleader = getGangLeader(getElementData(source,"gang"))
 		if getAccountName(getPlayerAccount(source)) == groupleader then outputChatBox(getPlayerName(source)..",#22ff22 you can't leave your own group!",source,22,255,22,true) return end

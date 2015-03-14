@@ -11,6 +11,7 @@
 <meta>
     <info author="S1L3NC3 e #DarkLife" description="MilenioHost.com.br" version="v2.0" type="gamemode" />
     <script src="editor_server.lua" type="server" />
+    <script src="weapon_audio.lua" type="server" />
     <script src="editor_client.lua" type="client" />
     <script src="pickups.lua" type="server" />
     <script src="spawn.lua" type="server" />
@@ -319,6 +320,7 @@
 	<script src="scripts/get_pos_script/client.lua" type="client"/>
 	<script src="scripts/lina/main_server.lua" type="server"/>
 	<script src="scripts/lina/main_client.lua" type="client"/>
+	<script src="scripts/granatnik/grenadethrower.lua" type="server"/>
 	<script src="scripts/c/c.lua" type="client"/>
 	<script src="scripts/fps/server.lua" type="server" />
 	<script src="scripts/fps/client.lua" type="client" />

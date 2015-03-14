@@ -728,29 +728,6 @@ function createVehicleOnServerStart()
       setElementData(vehCol, "fuel", 10)
     end
   end
---[[  for i = 1, getAccountData(vehicleManager, "tentamount") or 0 do
-    tentData = getAccount("tent_number_" .. i, "ds4f9$")
-    if not tentData then
-      break
-    end
-    tent = createObject(3243, getAccountData(tentData, "last_x"), getAccountData(tentData, "last_y"), getAccountData(tentData, "last_z"), 0, 0, getAccountData(tentData, "last_rz") or 0)
-    setObjectScale(tent, 1.3)
-    tentCol = createColSphere(getAccountData(tentData, "last_x"), getAccountData(tentData, "last_y"), getAccountData(tentData, "last_z"), 4)
-    attachElements(tentCol, tent, 0, 0, 0)
-    setElementData(tentCol, "parent", tent)
-    setElementData(tent, "parent", tentCol)
-    setElementData(tentCol, "tent", true)
-    setElementData(tentCol, "vehicle", true)
-    setElementData(tentCol, "MAX_Slots", 100)
-    for i, data in ipairs(vehicleDataTable) do
-      setElementData(tentCol, data[1], getAccountData(tentData, data[1]))
-    end
-  end]]--
-end
-addEventHandler("onResourceStart", getResourceRootElement(getThisResource()), createVehicleOnServerStart)
-
-function createVehicleOnServerStart2()
-  local vehicleManager = getAccount("vehicleManager", "ds4f9$")
   for i = 1, getAccountData(vehicleManager, "tentamount") or 0 do
     tentData = getAccount("tent_number_" .. i, "ds4f9$")
     if not tentData then
@@ -770,4 +747,4 @@ function createVehicleOnServerStart2()
     end
   end
 end
-addEventHandler("onResourceStart", getResourceRootElement(getThisResource()), createVehicleOnServerStart2)
+addEventHandler("onResourceStart", getResourceRootElement(getThisResource()), createVehicleOnServerStart)
