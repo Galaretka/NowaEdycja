@@ -38,7 +38,7 @@ gameplayVariables = {}
 -- WEAPON DAMAGE
 damageTable = {
 -- {"WEAPON NAME",DAMAGE},
-{"Lee Enfield",8000},
+--{"Lee Enfield",8000},
 {"Hunting Knife",1500},
 {"Hatchet",2300},
 {"G17",889},
@@ -52,7 +52,6 @@ damageTable = {
 {"Crowbar",953},
 {"Machete",953},
 {"M4A1 CCO",4555},
-{"DMR",8000},
 {"SVD Camo",13000},
 {"PKM",3800},
 {"M107",13000},
@@ -62,4 +61,5 @@ damageTable = {
 {"AKS-74 Kobra",3722},
 --{"Heat-Seeking RPG",0},
 --{"M136 Rocket Launcher",0},
+{"DMR",8000},
 }
