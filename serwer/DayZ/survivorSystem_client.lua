@@ -156,6 +156,15 @@ engineImportTXD(snipertxd, 2407)
 sniperdff = engineLoadDFF("items/backpack_survival.dff", 2407)
 engineReplaceModel(sniperdff, 2407)
 
+snipertxd = engineLoadTXD("items/chromegun.txd")
+engineImportTXD(snipertxd, 349)
+sniperdff = engineLoadDFF("items/chromegun.dff", 349)
+engineReplaceModel(sniperdff, 349)
+
+snipertxd = engineLoadTXD("items/cuntgun.txd")
+engineImportTXD(snipertxd, 357)
+sniperdff = engineLoadDFF("items/cuntgun.dff", 357)
+engineReplaceModel(sniperdff, 357)
 
 
 snipertxd = engineLoadTXD("items/m4.txd")
@@ -163,14 +172,30 @@ engineImportTXD(snipertxd, 356)
 sniperdff = engineLoadDFF("items/m4.dff", 356)
 engineReplaceModel(sniperdff, 356)
 
-snipertxd = engineLoadTXD("items/ak47.txd")
+snipertxd = engineLoadTXD("items/snipa_fake.txd")
 engineImportTXD(snipertxd, 355)
-sniperdff = engineLoadDFF("items/ak47.dff", 355)
+sniperdff = engineLoadDFF("items/snipa_fake.dff", 355)
 engineReplaceModel(sniperdff, 355)
 
+snipertxd = engineLoadTXD("items/ak47.txd")
+engineImportTXD(snipertxd, 2919)
+sniperdff = engineLoadDFF("items/ak47.dff", 2919)
+engineReplaceModel(sniperdff, 2919)
+
+snipertxd = engineLoadTXD("items/pkm.txd")
+engineImportTXD(snipertxd, 2915)
+sniperdff = engineLoadDFF("items/pkm.dff", 2915)
+engineReplaceModel(sniperdff, 2915)
+
+
 snipertxd = engineLoadTXD("items/sniper.txd")
+engineImportTXD(snipertxd, 2918)
+sniperdff = engineLoadDFF("items/sniper.dff", 2918)
+engineReplaceModel(sniperdff, 2918)
+
+snipertxd = engineLoadTXD("items/snipa_fake.txd")
 engineImportTXD(snipertxd, 358)
-sniperdff = engineLoadDFF("items/sniper.dff", 358)
+sniperdff = engineLoadDFF("items/snipa_fake.dff", 358)
 engineReplaceModel(sniperdff, 358)
 
 snipertxd = engineLoadTXD("items/backpack_patrol.txd")
@@ -482,7 +507,7 @@ function zombieSpawning()
     triggerServerEvent("createZomieForPlayer", getLocalPlayer(), hitX, hitY, hitZ)
   end
 end
-setTimer(zombieSpawning, 3000, 0)
+setTimer(zombieSpawning, 6000, 0)
 function stopZombieSound()
   local zombies = getElementsByType("ped")
   for theKey, theZomb in ipairs(zombies) do
@@ -767,6 +792,9 @@ weaponAmmoTable = {
   ["30Rnd. AKS"] = {
     {"AKS-74 Kobra", 30}
   },
+  ["PKM Mag"] = {
+    {"PKM", 30}
+  },
   ["STANAG Mag"] = {
     {"M4A1 CCO", 31}
   },
@@ -870,6 +898,11 @@ function getWeaponAmmoType(weaponName)
   for i, weaponData in ipairs(weaponAmmoTable["30Rnd. AKS"]) do
     if weaponName == weaponData[1] then
       return "30Rnd. AKS", weaponData[2]
+    end
+  end
+  for i, weaponData in ipairs(weaponAmmoTable["PKM Mag"]) do
+    if weaponName == weaponData[1] then
+      return "PKM Mag", weaponData[2]
     end
   end
   for i, weaponData in ipairs(weaponAmmoTable["STANAG Mag"]) do
@@ -1805,3 +1838,38 @@ end
 setTimer(playerPingCheck, 4000, 0)
 
 bindKey("b", "down", "chatbox", "global" )
+
+
+local alpha = 255
+------ <<< --------- >>> ----------
+bindKey ( "aim_weapon", "both",
+function ( _, state )
+weapon = getPedWeapon(localPlayer)
+if weapon == 34 then -- проверка не по слоту а по id
+if ( state == "down" ) then
+alpha = 0
+elseif ( state == "up" ) then
+alpha = 255
+end
+for _, v in ipairs ( getElementsByType ( "object", root, true ) ) do
+if isElementAttachedToBone ( v ) then
+local id = getElementModel ( v )
+local px,py,pz = getElementPosition (v)
+local x,y,z = getElementPosition(localPlayer)
+local pdistance = getDistanceBetweenPoints3D ( x,y,z,px,py,pz )
+if pdistance <= 1 then -- Проверка на дистанцию
+if ( id == 2916 ) then
+setElementAlpha ( v, alpha )
+elseif ( id == 2917 ) then
+setElementAlpha ( v, alpha )
+elseif ( id == 2918 ) then
+setElementAlpha ( v, alpha )
+end
+end
+end
+end
+end
+end
+)
+
+

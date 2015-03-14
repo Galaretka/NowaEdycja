@@ -11,7 +11,6 @@
 <meta>
     <info author="S1L3NC3 e #DarkLife" description="MilenioHost.com.br" version="v2.0" type="gamemode" />
     <script src="editor_server.lua" type="server" />
-    <script src="weapon_audio.lua" type="server" />
     <script src="editor_client.lua" type="client" />
     <script src="pickups.lua" type="server" />
     <script src="spawn.lua" type="server" />
@@ -236,6 +235,14 @@
     <file src="items/m4.dff" />
     <file src="items/sniper.txd" />
     <file src="items/sniper.dff" />
+    <file src="items/snipa_fake.txd" />
+    <file src="items/snipa_fake.dff" />
+    <file src="items/pkm.txd" />
+    <file src="items/pkm.dff" />
+    <file src="items/chromegun.txd" />
+    <file src="items/chromegun.dff" />
+    <file src="items/cuntgun.txd" />
+    <file src="items/cuntgun.dff" />
 	<file src="items/sandbags.dff" />
 	<file src="items/sandbags.col" />
 	<file src="items/sandbags.txd" />
@@ -320,7 +327,6 @@
 	<script src="scripts/get_pos_script/client.lua" type="client"/>
 	<script src="scripts/lina/main_server.lua" type="server"/>
 	<script src="scripts/lina/main_client.lua" type="client"/>
-	<script src="scripts/granatnik/grenadethrower.lua" type="server"/>
 	<script src="scripts/c/c.lua" type="client"/>
 	<script src="scripts/fps/server.lua" type="server" />
 	<script src="scripts/fps/client.lua" type="client" />
