@@ -50,161 +50,162 @@ playerGroupWindow["invite_member_list_name"] = guiGridListAddColumn( playerGroup
 playerGroupWindow["invite_member_list_invite"] = guiCreateButton(0.2,0.775,0.6,0.15, "Zaproś", true, playerGroupWindow["invite_member_list_window"] )
 
 function openPlayerGroupWindow ()
-	if not getElementData(getLocalPlayer(),"gang") == "logedin" then return end
-	local showing = guiGetVisible(playerGroupWindow["window"])
-	if showing == false then
-		if isSpamTimer2() then return end
-		refreshGangList()
-		setAntiSpamActive2()
-		guiSetVisible(playerGroupWindow["member_window"],false)
-		guiSetVisible(playerGroupWindow["invite_member_list_window"],false)
-	end
-	guiSetVisible(playerGroupWindow["window"],not showing)
-	showCursor(not showing)
+    if not getElementData(getLocalPlayer(),"gang") == "logedin" then return end
+    local showing = guiGetVisible(playerGroupWindow["window"])
+    if showing == false then
+        if isPlayerKeySpamming() then return end
+        triggerServerEvent("refreshClientGangList", localPlayer)
+        guiSetVisible(playerGroupWindow["member_window"],false)
+        guiSetVisible(playerGroupWindow["invite_member_list_window"],false)
+    end
+    guiSetVisible(playerGroupWindow["window"],not showing)
+    showCursor(not showing)
 end
 bindKey("F1","down",openPlayerGroupWindow)
 
 function openMemberGroupWindow ()
-if getElementData(getLocalPlayer(),"gang") == "None" then return end
-	local showing = guiGetVisible(playerGroupWindow["member_window"])
-	if showing == false then
-		if isSpamTimer2() then return end
-		guiSetVisible(playerGroupWindow["window"],false)
-		refreshGangMemberTable()
-		setAntiSpamActive2()
-	else
-		guiSetVisible(playerGroupWindow["invite_member_list_window"],false)
-	end
-	guiSetVisible(playerGroupWindow["member_window"],not showing)
-	showCursor(not showing)
+    if getElementData(getLocalPlayer(),"gang") == "None" then return end
+    local showing = guiGetVisible(playerGroupWindow["member_window"])
+    if showing == false then
+        if isPlayerKeySpamming() then return end
+        guiSetVisible(playerGroupWindow["window"],false)
+        refreshGangMemberTable()
+    else
+        guiSetVisible(playerGroupWindow["invite_member_list_window"],false)
+    end
+    guiSetVisible(playerGroupWindow["member_window"],not showing)
+    showCursor(not showing)
 end
 bindKey("F2","down",openMemberGroupWindow)
 
-function refreshGangList ()
-		guiGridListClear(playerGroupWindow["grouplist"])
-		for i, group in ipairs(getElementData(getRootElement(),"ganglist")) do
-			local row = guiGridListAddRow ( playerGroupWindow["grouplist"] )
-			guiGridListSetItemText ( playerGroupWindow["grouplist"], row, playerGroupWindow["grouplist_groupname"], group[1], false, false )
-			guiGridListSetItemText ( playerGroupWindow["grouplist"], row, playerGroupWindow["grouplist_groupleader"],group[2] , false, false )
-			guiGridListSetItemText ( playerGroupWindow["grouplist"], row, playerGroupWindow["grouplist_groupmember"],group[3].."/"..group[4] , false, false )
-			if group[4] > 12 then
-				guiGridListSetItemColor ( playerGroupWindow["grouplist"], row, playerGroupWindow["grouplist_groupname"], 22, 255, 22 )
-				guiGridListSetItemColor ( playerGroupWindow["grouplist"], row, playerGroupWindow["grouplist_groupleader"], 22, 255, 22 )
-				guiGridListSetItemColor ( playerGroupWindow["grouplist"], row, playerGroupWindow["grouplist_groupmember"], 22, 255, 22 )
-			end
-		end	
-		refreshPlayerInvites()
+function refreshGangList (ganglist)
+    guiGridListClear(playerGroupWindow["grouplist"])
+    for i, group in ipairs(ganglist) do
+        local row = guiGridListAddRow ( playerGroupWindow["grouplist"] )
+        guiGridListSetItemText ( playerGroupWindow["grouplist"], row, playerGroupWindow["grouplist_groupname"], group[1], false, false )
+        guiGridListSetItemText ( playerGroupWindow["grouplist"], row, playerGroupWindow["grouplist_groupleader"],group[2] , false, false )
+        guiGridListSetItemText ( playerGroupWindow["grouplist"], row, playerGroupWindow["grouplist_groupmember"],group[3].."/"..group[4] , false, false )
+        if group[4] > 12 then
+            guiGridListSetItemColor ( playerGroupWindow["grouplist"], row, playerGroupWindow["grouplist_groupname"], 22, 255, 22 )
+            guiGridListSetItemColor ( playerGroupWindow["grouplist"], row, playerGroupWindow["grouplist_groupleader"], 22, 255, 22 )
+            guiGridListSetItemColor ( playerGroupWindow["grouplist"], row, playerGroupWindow["grouplist_groupmember"], 22, 255, 22 )
+        end
+    end    
+    refreshPlayerInvites()
 end
+addEvent("refreshGangListToClient", true)
+addEventHandler("refreshGangListToClient", root, refreshGangList)
 
 --Actions
 function refreshGangMemberTable()
-	triggerServerEvent("refreshPlayerGangMemberList",getLocalPlayer())
-	setTimer(refreshGangMemberTable2,1000,3)
+    triggerServerEvent("refreshPlayerGangMemberList",getLocalPlayer())
 end
 
-function refreshGangMemberTable2 ()	
-	guiGridListClear(playerGroupWindow["member_list"])
-		for i, gangmember in ipairs(getElementData(getRootElement(),"gangmemberlist_"..getElementData(getLocalPlayer(),"gang"))) do
-			local row = guiGridListAddRow ( playerGroupWindow["member_list"] )
-			local player = gangmember[4]
-			if gangmember[2] then
-				gangmember[1] = gangmember[1].." (Leader)"
-			else
-				gangmember[1] = gangmember[1]
-			end
-			if gangmember[3] then
-				guiGridListSetItemText ( playerGroupWindow["member_list"], row, playerGroupWindow["member_list_murders"], getElementData(player,"murders"), false, false )
-				guiGridListSetItemText ( playerGroupWindow["member_list"], row, playerGroupWindow["member_list_alivetime"],getElementData(player,"alivetime") , false, false )
-				guiGridListSetItemText ( playerGroupWindow["member_list"], row, playerGroupWindow["member_list_movestate"],isPedInVehicle (player) and "Pojazd" or "Piechota" , false, false )
-			else
-				guiGridListSetItemText ( playerGroupWindow["member_list"], row, playerGroupWindow["member_list_murders"], "-", false, false )
-				guiGridListSetItemText ( playerGroupWindow["member_list"], row, playerGroupWindow["member_list_alivetime"],"-" , false, false )
-				guiGridListSetItemText ( playerGroupWindow["member_list"], row, playerGroupWindow["member_list_movestate"],"-" , false, false )
-			end
-			r,g,b = 255,22,22
-			if gangmember[3] then
-				r,g,b = 22,255,22
-			end
-			guiGridListSetItemText ( playerGroupWindow["member_list"], row, playerGroupWindow["member_list_name"], gangmember[1], false, false )
-			guiGridListSetItemColor ( playerGroupWindow["member_list"], row, playerGroupWindow["member_list_name"], r, g, b )
-		end	
+function refreshGangMemberTable2 (gangtable)    
+    guiGridListClear(playerGroupWindow["member_list"])
+    for i, gangmember in ipairs(gangtable) do
+        local row = guiGridListAddRow ( playerGroupWindow["member_list"] )
+        local player = gangmember[4]
+        if gangmember[2] then
+            gangmember[1] = gangmember[1].." (Leader)"
+        else
+            gangmember[1] = gangmember[1]
+        end
+        if gangmember[3] then
+            guiGridListSetItemText ( playerGroupWindow["member_list"], row, playerGroupWindow["member_list_murders"], getElementData(player,"murders"), false, false )
+            guiGridListSetItemText ( playerGroupWindow["member_list"], row, playerGroupWindow["member_list_alivetime"],getElementData(player,"alivetime") , false, false )
+            guiGridListSetItemText ( playerGroupWindow["member_list"], row, playerGroupWindow["member_list_movestate"],isPedInVehicle (player) and "Vehicle" or "Walking" , false, false )
+        else
+            guiGridListSetItemText ( playerGroupWindow["member_list"], row, playerGroupWindow["member_list_murders"], "-", false, false )
+            guiGridListSetItemText ( playerGroupWindow["member_list"], row, playerGroupWindow["member_list_alivetime"],"-" , false, false )
+            guiGridListSetItemText ( playerGroupWindow["member_list"], row, playerGroupWindow["member_list_movestate"],"-" , false, false )
+        end
+        r,g,b = 255,22,22
+        if gangmember[3] then
+            r,g,b = 22,255,22
+        end
+        guiGridListSetItemText ( playerGroupWindow["member_list"], row, playerGroupWindow["member_list_name"], gangmember[1], false, false )
+        guiGridListSetItemColor ( playerGroupWindow["member_list"], row, playerGroupWindow["member_list_name"], r, g, b )
+    end    
 end
+addEvent("refreshGangMemberTableToClient", true)
+addEventHandler("refreshGangMemberTableToClient", root, refreshGangMemberTable2)
 
 function refreshPlayerInvites()
-	triggerServerEvent("refreshPlayerInvite",getLocalPlayer())
+    triggerServerEvent("refreshPlayerInvite",getLocalPlayer())
 end
 
 function updatePlayerInvites(name,inviter,member,vip)
-			guiGridListClear(playerGroupWindow["groupinvitelist"])
-			local row = guiGridListAddRow ( playerGroupWindow["groupinvitelist"])
-			guiGridListSetItemText ( playerGroupWindow["groupinvitelist"], row, playerGroupWindow["groupinvitelist_groupname"],name, false, false )
-			guiGridListSetItemText ( playerGroupWindow["groupinvitelist"], row, playerGroupWindow["groupinvitelist_groupinviter"],inviter, false, false )
-			guiGridListSetItemText ( playerGroupWindow["groupinvitelist"], row, playerGroupWindow["groupinvitelist_groupmember"],member, false, false )
-			if vip > 12 then
-				guiGridListSetItemText ( playerGroupWindow["groupinvitelist"], row, playerGroupWindow["groupinvitelist_groupvip"],"YES", false, false )
-			else
-				guiGridListSetItemText ( playerGroupWindow["groupinvitelist"], row, playerGroupWindow["groupinvitelist_groupvip"],"NO", false, false )
-			end	
+    guiGridListClear(playerGroupWindow["groupinvitelist"])
+    local row = guiGridListAddRow ( playerGroupWindow["groupinvitelist"])
+    guiGridListSetItemText ( playerGroupWindow["groupinvitelist"], row, playerGroupWindow["groupinvitelist_groupname"],name, false, false )
+    guiGridListSetItemText ( playerGroupWindow["groupinvitelist"], row, playerGroupWindow["groupinvitelist_groupinviter"],inviter, false, false )
+    guiGridListSetItemText ( playerGroupWindow["groupinvitelist"], row, playerGroupWindow["groupinvitelist_groupmember"],member, false, false )
+    if vip > 12 then
+        guiGridListSetItemText ( playerGroupWindow["groupinvitelist"], row, playerGroupWindow["groupinvitelist_groupvip"],"YES", false, false )
+    else
+        guiGridListSetItemText ( playerGroupWindow["groupinvitelist"], row, playerGroupWindow["groupinvitelist_groupvip"],"NO", false, false )
+    end    
 end
 addEvent("updatePlayerInvites",true)
 addEventHandler("updatePlayerInvites",getRootElement(),updatePlayerInvites)
 
 function removePlayerInvites()
-	guiGridListClear(playerGroupWindow["groupinvitelist"])
+    guiGridListClear(playerGroupWindow["groupinvitelist"])
 end
 addEvent("removePlayerInvites",true)
 addEventHandler("removePlayerInvites",getRootElement(),removePlayerInvites)
 
 function refreshPlayerInviteList ()
-	guiGridListClear(playerGroupWindow["invite_member_list"])
-	for i, player in ipairs(getElementsByType("player")) do
-			if getElementData(player,"gang") == "None" then
-				local row = guiGridListAddRow ( playerGroupWindow["invite_member_list"] )
-				guiGridListSetItemText ( playerGroupWindow["invite_member_list"], row, playerGroupWindow["invite_member_list_name"],getPlayerName(player), false, false )
-			end
-		end
+    guiGridListClear(playerGroupWindow["invite_member_list"])
+    for i, player in ipairs(getElementsByType("player")) do
+        if getElementData(player,"gang") == "None" then
+            local row = guiGridListAddRow ( playerGroupWindow["invite_member_list"] )
+            guiGridListSetItemText ( playerGroupWindow["invite_member_list"], row, playerGroupWindow["invite_member_list_name"],getPlayerName(player), false, false )
+        end
+    end
 end
 
 function playerGroupSystemButton (button,state)
 if not button == "mouse1" and not state == "down" then return end
 if source == playerGroupWindow["groupinvite_accept"] then
-	triggerServerEvent("acceptGroupInvite",getLocalPlayer())
-	guiGridListClear(playerGroupWindow["groupinvitelist"])
-	guiSetVisible(playerGroupWindow["window"],false)
-	showCursor(false)
+    triggerServerEvent("acceptGroupInvite",getLocalPlayer())
+    guiGridListClear(playerGroupWindow["groupinvitelist"])
+    guiSetVisible(playerGroupWindow["window"],false)
+    showCursor(false)
 elseif source == playerGroupWindow["member_list_destroygroup"] then
-	guiSetVisible(playerGroupWindow["member_list_destroygroup_reclick_window"],true)
-	guiBringToFront(playerGroupWindow["member_list_destroygroup_reclick_window"])
+    guiSetVisible(playerGroupWindow["member_list_destroygroup_reclick_window"],true)
+    guiBringToFront(playerGroupWindow["member_list_destroygroup_reclick_window"])
 elseif source == playerGroupWindow["member_list_destroygroup_reclick_yes"] then
-	triggerServerEvent("destroyGroup",getLocalPlayer())
-	guiSetVisible(playerGroupWindow["member_list_destroygroup_reclick_window"],false)
-	guiSetVisible(playerGroupWindow["member_window"],false)
-	showCursor(false)
+    triggerServerEvent("destroyGroup",getLocalPlayer())
+    guiSetVisible(playerGroupWindow["member_list_destroygroup_reclick_window"],false)
+    guiSetVisible(playerGroupWindow["member_window"],false)
+    showCursor(false)
 elseif source == playerGroupWindow["member_list_destroygroup_reclick_cancel"] then
-	guiSetVisible(playerGroupWindow["member_list_destroygroup_reclick_window"],false)
+    guiSetVisible(playerGroupWindow["member_list_destroygroup_reclick_window"],false)
 elseif source == playerGroupWindow["member_list_leavegang"] then
-	triggerServerEvent("leaveGroup",getLocalPlayer())
-	guiSetVisible(playerGroupWindow["member_window"],false)
-	showCursor(false)
+    triggerServerEvent("leaveGroup",getLocalPlayer())
+    guiSetVisible(playerGroupWindow["member_window"],false)
+    showCursor(false)
 elseif source == playerGroupWindow["member_list_inviteplayer"] then
-	guiSetVisible(playerGroupWindow["invite_member_list_window"],true)
-	guiBringToFront(playerGroupWindow["invite_member_list_window"])
-	refreshPlayerInviteList()
+    guiSetVisible(playerGroupWindow["invite_member_list_window"],true)
+    guiBringToFront(playerGroupWindow["invite_member_list_window"])
+    refreshPlayerInviteList()
 elseif source == playerGroupWindow["invite_member_list_invite"] then
-	local playerName = guiGridListGetItemText ( playerGroupWindow["invite_member_list"], guiGridListGetSelectedItem ( playerGroupWindow["invite_member_list"] ), 1 )
-	triggerServerEvent("invitePlayerToGroup",getLocalPlayer(),playerName)
-	guiSetVisible(playerGroupWindow["invite_member_list_window"],true)
+    local playerName = guiGridListGetItemText ( playerGroupWindow["invite_member_list"], guiGridListGetSelectedItem ( playerGroupWindow["invite_member_list"] ), 1 )
+    triggerServerEvent("invitePlayerToGroup",getLocalPlayer(),playerName)
+    guiSetVisible(playerGroupWindow["invite_member_list_window"],true)
 elseif source == playerGroupWindow["member_list_kickplayer"] then
-	local playerName = guiGridListGetItemText ( playerGroupWindow["member_list"], guiGridListGetSelectedItem ( playerGroupWindow["member_list"] ), 1 )
-	triggerServerEvent("kickGroupMember",getLocalPlayer(),playerName)
-	guiSetVisible(playerGroupWindow["member_window"],false)
-	showCursor(false)
+    local playerName = guiGridListGetItemText ( playerGroupWindow["member_list"], guiGridListGetSelectedItem ( playerGroupWindow["member_list"] ), 1 )
+    triggerServerEvent("kickGroupMember",getLocalPlayer(),playerName)
+    guiSetVisible(playerGroupWindow["member_window"],false)
+    showCursor(false)
 elseif source == playerGroupWindow["member_list_removesubleader"] then
-	local playerName = guiGridListGetItemText ( playerGroupWindow["member_list"], guiGridListGetSelectedItem ( playerGroupWindow["member_list"] ), 1 )
-	triggerServerEvent("removeGroupSubLeader",getLocalPlayer(),playerName)
+    local playerName = guiGridListGetItemText ( playerGroupWindow["member_list"], guiGridListGetSelectedItem ( playerGroupWindow["member_list"] ), 1 )
+    triggerServerEvent("removeGroupSubLeader",getLocalPlayer(),playerName)
 elseif source == playerGroupWindow["member_list_addsubleader"] then
-	local playerName = guiGridListGetItemText ( playerGroupWindow["member_list"], guiGridListGetSelectedItem ( playerGroupWindow["member_list"] ), 1 )
-	triggerServerEvent("addGroupSubLeader",getLocalPlayer(),playerName)
+    local playerName = guiGridListGetItemText ( playerGroupWindow["member_list"], guiGridListGetSelectedItem ( playerGroupWindow["member_list"] ), 1 )
+    triggerServerEvent("addGroupSubLeader",getLocalPlayer(),playerName)
 end
 end
 addEventHandler("onClientGUIClick",playerGroupWindow["groupinvite_accept"],playerGroupSystemButton,false)
@@ -219,50 +220,38 @@ addEventHandler("onClientGUIClick",playerGroupWindow["member_list_destroygroup_r
 addEventHandler("onClientGUIClick",playerGroupWindow["invite_member_list_invite"],playerGroupSystemButton,false)
 --
 
-local antiSpamTimer2 = {}
-function setAntiSpamActive2()
-	if not isTimer(antiSpamTimer2) then
-		antiSpamTimer2 = setTimer(killAntiSpamTimer2,3500,1)
-	else
-		killTimer(antiSpamTimer2)
-		antiSpamTimer2 = setTimer(killAntiSpamTimer2,3500,1)
-	end
-end
+local openGangTick = getTickCount()
 
-function isSpamTimer2()
-	if isTimer(antiSpamTimer2) then 
-		local t = getTimerDetails(antiSpamTimer2)
-		outputChatBox("Musisz odczekać "..math.floor(t/1000+1).." sek. aby włączyć panel!", 255, 255, 0,true)
-		return true
-	else
-		return false
-	end
+function isPlayerKeySpamming()
+    local passed = getTickCount() - openGangTick
+    if passed < 3000 then
+        outputChatBox("Musisz odczekać "..math.floor(t/1000+1).." sek. aby włączyć panel!", 255, 255, 0,true)
+        return true
+    else
+        openGangTick = getTickCount()
+        return false
+    end
 end
-
-function killAntiSpamTimer2 ()
-killTimer(antiSpamTimer2)
-end
-
 
 --GPS
 playerBlibs = {}
 amouunt = 0
 function updateGPS ()
-amouunt = 0
-local gangname = getElementData(getLocalPlayer(),"gang")
-	for i, blip in ipairs(playerBlibs) do
-		destroyElement(blip)
-	end
-if getElementData(getLocalPlayer(),"gang") == "None" then return end	
-playerBlibs = {}	
-	for i, player in ipairs(getElementsByType("player")) do
-		if gangname == getElementData(player,"gang") then
-			amouunt = amouunt+1
-			playerBlibs[amouunt] = createBlipAttachedTo(player,0,2,22,255,22)
-			setBlipVisibleDistance(playerBlibs[amouunt],1000)
-		end
-	end
+    amouunt = 0
+    local gangname = getElementData(getLocalPlayer(),"gang")
+    for i, blip in ipairs(playerBlibs) do
+        if isElement(blip) then
+            destroyElement(blip)
+        end
+    end
+    if getElementData(getLocalPlayer(),"gang") == "None" then return end    
+    playerBlibs = {}    
+    for i, player in ipairs(getElementsByType("player")) do
+        if gangname == getElementData(player,"gang") and player ~= localPlayer then
+            amouunt = amouunt+1
+            playerBlibs[amouunt] = createBlipAttachedTo(player,0,2,22,255,22)
+            setBlipVisibleDistance(playerBlibs[amouunt],1000)
+        end
+    end
 end
 setTimer(updateGPS,10000,0)
-
-unbindKey ("U")
