@@ -156,15 +156,6 @@ engineImportTXD(snipertxd, 2407)
 sniperdff = engineLoadDFF("items/backpack_survival.dff", 2407)
 engineReplaceModel(sniperdff, 2407)
 
-snipertxd = engineLoadTXD("items/chromegun.txd")
-engineImportTXD(snipertxd, 349)
-sniperdff = engineLoadDFF("items/chromegun.dff", 349)
-engineReplaceModel(sniperdff, 349)
-
-snipertxd = engineLoadTXD("items/cuntgun.txd")
-engineImportTXD(snipertxd, 357)
-sniperdff = engineLoadDFF("items/cuntgun.dff", 357)
-engineReplaceModel(sniperdff, 357)
 
 
 snipertxd = engineLoadTXD("items/m4.txd")
@@ -178,12 +169,9 @@ sniperdff = engineLoadDFF("items/ak47.dff", 355)
 engineReplaceModel(sniperdff, 355)
 
 snipertxd = engineLoadTXD("items/sniper.txd")
-engineImportTXD(snipertxd, 2918)
-sniperdff = engineLoadDFF("items/sniper.dff", 2918)
-engineReplaceModel(sniperdff, 2918)
-
-snipertxd = engineLoadTXD("items/snipa_fake.txd")
 engineImportTXD(snipertxd, 358)
+sniperdff = engineLoadDFF("items/sniper.dff", 358)
+engineReplaceModel(sniperdff, 358)
 
 snipertxd = engineLoadTXD("items/backpack_patrol.txd")
 engineImportTXD(snipertxd, 2401)
