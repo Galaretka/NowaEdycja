@@ -320,10 +320,8 @@
 	<script src="scripts/get_pos_script/client.lua" type="client"/>
 	<script src="scripts/lina/main_server.lua" type="server"/>
 	<script src="scripts/lina/main_client.lua" type="client"/>
-	<script src="scripts/granatnik/grenadethrower.lua" type="server"/>
-	<script src="scripts/c/c.lua" type="client"/>
+	<script src="scripts/granatnik/grenadethrower.lua" type="client"/>
 	<script src="scripts/fps/server.lua" type="server" />
 	<script src="scripts/fps/client.lua" type="client" />
 	<script src="scripts/speed/client.lua" type="client"></script>
-	
 </meta>
