@@ -507,7 +507,7 @@ function zombieSpawning()
     triggerServerEvent("createZomieForPlayer", getLocalPlayer(), hitX, hitY, hitZ)
   end
 end
-setTimer(zombieSpawning, 6000, 0)
+setTimer(zombieSpawning, 3000, 0)
 function stopZombieSound()
   local zombies = getElementsByType("ped")
   for theKey, theZomb in ipairs(zombies) do
