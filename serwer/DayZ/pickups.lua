@@ -731,7 +731,14 @@ local itemTable = {
     },
     {
       "AKS-74 Kobra",
-      355,
+      2919,
+      1,
+      90,
+      3.8
+    },
+	{
+      "PKM",
+      2915,
       1,
       90,
       3.8
@@ -1493,6 +1500,12 @@ local itemTable = {
       2,
       0
     },
+	{
+      "PKM Mag",
+      1271,
+      2,
+      0
+    },
     {
       "STANAG Mag",
       1271,
@@ -1864,10 +1877,17 @@ local itemTable = {
     },
     {
       "AKS-74 Kobra",
-      355,
+      2919,
       1,
       90,
-      0.9
+      3.8
+    },
+	{
+      "PKM",
+      2915,
+      1,
+      90,
+      3.8
     },
     {
       "M136 Rocket Launcher",
@@ -2053,6 +2073,9 @@ weaponAmmoTable = {
   ["30Rnd. AKS"] = {
     {"AKS-74 Kobra", 30}
   },
+  ["PKM Mag"] = {
+    {"PKM", 30}
+  },
   ["STANAG Mag"] = {
     {"M4A1 CCO", 31}
   },
@@ -2158,6 +2181,11 @@ function getWeaponAmmoType(weaponName, notOthers)
   for i, weaponData in ipairs(weaponAmmoTable["30Rnd. AKS"]) do
     if weaponName == weaponData[1] then
       return "30Rnd. AKS", weaponData[2]
+    end
+  end
+  for i, weaponData in ipairs(weaponAmmoTable["PKM Mag"]) do
+    if weaponName == weaponData[1] then
+      return "PKM Mag", weaponData[2]
     end
   end
   for i, weaponData in ipairs(weaponAmmoTable["STANAG Mag"]) do
@@ -2396,6 +2424,8 @@ function onPlayerTakeItemFromGround(itemName, col)
     itemPlus = 20
   elseif itemName == "30Rnd. AKS" then
     itemPlus = 30
+  elseif itemName == "PKM Mag" then
+    itemPlus = 30
   elseif itemName == "STANAG Mag" then
     itemPlus = 20
   elseif itemName == "1866 Slug" then
@@ -2414,7 +2444,7 @@ function onPlayerTakeItemFromGround(itemName, col)
     itemPlus = 10
   elseif itemName == "M136 Rocket" then
     itemPlus = 0
-  elseif itemName == "M4A1 CCO" or itemName == "AKS-74 Kobra" or itemName == "SVD Camo" or itemName == "M107" or itemName == "DMR" or itemName == "Winchester 1866" or itemName == "SPAZ-12 Combat Shotgun" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "M136 Rocket Launcher" or itemName == "Lee Enfield" then
+  elseif itemName == "M4A1 CCO" or itemName == "AKS-74 Kobra" or itemName == "PKM" or itemName == "SVD Camo" or itemName == "M107" or itemName == "DMR" or itemName == "Winchester 1866" or itemName == "SPAZ-12 Combat Shotgun" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "M136 Rocket Launcher" or itemName == "Lee Enfield" then
     removeBackWeaponOnDrop()
   end
   local x, y, z = getElementPosition(source)

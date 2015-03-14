@@ -53,6 +53,7 @@ local vehicleDataTableForTent = {
   {"PDW Mag"},
   {"MP5A5 Mag"},
   {"30Rnd. AKS"},
+  {"PKM Mag"},
   {"STANAG Mag"},
   {"Tear Gas"},
   {"M67 Frag Grenade"},
@@ -73,6 +74,7 @@ local vehicleDataTableForTent = {
     "Lee Enfield"
   },
   {"AKS-74 Kobra"},
+  {"PKM"},
   {"Blood Bag"},
   {"GPS"},
   {"Map"},
@@ -210,6 +212,9 @@ weaponAmmoTable = {
   ["30Rnd. AKS"] = {
     {"AKS-74 Kobra", 30}
   },
+  ["PKM Mag"] = {
+    {"PKM", 30}
+  },
   ["STANAG Mag"] = {
     {"M4A1 CCO", 31}
   },
@@ -306,6 +311,11 @@ function getWeaponAmmoType(weaponName, notOthers)
   for i, weaponData in ipairs(weaponAmmoTable["30Rnd. AKS"]) do
     if weaponName == weaponData[1] then
       return "30Rnd. AKS", weaponData[2]
+    end
+  end
+  for i, weaponData in ipairs(weaponAmmoTable["PKM Mag"]) do
+    if weaponName == weaponData[1] then
+      return "PKM Mag", weaponData[2]
     end
   end
   for i, weaponData in ipairs(weaponAmmoTable["STANAG Mag"]) do
@@ -506,6 +516,12 @@ function weaponSwitchBack(previousWeaponID, currentWeaponID)
 	elseif weapon1 == "DMR" then
 	elementWeaponBack[source] = createObject(2918, x, y, z)
     setObjectScale(elementWeaponBack[source], 0.875)
+	elseif weapon1 == "PKM" then
+	elementWeaponBack[source] = createObject(2915, x, y, z)
+    setObjectScale(elementWeaponBack[source], 0.875)
+	elseif weapon1 == "AKS-74 Kobra" then
+	elementWeaponBack[source] = createObject(2919, x, y, z)
+    setObjectScale(elementWeaponBack[source], 0.875)
 	else
     elementWeaponBack[source] = createObject(getWeaponObjectID(weapID1), x, y, z)
     setObjectScale(elementWeaponBack[source], 0.875)
@@ -546,7 +562,10 @@ elseif weapon1 == "M107" then
 elementWeaponRaplace[source] = createObject(2917,x,y,z)
 elseif weapon1 == "DMR" then
 elementWeaponRaplace[source] = createObject(2918,x,y,z)
-    
+elseif weapon1 == "PKM" then
+elementWeaponRaplace[source] = createObject(2915,x,y,z)
+elseif weapon1 == "AKS-74 Kobra" then
+elementWeaponRaplace[source] = createObject(2919,x,y,z)
 end
 if elementBackpack[source] then
 attachElementToBone(elementWeaponRaplace[source],source,12,0,0,0,180,90,180)

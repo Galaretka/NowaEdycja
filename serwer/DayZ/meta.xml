@@ -237,6 +237,12 @@
     <file src="items/sniper.dff" />
     <file src="items/snipa_fake.txd" />
     <file src="items/snipa_fake.dff" />
+    <file src="items/pkm.txd" />
+    <file src="items/pkm.dff" />
+    <file src="items/chromegun.txd" />
+    <file src="items/chromegun.dff" />
+    <file src="items/cuntgun.txd" />
+    <file src="items/cuntgun.dff" />
 	<file src="items/sandbags.dff" />
 	<file src="items/sandbags.col" />
 	<file src="items/sandbags.txd" />
