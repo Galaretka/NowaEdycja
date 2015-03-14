@@ -47,7 +47,7 @@ damageTable = {
 {"MP5A5",889},
 {"SPAZ-12 Combat Shotgun",2300},
 {"AKS-74 Kobra",3722},
-{"PKM",3900},
+{"PKM",3800},
 --{"Heat-Seeking RPG",0},
 --{"M136 Rocket Launcher",0},
 {"Lee Enfield",8000},
