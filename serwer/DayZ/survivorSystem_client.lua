@@ -1838,38 +1838,3 @@ end
 setTimer(playerPingCheck, 4000, 0)
 
 bindKey("b", "down", "chatbox", "global" )
-
-
-local alpha = 255
------- <<< --------- >>> ----------
-bindKey ( "aim_weapon", "both",
-function ( _, state )
-weapon = getPedWeapon(localPlayer)
-if weapon == 34 then -- проверка не по слоту а по id
-if ( state == "down" ) then
-alpha = 0
-elseif ( state == "up" ) then
-alpha = 255
-end
-for _, v in ipairs ( getElementsByType ( "object", root, true ) ) do
-if isElementAttachedToBone ( v ) then
-local id = getElementModel ( v )
-local px,py,pz = getElementPosition (v)
-local x,y,z = getElementPosition(localPlayer)
-local pdistance = getDistanceBetweenPoints3D ( x,y,z,px,py,pz )
-if pdistance <= 1 then -- Проверка на дистанцию
-if ( id == 2916 ) then
-setElementAlpha ( v, alpha )
-elseif ( id == 2917 ) then
-setElementAlpha ( v, alpha )
-elseif ( id == 2918 ) then
-setElementAlpha ( v, alpha )
-end
-end
-end
-end
-end
-end
-)
-
-
