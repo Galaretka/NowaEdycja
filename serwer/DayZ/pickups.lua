@@ -306,13 +306,13 @@ local itemTable = {
       0,
       12
     },
-    {
+   --[[ {
       "M67 Frag Grenade",
       342,
       1,
       0,
       0.01
-    },
+    },]]--
     {
       "Revolver",
       348,
@@ -582,13 +582,13 @@ local itemTable = {
       0,
       12
     },
-    {
+   --[[ {
       "M67 Frag Grenade",
       342,
       1,
       0,
       0.5
-    },
+    },]]--
     {
       "Sawn-Off Shotgun",
       350,
@@ -1811,13 +1811,13 @@ local itemTable = {
       90,
       5
     },
-    {
+    --[[{
       "M67 Frag Grenade",
       342,
       1,
       0,
       0.5
-    },
+    },]]--
     {
       "Sawn-Off Shotgun",
       350,
@@ -2126,7 +2126,7 @@ weaponAmmoTable = {
     {"Parachute", 46},
     {"Satchel", 39},
     {"Tear Gas", 17},
-    {"M67 Frag Grenade", 16},
+  --  {"M67 Frag Grenade", 16},
     {
       "Hunting Knife",
       4

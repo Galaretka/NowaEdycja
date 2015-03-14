@@ -845,7 +845,7 @@ weaponAmmoTable = {
     {"Parachute", 46},
     {"Satchel", 39},
     {"Tear Gas", 17},
-    {"M67 Frag Grenade", 16},
+--    {"M67 Frag Grenade", 16},
     {
       "Hunting Knife",
       4

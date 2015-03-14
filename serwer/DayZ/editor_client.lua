@@ -47,7 +47,7 @@ damageTable = {
 --{"TEC-9",889},
 {"Sawn-Off Shotgun",2300},
 {"Revolver",1389},
-{"M67 Frag Grenade",17998},
+--{"M67 Frag Grenade",17998},
 --{"Baseball Bat",953},
 {"Crowbar",953},
 {"Machete",953},

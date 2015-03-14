@@ -38,7 +38,7 @@ inventoryItems = {
 ["Specially Weapon"] = {
 {"Parachute", 1},
 {"Tear Gas", 1},
-{"M67 Frag Grenade", 1},
+--{"M67 Frag Grenade", 1},
 {"Binoculars", 1},
 }
 },
@@ -1182,7 +1182,7 @@ weaponAmmoTable = {
 ["M107 Mag"] = {{"M107", 34}},
 ["Lee Enfield Mag"] = {{"Lee Enfield", 33}},
 ["M136 Rocket"] = {{"Heat-Seeking RPG", 36},{"M136 Rocket Launcher", 35}},
-["others"] = {{"Parachute", 46},{"Satchel", 39},{"Tear Gas", 17},{"M67 Frag Grenade", 16},{"Hunting Knife", 4},{"Hatchet", 8},{"Binoculars", 43},{"Machete", 5},{"Crowbar", 6},{"Golf Club", 2}}
+["others"] = {{"Parachute", 46},{"Satchel", 39},{"Tear Gas", 17},{"Hunting Knife", 4},{"Hatchet", 8},{"Binoculars", 43},{"Machete", 5},{"Crowbar", 6},{"Golf Club", 2}}--,{"M67 Frag Grenade", 16}}
 }
 
 function getWeaponAmmoType2(weaponName)

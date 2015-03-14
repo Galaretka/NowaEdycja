@@ -117,7 +117,7 @@ local playerDataTable = {
   {"PKM Mag"},
   {"STANAG Mag"},
   {"Tear Gas"},
-  {"M67 Frag Grenade"},
+--  {"M67 Frag Grenade"},
   {
     "Revolver"
   },
@@ -281,7 +281,7 @@ local vehicleDataTable = {
   {"PKM Mag"},
   {"STANAG Mag"},
   {"Tear Gas"},
-  {"M67 Frag Grenade"},
+ -- {"M67 Frag Grenade"},
   {
     "Revolver"
   },
