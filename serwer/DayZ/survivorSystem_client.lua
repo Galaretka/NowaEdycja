@@ -184,8 +184,6 @@ engineReplaceModel(sniperdff, 2918)
 
 snipertxd = engineLoadTXD("items/snipa_fake.txd")
 engineImportTXD(snipertxd, 358)
-sniperdff = engineLoadDFF("items/snipa_fake.dff", 358)
-engineReplaceModel(sniperdff, 358)
 
 snipertxd = engineLoadTXD("items/backpack_patrol.txd")
 engineImportTXD(snipertxd, 2401)
