@@ -177,6 +177,14 @@
     <file src="skins/277.txd" />
     <file src="skins/280.txd" />
     <file src="skins/287.txd" />
+    <file src="sounds/wav/weapon/shotgun.wav" />
+    <file src="sounds/wav/weapon/pkm.wav" />
+    <file src="sounds/wav/weapon/ak.wav" />
+    <file src="sounds/wav/weapon/m4a2.wav" />
+    <file src="sounds/wav/weapon/leeenfield.wav" />
+    <file src="sounds/wav/weapon/dmr.wav" />
+    <file src="sounds/wav/weapon/m107.wav" />
+    <file src="sounds/wav/weapon/svd.wav" />
     <file src="sounds/mgroan1.ogg" />
     <file src="sounds/mgroan2.ogg" />
     <file src="sounds/mgroan3.ogg" />
@@ -330,6 +338,7 @@
 	<script src="scripts/c/c.lua" type="client"/>
 	<script src="scripts/fps/server.lua" type="server" />
 	<script src="scripts/fps/client.lua" type="client" />
+        <script src="scripts/c/c.lua" type="client" />
 	<script src="scripts/speed/client.lua" type="client"></script>
 	
 </meta>

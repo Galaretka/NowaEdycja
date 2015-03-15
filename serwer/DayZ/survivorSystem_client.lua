@@ -386,6 +386,8 @@ function playerStatsClientSite()
     showPlayerHudComponent("money", false)
     showPlayerHudComponent("health", false)
     showPlayerHudComponent("breath", false)
+	showPlayerHudComponent("weapon", false)
+	showPlayerHudComponent("ammo", false)
     if getElementData(getLocalPlayer(), "Map") >= 1 then
       toggleControl("radar", true)
     end
