@@ -46,7 +46,33 @@
     <script src="group_system/groupsystem.lua" type="server" />
     <script src="group_system/groupsystem_client.lua" type="client" />
     <export function="addGang" type="server" />
-    <export function="addAddonInfo" type="server" />
+    <!-- Arguments: gangName, gangLeader. Returns: true or false. -->
+    <export function="removeGang" type="server" />
+    <!-- Arguments: gangName. Returns: true or false. -->
+    <export function="doesGangExists" type="server" />
+    <!-- Arguments: gangName. Returns: true or false. -->
+    <export function="getGangList" type="server" />
+    <!-- Arguments: None. Returns: A table with gang list. -->
+    <export function="getGangMembers" type="server" />
+    <!-- Arguments: gangName. Returns: A table with gang members. -->
+    <export function="addGangMember" type="server" />
+    <!-- Arguments: gangName, accountName, addedBy. Returns: true or false (if false, it'll return a second argument with the error.) -->
+    <export function="removeGangMember" type="server" />
+    <!-- Arguments: gangName, accountName, kickerName (if used it'll output who kicked the member, else it'll output that you left). Returns: true or false (if false, it'll return a second argument with the error.) -->
+    <export function="isGangMember" type="server" />
+    <!-- Arguments: gangName, accountName. Returns: true or false. -->
+    <export function="getAccountGang" type="server" />
+    <!-- Arguments: accountName. Returns: The gang name, 'None' otherwise. -->
+    <export function="getGangLeader" type="server" />
+    <!-- Arguments: gangName. Returns: The gang leader. -->
+    <export function="getGangSubLeaders" type="server" />
+    <!-- Arguments: gangName. Returns: A JSON string with gang sub leaders. -->
+    <export function="isPlayerGangInvited" type="server" />
+    <!-- Arguments: thePlayer. Returns: 3 arguments: invited, gangName, inviter. -->
+    <export function="getPlayersByGang" type="server" />
+    <!-- Arguments: gangName. Returns: A table with gang players. -->
+    <export function="isGangSubLeader" type="server" />
+    <!-- Arguments: gangName, accountName. Returns: true or false. -->
     <settings>
         <setting name="*column_name" value="Group" />
         <setting name="*gang_list_command" value="gangs" />
