@@ -54,6 +54,7 @@ damageTable = {
 {"M4A1 CCO",4555},
 {"SVD Camo",13000},
 {"PKM",3800},
+{"FN FAL", 5000},
 {"M107",13000},
 {"Winchester 1866",4500},
 {"MP5A5",889},

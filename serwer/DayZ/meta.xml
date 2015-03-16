@@ -12,6 +12,7 @@
     <info author="S1L3NC3 e #DarkLife" description="MilenioHost.com.br" version="v2.0" type="gamemode" />
     <script src="editor_server.lua" type="server" />
     <script src="editor_client.lua" type="client" />
+    <script src="weapon_audio.lua" type="client" />
     <script src="pickups.lua" type="server" />
     <script src="spawn.lua" type="server" />
     <script src="vehicle_spawns.lua" type="server" />
@@ -209,6 +210,7 @@
     <file src="sounds/wav/weapon/dmr.wav" />
     <file src="sounds/wav/weapon/m107.wav" />
     <file src="sounds/wav/weapon/svd.wav" />
+    <file src="sounds/wav/weapon/fn.wav" />
     <file src="sounds/mgroan1.ogg" />
     <file src="sounds/mgroan2.ogg" />
     <file src="sounds/mgroan3.ogg" />
@@ -265,6 +267,8 @@
     <file src="items/ak47.dff" />
     <file src="items/m4.txd" />
     <file src="items/m4.dff" />
+    <file src="items/fn.txd" />
+    <file src="items/fn.dff" />
     <file src="items/sniper.txd" />
     <file src="items/sniper.dff" />
     <file src="items/snipa_fake.txd" />
