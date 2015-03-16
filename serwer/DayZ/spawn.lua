@@ -520,7 +520,7 @@ function kilLDayZPlayer(killer, headshot, weapon)
       local time = getRealTime()
       local hours = time.hour
       local minutes = time.minute
-      setElementData(pedCol, "deadreason", getPlayerName(source) .. " jest partwy. Przyczyna śmierci: " .. (weapon or "Unknown") .. ". Zmarł o: " .. hours .. ":" .. minutes .. ".")
+      setElementData(pedCol, "deadreason", getPlayerName(source) .. " jest martwy. Przyczyna śmierci: " .. (weapon or "Unknown") .. ". Zmarł o: " .. hours .. ":" .. minutes .. ".")
     end
   end
   if killer then
