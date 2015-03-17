@@ -115,6 +115,7 @@ local playerDataTable = {
   {"MP5A5 Mag"},
   {"30Rnd. AKS"},
   {"PKM Mag"},
+  {"AK107 Mag"},
   {"FN Mag"},
   {"STANAG Mag"},
   {"Tear Gas"},
@@ -138,6 +139,7 @@ local playerDataTable = {
   {"PDW"},
   {"AKS-74 Kobra"},
   {"PKM"},
+  {"AK-107"},
   {"FN FAL"},
   {"Blood Bag"},
   {"GPS"},
@@ -281,6 +283,7 @@ local vehicleDataTable = {
   {"MP5A5 Mag"},
   {"30Rnd. AKS"},
   {"PKM Mag"},
+  {"AK107 Mag"},
   {"FN Mag"},
   {"STANAG Mag"},
   {"Tear Gas"},
@@ -303,6 +306,7 @@ local vehicleDataTable = {
   },
   {"AKS-74 Kobra"},
   {"PKM"},
+  {"AK-107"},
   {"FN FAL"},
   {"Blood Bag"},
   {"GPS"},
@@ -562,6 +566,8 @@ function kilLDayZPlayer(killer, headshot, weapon)
       elseif data[1] == "30Rnd. AKS" then
         plusData = math.floor(getElementData(source, data[1]) / 30)
 	  elseif data[1] == "PKM Mag" then
+        plusData = math.floor(getElementData(source, data[1]) / 30)
+	  elseif data[1] == "AK107 Mag" then
         plusData = math.floor(getElementData(source, data[1]) / 30)
 	  elseif data[1] == "FN Mag" then
         plusData = math.floor(getElementData(source, data[1]) / 30)

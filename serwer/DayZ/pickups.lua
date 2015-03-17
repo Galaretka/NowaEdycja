@@ -692,35 +692,35 @@ local itemTable = {
       1247,
       2,
       0,
-      4.5
+      2
     },
 	{
       "Sniper Clothing II",
       1247,
       2,
       0,
-      4.5
+      0.01
     },
 	{
       "Sniper Clothing",
       1247,
       2,
       0,
-      4.5
+      0.01
     },
 	{
       "Military Clothing",
       1247,
       2,
       0,
-      4.5
+      2
     },
 	{
       "Military Clothing III",
       1247,
       2,
       0,
-      4.5
+      2
     },
     {
       "Civilian Clothing",
@@ -744,11 +744,53 @@ local itemTable = {
       3.8
     },
 	{
+      "AK-107",
+      2914,
+      1,
+      90,
+      3.8
+    },
+	{
       "FN FAL",
       2914,
       1,
       90,
       3.8
+    },
+	{
+      "30Rnd. AKS",
+      1271,
+      2,
+      0,
+	  3.8
+    },
+	{
+      "PKM Mag",
+      1271,
+      2,
+      0,
+	  3.8
+    },
+	{
+      "AK107 Mag",
+      1271,
+      2,
+      0,
+	  3.8
+    },
+	{
+      "FN Mag",
+      1271,
+      2,
+      0,
+	  3.8
+    },
+    {
+      "STANAG Mag",
+      1271,
+      2,
+      0,
+	  3.8
     },
     {
       "GPS",
@@ -818,21 +860,21 @@ local itemTable = {
       2918,
       1,
       90,
-      0.4
+      1
     },
 	{
       "SVD Camo",
       2916,
       1,
       90,
-      0.4
+      1.2
     },
 	{
       "M107",
       2917,
       1,
       90,
-      0.4
+      2
     },
     {
       "Infrared Goggles",
@@ -1514,6 +1556,12 @@ local itemTable = {
       0
     },
 	{
+      "AK107 Mag",
+      1271,
+      2,
+      0
+    },
+	{
       "FN Mag",
       1271,
       2,
@@ -1903,6 +1951,13 @@ local itemTable = {
       3.8
     },
 	{
+      "AK-107",
+      2914,
+      1,
+      90,
+      3.8
+    },
+	{
       "FN FAL",
       2914,
       1,
@@ -2096,6 +2151,9 @@ weaponAmmoTable = {
   ["PKM Mag"] = {
     {"PKM", 30}
   },
+  ["AK107 Mag"] = {
+    {"AK-107", 30}
+  },
   ["FN Mag"] = {
     {"FN FAL", 30}
   },
@@ -2209,6 +2267,11 @@ function getWeaponAmmoType(weaponName, notOthers)
   for i, weaponData in ipairs(weaponAmmoTable["PKM Mag"]) do
     if weaponName == weaponData[1] then
       return "PKM Mag", weaponData[2]
+    end
+  end
+  for i, weaponData in ipairs(weaponAmmoTable["AK107 Mag"]) do
+    if weaponName == weaponData[1] then
+      return "AK107 Mag", weaponData[2]
     end
   end
   for i, weaponData in ipairs(weaponAmmoTable["FN Mag"]) do
@@ -2454,6 +2517,8 @@ function onPlayerTakeItemFromGround(itemName, col)
     itemPlus = 30
   elseif itemName == "PKM Mag" then
     itemPlus = 30
+  elseif itemName == "AK107 Mag" then
+    itemPlus = 30
   elseif itemName == "FN Mag" then
     itemPlus = 30
   elseif itemName == "STANAG Mag" then
@@ -2474,7 +2539,7 @@ function onPlayerTakeItemFromGround(itemName, col)
     itemPlus = 10
   elseif itemName == "M136 Rocket" then
     itemPlus = 0
-  elseif itemName == "M4A1 CCO" or itemName == "AKS-74 Kobra" or itemName == "PKM" or itemName == "FN FAL" or itemName == "SVD Camo" or itemName == "M107" or itemName == "DMR" or itemName == "Winchester 1866" or itemName == "SPAZ-12 Combat Shotgun" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "M136 Rocket Launcher" or itemName == "Lee Enfield" then
+  elseif itemName == "M4A1 CCO" or itemName == "AKS-74 Kobra" or itemName == "PKM" or itemName == "AK-107" or itemName == "FN FAL" or itemName == "SVD Camo" or itemName == "M107" or itemName == "DMR" or itemName == "Winchester 1866" or itemName == "SPAZ-12 Combat Shotgun" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "M136 Rocket Launcher" or itemName == "Lee Enfield" then
     removeBackWeaponOnDrop()
   end
   local x, y, z = getElementPosition(source)

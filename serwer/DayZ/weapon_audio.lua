@@ -53,6 +53,9 @@ function playGunfireSound()
 	elseif weapon == 30 and current_1 == "AKS-74 Kobra" then
         local sound = playSound3D("sounds/wav/weapon/ak.wav",x,y,z,false)
         setSoundMaxDistance(sound,30)
+	elseif weapon == 30 and current_1 == "AK-107" then
+        local sound = playSound3D("sounds/wav/weapon/ak107.wav",x,y,z,false)
+        setSoundMaxDistance(sound,30)
 	elseif weapon == 31 and current_1 == "M4A1 CCO" then
         local sound = playSound3D("sounds/wav/weapon/m4a2.wav",x,y,z,false)
         setSoundMaxDistance(sound,30)

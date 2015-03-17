@@ -55,6 +55,7 @@ local vehicleDataTableForTent = {
   {"30Rnd. AKS"},
   {"PKM Mag"},
   {"FN Mag"},
+  {"AK107 Mag"},
   {"STANAG Mag"},
   {"Tear Gas"},
 --  {"M67 Frag Grenade"},
@@ -76,6 +77,7 @@ local vehicleDataTableForTent = {
   },
   {"AKS-74 Kobra"},
   {"PKM"},
+  {"AK-107"},
   {"FN FAL"},
   {"Blood Bag"},
   {"GPS"},
@@ -217,6 +219,9 @@ weaponAmmoTable = {
   ["PKM Mag"] = {
     {"PKM", 30}
   },
+  ["AK107 Mag"] = {
+    {"AK-107", 30}
+  },
   ["FN Mag"] = {
     {"FN FAL", 30}
   },
@@ -321,6 +326,11 @@ function getWeaponAmmoType(weaponName, notOthers)
   for i, weaponData in ipairs(weaponAmmoTable["PKM Mag"]) do
     if weaponName == weaponData[1] then
       return "PKM Mag", weaponData[2]
+    end
+  end
+  for i, weaponData in ipairs(weaponAmmoTable["AK107 Mag"]) do
+    if weaponName == weaponData[1] then
+      return "AK107 Mag", weaponData[2]
     end
   end
   for i, weaponData in ipairs(weaponAmmoTable["FN Mag"]) do
@@ -535,6 +545,9 @@ function weaponSwitchBack(previousWeaponID, currentWeaponID)
 	elseif weapon1 == "FN FAL" then
 	elementWeaponBack[source] = createObject(2914, x, y, z)
     setObjectScale(elementWeaponBack[source], 0.875)
+	elseif weapon1 == "AK-107" then
+	elementWeaponBack[source] = createObject(2913, x, y, z)
+    setObjectScale(elementWeaponBack[source], 0.875)
 	else
     elementWeaponBack[source] = createObject(getWeaponObjectID(weapID1), x, y, z)
     setObjectScale(elementWeaponBack[source], 0.875)
@@ -581,6 +594,8 @@ elseif weapon1 == "AKS-74 Kobra" then
 elementWeaponRaplace[source] = createObject(2919,x,y,z)
 elseif weapon1 == "FN FAL" then
 elementWeaponRaplace[source] = createObject(2914,x,y,z)
+elseif weapon1 == "AK-107" then
+elementWeaponRaplace[source] = createObject(2913,x,y,z)
 end
 if elementBackpack[source] then
 attachElementToBone(elementWeaponRaplace[source],source,12,0,0,0,180,90,180)

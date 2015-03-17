@@ -27,6 +27,7 @@ local x, y = guiGetScreenSize ( ) posx2= x-0 posy2= 0 posx3= x-0 posy3= 0
 	if arma == 34 and weapon1 == "M107" then destroyElement(element1)element1 = dxDrawText(" M107 ",posx3-290, posy3+10, x, y,tocolor(50,205,50,255),0.8,"bankgothic","left","top",false,false,false)end
 	if arma == 30 and weapon1 == "AKS-74 Kobra" then destroyElement(element1)element1 = dxDrawText(" AKS-74 Kobra ",posx3-290, posy3+10, x, y,tocolor(50,205,50,255),0.8,"bankgothic","left","top",false,false,false)end
 	if arma == 30 and weapon1 == "PKM" then destroyElement(element1)element1 = dxDrawText(" PKM ",posx3-290, posy3+10, x, y,tocolor(50,205,50,255),0.8,"bankgothic","left","top",false,false,false)end
+	if arma == 30 and weapon1 == "AK-107" then destroyElement(element1)element1 = dxDrawText(" AK-107 ",posx3-290, posy3+10, x, y,tocolor(50,205,50,255),0.8,"bankgothic","left","top",false,false,false)end
 	if arma == 30 and weapon1 == "FN FAL" then destroyElement(element1)element1 = dxDrawText(" FN FAL ",posx3-290, posy3+10, x, y,tocolor(50,205,50,255),0.8,"bankgothic","left","top",false,false,false)end
 	if arma == 31 and weapon1 == "M4A1 CCO" then destroyElement(element1)element1 = dxDrawText(" M4A1 CCO ",posx3-290, posy3+10, x, y,tocolor(50,205,50,255),0.8,"bankgothic","left","top",false,false,false)end
 	if arma == 34 and weapon1 == "SVD Camo" then destroyElement(element1)element1 = dxDrawText(" SVD Camo ",posx3-290, posy3+10, x, y,tocolor(50,205,50,255),0.8,"bankgothic","left","top",false,false,false)end

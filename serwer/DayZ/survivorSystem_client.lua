@@ -187,9 +187,14 @@ engineImportTXD(snipertxd, 2915)
 sniperdff = engineLoadDFF("items/pkm.dff", 2915)
 engineReplaceModel(sniperdff, 2915)
 
+snipertxd = engineLoadTXD("items/ak107.txd")
+engineImportTXD(snipertxd, 2913)
+sniperdff = engineLoadDFF("items/ak107.dff", 2913)
+engineReplaceModel(sniperdff, 2913)
+
 snipertxd = engineLoadTXD("items/fn.txd")
 engineImportTXD(snipertxd, 2914)
-sniperdff = engineLoadDFF("items/fn.dff", 2915)
+sniperdff = engineLoadDFF("items/fn.dff", 2914)
 engineReplaceModel(sniperdff, 2914)
 
 snipertxd = engineLoadTXD("items/sniper.txd")
@@ -801,6 +806,9 @@ weaponAmmoTable = {
   ["PKM Mag"] = {
     {"PKM", 30}
   },
+  ["AK107 Mag"] = {
+    {"AK-107", 30}
+  },
   ["FN Mag"] = {
     {"FN FAL", 30}
   },
@@ -912,6 +920,11 @@ function getWeaponAmmoType(weaponName)
   for i, weaponData in ipairs(weaponAmmoTable["PKM Mag"]) do
     if weaponName == weaponData[1] then
       return "PKM Mag", weaponData[2]
+    end
+  end
+  for i, weaponData in ipairs(weaponAmmoTable["AK107 Mag"]) do
+    if weaponName == weaponData[1] then
+      return "AK107 Mag", weaponData[2]
     end
   end
   for i, weaponData in ipairs(weaponAmmoTable["FN Mag"]) do
