@@ -1,38 +1,63 @@
---[[
-#---------------------------------------------------------------#
-----* DayZ MTA Script weather.lua                           *----
-----* Script created by: Unknown                            *----
-----* New additions and functions by: Unknown               *----
-#---------------------------------------------------------------#
-]]
 
-cyclones = {{0,1,2,3,4},{5,6,7,8,9},{8,7,6,5,4}}
+local realtime = getRealTime()
+setTime(realtime.hour, realtime.minute)
+setMinuteDuration(60000)
+setFarClipDistance(1000)
+setFogDistance(100)
 
-function weatherInit ()
-	math.randomseed(getTickCount()/2)
-	for i, cyc in pairs(cyclones) do
-	cyclones[i][1]=math.random(4000)-2000
-	cyclones[i][2]=math.random(4000)-2000
-	cyclones[i][4]=math.random(60)-30
-	cyclones[i][5]=math.random(60)-30
-	cyclones[i][3]=math.random(1000)+100
+function checkSetTime()
+    local realtime = getRealTime()
+    setTime(realtime.hour, realtime.minute)
+    setMinuteDuration(60000)
+end
+setTimer(checkSetTime,60000,0)
+
+
+
+function setWeather2()
+	local number = math.random(1,6)
+	if number == 2 then
+		setWeather ( 7 )
+	elseif number == 3 then
+		setWeather ( 12 )
+	elseif number == 4 then
+		setWeather ( 7 )
+	elseif number == 5 then
+		setWeather ( 4 )	
 	end
 end
-weatherInit()
+setTimer(setWeather2,3600000,0)
+setWeather2()
 
-function weatherProcess ()
-	for i,cyc in pairs(cyclones) do
-		cyclones[i][1] = cyclones[i][1] + math.random(30)-15+cyclones[i][4]
-		cyclones[i][2] = cyclones[i][2] + math.random(30)-15+cyclones[i][5]
-		cyclones[i][3] = cyclones[i][3] - math.random(60)
-		if (cyclones[i][3]<=200) then
-			cyclones[i][1]=math.random(4000)-2000
-			cyclones[i][2]=math.random(4000)-2000
-			cyclones[i][3]=math.random(1000)+100
-			cyclones[i][4]=math.random(60)-30
-			cyclones[i][5]=math.random(60)-30
-		end
+
+function setNight (hour,minutes)
+	if hour == 21 then
+		setSkyGradient(0, 100/minutes, 196/minutes, 136/minutes, 170/minutes, 212/minutes)
+		setFarClipDistance(120+(880-minutes*14.6))
+		setFogDistance(-150+(250-minutes*4.16))
+	elseif hour == 7 then
+		setSkyGradient( 0, 1.6*minutes, 196*3.26, 136*2.26, 170*2.83, 212*3.53 )
+		setFarClipDistance(120+(minutes*14.6))
+		setFogDistance(-150+(minutes*4.16))
+	elseif hour == 22 or hour == 23 then
+		setSkyGradient( 0, 0, 0, 0, 0, 0 )
+		setFarClipDistance(120)
+		setFogDistance(-150)
+	elseif hour >= 0 and hour <= 7 then
+		setSkyGradient( 0, 0, 0, 0, 0, 0 )
+		setFarClipDistance(120)
+		setFogDistance(-150)
+	else
+		setSkyGradient(0, 100, 196, 136, 170, 212)
+		setFarClipDistance(1000)
+		setFogDistance(100)
 	end
-	triggerClientEvent("weatherCyclones",getRootElement(),cyclones[1][1],cyclones[1][2],cyclones[1][3],cyclones[2][1],cyclones[2][2],cyclones[2][3],cyclones[3][1],cyclones[3][2],cyclones[3][3])
 end
-setTimer(weatherProcess,5000,0,0)
+
+function setNightTime()
+	if not gameplayVariables["enablenight"] then return end
+	local hour, minutes = getTime()
+	setNight (hour,minutes)
+end
+setTimer(setNightTime,60000,0)
+setNightTime()

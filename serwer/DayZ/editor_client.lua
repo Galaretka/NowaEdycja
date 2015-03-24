@@ -1,67 +1,61 @@
---[[
+﻿--[[
 #---------------------------------------------------------------#
-----*                   SUPRILOAD DAYZ 0.8.5                *----
-----* CREDITOS :FUTZ
-----* CRIADOR :FUTZ
-----* SKYPE:gtacspest
-----*
-----*                                                       *----
+----*			DayZ MTA Script editor_client.lua			*----
+----* This Script is owned by Marwin, you are allowed to edit it.
+----* Owner: Marwin W., Germany, Lower Saxony, Otterndorf
+----* Skype: xxmavxx96
+----* Перевод мода: by Lorenco								*----
 #---------------------------------------------------------------#
 ]]
 
 -- SCOREBOARD
 shownText = {}
  
-	shownText["name"] = "Name"
-	shownText["murders"] = "Murders"
-	shownText["zombieskilled"] = "Zombies killed:"
+	shownText["name"] = "Игровой ник"
+	shownText["murders"] = "Убито выживших"
+	shownText["zombieskilled"] = "Убито зомби:"
 	shownText["alivetime"] = "Alivetime"
-	shownText["headshots"] =  "Headshots"
-	shownText["blood"] =  "Blood"
-	shownText["temperature"] =  "Temperature"
-	shownText["humanity"] =  "Humanity"
-	shownText["banditskilled"] =  "Bandits killed:"
-	shownText["players"] =  "Players:"
+	shownText["headshots"] =  "Убито в голову"
+	shownText["blood"] =  "Кровь"
+	shownText["temperature"] =  "Температура"
+	shownText["humanity"] =  "Карма"
+	shownText["banditskilled"] =  "Убито бандитов:"
+	shownText["players"] =  "Игроки:"
 
 
 gameplayVariables = {}
 
 -- PING CHECK	
 
-	gameplayVariables["ping"] = 450 -- Checks if ping is over the set amount. DEFAULT: 600
+	gameplayVariables["ping"] = 600 -- Checks if ping is over the set amount. DEFAULT: 600
 	
 -- ZOMBIE DAMAGE
-	gameplayVariables["zombiedamage"] = math.random(500,800) -- Damage done by zombies - DEFAULT: math.random(400,900), for consistent damage, remove math.random(400,900) and insert value (EXAMPLE: 1000)
+	gameplayVariables["zombiedamage"] = math.random(400,900) -- Damage done by zombies - DEFAULT: math.random(400,900), for consistent damage, remove math.random(400,900) and insert value (EXAMPLE: 1000)
 	
-	gameplayVariables["enablenight"] = true -- Whether or not the night should be darker - DEFAULT: true - SET TO false to disable - remember you need to set it in editor_server.lua too.
+	gameplayVariables["enablenight"] = false -- Whether or not the night should be darker - DEFAULT: true - SET TO false to disable - remember you need to set it in editor_server.lua too.
 	
 -- WEAPON DAMAGE
 damageTable = {
--- {"WEAPON NAME",DAMAGE},
---{"Lee Enfield",8000},
-{"Hunting Knife",1500},
-{"Hatchet",2300},
-{"G17",889},
-{"Makarov SD",1000},
-{"PDW",889},
---{"TEC-9",889},
-{"Sawn-Off Shotgun",2300},
-{"Revolver",1389},
---{"M67 Frag Grenade",17998},
---{"Baseball Bat",953},
-{"Crowbar",953},
-{"Machete",953},
-{"M4A1 CCO",4555},
-{"SVD Camo",13000},
-{"PKM",3800},
-{"AK-107",3800},
-{"FN FAL", 4800},
-{"M107",13000},
-{"Winchester 1866",5000},
+---{"WEAPON NAME",DAMAGE},
+{"M4",3500},
+{"Снайперская винтовка",8000},
+{"Винчестер 1866",4500},
 {"MP5A5",889},
-{"SPAZ-12 Combat Shotgun",2300},
-{"AKS-74 Kobra",3722},
---{"Heat-Seeking RPG",0},
---{"M136 Rocket Launcher",0},
-{"DMR",8000},
+{"Гранатомёт",2000},
+{"AK-47",2722},
+{"Heat-Seeking RPG",0},
+{"M136 Rocket Launcher",0},
+{"Lee Enfield",8000},
+{"Охотничий нож",1500},
+{"Топор",1006},
+{"M1911",889},
+{"M9 SD",889},
+{"PDW",889},
+{"TEC-9",889},
+{"Sawn-Off Shotgun",2000},
+{"Пустынный орёл",1389},
+{"Оск. граната M67",17998},
+{"Бейсбольная бита",953},
+{"Лопата",953},
+{"Клюшка для гольфа",953},
 }

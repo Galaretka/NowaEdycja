@@ -1,7 +1,0 @@
-<meta>
-	<info author="PrettySweetie" version="1" edf:definition="edf/dm.edf"/>
-	<file src="edf/spawnpoint.png" />
-	<file src="ladder.dff" />
-	<file src="ladder.col" />
-	<script src="test_client.lua" type="client"/>
-</meta>

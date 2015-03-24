@@ -1,8 +1,0 @@
-<def name="Ladders">
-	<element name="short_lad" friendlyname="Short ladder" icon="edf/spawnpoint.png">
-		<data name="position" type="coord3d" default="0,0,0" />
-		<data name="rotation" type="coord3d" default="0,0,0" />
-		<object model="1428"/>	
-		<object model="1318" posY = "-0.3"/>
-	</element>
-</def>
