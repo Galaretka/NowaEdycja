@@ -183,13 +183,13 @@ engineReplaceModel (itemDFF, 983);
 
 --Weapons
 
--- Camera -> Бинокль
+-- Camera -> Lornetka
 weaponTXD = engineLoadTXD ("items/camera.txd");
 engineImportTXD (weaponTXD, 367);
 weaponDFF = engineLoadDFF ("items/camera.dff", 367);
 engineReplaceModel (weaponDFF, 367);
 
--- Katana -> Топор
+-- Katana -> Topór
 weaponTXD = engineLoadTXD ("items/katana.txd");
 engineImportTXD (weaponTXD, 339);
 weaponDFF = engineLoadDFF ("items/katana.dff", 339);
@@ -205,13 +205,13 @@ function playerStatsClientSite()
 		showPlayerHudComponent ("weapon",false) 
 		--showPlayerHudComponent ("ammo",false) 
 		showPlayerHudComponent ("breath",false) 
-		if getElementData(getLocalPlayer(),"Карта") >= 1  then
+		if getElementData(getLocalPlayer(),"Mapa") >= 1  then
 			toggleControl ("radar",true)
 		end
 		if getElementData(getLocalPlayer(),"GPS") >= 1  then
 			showPlayerHudComponent ("radar",true) 
 		end
-		if getElementData(getLocalPlayer(),"Часы") >= 1 then
+		if getElementData(getLocalPlayer(),"Zegarek") >= 1 then
 			showPlayerHudComponent ("clock",true) 
 		end
 	end
@@ -220,7 +220,7 @@ setTimer(playerStatsClientSite,1000,0)
 
 function playerZoom (key,keyState)
 	if key == "n" then
-		if getElementData(getLocalPlayer(),"Очки ночного видения") > 0 then
+		if getElementData(getLocalPlayer(),"Gogle noktowizyjne") > 0 then
 			if nightvision then
 				nightvision = false
 				setCameraGoggleEffect("normal")
@@ -235,7 +235,7 @@ function playerZoom (key,keyState)
 			end
 		end
 	elseif key == "i" then
-		if getElementData(getLocalPlayer(),"Инфокрасные очки") > 0 then
+		if getElementData(getLocalPlayer(),"Gogle na podczerwień") > 0 then
 			if infaredvision then
 				infaredvision = false
 				setCameraGoggleEffect("normal")
@@ -529,27 +529,27 @@ statsLabel = {}
 statsWindows = guiCreateStaticImage(0.820,0.2,0.225,0.22,"images/scrollmenu_1.png",true)
 guiSetAlpha(statsWindows,0.8)
 --Зомби  Killed
-statsLabel["zombieskilled"] = guiCreateLabel(0,0.05,1,0.15,"Убито зомби: 0",true,statsWindows)
+statsLabel["zombieskilled"] = guiCreateLabel(0,0.05,1,0.15,"Zabitych zombi: 0",true,statsWindows)
 guiLabelSetHorizontalAlign (statsLabel["zombieskilled"],"center")
 guiSetFont (statsLabel["zombieskilled"], "default-bold-small" )
 setElementData(statsLabel["zombieskilled"],"identifikation","zombieskilled")
---Убито в голову
-statsLabel["headshots"] = guiCreateLabel(0,0.15,1,0.15,"Убито в голову: 0",true,statsWindows)
+--HeadShoty
+statsLabel["headshots"] = guiCreateLabel(0,0.15,1,0.15,"HeadShoty: 0",true,statsWindows)
 guiLabelSetHorizontalAlign (statsLabel["headshots"],"center")
 guiSetFont (statsLabel["headshots"], "default-bold-small" )
 setElementData(statsLabel["headshots"],"identifikation","headshots")
 --Убито выживших
-statsLabel["murders"] = guiCreateLabel(0,0.25,1,0.15,"Убито выживших: 0",true,statsWindows)
+statsLabel["murders"] = guiCreateLabel(0,0.25,1,0.15,"Morderstw: 0",true,statsWindows)
 guiLabelSetHorizontalAlign (statsLabel["murders"],"center")
 guiSetFont (statsLabel["murders"], "default-bold-small" )
 setElementData(statsLabel["murders"],"identifikation","murders")
 --Bandits Killed
-statsLabel["banditskilled"] = guiCreateLabel(0,0.35,1,0.15,"Убито бандитов: 0",true,statsWindows)
+statsLabel["banditskilled"] = guiCreateLabel(0,0.35,1,0.15,"Zabitych bandytów: 0",true,statsWindows)
 guiLabelSetHorizontalAlign (statsLabel["banditskilled"],"center")
 guiSetFont (statsLabel["banditskilled"], "default-bold-small" )
 setElementData(statsLabel["banditskilled"],"identifikation","banditskilled")
 --Кровь
-statsLabel["blood"] = guiCreateLabel(0,0.45,1,0.15,"Кровь: 12000",true,statsWindows)
+statsLabel["blood"] = guiCreateLabel(0,0.45,1,0.15,"Krew: 12000",true,statsWindows)
 guiLabelSetHorizontalAlign (statsLabel["blood"],"center")
 guiSetFont (statsLabel["blood"], "default-bold-small" )
 setElementData(statsLabel["blood"],"identifikation","blood")
@@ -559,17 +559,17 @@ guiLabelSetHorizontalAlign (statsLabel["zombies"],"center")
 guiSetFont (statsLabel["zombies"], "default-bold-small" )
 setElementData(statsLabel["zombies"],"identifikation","zombies")
 --Температура
-statsLabel["temperature"] = guiCreateLabel(0,0.65,1,0.15,"Температура: 37°C",true,statsWindows)
+statsLabel["temperature"] = guiCreateLabel(0,0.65,1,0.15,"Temperatura: 37°C",true,statsWindows)
 guiLabelSetHorizontalAlign (statsLabel["temperature"],"center")
 guiSetFont (statsLabel["temperature"], "default-bold-small" )
 setElementData(statsLabel["temperature"],"identifikation","temperature")
 --Карма
-statsLabel["humanity"] = guiCreateLabel(0,0.75,1,0.15,"Карма: 2500",true,statsWindows)
+statsLabel["humanity"] = guiCreateLabel(0,0.75,1,0.15,"Ludzkość: 2500",true,statsWindows)
 guiLabelSetHorizontalAlign (statsLabel["humanity"],"center")
 guiSetFont (statsLabel["humanity"], "default-bold-small" )
 setElementData(statsLabel["humanity"],"identifikation","humanity")
 --Игровой ник
-statsLabel["name"] = guiCreateLabel(0,0.85,1,0.15,"Игровой ник: "..getPlayerName(getLocalPlayer()),true,statsWindows)
+statsLabel["name"] = guiCreateLabel(0,0.85,1,0.15,"Nick: "..getPlayerName(getLocalPlayer()),true,statsWindows)
 guiLabelSetHorizontalAlign (statsLabel["name"],"center")
 guiSetFont (statsLabel["name"], "default-bold-small" )
 setElementData(statsLabel["name"],"identifikation","name")
@@ -595,31 +595,31 @@ addEventHandler("onClientPlayerDayZLogin", root, showDebugMintorOnLogin)
 function refreshDebugMonitor()
 	if getElementData(getLocalPlayer(),"logedin") then
 		local value = getElementData(getLocalPlayer(),getElementData(statsLabel["zombieskilled"],"identifikation"))
-		guiSetText(statsLabel["zombieskilled"],"Убито зомби: "..value)
+		guiSetText(statsLabel["zombieskilled"],"Zabitych zombi: "..value)
 		
 		local value = getElementData(getLocalPlayer(),getElementData(statsLabel["headshots"],"identifikation"))
-		guiSetText(statsLabel["headshots"],"Убито в голову: "..value)
+		guiSetText(statsLabel["headshots"],"HeadShoty: "..value)
 		
 		local value = getElementData(getLocalPlayer(),getElementData(statsLabel["banditskilled"],"identifikation"))
-		guiSetText(statsLabel["banditskilled"],"Убито бандитов: "..value)
+		guiSetText(statsLabel["banditskilled"],"Zabitych bandytów: "..value)
 		
 		local value = getElementData(getLocalPlayer(),getElementData(statsLabel["murders"],"identifikation"))
-		guiSetText(statsLabel["murders"],"Убито выживших: "..value)
+		guiSetText(statsLabel["murders"],"Morderstw: "..value)
 		
 		local value = getElementData(getLocalPlayer(),getElementData(statsLabel["blood"],"identifikation"))
-		guiSetText(statsLabel["blood"],"Кровь: "..value)
+		guiSetText(statsLabel["blood"],"Krew: "..value)
 		
 		local value = getElementData(getRootElement(),"zombiesalive") or 0
 		local value2 = getElementData(getRootElement(),"zombiestotal") or 0
-		guiSetText(statsLabel["zombies"],"Зомби (Актив/Всего): "..value.."/"..value2)
+		guiSetText(statsLabel["zombies"],"Zombie (Ż/W): "..value.."/"..value2)
 		
 		local value = getElementData(getLocalPlayer(),getElementData(statsLabel["temperature"],"identifikation"))
-		guiSetText(statsLabel["temperature"],"Температура: "..math.round(value,2).."°C")
+		guiSetText(statsLabel["temperature"],"Temperatura: "..math.round(value,2).."°C")
 		
 		local value = getElementData(getLocalPlayer(),getElementData(statsLabel["humanity"],"identifikation"))
-		guiSetText(statsLabel["humanity"],"Карма: "..math.round(value,2))
+		guiSetText(statsLabel["humanity"],"Ludzkość: "..math.round(value,2))
 		
-		guiSetText(statsLabel["name"],"Игровой ник: "..getPlayerName(getLocalPlayer()))
+		guiSetText(statsLabel["name"],"Nick: "..getPlayerName(getLocalPlayer()))
 	end			
 end
 setTimer(refreshDebugMonitor,2000,0)
@@ -627,36 +627,36 @@ setTimer(refreshDebugMonitor,2000,0)
 weaponAmmoTable = {
 
 
-["M1911 Mag"] = {
+["Amunicja do M1911"] = {
 {"M1911",22},
 },
 
-["M9 SD Mag"] = {
+["Amunicja do M9 SD"] = {
 {"M9 SD",23},
 },
 
-["Пустынный орёл Маг"] = {
-{"Пустынный орёл",24},
+["Amunicja do Desert Eagle"] = {
+{"Desert Eagle",24},
 },
 
-["PDW Mag"] = {
+["Amunicja do PDW"] = {
 {"PDW",28},
 },
 
-["MP5A5 Mag"] = {
+["Amunicja do MP5A5"] = {
 {"MP5A5",29},
 },
 
-["AK Маг"] = {
+["Amunicja do AK"] = {
 {"AK-47",30},
 },
 
-["M4 Маг"] = {
+["Amunicja do M4"] = {
 {"M4",31},
 },
 
 ["1866 Slug"] = {
-{"Винчестер 1866",25},
+{"Winchester 1866",25},
 },
 
 
@@ -664,36 +664,36 @@ weaponAmmoTable = {
 {"Sawn-Off Shotgun",26},
 },
 
-["Гранотомёт Маг"] = {
-{"Гранатомёт",27},
+["Amunicja do Granatnika"] = {
+{"Granat",27},
 },
 
-["Снайперская винтовка Mag"] = {
-{"Снайперская винтовка",34},
+["Amunicja do CZ550"] = {
+{"CZ550",34},
 },
 
-["Lee Enfield Mag"] = {
+["Amunicja do Lee Enfield"] = {
 {"Lee Enfield",33},
 },
 
-["M136 Rocket"] = {
+["Amunicja do M136"] = {
 {"Heat-Seeking RPG",36},
-{"M136 Rocket Launcher",35},
+{"Amunicja do M136 Launcher",35},
 },
 
 
 ["others"] = {
-{"Парашют",46},
+{"Spadochron",46},
 {"Satchel",39},
-{"Tear Gas",17},
+{"Gas łzawiący",17},
 {"Оск. граната M67",16},
-{"Охотничий нож",4},
-{"Топор",8},
-{"Бинокль",43},
-{"Бейсбольная бита",5},
-{"Лопата",6},
-{"Клюшка для гольфа",2},
-{"Рация",1},
+{"Nóż",4},
+{"Topór",8},
+{"Lornetka",43},
+{"Kij bejsbolowy",5},
+{"Łopata",6},
+{"Kij golfowy",2},
+{"Radio",1},
 },
 }
 
@@ -703,39 +703,39 @@ function getWeaponAmmoType (weaponName)
 			return weaponData[1],weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["M1911 Mag"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do M1911"]) do
 		if weaponName == weaponData[1] then
-			return "M1911 Mag",weaponData[2]
+			return "Amunicja do M1911",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["M9 SD Mag"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do M9 SD"]) do
 		if weaponName == weaponData[1] then
-			return "M9 SD Mag",weaponData[2]
+			return "Amunicja do M9 SD",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["Пустынный орёл Маг"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do Desert Eagle"]) do
 		if weaponName == weaponData[1] then
-			return "Пустынный орёл Маг",weaponData[2]
+			return "Amunicja do Desert Eagle",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["PDW Mag"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do PDW"]) do
 		if weaponName == weaponData[1] then
-			return "PDW Mag",weaponData[2]
+			return "Amunicja do PDW",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["MP5A5 Mag"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do MP5A5"]) do
 		if weaponName == weaponData[1] then
-			return "MP5A5 Mag",weaponData[2]
+			return "Amunicja do MP5A5",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["AK Маг"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do AK"]) do
 		if weaponName == weaponData[1] then
-			return "AK Маг",weaponData[2]
+			return "Amunicja do AK",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["M4 Маг"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do M4"]) do
 		if weaponName == weaponData[1] then
-			return "M4 Маг",weaponData[2]
+			return "Amunicja do M4",weaponData[2]
 		end
 	end
 	for i,weaponData in ipairs(weaponAmmoTable["1866 Slug"]) do
@@ -743,9 +743,9 @@ function getWeaponAmmoType (weaponName)
 			return "1866 Slug",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["Гранотомёт Маг"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do Granatnika"]) do
 		if weaponName == weaponData[1] then
-			return "Гранотомёт Маг",weaponData[2]
+			return "Amunicja do Granatnika",weaponData[2]
 		end
 	end
 	for i,weaponData in ipairs(weaponAmmoTable["2Rnd. Slug"]) do
@@ -753,19 +753,19 @@ function getWeaponAmmoType (weaponName)
 			return "2Rnd. Slug",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["Снайперская винтовка Mag"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do CZ550"]) do
 		if weaponName == weaponData[1] then
-			return "Снайперская винтовка Mag",weaponData[2]
+			return "Amunicja do CZ550",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["Lee Enfield Mag"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do Lee Enfield"]) do
 		if weaponName == weaponData[1] then
-			return "Lee Enfield Mag",weaponData[2]
+			return "Amunicja do Lee Enfield",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["M136 Rocket"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do M136"]) do
 		if weaponName == weaponData[1] then
-			return "M136 Rocket",weaponData[2]
+			return "Amunicja do M136",weaponData[2]
 		end
 	end
 end
@@ -1347,7 +1347,7 @@ function updateIcons ()
 					if sx and sy then
 					--Draw Игровой ник
 					if getElementData(player,"bandit") then
-						text = string.gsub(getPlayerName(player), '#%x%x%x%x%x%x', '' ).." (Бандит)"
+						text = string.gsub(getPlayerName(player), '#%x%x%x%x%x%x', '' ).." (BANDYTA)"
 					else
 						text = string.gsub(getPlayerName(player), '#%x%x%x%x%x%x', '' )
 					end
@@ -1380,7 +1380,7 @@ function updateIcons ()
 		end
 		--Vehicle Infos
 		local veh = getPedOccupiedVehicle (getLocalPlayer())
-		if veh then
+		--[[if veh then
 			local maxfuel = getElementData(veh,"maxfuel")
 			local fuel = getElementData(getElementData(veh,"parent"),"fuel")
 			local needengine = getElementData(veh,"needengines")
@@ -1396,21 +1396,21 @@ function updateIcons ()
 			else
 				r,g,b = 255,0,0
 			end
-			dxDrawText (engine.."/"..needengine.." Engine" ,screenWidth*0.5-w/2 , screenHeight*0,screenWidth*0.5-w/2 , screenHeight*0,tocolor ( r,g,b, 220 ), 1.02, "default-bold" )
+			dxDrawText (engine.."/"..needengine.." Silnik" ,screenWidth*0.5-w/2 , screenHeight*0,screenWidth*0.5-w/2 , screenHeight*0,tocolor ( r,g,b, 220 ), 1.02, "default-bold" )
 			local w = dxGetTextWidth(tires.."/"..needtires.." Tires",1.02,"default-bold")
 			if tires == needtires then
 				r,g,b = 0,255,0
 			else
 				r,g,b = 255,0,0
 			end
-			dxDrawText (tires.."/"..needtires.." Tires",screenWidth*0.5-w/2 , screenHeight*0+offset,screenWidth*0.5-w/2 , screenHeight*0+offset,tocolor ( r,g,b, 220 ), 1.02, "default-bold" )
+			dxDrawText (tires.."/"..needtires.." Koła",screenWidth*0.5-w/2 , screenHeight*0+offset,screenWidth*0.5-w/2 , screenHeight*0+offset,tocolor ( r,g,b, 220 ), 1.02, "default-bold" )
 			local w = dxGetTextWidth(parts.."/"..needparts.." Бензобак",1.02,"default-bold")
 			if parts == needparts then
 				r,g,b = 0,255,0
 			else
 				r,g,b = 255,0,0
 			end
-			dxDrawText (parts.."/"..needparts.." Бензобак",screenWidth*0.5-w/2 , screenHeight*0+offset*2,screenWidth*0.5-w/2 , screenHeight*0+offset, tocolor (r,g,b, 220 ) , 1.02, "default-bold" )
+			dxDrawText (parts.."/"..needparts.." Zbiornik paliwa",screenWidth*0.5-w/2 , screenHeight*0+offset*2,screenWidth*0.5-w/2 , screenHeight*0+offset, tocolor (r,g,b, 220 ) , 1.02, "default-bold" )
 			local w = dxGetTextWidth("Бензин:"..math.floor(fuel).."/"..maxfuel,1.02,"default-bold")
 			if fuel == maxfuel then
 				r,g,b = 0,255,0
@@ -1425,14 +1425,142 @@ function updateIcons ()
 			elseif fuel < maxfuel/1.5 then
 				r,g,b = 50,200,0
 			end
-			dxDrawText ("Бензин:"..math.floor(fuel).."/"..maxfuel,screenWidth*0.5-w/2 , screenHeight*0+offset*3,screenWidth*0.5-w/2 , screenHeight*0+offset*2,tocolor ( r,g,b, 220 ), 1.02, "default-bold" )
+			dxDrawText ("Benzyna:"..math.floor(fuel).."/"..maxfuel,screenWidth*0.5-w/2 , screenHeight*0+offset*3,screenWidth*0.5-w/2 , screenHeight*0+offset*2,tocolor ( r,g,b, 220 ), 1.02, "default-bold" )
+		end]]--
+		if veh then
+			local maxfuel = getElementData(veh,"maxfuel")
+			local fuel = getElementData(getElementData(veh,"parent"),"fuel")
+			local needengine = getElementData(veh,"needengines")
+			local needtires = getElementData(veh,"needtires")
+			local needparts = getElementData(veh,"needparts")
+			local engine = getElementData(getElementData(veh,"parent"),"Engine_inVehicle") or 0
+			local tires = getElementData(getElementData(veh,"parent"),"Tire_inVehicle") or 0
+			local parts = getElementData(getElementData(veh,"parent"),"Parts_inVehicle") or 0
+			local offset = dxGetFontHeight(1.02,"default-bold")
+			local w = dxGetTextWidth(engine.."/"..needengine.." Silnik",1.02,"default-bold")
+			local fnf = (fuel/maxfuel)*100
+			local hp = getElementHealth(veh);
+			local hp2 = getElementHealth(veh);
+			if engine == needengine then
+				r,g,b = 0,255,0
+			else
+				r,g,b = 255,0,0
+			end
+			dxDrawRectangle ( screenWidth*0.05, screenHeight*0.2, screenWidth*0.05+10, screenHeight*0.015, tocolor ( r, g, b, 200 ) )
+			dxDrawText ( " Silnik" ,screenWidth*0.051 , screenHeight*0.2,screenWidth*0.05 , screenHeight*0.15,tocolor ( 0,0,0, 220 ), 1.02, "default-bold" )
+			if tires == needtires then
+				r,g,b = 50,250,50
+			else
+				r,g,b = 255,0,0
+			end
+			dxDrawRectangle ( screenWidth*0.05, screenHeight*0.22, screenWidth*0.05+10, screenHeight*0.015, tocolor ( r, g, b, 200 ) )
+			dxDrawText ("  Koła  ("..tires.."/"..needtires..")",screenWidth*0.05 , screenHeight*0.22,screenWidth*0.05 , screenHeight*0.015,tocolor ( 0,0,0, 220 ), 1.02, "default-bold" )
+			if parts == needparts then
+				r,g,b = 50,250,50
+			else
+				r,g,b = 255,0,0
+			end
+			dxDrawRectangle ( screenWidth*0.05, screenHeight*0.24, screenWidth*0.05+10, screenHeight*0.015, tocolor ( r, g, b, 200 ) )
+			dxDrawText ("  Bak",screenWidth*0.05 , screenHeight*0.24,screenWidth*0.05 , screenHeight*0.015, tocolor (0,0,0, 220 ) , 1.02, "default-bold" )
+			if fuel == maxfuel then
+				fuellmax = 0.2
+			elseif fuel < maxfuel*0.1 then
+				fuellmax = 0.349
+			elseif fuel > maxfuel*0.1 and fuel < maxfuel*0.2 then
+				fuellmax = 0.325
+			elseif fuel > maxfuel*0.2 and fuel < maxfuel*0.3 then
+				fuellmax = 0.315	
+			elseif fuel > maxfuel*0.3 and fuel < maxfuel*0.4 then
+				fuellmax = 0.30	
+			elseif fuel > maxfuel*0.4 and fuel < maxfuel*0.5 then
+				fuellmax = 0.28
+			elseif fuel > maxfuel*0.5 and fuel < maxfuel*0.6 then
+				fuellmax = 0.27
+			elseif fuel > maxfuel*0.6 and fuel < maxfuel*0.7 then
+				fuellmax = 0.25
+			elseif fuel > maxfuel*0.7 and fuel < maxfuel*0.8 then
+				fuellmax = 0.24
+			elseif fuel > maxfuel*0.8 and fuel < maxfuel*0.9 then
+				fuellmax = 0.23
+			elseif fuel > maxfuel*0.9 and fuel < maxfuel*0.95 then
+				fuellmax = 0.22
+			elseif fuel > maxfuel*0.95 and fuel < maxfuel then
+				fuellmax = 0.21
+			end
+			if fnf >= 100 then
+				re,gr,bl = 0,255,0
+			elseif fnf >= 92 then
+				re,gr,bl = 24,234,0				
+			elseif fnf >= 84 then
+				re,gr,bl = 45,213,0
+			elseif fnf >= 76 then
+				re,gr,bl = 66,192,0	
+			elseif fnf >= 68 then
+				re,gr,bl = 87,171,0	
+			elseif fnf >= 60 then
+				re,gr,bl = 108,150,0	
+			elseif fnf >= 52 then
+				re,gr,bl = 129,129,0	
+			elseif fnf >= 44 then
+				re,gr,bl = 150,108,0				
+			elseif fnf >= 36 then
+				re,gr,bl = 171,87,0	
+			elseif fnf >= 60 then
+				re,gr,bl = 192,66,0
+			elseif fnf >= 40 then
+				re,gr,bl = 213,45,0		
+			elseif fnf >= 20 then
+				re,gr,bl = 234,24,0
+			elseif fnf < 20 then
+				re,gr,bl = 255,0,0
+		end
+			dxDrawRectangle ( screenWidth*0.05, screenHeight*0.26, screenWidth*0.05+40, screenHeight*0.015, tocolor ( re, gr, bl, 200 ) )
+			dxDrawText ("Benzyna:"..math.floor(fuel).."/"..maxfuel,screenWidth*0.05+6 , screenHeight*0.26,screenWidth*0.05 , screenHeight*0.015, tocolor (0,0,0, 220 ) , 1.02, "default-bold" )
+			
+			dxDrawImage ( screenWidth*0.02, screenHeight*0.2, screenWidth*0.015, screenHeight*0.15, "images/fuel.png" )
+			dxDrawLine(screenWidth*0.028, screenHeight*fuellmax, screenWidth*0.028, screenHeight*0.349, tocolor(re, gr, bl),18)
+			
+			if hp >= 500 then
+				re2,gr2,bl2 = 0,255,0
+			elseif hp >= 450 then
+				re2,gr2,bl2 = 24,234,0				
+			elseif hp >= 400 then
+				re2,gr2,bl2 = 45,213,0
+			elseif hp >= 350 then
+				re2,gr2,bl2 = 66,192,0	
+			elseif hp >= 300 then
+				re2,gr2,bl2 = 87,171,0	
+			elseif hp >= 250 then
+				re2,gr2,bl2 = 108,150,0	
+			elseif hp >= 200 then
+				re2,gr2,bl2 = 129,129,0	
+			elseif hp >= 150 then
+				re2,gr2,bl2 = 150,108,0				
+			elseif hp >= 100 then
+				re2,gr2,bl2 = 171,87,0	
+			elseif hp >= 50 then
+				re2,gr2,bl2 = 192,66,0
+			elseif hp >= 40 then
+				re2,gr2,bl2 = 213,45,0		
+			elseif hp >= 20 then
+				re2,gr2,bl2 = 234,24,0
+			elseif hp < 20 then
+				re2,gr2,bl2 = 255,0,0
+		end
+			if (hp2 > 249) then
+				hp2 = math.floor( ((hp2-250)/750) * 100 );
+			else
+				hp2 = 0;
+			end
+			dxDrawRectangle ( screenWidth*0.05, screenHeight*0.28, screenWidth*0.05+10, screenHeight*0.015, tocolor ( re2, gr2, bl2, 200 ) )
+			dxDrawText ("  HP: "..hp2.."%",screenWidth*0.05, screenHeight*0.28,screenWidth*0.05 , screenHeight*0.015, tocolor (0,0,0, 220 ) , 1.02, "default-bold" )
 		end
 		if not playerTarget then return end
 		local x,y,z = getElementPosition(playerTarget)
 		local x,y,distance = getScreenFromWorldPosition (x,y,z+0.5)
 		distance = 20
 		if getElementData(playerTarget,"bandit") then
-			text = string.gsub(getPlayerName(playerTarget), '#%x%x%x%x%x%x', '' ).." (Бандит)"
+			text = string.gsub(getPlayerName(playerTarget), '#%x%x%x%x%x%x', '' ).." (Bandyta)"
 		else
 			text = string.gsub(getPlayerName(playerTarget), '#%x%x%x%x%x%x', '' )
 		end
@@ -1461,7 +1589,7 @@ addEventHandler("onClientPlayerDeathInfo",getRootElement(),dayZDeathInfo)
 function showDayZDeathScreen()
 	setTimer ( fadeCamera, 1000, 1, true, 1.5 )
 	deadBackground = guiCreateStaticImage(0,0,1,1,"images/dead.jpg",true)
-	deathText = guiCreateLabel(0,0.8,1,0.2,"Вы убиты! \n Ваш персонаж возродится через 5 секунд.",true)
+	deathText = guiCreateLabel(0,0.8,1,0.2,"Zginąłeś! \n Odrodzisz się za 5 sek.",true)
 	guiLabelSetHorizontalAlign (deathText,"center")
 	setTimer(guiSetVisible,5000,1,false)
 	setTimer(guiSetVisible,5000,1,false)
@@ -1540,10 +1668,10 @@ setTimer(showBlipGPS,500,0)
 supportWindow = guiCreateStaticImage(0.05,0.25,0.9,0.5,"images/scrollmenu_1.png",true)
 guiSetVisible(supportWindow,false)
 supportGridlist = guiCreateGridList ( 0.05,0.1,0.9,0.7,true,supportWindow)
-nameColumn = guiGridListAddColumn( supportGridlist, "Игровой ник", 0.2 )
-messageColumn = guiGridListAddColumn( supportGridlist, "Сообщение", 0.8 )
+nameColumn = guiGridListAddColumn( supportGridlist, "Nick", 0.2 )
+messageColumn = guiGridListAddColumn( supportGridlist, "Wiadomość", 0.8 )
 messageInput = guiCreateEdit( 0.05, 0.825, 0.9, 0.075, "", true,supportWindow )
-closeButton = guiCreateButton( 0.9, 0.015, 0.09, 0.05, "Закрыть", true, supportWindow )
+closeButton = guiCreateButton( 0.9, 0.015, 0.09, 0.05, "Zamknij", true, supportWindow )
 
 
 function openSupportChat ()
@@ -1597,7 +1725,7 @@ function outputSupportChat(sourcePlayer,text)
 	elseif not getElementData(sourcePlayer,"logedin") then
 		name = string.gsub(getPlayerName ( sourcePlayer ), '#%x%x%x%x%x%x', '').." (Guest)"
 	else
-		if getElementData(sourcePlayer,"admin") then
+		if getElementData(sourcePlayer,"Admin") then
 			name = string.gsub(getPlayerName ( sourcePlayer ), '#%x%x%x%x%x%x', '').." (Admin)"
 		elseif getElementData(sourcePlayer,"supporter") then
 			name = string.gsub(getPlayerName ( sourcePlayer ), '#%x%x%x%x%x%x', '').." (Supporter)"
@@ -1611,7 +1739,7 @@ function outputSupportChat(sourcePlayer,text)
 		r,g,b = 255,30,120
 	elseif sourcePlayer == "James" or sourcePlayer == "Paul" then
 		r,g,b = 255,255,22
-	elseif getElementData(sourcePlayer,"admin") then
+	elseif getElementData(sourcePlayer,"Admin") then
 		r,g,b = 255,22,0
 	elseif getElementData(sourcePlayer,"supporter") then
 		r,g,b = 22,255,0
@@ -1642,7 +1770,7 @@ end
 
 function isSpamTimer()
 	if isTimer(antiSpamTimer) then 
-		outputChatBox("Please do not spam the support chat!", 255, 255, 0,true)
+		outputChatBox("Proszę nie spamować! Admin odpisze.", 255, 255, 0,true)
 		return true
 	else
 		return false
@@ -1660,9 +1788,9 @@ end
 --------------------------------------------------------------------
 ]]
 
-function getRankingPlayer (place)
-return playerRankingTable[place]["Player"]
-end
+--function getRankingPlayer (place)
+--return playerRankingTable[place]["Player"]
+--end
 
 function getElementDataPosition(key,value)
 	if key and value then
@@ -1756,7 +1884,7 @@ function onQuitGame( reason )
 end
 addEventHandler( "onClientPlayerQuit", getRootElement(), onQuitGame )
 
-yA = 0
+--[[yA = 0
 local screenWidth,screenHeight = guiGetScreenSize()
 function scoreBoard ()
 	if getKeyState( "tab" ) == false then return end
@@ -1770,26 +1898,26 @@ function scoreBoard ()
 
 		--Table Spalten
 		--Игровой ник
-		dxDrawText ("Ник", screenWidth*0.175 , screenHeight*0.2+offset, screenWidth*0.175 , screenHeight*0.2+offset, tocolor ( 50, 255, 50, 200 ), 1.5, "default-bold" )
-		w1 = dxGetTextWidth("Ник",1.5,"default-bold")
+		dxDrawText ("Nick", screenWidth*0.175 , screenHeight*0.2+offset, screenWidth*0.175 , screenHeight*0.2+offset, tocolor ( 50, 255, 50, 200 ), 1.5, "default-bold" )
+		w1 = dxGetTextWidth("Nick",1.5,"default-bold")
 		--Убито выживших
-		dxDrawText ("Убито выживших", screenWidth*0.3+w1*1.6, screenHeight*0.2+offset, screenWidth*0.3+w1*1.6 , screenHeight*0.2+offset, tocolor ( 50, 255, 50, 200 ), 1.5, "default-bold" )
-		w2 = dxGetTextWidth("Убито выживших",1.5,"default-bold")
+		dxDrawText ("Morderstw", screenWidth*0.3+w1*1.6, screenHeight*0.2+offset, screenWidth*0.3+w1*1.6 , screenHeight*0.2+offset, tocolor ( 50, 255, 50, 200 ), 1.5, "default-bold" )
+		w2 = dxGetTextWidth("Morderstw",1.5,"default-bold")
 		dxDrawRectangle ( screenWidth*0.3+w1*1.6-w2*0.1-(screenWidth*0.0025/2), screenHeight*0.2, screenWidth*0.0025, screenHeight*0.2+yA, tocolor ( 255, 255, 255, 220 ) )
 		dxDrawRectangle ( screenWidth*0.3+w1*1.6+w2*1.1-(screenWidth*0.0025/2), screenHeight*0.2, screenWidth*0.0025, screenHeight*0.2+yA, tocolor ( 255, 255, 255, 220 ) )
 		
 		--Убито зомби
-		dxDrawText ("Убито зомби", screenWidth*0.3+w1*1.6+w2*1.1-(screenWidth*0.0025/2)+w2*0.1, screenHeight*0.2+offset, screenWidth*0.3+w1*1.6 , screenHeight*0.2+offset, tocolor ( 50, 255, 50, 200 ), 1.5, "default-bold" )
-		w3 = dxGetTextWidth("Убито зомби",1.5,"default-bold")
+		dxDrawText ("Zabitych zombi", screenWidth*0.3+w1*1.6+w2*1.1-(screenWidth*0.0025/2)+w2*0.1, screenHeight*0.2+offset, screenWidth*0.3+w1*1.6 , screenHeight*0.2+offset, tocolor ( 50, 255, 50, 200 ), 1.5, "default-bold" )
+		w3 = dxGetTextWidth("Zabitych zombi",1.5,"default-bold")
 		dxDrawRectangle ( screenWidth*0.3+w1*1.6+w2*1.1+w3+w2*0.1+(screenWidth*0.0025/2), screenHeight*0.2, screenWidth*0.0025, screenHeight*0.2+yA, tocolor ( 255, 255, 255, 220 ) )
 		
 		--Убито зомби
-		dxDrawText ("Время", screenWidth*0.3+w1*1.6+w2*1.1+w3+w2*0.1+(screenWidth*0.0025/2)+w2*0.1, screenHeight*0.2+offset, screenWidth*0.3+w1*1.6 , screenHeight*0.2+offset, tocolor ( 50, 255, 50, 200 ), 1.5, "default-bold" )
-		w4 = dxGetTextWidth("Время",1.5,"default-bold")
+		dxDrawText ("Czas życia", screenWidth*0.3+w1*1.6+w2*1.1+w3+w2*0.1+(screenWidth*0.0025/2)+w2*0.1, screenHeight*0.2+offset, screenWidth*0.3+w1*1.6 , screenHeight*0.2+offset, tocolor ( 50, 255, 50, 200 ), 1.5, "default-bold" )
+		w4 = dxGetTextWidth("Czas życia",1.5,"default-bold")
 		dxDrawRectangle ( screenWidth*0.3+w1*1.6+w2*1.1+w3+w2*0.1+(screenWidth*0.0025/2)+w2*0.1+w4+w2*0.1, screenHeight*0.2, screenWidth*0.0025, screenHeight*0.2+yA, tocolor ( 255, 255, 255, 220 ) )
 		
 		--Player Amount
-		dxDrawText ("Игроки:"..#getElementsByType("player"), screenWidth*0.3+w1*1.6+w2*1.1+w3+w2*0.1+(screenWidth*0.0025/2)+w2*0.1+w4+w2*0.1+w4/3, screenHeight*0.2+offset, screenWidth*0.8 , screenHeight*0.2+offset, tocolor ( 50, 255, 50, 200 ), 1.5, "default-bold" )
+		dxDrawText ("Graczy:"..#getElementsByType("player"), screenWidth*0.3+w1*1.6+w2*1.1+w3+w2*0.1+(screenWidth*0.0025/2)+w2*0.1+w4+w2*0.1+w4/3, screenHeight*0.2+offset, screenWidth*0.8 , screenHeight*0.2+offset, tocolor ( 50, 255, 50, 200 ), 1.5, "default-bold" )
 
 		--Player
 		playerInList = false
@@ -1855,7 +1983,7 @@ function scoreBoard ()
 		yA = playerAmount*offset+playerLocalAdd
 	end	
 end
-addEventHandler ( "onClientRender", getRootElement(), scoreBoard )
+addEventHandler ( "onClientRender", getRootElement(), scoreBoard )]]--
 
 
 
@@ -1898,7 +2026,7 @@ function playerPingCheck ()
 			triggerServerEvent("kickPlayerOnHighPing",getLocalPlayer())
 			return
 		end
-			startRollMessage2("Ping", "Ваш пинг высокий "..gameplayVariables["ping"].."! ("..pingFails.."/5)", 255, 22, 0 )
+			startRollMessage2("Ping", "Za wysoki ping "..gameplayVariables["ping"].."! ("..pingFails.."/5)", 255, 22, 0 )
 		if isTimer(pingTimer) then return end
 		pingTimer = setTimer(function()
 			pingFails = 0

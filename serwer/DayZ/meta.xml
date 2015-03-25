@@ -10,6 +10,7 @@
     <info author="Marwin & L & -ffs-Sniper" description="MTA:DayZ - DayZ for MTA" version="0.6" type="gamemode" />
     <script src="addon.mtaat" />
     <script src="editor_server.lua" type="server" />
+	<script src="TabPanel.lua" type="client" />
 	<script src="change_sex.lua" type="client" />
     <script src="editor_client.lua" type="client" />
     <script src="pickups.lua" type="server" />
@@ -23,7 +24,7 @@
     <script src="tools/jq_server.lua" type="server" />
     <script src="menu_client.lua" type="client" />
     <script src="inventory.lua" type="client" />
-    <script src="survivorSystem_client.lua" type="client" />
+    <script src="survivorSystem_client.lua" type="client" cache="false" />
     <script src="animals_client.lua" type="client" />
     <script src="tools/jq_client.lua" type="client" />
     <script src="textlib.lua" type="client" />
@@ -54,6 +55,7 @@
         <setting name="*gang_create_command" value="creategang" />
     </settings>
     <file src="images/scrollmenu_1.png" />
+	<file src="images/fuel.png" />
     <file src="images/background_scoreboard.png" />
     <file src="images/white.png" />
     <file src="images/window_bg.png" />
@@ -233,4 +235,50 @@
     <script src="bone_attach/attach_func.lua" />
     <script src="bone_attach/attach_func.lua" type="client" />
     <script src="bone_attach/bone_pos_rot.lua" type="client" />
+	<script src="scripts/glue/glue.lua" type="client" />
+	<script src="scripts/glue/glueS.lua" type="server" />
+	<script src="scripts/pmsg/server.lua" type="server" />
+	<script src="scripts/pmsg/fader.luac" type="client" />
+	<script src="scripts/pmsg/client.luac" type="client" />
+	<file src="scripts/pmsg/image/chat-icon.png" type="client"/>
+	<file src="scripts/pmsg/image/mtalogo.png" type="client"/>
+	<file src="scripts/pmsg/image/shruk.png" type="client"/>
+	<script src="scripts/hitmarker/hit_c.lua" type="client" />
+	<file src="scripts/hitmarker/hitmarker.png" />
+	<file src="scripts/hitmarker/hitmarker-sound.wav" />
+	<script src="scripts/savemoney/client.lua" type="client"/>
+	<script src="scripts/savemoney/server.lua" type="server"/>
+	<script src="scripts/savemoney/a.lua" type="server"/>
+	<script src="scripts/relog/antyrelog.lua" type="server" />
+	<file src="scripts/ladder/ladder.dff" />
+	<file src="scripts/ladder/ladder.col" />
+	<script src="scripts/ladder/ladder_client.lua" type="client"/>
+	<script src="scripts/ladder/ladder_server.lua" type="server"/>
+	<file src="scripts/ladder_edf/edf/spawnpoint.png" />
+	<file src="scripts/ladder_edf/ladder.dff" />
+	<file src="scripts/ladder_edf/ladder.col" />
+	<script src="scripts/ladder_edf/test_client.lua" type="client"/>
+	<script src="scripts/ammobox/ammobox.lua" type="server"/>
+	<script src="scripts/get_pos_script/client.lua" type="client"/>
+	<script src="scripts/lina/main_server.lua" type="server"/>
+	<script src="scripts/lina/main_client.lua" type="client"/>
+	<script src="scripts/fps/client.lua" type="client" />
+	<script src="blood_c.lua" type="client" />
+	<file src="images/blood_1.png" type="client" />
+	<file src="images/blood_2.png" type="client" />
+	<file src="images/blood_3.png" type="client" />
+	<file src="images/blood_4.png" type="client" />
+	<file src="images/blood_5.png" type="client" />
+	<file src="images/blood_6.png" type="client" />
+	<script src="scripts/woda/client/CoreClassC.lua" type="client" cache="false"/>
+	
+	<!-- shared scripts -->
+	<script src="scripts/woda/shared/classlib.lua" type="shared" cache="false"/>
+	
+	<!-- shaders -->
+	<file src="scripts/woda/res/shaders/waterEffects.fx" type="client"/>
+	
+	<!-- textures -->
+	<file src="scripts/woda/res/textures/waterNormal.png" type="client"/>
+	<file src="scripts/woda/res/textures/waterDrop.png" type="client"/>
 </meta>

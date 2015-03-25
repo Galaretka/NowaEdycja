@@ -11,11 +11,11 @@
 --SERVER OUTPUTS
 shownInfos = {}
 
-	shownInfos["nomag"] = "У вас нету боеприпасов к данному оружию!"
-	shownInfos["youconsumed"] = "Вы использовали"
-	shownInfos["needwatersource"] = "Вы должны быть в воде!"
-	shownInfos["filledup"] = "Вы наполнили флягу!"
-	shownInfos["noradio"] = "У вас нету рации!"
+	shownInfos["nomag"] = "Nie masz amunicji do tej broni!"
+	shownInfos["youconsumed"] = "Użyłeś"
+	shownInfos["needwatersource"] = "Musisz być w wodzie!"
+	shownInfos["filledup"] = "Napełniasz!"
+	shownInfos["noradio"] = "Nie masz radia!"
 	
 --GAMEPLAY SETUP
 gameplayVariables = {}
@@ -36,7 +36,7 @@ gameplayVariables = {}
 	
 -- SERVER BACKUP
 	gameplayVariables["backupenabled"] = true -- Whether or not backup should be enabled. Backup = saves all tents, accounts & vehicles. - DEFAULT: true - Set to false to disable backup.
-	gameplayVariables["backupinterval"] = 86400000 -- Number of milliseconds that should elapse before backup. Minimum: 50. - 1000 milliseconds = 1 second. - DEFAULT: 86400000 (= 24 hours)
+	gameplayVariables["backupinterval"] = 21600000 -- Number of milliseconds that should elapse before backup. Minimum: 50. - 1000 milliseconds = 1 second. - DEFAULT: 86400000 (= 24 hours)
 
 	
 	

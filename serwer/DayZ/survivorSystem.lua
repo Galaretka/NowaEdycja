@@ -1,157 +1,157 @@
 ﻿local vehicleDataTableForTent = {
-{"Дрова"},
+{"Drewno opałowe"},
 {"Montion Backpack"},
 {"Crash Backpack"},
 {"Army Backpack"},
-{"Бинт"},
-{"Фляга"},
-{"Банка макарон"},
-{"Банка бобов"},
-{"Гамбургер"},
-{"Спички"},
+{"Bandaż"},
+{"Manierka"},
+{"Makaron"},
+{"Puszka fasoli"},
+{"Hamburger"},
+{"Zapałki"},
 {"M911 Mag"},
-{"M9 SD Mag"},
-{"Пустынный орёл Маг"},
+{"Amunicja do M9 SD"},
+{"Amunicja do Desert Eagle"},
 {"M911"},
 {"M9 SD"},
-{"Винчестер 1866"},
+{"Winchester 1866"},
 {"PDW"},
-{"Охотничий нож"},
-{"Морфий"},
-{"Топор"},
-{"Пицца"},
-{"Банка соды"},
-{"Пустая канистра"},
-{"Наполненная канистра"},
-{"Фаер"},
-{"Молоко"},
-{"PDW Mag"},
-{"MP5A5 Mag"},
+{"Nóż"},
+{"Morfina"},
+{"Topór"},
+{"Pizza"},
+{"Puszka z napojem"},
+{"Pusty kalnister"},
+{"Pełny kalnister"},
+{"Ogień"},
+{"Mleko"},
+{"Amunicja do PDW"},
+{"Amunicja do MP5A5"},
 {"AK"},
-{"M4 Маг"},
-{"Tear Gas"},
+{"Amunicja do M4"},
+{"Gas łzawiący"},
 {"Оск. граната M67"},
-{"Пустынный орёл"},
+{"Desert Eagle"},
 {"Sawn-Off Shotgun"},
-{"Гранатомёт"},
+{"Granat"},
 {"MP5A5"},
-{"Часы"},
-{"Аптечка"},
-{"Грелка"},
+{"Zegarek"},
+{"Apteczka"},
+{"Ciepła paczka"},
 {"Lee Enfield"},
 {"TEC-9"},
 {"AK-47"},
-{"M136 Rocket Launcher"},
-{"Пакет крови"},
+{"Amunicja do M136 Launcher"},
+{"Medyczna paczka"},
 {"GPS"},
-{"Карта"},
-{"Инструменты"},
-{"Колючая проволока"},
-{"Tire"},
-{"Engine"},
-{"Бензобак"},
-{"M136 Rocket"},
-{"Снайперская винтовка Маг"},
-{"Lee Enfield Mag"},
+{"Mapa"},
+{"Narzędzia"},
+{"Drut kolczasty"},
+{"Koło"},
+{"Silnik"},
+{"Zbiornik benzyny"},
+{"Amunicja do M136"},
+{"Amunicja do CZ550"},
+{"Amunicja do Lee Enfield"},
 {"M4"},
-{"Снайперская винтовка"},
+{"CZ550"},
 {"Heat-Seeking RPG"},
 {"Satchel"},
-{"Инфокрасные очки"},
-{"Очки ночного видения"},
-{"Палатка"},
-{"Жареное мясо"},
-{"Сырое мясо"},
-{"Одежда Армейца"},
-{"Одежда снайпера"},
-{"Одежда Бандита"},
-{"Одежда выжившего"},
-{"Болеутоляющие"},
-{"Бинокль"},
-{"Пустая фляга"},
-{"Пустая банка соды"},
-{"Объедки"},
+{"Gogle na podczerwień"},
+{"Gogle noktowizyjne"},
+{"Namiot"},
+{"Pieczeń"},
+{"Mięso"},
+{"Skin przetrwania"},
+{"Skin snajpera"},
+{"Skin bandyty"},
+{"Podstawowy skin"},
+{"Środki przeciwbólowe"},
+{"Lornetka"},
+{"Pusta manierka"},
+{"Pusta puszka z napojem"},
+{"Pozostałości"},
 {"1866 Slug"},
 {"2Rnd. Slug"},
-{"Гранотомёт Маг"},
+{"Amunicja do Granatnika"},
 {"Assault Pack (ACU)"},
 {"Alice Pack"},
-{"Рация"},
+{"Radio"},
 {"Coyote Backpack"},
 {"Czech Backpack"},
-{"Бейсбольная бита"},
-{"Лопата"},
-{"Клюшка для гольфа"},
+{"Kij bejsbolowy"},
+{"Łopata"},
+{"Kij golfowy"},
 }
 
 weaponAmmoTable = {
 
-["M1911 Mag"] = {
+["Amunicja do M1911"] = {
 {"M1911",22},
 },
 
-["M9 SD Mag"] = {
+["Amunicja do M9 SD"] = {
 {"M9 SD",23},
 },
 
-["Пустынный орёл Маг"] = {
-{"Пустынный орёл",24},
+["Amunicja do Desert Eagle"] = {
+{"Desert Eagle",24},
 },
 
-["PDW Mag"] = {
+["Amunicja do PDW"] = {
 {"PDW",28},
 },
 
-["MP5A5 Mag"] = {
+["Amunicja do MP5A5"] = {
 {"MP5A5",29},
 },
 
-["AK Маг"] = {
+["Amunicja do AK"] = {
 {"AK-47",30},
 },
 
-["M4 Маг"] = {
+["Amunicja do M4"] = {
 {"M4",31},
 },
 
 ["1866 Slug"] = {
-{"Винчестер 1866",25},
+{"Winchester 1866",25},
 },
 
 ["2Rnd. Slug"] = {
 {"Sawn-Off Shotgun",26},
 },
 
-["Гранотомёт Маг"] = {
-{"Гранатомёт",27},
+["Amunicja do Granatnika"] = {
+{"Granat",27},
 },
 
-["Снайперская винтовка Маг"] = {
-{"Снайперская винтовка",34},
+["Amunicja do CZ550"] = {
+{"CZ550",34},
 },
 
-["Lee Enfield Mag"] = {
+["Amunicja do Lee Enfield"] = {
 {"Lee Enfield",33},
 },
 
-["M136 Rocket"] = {
+["Amunicja do M136"] = {
 {"Heat-Seeking RPG",36},
-{"M136 Rocket Launcher",35},
+{"Amunicja do M136 Launcher",35},
 },
 
 
 ["others"] = {
-{"Парашют",46},
+{"Spadochron",46},
 {"Satchel",39},
-{"Tear Gas",17},
+{"Gas łzawiący",17},
 {"Оск. граната M67",16},
-{"Охотничий нож",4},
-{"Топор",8},
-{"Бинокль",43},
-{"Бейсбольная бита",5},
-{"Лопата",6},
-{"Клюшка для гольфа",2},
-{"Рация",1},
+{"Nóż",4},
+{"Topór",8},
+{"Lornetka",43},
+{"Kij bejsbolowy",5},
+{"Łopata",6},
+{"Kij golfowy",2},
+{"Radio",1},
 },
 }
 
@@ -163,39 +163,39 @@ function getWeaponAmmoType (weaponName,notOthers)
 			end
 		end
 	end	
-	for i,weaponData in ipairs(weaponAmmoTable["M1911 Mag"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do M1911"]) do
 		if weaponName == weaponData[1] then
-			return "M1911 Mag",weaponData[2]
+			return "Amunicja do M1911",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["M9 SD Mag"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do M9 SD"]) do
 		if weaponName == weaponData[1] then
-			return "M9 SD Mag",weaponData[2]
+			return "Amunicja do M9 SD",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["Пустынный орёл Маг"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do Desert Eagle"]) do
 		if weaponName == weaponData[1] then
-			return "Пустынный орёл Маг",weaponData[2]
+			return "Amunicja do Desert Eagle",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["PDW Mag"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do PDW"]) do
 		if weaponName == weaponData[1] then
-			return "PDW Mag",weaponData[2]
+			return "Amunicja do PDW",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["MP5A5 Mag"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do MP5A5"]) do
 		if weaponName == weaponData[1] then
-			return "MP5A5 Mag",weaponData[2]
+			return "Amunicja do MP5A5",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["AK Маг"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do AK"]) do
 		if weaponName == weaponData[1] then
-			return "AK Маг",weaponData[2]
+			return "Amunicja do AK",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["M4 Маг"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do M4"]) do
 		if weaponName == weaponData[1] then
-			return "M4 Маг",weaponData[2]
+			return "Amunicja do M4",weaponData[2]
 		end
 	end
 	for i,weaponData in ipairs(weaponAmmoTable["1866 Slug"]) do
@@ -208,24 +208,24 @@ function getWeaponAmmoType (weaponName,notOthers)
 			return "2Rnd. Slug",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["Гранотомёт Маг"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do Granatnika"]) do
 		if weaponName == weaponData[1] then
-			return "Гранотомёт Маг",weaponData[2]
+			return "Amunicja do Granatnika",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["Снайперская винтовка Маг"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do CZ550"]) do
 		if weaponName == weaponData[1] then
-			return "Снайперская винтовка Маг",weaponData[2]
+			return "Amunicja do CZ550",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["Lee Enfield Mag"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do Lee Enfield"]) do
 		if weaponName == weaponData[1] then
-			return "Lee Enfield Mag",weaponData[2]
+			return "Amunicja do Lee Enfield",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["M136 Rocket"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do M136"]) do
 		if weaponName == weaponData[1] then
-			return "M136 Rocket",weaponData[2]
+			return "Amunicja do M136",weaponData[2]
 		end
 	end
 	return false
@@ -642,15 +642,15 @@ setTimer(checkHumanity,60000,0)
 
 function onPlayerRequestChangingStats(itemName,itemInfo,data)
 	if data == "food" then
-		if itemName == "Гамбургер" then
+		if itemName == "Hamburger" then
 			blood = 300
-		elseif itemName == "Пицца" then
+		elseif itemName == "Pizza" then
 			blood = 300
-		elseif itemName == "Сырое мясо" then
+		elseif itemName == "Mięso" then
 			blood = 800
-		elseif itemName == "Банка бобов" then
+		elseif itemName == "Puszka fasoli" then
 			blood = 200
-		elseif itemName == "Банка макарон" then
+		elseif itemName == "Makaron" then
 			blood = 200
 		end
 		setPedAnimation (source,"FOOD","EAT_Burger",-1, false, false, false, false)
@@ -661,8 +661,8 @@ function onPlayerRequestChangingStats(itemName,itemInfo,data)
 		setElementData(source,itemName,getElementData(source,itemName)-1)
 		addPlayerStats (source,data,gameplayVariables["thirstrestore"])
 		setPedAnimation (source,"VENDING","VEND_Drink2_P",-1, false, false, false, false) 
-		if itemName == "Фляга" then
-			setElementData(source,"Пустая фляга",(getElementData(source,"Пустая фляга") or 0)+1)
+		if itemName == "Manierka" then
+			setElementData(source,"Pusta manierka",(getElementData(source,"Pusta manierka") or 0)+1)
 		end
 	end
 	triggerClientEvent (source, "displayClientInfo", source,"Food",shownInfos["youconsumed"].." "..itemName,22,255,0)
@@ -675,24 +675,24 @@ function onPlayerUseMedicObject(itemName)
 	local playersource = source
 	setPedAnimation (playersource,"BOMBER","BOM_Plant",-1, false, false, false, false)
 	setTimer( function ()
-		if itemName == "Бинт" then
+		if itemName == "Bandaż" then
 			setElementData(playersource,"bleeding",0)
 			setElementData(playersource,itemName,getElementData(playersource,itemName)-1)
-		elseif itemName == "Аптечка" then
+		elseif itemName == "Apteczka" then
 			addPlayerStats (playersource,"blood",7000)
 			setElementData(playersource,"bleeding",0)
 			setElementData(playersource,itemName,getElementData(playersource,itemName)-1)
-		elseif itemName == "Грелка" then
+		elseif itemName == "Ciepła paczka" then
 			setElementData(playersource,"cold",false)
 			setElementData(playersource,"temperature",37)
 			setElementData(playersource,itemName,getElementData(playersource,itemName)-1)
-		elseif itemName == "Болеутоляющие" then
+		elseif itemName == "Środki przeciwbólowe" then
 			setElementData(playersource,"pain",false)
 			setElementData(playersource,itemName,getElementData(playersource,itemName)-1)
-		elseif itemName == "Морфий" then
+		elseif itemName == "Morfina" then
 			setElementData(playersource,"brokenbone",false)
 			setElementData(playersource,itemName,getElementData(playersource,itemName)-1)
-		elseif itemName == "Пакет крови" then
+		elseif itemName == "Medyczna paczka" then
 			addPlayerStats (playersource,"blood",12000)
 			setElementData(playersource,itemName,getElementData(playersource,itemName)-1)
 		end
@@ -708,11 +708,11 @@ function onPlayerGiveMedicObject(itemName,player)
 	setTimer( function ()
 		if itemName == "bandage" then
 			setElementData(player,"bleeding",0)
-			setElementData(playersource,"Бинт",getElementData(playersource,"Бинт")-1)
+			setElementData(playersource,"Bandaż",getElementData(playersource,"Bandaż")-1)
 			addPlayerStats (playersource,humanity,40)
 		elseif itemName == "giveblood" then
 			addPlayerStats (player,"blood",12000)
-			setElementData(playersource,"Пакет крови",getElementData(playersource,"Пакет крови")-1)
+			setElementData(playersource,"Medyczna paczka",getElementData(playersource,"Medyczna paczka")-1)
 			addPlayerStats (playersource,humanity,250)
 		end
 	end,1500,1)	
@@ -722,10 +722,10 @@ addEventHandler("onPlayerGiveMedicObject",getRootElement(),onPlayerGiveMedicObje
 
 
 skinTable = {
-{"Одежда Армейца",179},
-{"Одежда снайпера",285},
-{"Одежда Бандита",180},
-{"Одежда выжившего",73},
+{"Skin przetrwania",179},
+{"Skin snajpera",285},
+{"Skin bandyty",180},
+{"Podstawowy skin",73},
 }
 
 function getSkinIDFromName(name)
@@ -760,12 +760,12 @@ addEventHandler("onPlayerChangeSkin",getRootElement(),addPlayerSkin)
 
 function onPlayerRefillWaterBottle (itemName)
 	if isElementInWater(source) then
-		setElementData(source,"Фляга",getElementData(source,"Фляга")+1)
+		setElementData(source,"Manierka",getElementData(source,"Manierka")+1)
 		setElementData(source,itemName,getElementData(source,itemName)-1)
 		triggerClientEvent(source,"refreshInventoryManual",source)
-		triggerClientEvent (source, "displayClientInfo", source,"Фляга",shownInfos["filledup"],22,255,0)
+		triggerClientEvent (source, "displayClientInfo", source,"Manierka",shownInfos["filledup"],22,255,0)
 	else
-		triggerClientEvent (source, "displayClientInfo", source,"Фляга",shownInfos["needwatersource"],255,22,0)
+		triggerClientEvent (source, "displayClientInfo", source,"Manierka",shownInfos["needwatersource"],255,22,0)
 	end	
 end
 addEvent("onPlayerRefillWaterBottle",true)
@@ -849,7 +849,7 @@ addEventHandler("removeWirefence",getRootElement(),removeWirefence)
 
 function removeTent (object)
 	local x,y,z = getElementPosition(getElementData(object,"parent"))
-	local item,itemString = getItemTablePosition("Палатка")
+	local item,itemString = getItemTablePosition("Namiot")
 	local itemPickup = createItemPickup(item,x,y,z+1,itemString)
 	
 	destroyElement(getElementData(object,"parent"))
@@ -861,18 +861,18 @@ addEventHandler("removeTent",getRootElement(),removeTent)
 function addPlayerCookMeat ()
 	local playersource = source
 	setPedAnimation (playersource,"BOMBER","BOM_Plant",-1, false, false, false, false)
-	local meat = getElementData(playersource,"Жареное мясо")
+	local meat = getElementData(playersource,"Pieczeń")
 	setTimer(function()
-			setElementData(playersource,"Жареное мясо",0)
-			setElementData(playersource,"Сырое мясо",getElementData(playersource,"Сырое мясо")+meat)
-			triggerClientEvent (playersource, "displayClientInfo", playersource,"Костёр","Вы пожарили "..meat.." сырого мяса.",22,255,0)
+			setElementData(playersource,"Pieczeń",0)
+			setElementData(playersource,"Mięso",getElementData(playersource,"Mięso")+meat)
+			triggerClientEvent (playersource, "displayClientInfo", playersource,"Ognisko","Smażysz "..meat.." surowe mięso.",22,255,0)
 	end,5000,1)
 end
 addEvent("addPlayerCookMeat",true)
 addEventHandler("addPlayerCookMeat",getRootElement(),addPlayerCookMeat)
 
 function onPlayerMakeAFire (itemName)
-	setElementData(source,"Дрова",getElementData(source,"Дрова")-1)
+	setElementData(source,"Drewno opałowe",getElementData(source,"Drewno opałowe")-1)
 	local x,y,z = getElementPosition(source)
 	local xr,yr,zr = getElementRotation(source)
 	px, py, pz = getElementPosition(source)
@@ -891,7 +891,7 @@ function onPlayerMakeAFire (itemName)
 	setObjectScale(fire,0)
 	local fireCol = createColSphere(x,y,z,2)
 	setElementData(fireCol,"parent",wood)
-	setElementData("Дрова","parent",fireCol)
+	setElementData("Drewno opałowe","parent",fireCol)
 	setElementData(fireCol,"fireplace",true)
 	triggerClientEvent(source,"refreshInventoryManual",source)
 	setPedAnimation (playersource,"BOMBER","BOM_Plant",-1, false, false, false, false)
@@ -945,13 +945,13 @@ addEventHandler( "onPlayerChat", getRootElement(), sendMessageToNearbyPlayers )
 function playerRadioChat(playersource,cmd,...)
 	if cmd == "radiochat" then
 		local msg2 = table.concat({...}, " ")
-		if (getElementData(playersource,"Рация") or 0) <= 0 then outputChatBox(shownInfos["noradio"],playersource) return end
+		if (getElementData(playersource,"Radio") or 0) <= 0 then outputChatBox(shownInfos["noradio"],playersource) return end
         local posX, posY, posZ = getElementPosition( playersource )
         local chatSphere = createColSphere( posX, posY, posZ, chatEadioRadius )
         local nearbyPlayers = getElementsWithinColShape( chatSphere, "player" )
         destroyElement( chatSphere )
         for index, nearbyPlayer in ipairs( nearbyPlayers ) do
-			if getElementData(nearbyPlayer,"Рация") > 0 then
+			if getElementData(nearbyPlayer,"Radio") > 0 then
 				outputChatBox(""..string.gsub((getPlayerName(playersource).." : "..msg2), '#%x%x%x%x%x%x', ''),nearbyPlayer, 238,238,0,true ) -- Color changed from 60,200,40 to 238,238,0
 			end
         end
@@ -993,7 +993,7 @@ local infoTimer = 240000
 
 function outputInfo1 ()
 	for i, player in ipairs(getElementsByType("player")) do
-		triggerClientEvent (player, "displayClientInfo", player,"Информация","Вы можете использовать среднюю кнопку мыши или '-', чтобы сделать действия",30,0,255)
+		triggerClientEvent (player, "displayClientInfo", player,"Informacja","Możesz użyć leków 'środkowym przyciskiem myszy' lub '-'.",30,0,255)
 	end
 	setTimer(outputInfo2,infoTimer,1)
 end
@@ -1001,28 +1001,28 @@ setTimer(outputInfo1,infoTimer,1)
 
 function outputInfo2 ()
 	for i, player in ipairs(getElementsByType("player")) do
-		triggerClientEvent (player, "displayClientInfo", player,"Информация","Добро пожаловать на DayZ Server",30,0,255)
+		triggerClientEvent (player, "displayClientInfo", player,"Informacja","Zapaszamy na nasz serwer TS3! 185.49.12.243",30,0,255)
 	end
 	setTimer(outputInfo3,infoTimer,1)
 end
 
 function outputInfo3 ()
 	for i, player in ipairs(getElementsByType("player")) do
-		triggerClientEvent (player, "displayClientInfo", player,"Информация","Гл.Админ ...",30,0,255)
+		triggerClientEvent (player, "displayClientInfo", player,"Informacja","Admini to Pietr i BAKSTER112",30,0,255)
 	end
 	setTimer(outputInfo4,infoTimer,1)
 end
 
 function outputInfo4 ()
 	for i, player in ipairs(getElementsByType("player")) do
-		triggerClientEvent (player, "displayClientInfo", player,"Информация","Вы можете включить и отключить дебаг монитор, нажав клавишу F5",30,0,255)
+		triggerClientEvent (player, "displayClientInfo", player,"Informacja","Można włączyć i wyłączyć monitor diagnostyczny, naciskając klawisz F5",30,0,255)
 	end
 	setTimer(outputInfo5,infoTimer,1)
 end
 
 function outputInfo5 ()
 	for i, player in ipairs(getElementsByType("player")) do
-		triggerClientEvent (player, "displayClientInfo", player,"Информация","Администрация online: "..getTeamMemberOnline(),255,0,0)
+		triggerClientEvent (player, "displayClientInfo", player,"Informacja","Administracja OnLine: "..getTeamMemberOnline(),255,0,0)
 	end
 	setTimer(outputInfo1,infoTimer,1)
 end
@@ -1032,7 +1032,7 @@ function getTeamMemberOnline ()
 	for i,player in ipairs(getElementsByType("player")) do
 		local account = getPlayerAccount(player)
 		if not isGuestAccount(account) then
-			if getElementData(player,"supporter") or getElementData(player,"admin") then
+			if getElementData(player,"supporter") or getElementData(player,"Admin") then
 				theTableMembersOnline = theTableMembersOnline..","..getPlayerName(player)
 			end
 		end
@@ -1143,12 +1143,12 @@ addCommandHandler("pmsg",pmsgAdmin)
 	
 botSupportTable = {
 --Website
-{"website","what","","The URL is: www.community.vavegames.net.","","James"},
-{"website","where","","The URL is: www.community.vavegames.net.","","James"},
-{"website","which","","The URL is: www.community.vavegames.net.","","James"},
-{"website","how","","The URL is: www.community.vavegames.net.","","James"},
-{"website","got","","The URL is: www.community.vavegames.net.","","James"},
-{"website","know","","The URL is: www.community.vavegames.net.","","James"},
+{"website","what","","The URL is: www.DayZ-Polska.pl.","","James"},
+{"website","where","","The URL is: www.DayZ-Polska.pl.","","James"},
+{"website","which","","The URL is: www.DayZ-Polska.pl.","","James"},
+{"website","how","","The URL is: www.DayZ-Polska.pl.","","James"},
+{"website","got","","The URL is: www.DayZ-Polska.pl.","","James"},
+{"website","know","","The URL is: www.DayZ-Polska.pl.","","James"},
 --Chat
 {"hey","james","","Hey.","","James"},
 {"hey","paul","","Yo!.","","Paul"},
@@ -1167,7 +1167,7 @@ botSupportTable = {
 {"how","open","inven","By pressing 'J', you can open your inventory.","","James"},
 --Cyxno
 {"drop","item","","Press 'J' to open your inventory, select the item you want to drop and press the arrow pointing to the left.","","Paul"},
-{"fuel","car","how","You need an 'Пустая канистра'. You can fill it at a gas station.","","Sandra"},
+{"fuel","car","how","You need an 'Pusty kalnister'. You can fill it at a gas station.","","Sandra"},
 {"pick","items","how","Press the middle mouse button (or '-') when the name of the item is written on the left of your screen.","","Sandra"},
 {"fence","wire","destroy","You need a toolbox to destroy a wirefence.","","James"},
 {"register","how","to","You need to fill in your name and password. Afterwards, press 'Register'. If it doesn't work, reconnect.","","James"},
@@ -1219,7 +1219,7 @@ function onServerSupportChatMessage (player2,text)
 		botCheck(text,player2)
 	end
 	if mutedmessage then
-		outputChatBox("#2200ddУ вас мут!",player2,255,255,255,true)
+		outputChatBox("#2200ddJesteś uciszony!",player2,255,255,255,true)
 	end
 end
 addEvent("onServerSupportChatMessage",true)
@@ -1300,8 +1300,8 @@ addEventHandler("onPlayerCommand", root, preventCommandSpam)
 --Pingkick
 
 function kickPlayerOnHighPing ()
-	outputChatBox (getPlayerName(source).." был кикнут из-за высокого пинга!",getRootElement(),27, 89, 224,true)	
-	kickPlayer(source,"Ваш пинг был слишком высокий.")
+	outputChatBox (getPlayerName(source).." został wyrzucony za duży ping!",getRootElement(),27, 89, 224,true)	
+	kickPlayer(source,"Duży ping.")
 end
 addEvent("kickPlayerOnHighPing",true)
 addEventHandler("kickPlayerOnHighPing", getRootElement(),kickPlayerOnHighPing)
@@ -1348,7 +1348,7 @@ end
 function bindTheKeys ()
   bindKey(source,",","down",funcBindHandsup)
   bindKey(source,".","down",funcBindSit)
-  bindKey(source,"l","down",funcBindLie)
+  bindKey(source,"/","down",funcBindLie)
 end
 addEventHandler("onPlayerLogin", getRootElement(), bindTheKeys)
 

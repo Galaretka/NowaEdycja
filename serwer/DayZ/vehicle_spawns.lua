@@ -152,65 +152,65 @@ patrolPoints = {
 
 lootItems = {
 ["helicrashsides"] = {
-{"Очки ночного видения",368,1,90,10},
-{"M136 Rocket Launcher",359,1,90,0},
+{"Gogle noktowizyjne",368,1,90,10},
+{"Amunicja do M136 Launcher",359,1,90,0},
 {"Heat-Seeking RPG",360,1,90,0},
-{"Спички",328,0.4,90,2},
+{"Zapałki",328,0.4,90,2},
 {"M1911",346,1,90,10},
 {"M9 SD",347,1,90,7},
-{"Винчестер 1866",349,1,90,6},
+{"Winchester 1866",349,1,90,6},
 {"PDW",352,1,90,5.5},
-{"Охотничий нож",335,1,90,4},
-{"Топор",339,1,90,3},
-{"Пицца",1582,1,0,2},
-{"Банка соды",2647,1,0,2},
-{"Пустая канистра",1650,1,0,2},
-{"Фаер",324,1,90,2},
-{"Молоко",2856,1,0,1},
-{"Болеутоляющие",2709,0.5,0,4},
-{"Пустая банка соды",2673,0.5,0,2},
-{"Объедки",2675,0.5,0,3},
+{"Nóż",335,1,90,4},
+{"Topór",339,1,90,3},
+{"Pizza",1582,1,0,2},
+{"Puszka z napojem",2647,1,0,2},
+{"Pusty kalnister",1650,1,0,2},
+{"Ogień",324,1,90,2},
+{"Mleko",2856,1,0,1},
+{"Środki przeciwbólowe",2709,0.5,0,4},
+{"Pusta puszka z napojem",2673,0.5,0,2},
+{"Pozostałości",2675,0.5,0,3},
 {"Оск. граната M67",342,1,0,4},
-{"Парашют",342,1,0,80},
+{"Spadochron",342,1,0,80},
 {"Sawn-Off Shotgun",350,1,90,5},
-{"Гранатомёт",351,1,90,4},
+{"Granat",351,1,90,4},
 {"MP5A5",353,1,90,6},
-{"Часы",2710,1,0,4},
-{"Грелка",1576,1,0,3},
-{"Колючая проволока",933,0.25,0,1},
+{"Zegarek",2710,1,0,4},
+{"Ciepła paczka",1576,1,0,3},
+{"Drut kolczasty",933,0.25,0,1},
 {"Lee Enfield",357,1,90,6},
 {"Alice Pack",3026,1,0,4},
-{"Очки ночного видения",368,1,90,1.5},
-{"Tire",1073,1,0,2},
-{"Морфий",1579,1,0,4},
+{"Gogle noktowizyjne",368,1,90,1.5},
+{"Koło",1073,1,0,2},
+{"Morfina",1579,1,0,4},
 {"Армейский камуфляж",1577,1,0,4.5},
-{"Женский скин",1577,1,0,3},
+{"Skin kobiecy",1577,1,0,3},
 --{"TEC-9",372,1,90,4},
 {"AK-74",355,1,90,7},
 {"GPS",2976,0.15,0,3},
-{"Карта",1277,0.8,90,7},
-{"Инструменты",2969,0.5,0,1},
-{"Engine",929,0.3,0,2},
-{"Палатка",1279,1,0,4.5},
+{"Mapa",1277,0.8,90,7},
+{"Narzędzia",2969,0.5,0,1},
+{"Silnik",929,0.3,0,2},
+{"Namiot",1279,1,0,4.5},
 {"Камуфляж снайпера",1577,1,0,0.5},
 {"М4А1 CCO",356,1,90,1},
 {"CZ550",358,1,90,1.5},
-{"Инфокрасные очки",369,1,90,3},
+{"Gogle na podczerwień",369,1,90,3},
 {"Assault Pack (ACU)",3026,0.5,0,5},
 {"Coyote Backpack",3026,1.3,0,2},
 --{"Thermal GPS",2976,0.2,0,3},
 --{"GPS Jammer",2976,0.2,0,4},
 },
 ["hospital"] = {
-{"Аптечка",2891,0.7,0},
-{"Грелка",1576,1,0},
-{"Бинт",1578,0.5,0},
-{"Пакет крови",1580,1,0},
-{"Морфий",1579,1,0},
-{"Пакет крови",1580,1,0},
-{"Аптечка",2891,0.7,0},
-{"Пакет крови",1580,1,0},
-{"Болеутоляющие",1580,1,0},
+{"Apteczka",2891,0.7,0},
+{"Ciepła paczka",1576,1,0},
+{"Bandaż",1578,0.5,0},
+{"Medyczna paczka",1580,1,0},
+{"Morfina",1579,1,0},
+{"Medyczna paczka",1580,1,0},
+{"Apteczka",2891,0.7,0},
+{"Medyczna paczka",1580,1,0},
+{"Środki przeciwbólowe",1580,1,0},
 },
 }
 
@@ -762,14 +762,14 @@ function onPlayerEnterDayzVehicle(veh,seat)
     end
 	if (getElementData(col,"fuel") or 0) <= 1 then
 		if not getElementModel(veh) == 509 then
-			triggerClientEvent (source, "displayClientInfo", source,"Vehicle","В транспорте нету бензобака!",22,255,0)
+			triggerClientEvent (source, "displayClientInfo", source,"Vehicle","W pojeździe nie ma zbiornika z paliwem!",22,255,0)
 			setVehicleEngineState ( veh, false )
 			return
 		end
 	end
 	setVehicleEngineState ( veh, true )
 	bindKey(source,"k","down",setEngineStateByPlayer)
-	outputChatBox("Нажмите 'K' чтобы вкл/выкл дивигатель!",source)
+	outputChatBox("Naciśnij 'K' aby włączyć/wyłączyć silnik!",source)
 end
 addEventHandler ( "onPlayerVehicleEnter", getRootElement(), onPlayerEnterDayzVehicle )
 
@@ -817,14 +817,14 @@ end
 
 repairTimer = {}
 function repairVehicle (veh)
-	if repairTimer[veh] then triggerClientEvent (source, "displayClientInfo", source,"Vehicle",getVehicleName(veh).." is currently being repaired!",255,22,0) return end
+	if repairTimer[veh] then triggerClientEvent (source, "displayClientInfo", source,"Vehicle",getVehicleName(veh).." jest obecnie napawiony!",255,22,0) return end
 	local health = math.floor(getElementHealth(veh))
 	repairTimer[veh] = setTimer(fixVehicleDayZ,(1000-health)*120,1,veh,source)
 	setElementFrozen (veh,true)
 	setElementData(veh,"repairer",source)
 	setElementData(source,"repairingvehicle",veh)
 	setPedAnimation (source,"SCRATCHING","sclng_r",nil,true,false)
-	triggerClientEvent (source, "displayClientInfo", source,"Vehicle","Вы начали починку "..getVehicleName(veh),22,255,0)
+	triggerClientEvent (source, "displayClientInfo", source,"Vehicle","Zacząłeś napawiać "..getVehicleName(veh),22,255,0)
 end
 addEvent("repairVehicle",true)
 addEventHandler("repairVehicle",getRootElement(),repairVehicle)
@@ -837,7 +837,7 @@ function fixVehicleDayZ(veh,player)
 	repairTimer[veh] = nil
 	setElementData(veh,"repairer",nil)
 	setElementData(player,"repairingvehicle",nil)
-	triggerClientEvent (player, "displayClientInfo", player,"Vehicle","Вы закончили починку "..getVehicleName(veh),22,255,0)
+	triggerClientEvent (player, "displayClientInfo", player,"Vehicle","Skończyłeś naprawiać pojazd "..getVehicleName(veh),22,255,0)
 end
 
 function stopFixxingWhileMoving()
@@ -846,7 +846,7 @@ function stopFixxingWhileMoving()
 	setElementFrozen (veh,false)
 	setElementData(veh,"repairer",nil)
 	setElementData(source,"repairingvehicle",nil)
-	triggerClientEvent (source, "displayClientInfo", source,"Vehicle","Вы остановили починку "..getVehicleName(veh),255,22,0)
+	triggerClientEvent (source, "displayClientInfo", source,"Vehicle","Przestałeś naprawiać "..getVehicleName(veh),255,22,0)
 	killTimer(repairTimer[veh])
 	repairTimer[veh] = nil
 end
@@ -872,8 +872,8 @@ function setEngineStateByPlayer (playersource)
 	setVehicleEngineState (veh, not getVehicleEngineState(veh))
 	if getElementData(getElementData(veh,"parent"),"fuel") <= 0 then return end
 	if getVehicleEngineState(veh) == true then
-		triggerClientEvent (playersource, "displayClientInfo", playersource,"Vehicle","Двигатель вкл!",22,255,0)
+		triggerClientEvent (playersource, "displayClientInfo", playersource,"Vehicle","Brak paliwa!",22,255,0)
 	else
-		triggerClientEvent (playersource, "displayClientInfo", playersource,"Vehicle","Двигатель выкл!",255,22,0)
+		triggerClientEvent (playersource, "displayClientInfo", playersource,"Vehicle","Brak paliwa!",255,22,0)
 	end
 end

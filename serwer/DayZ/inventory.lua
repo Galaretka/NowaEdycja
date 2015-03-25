@@ -12,14 +12,14 @@ inventoryItems = {
 ["Weapons"] = {
 ["Primary Weapon"] = {
 {"M4",3},
-{"Снайперская винтовка",3},
-{"Винчестер 1866",3},
-{"Гранатомёт",3},
+{"CZ550",3},
+{"Winchester 1866",3},
+{"Granat",3},
 {"Sawn-Off Shotgun",3},
 {"AK-47",3},
 {"Lee Enfield",3},
 {"Heat-Seeking RPG",5},
-{"M136 Rocket Launcher",5},
+{"Amunicja do M136 Launcher",5},
 },
 
 ["Secondary Weapon"] = {
@@ -28,97 +28,97 @@ inventoryItems = {
 {"PDW",2},
 {"TEC-9",2},
 {"MP5A5",3},
-{"Пустынный орёл",2},
-{"Охотничий нож",1},
-{"Топор",2},
-{"Бейсбольная бита",2},
-{"Лопата",2},
-{"Клюшка для гольфа",2},
+{"Desert Eagle",2},
+{"Nóż",1},
+{"Topór",2},
+{"Kij bejsbolowy",2},
+{"Łopata",2},
+{"Kij golfowy",2},
 },
 
 ["Specially Weapon"] = {
-{"Парашют",1},
-{"Tear Gas",1},
+{"Spadochron",1},
+{"Gas łzawiący",1},
 {"Оск. граната M67",1},
-{"Бинокль",1}
+{"Lornetka",1}
 },
 
 },
 ["Ammo"] = {
-{"M1911 Mag",0.085},
-{"M9 SD Mag",0.085},
-{"Пустынный орёл Маг",0.085},
-{"PDW Mag",0.025},
-{"MP5A5 Mag",0.025},
-{"AK Маг",0.035},
-{"M4 Маг",0.035},
+{"Amunicja do M1911",0.085},
+{"Amunicja do M9 SD",0.085},
+{"Amunicja do Desert Eagle",0.085},
+{"Amunicja do PDW",0.025},
+{"Amunicja do MP5A5",0.025},
+{"Amunicja do AK",0.035},
+{"Amunicja do M4",0.035},
 {"1866 Slug",0.067},
 {"2Rnd. Slug",0.067},
-{"Гранотомёт Маг",0.067},
-{"Снайперская винтовка Маг",0.1},
-{"Lee Enfield Mag",0.1},
-{"M136 Rocket",2},
+{"Amunicja do Granatnika",0.067},
+{"Amunicja do CZ550",0.1},
+{"Amunicja do Lee Enfield",0.1},
+{"Amunicja do M136",2},
 },
 
 ["Food"] = {
-{"Фляга",1},
-{"Банка макарон",1},
-{"Банка бобов",1},
-{"Гамбургер",1},
-{"Пицца",1},
-{"Банка соды",1},
-{"Молоко",1},
-{"Сырое мясо",1},
+{"Manierka",1},
+{"Makaron",1},
+{"Puszka fasoli",1},
+{"Hamburger",1},
+{"Pizza",1},
+{"Puszka z napojem",1},
+{"Mleko",1},
+{"Mięso",1},
 },
 
 ["Items"] = {
-{"Montion Backpack",1,"Одеть"},
-{"Дрова",2},
-{"Бинт",1,"Перевязаться"},
-{"Фаер",1,"Зажечь"},
-{"Пустая канистра",2},
-{"Наполненная канистра",2},
-{"Аптечка",2,"Использовать."},
-{"Грелка",1,"Использовать."},
-{"Болеутоляющие",1,"Использовать."},
-{"Морфий",1,"Использовать."},
-{"Пакет крови",1,"Использовать."},
-{"Колючая проволока",1,"Поставить проволоку"},
-{"Жареное мясо",1},
-{"Tire",2},
-{"Engine",5},
-{"Бензобак",3},
-{"Палатка",3,"Разложить"},
-{"Одежда Армейца",1,"Переодеться"},
-{"Одежда выжившего",1,"Переодеться"},
-{"Одежда снайпера",1,"Переодеться"},
-{"Одежда Бандита",1,"Переодеться"},
-{"Пустая фляга",1,"Наполнить"}, 
-{"Пустая банка соды",1},
-{"Объедки",1},
-{"Assault Pack (ACU)",1},"Одеть",
-{"Alice Pack",1},"Одеть",
-{"Czech Backpack",1,"Одеть"},
-{"Coyote Backpack",1,"Одеть"},
-{"Crash Backpack",1,"Одеть"},
-{"Army Backpack",1,"Одеть"},
+{"Montion Backpack",1,"Nałóż"},
+{"Drewno opałowe",2},
+{"Bandaż",1,"Zabandażuj"},
+{"Ogień",1,"Podpal"},
+{"Pusty kalnister",2},
+{"Pełny kalnister",2},
+{"Apteczka",2,"Użyj leków."},
+{"Ciepła paczka",1,"Użyj leków."},
+{"Środki przeciwbólowe",1,"Użyj leków."},
+{"Morfina",1,"Użyj leków."},
+{"Medyczna paczka",1,"Użyj leków."},
+{"Drut kolczasty",1,"Rozłóż"},
+{"Pieczeń",1},
+{"Koło",2},
+{"Silnik",5},
+{"Zbiornik benzyny",3},
+{"Namiot",3,"Rozłóż"},
+{"Skin przetrwania",1,"Ubierz się"},
+{"Podstawowy skin",1,"Ubierz się"},
+{"Skin snajpera",1,"Ubierz się"},
+{"Skin bandyty",1,"Ubierz się"},
+{"Pusta manierka",1,"Napełnij"}, 
+{"Pusta puszka z napojem",1},
+{"Pozostałości",1},
+{"Assault Pack (ACU)",1},"Nałóż",
+{"Alice Pack",1},"Nałóż",
+{"Czech Backpack",1,"Nałóż"},
+{"Coyote Backpack",1,"Nałóż"},
+{"Crash Backpack",1,"Nałóż"},
+{"Army Backpack",1,"Nałóż"},
 },
 
 ["Toolbelt"] = {
-{"Очки ночного видения",1},
-{"Инфокрасные очки",1},
-{"Карта",1},
-{"Спички",1,"Поджечь"},
-{"Часы",1},
+{"Gogle noktowizyjne",1},
+{"Gogle na podczerwień",1},
+{"Mapa",1},
+{"Zapałki",1,"Podpal"},
+{"Zegarek",1},
 {"GPS",1},
-{"Инструменты",1},
-{"Рация",1},
+{"Narzędzia",1},
+{"Radio",1},
 },
 }
 
 
 ------------------------------------------------------------------------------
---Инвентарь
+--Inwentarz
 local headline = {}
 local gridlistItems = {}
 local buttonItems = {}
@@ -128,11 +128,11 @@ inventoryWindows = guiCreateWindow(0.15, 0.28, 0.72, 0.63, "", true)
 -- inventoryWindows = guiCreateStaticImage(0.25,0.25,0.5,0.5,"images/scrollmenu_1.png",true)
 
 
-headline["loot"] = guiCreateLabel(0.06, 0.05, 0.34, 0.09,"Обыскать",true,inventoryWindows)
+headline["loot"] = guiCreateLabel(0.06, 0.05, 0.34, 0.09,"Plądruj",true,inventoryWindows)
 guiLabelSetHorizontalAlign (headline["loot"],"center")
 guiSetFont (headline["loot"], "default-bold-small" )
 
-headline["inventory"] = guiCreateLabel(0.60, 0.05, 0.34, 0.09,"Инвентарь",true,inventoryWindows)
+headline["inventory"] = guiCreateLabel(0.60, 0.05, 0.34, 0.09,"Inwentarz",true,inventoryWindows)
 guiLabelSetHorizontalAlign (headline["inventory"],"center")
 guiSetFont (headline["inventory"], "default-bold-small" )
 
@@ -147,12 +147,12 @@ gridlistItems["inventory_colum_amount"] = guiGridListAddColumn( gridlistItems["i
 buttonItems["loot"] = guiCreateButton(0.42, 0.17, 0.04, 0.69, "->", true,inventoryWindows)
 buttonItems["inventory"] = guiCreateButton(0.53, 0.17, 0.04, 0.69, "<-", true,inventoryWindows)
 
-headline["slots"] = guiCreateLabel(0.62, 0.94, 0.29, 0.04,"Слоты:",true,inventoryWindows)
+headline["slots"] = guiCreateLabel(0.62, 0.94, 0.29, 0.04,"Slotów:",true,inventoryWindows)
 guiLabelSetHorizontalAlign (headline["slots"],"center")
 guiLabelSetVerticalAlign (headline["slots"],"center")
 guiSetFont (headline["slots"], "default-bold-small" )
 
-headline["slots_loot"] = guiCreateLabel(0.07, 0.94, 0.29, 0.04,"Слоты:",true,inventoryWindows)
+headline["slots_loot"] = guiCreateLabel(0.07, 0.94, 0.29, 0.04,"Slotów:",true,inventoryWindows)
 guiLabelSetHorizontalAlign (headline["slots_loot"],"center")
 guiLabelSetVerticalAlign (headline["slots_loot"],"center")
 guiSetFont (headline["slots_loot"], "default-bold-small" )
@@ -216,7 +216,7 @@ if ( gridlistItems["inventory_colum"] ) then --If the column has been created, f
 			local row = guiGridListAddRow ( gridlistItems["inventory"] )
 			--guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"ITEMS", false, false )
 			local row = guiGridListAddRow ( gridlistItems["inventory"] )
-			guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"Основное оружие", true, false )
+			guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"1. Pierwsza broń", true, false )
 		for id, item in ipairs(inventoryItems["Weapons"]["Primary Weapon"]) do
 			if getElementData(getLocalPlayer(),item[1]) and getElementData(getLocalPlayer(),item[1]) >= 1 then
 				local row = guiGridListAddRow ( gridlistItems["inventory"] )
@@ -225,7 +225,7 @@ if ( gridlistItems["inventory_colum"] ) then --If the column has been created, f
 			end
 		end
 				local row = guiGridListAddRow ( gridlistItems["inventory"] )
-			guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"Дополнительное оружие", true, false )
+			guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"2. Druga broń", true, false )
 		for id, item in ipairs(inventoryItems["Weapons"]["Secondary Weapon"]) do
 			if getElementData(getLocalPlayer(),item[1]) and getElementData(getLocalPlayer(),item[1]) >= 1 then
 				local row = guiGridListAddRow ( gridlistItems["inventory"] )
@@ -234,7 +234,7 @@ if ( gridlistItems["inventory_colum"] ) then --If the column has been created, f
 			end
 		end
 			local row = guiGridListAddRow ( gridlistItems["inventory"] )
-			guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"Специальное оружие", true, false )
+			guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"3. Specjalna broń", true, false )
 		for id, item in ipairs(inventoryItems["Weapons"]["Specially Weapon"]) do
 			if getElementData(getLocalPlayer(),item[1]) and getElementData(getLocalPlayer(),item[1]) >= 1 then
 				local row = guiGridListAddRow ( gridlistItems["inventory"] )
@@ -243,7 +243,7 @@ if ( gridlistItems["inventory_colum"] ) then --If the column has been created, f
 			end
 		end
 			local row = guiGridListAddRow ( gridlistItems["inventory"] )
-			guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"Боеприпасы", true, false )
+			guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"4. Amunicja", true, false )
 		for id, item in ipairs(inventoryItems["Ammo"]) do
 			if getElementData(getLocalPlayer(),item[1]) and getElementData(getLocalPlayer(),item[1]) >= 1 then
 				local row = guiGridListAddRow ( gridlistItems["inventory"] )
@@ -252,7 +252,7 @@ if ( gridlistItems["inventory_colum"] ) then --If the column has been created, f
 			end
 		end
 			local row = guiGridListAddRow ( gridlistItems["inventory"] )
-			guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"Еда и вода", true, false )
+			guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"5. Jedzenie i picie", true, false )
 		for id, item in ipairs(inventoryItems["Food"]) do
 			if getElementData(getLocalPlayer(),item[1]) and getElementData(getLocalPlayer(),item[1]) >= 1 then
 				local row = guiGridListAddRow ( gridlistItems["inventory"] )
@@ -261,7 +261,7 @@ if ( gridlistItems["inventory_colum"] ) then --If the column has been created, f
 			end
 		end
 			local row = guiGridListAddRow ( gridlistItems["inventory"] )
-			guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"Прочее", true, false )
+			guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"6. Inne", true, false )
 		for id, item in ipairs(inventoryItems["Items"]) do
 			if getElementData(getLocalPlayer(),item[1]) and getElementData(getLocalPlayer(),item[1]) >= 1 then
 				local row = guiGridListAddRow ( gridlistItems["inventory"] )
@@ -270,7 +270,7 @@ if ( gridlistItems["inventory_colum"] ) then --If the column has been created, f
 			end
 		end
 			local row = guiGridListAddRow ( gridlistItems["inventory"] )
-			guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"Инструменты", true, false )
+			guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"7. Narzędzia", true, false )
 		for id, item in ipairs(inventoryItems["Toolbelt"]) do
 			if getElementData(getLocalPlayer(),item[1]) and getElementData(getLocalPlayer(),item[1]) >= 1 then
 				local row = guiGridListAddRow ( gridlistItems["inventory"] )
@@ -281,7 +281,7 @@ if ( gridlistItems["inventory_colum"] ) then --If the column has been created, f
 		if row1 and column1 then
 			guiGridListSetSelectedItem ( gridlistItems["inventory"], row1,column1)
 		end
-		guiSetText(headline["slots"],"Слоты: "..getPlayerCurrentSlots().."/"..getPlayerMaxAviableSlots())
+		guiSetText(headline["slots"],"Slotów: "..getPlayerCurrentSlots().."/"..getPlayerMaxAviableSlots())
 	end
 end
 
@@ -300,7 +300,7 @@ if ( gridlistItems["loot_colum"] ) then
 			local row = guiGridListAddRow ( gridlistItems["loot"] )
 			--guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"Weapons", true, false )
 			local row = guiGridListAddRow ( gridlistItems["loot"] )
-			guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"Основное оружие", true, false )
+			guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"1. Pierwsza broń", true, false )
 		for id, item in ipairs(inventoryItems["Weapons"]["Primary Weapon"]) do
 			if getElementData(loot,item[1]) and getElementData(loot,item[1]) >= 1 then
 				local row = guiGridListAddRow ( gridlistItems["loot"] )
@@ -309,7 +309,7 @@ if ( gridlistItems["loot_colum"] ) then
 			end
 		end
 				local row = guiGridListAddRow ( gridlistItems["loot"] )
-			guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"Дополнительное оружие", true, false )
+			guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"2. Druga broń", true, false )
 		for id, item in ipairs(inventoryItems["Weapons"]["Secondary Weapon"]) do
 			if getElementData(loot,item[1]) and getElementData(loot,item[1]) >= 1 then
 				local row = guiGridListAddRow ( gridlistItems["loot"] )
@@ -318,7 +318,7 @@ if ( gridlistItems["loot_colum"] ) then
 			end
 		end
 			local row = guiGridListAddRow ( gridlistItems["loot"] )
-			guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"Специальное оружие", true, false )
+			guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"3. Specjalna broń", true, false )
 		for id, item in ipairs(inventoryItems["Weapons"]["Specially Weapon"]) do
 			if getElementData(loot,item[1]) and getElementData(loot,item[1]) >= 1 then
 				local row = guiGridListAddRow ( gridlistItems["loot"] )
@@ -327,7 +327,7 @@ if ( gridlistItems["loot_colum"] ) then
 			end
 		end
 			local row = guiGridListAddRow ( gridlistItems["loot"] )
-			guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"Боеприпасы", true, false )
+			guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"4. Amunicja", true, false )
 		for id, item in ipairs(inventoryItems["Ammo"]) do
 			if getElementData(loot,item[1]) and getElementData(loot,item[1]) >= 1 then
 				local row = guiGridListAddRow ( gridlistItems["loot"] )
@@ -336,7 +336,7 @@ if ( gridlistItems["loot_colum"] ) then
 			end
 		end
 			local row = guiGridListAddRow ( gridlistItems["loot"] )
-			guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"Еда и вода", true, false )
+			guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"5. Jedzenie i picie", true, false )
 		for id, item in ipairs(inventoryItems["Food"]) do
 			if getElementData(loot,item[1]) and getElementData(loot,item[1]) >= 1 then
 				local row = guiGridListAddRow ( gridlistItems["loot"] )
@@ -345,7 +345,7 @@ if ( gridlistItems["loot_colum"] ) then
 			end
 		end
 			local row = guiGridListAddRow ( gridlistItems["loot"] )
-			guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"Прочее", true, false )
+			guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"6. Inne", true, false )
 		for id, item in ipairs(inventoryItems["Items"]) do
 			if getElementData(loot,item[1]) and getElementData(loot,item[1]) >= 1 then
 				local row = guiGridListAddRow ( gridlistItems["loot"] )
@@ -354,7 +354,7 @@ if ( gridlistItems["loot_colum"] ) then
 			end
 		end
 			local row = guiGridListAddRow ( gridlistItems["loot"] )
-			guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"Инструменты", true, false )
+			guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"7. Narzędzia", true, false )
 		for id, item in ipairs(inventoryItems["Toolbelt"]) do
 			if getElementData(loot,item[1]) and getElementData(loot,item[1]) >= 1 then
 				local row = guiGridListAddRow ( gridlistItems["loot"] )
@@ -366,7 +366,7 @@ if ( gridlistItems["loot_colum"] ) then
 		if row2 and column2 then
 			--guiGridListSetSelectedItem ( gridlistItems["loot"], row2,column2)
 		end
-		guiSetText(headline["slots_loot"],"Слоты: "..getLootCurrentSlots(loot).."/"..(getLootMaxAviableSlots(loot)or 0))
+		guiSetText(headline["slots_loot"],"Slotów: "..getLootCurrentSlots(loot).."/"..(getLootMaxAviableSlots(loot)or 0))
 	end
 end
 
@@ -523,7 +523,7 @@ end
 
 --OTHER ITEM STUFF
 vehicleFuelTable = {
--- {Model ID, Max Бензин}
+-- {Model ID, Max fuel}
 {542,140},
 {522,140},
 {427,140},
@@ -552,7 +552,7 @@ function getVehicleMaxFuel(loot)
 end
 
 function onPlayerMoveItemOutOfInventory ()
-if playerMovedInInventory then startRollMessage2("Inventory", "Не торопись!", 255, 22, 0 ) return end -- [ID:0000005 - Several grammar + spelling mistakes and typos] //L
+if playerMovedInInventory then startRollMessage2("Inventory", "Nie śpiesz się!", 255, 22, 0 ) return end -- [ID:0000005 - Several grammar + spelling mistakes and typos] //L
 local itemName = guiGridListGetItemText ( gridlistItems["inventory"], guiGridListGetSelectedItem ( gridlistItems["inventory"] ), 1 )
 	if getElementData(getLocalPlayer(),itemName) and getElementData(getLocalPlayer(),itemName) >= 1 then
 		if isPlayerInLoot() then
@@ -561,8 +561,8 @@ local itemName = guiGridListGetItemText ( gridlistItems["inventory"], guiGridLis
 			if isVehicle and not isTent then
 				local veh = getElementData(isPlayerInLoot(),"parent")
 				local tires,engine,parts = getVehicleAddonInfos (getElementModel(veh))
-				if itemName == "Tire" and (getElementData(isPlayerInLoot(),"Tire_inVehicle") or 0) < tires  or itemName == "Engine" and (getElementData(isPlayerInLoot(),"Engine_inVehicle") or 0)  < engine or itemName == "Бензобак" and (getElementData(isPlayerInLoot(),"Parts_inVehicle") or 0) < parts then
-					if itemName == "Бензобак" then itemName = "Parts" end
+				if itemName == "Koło" and (getElementData(isPlayerInLoot(),"Tire_inVehicle") or 0) < tires  or itemName == "Silnik" and (getElementData(isPlayerInLoot(),"Engine_inVehicle") or 0)  < engine or itemName == "Zbiornik benzyny" and (getElementData(isPlayerInLoot(),"Parts_inVehicle") or 0) < parts then
+					if itemName == "Zbiornik benzyny" then itemName = "Parts" end
 					triggerEvent("onPlayerMoveItemOutOFInventory",getLocalPlayer(),itemName.."_inVehicle",isPlayerInLoot())
 					playerMovedInInventory = true
 					setTimer(function()
@@ -581,7 +581,7 @@ local itemName = guiGridListGetItemText ( gridlistItems["inventory"], guiGridLis
 						playerMovedInInventory = false
 					end,700,1)
 				else
-					startRollMessage2("Inventory", "Инвентарь полон!", 255, 22, 0 )
+					startRollMessage2("Inventory", "Inwentarz jest pełny!", 255, 22, 0 )
 					return
 				end
 			elseif isToolbeltItem(itemName) then
@@ -597,7 +597,7 @@ local itemName = guiGridListGetItemText ( gridlistItems["inventory"], guiGridLis
 					playerMovedInInventory = false
 				end,700,1)
 			else
-				startRollMessage2("Inventory", "Инвентарь полон!", 255, 22, 0 )
+				startRollMessage2("Inventory", "Inwentarz jest pełny!", 255, 22, 0 )
 				return
 			end	
 		else
@@ -620,102 +620,102 @@ addEventHandler ( "onClientGUIClick", buttonItems["inventory"], onPlayerMoveItem
 
 function onPlayerMoveItemOutOFInventory (itemName,loot)
 local itemPlus = 1
-if itemName == "M1911 Mag" then
+if itemName == "Amunicja do M1911" then
 	itemPlus = 7
-elseif itemName == "M9 SD Mag" then
+elseif itemName == "Amunicja do M9 SD" then
 	itemPlus = 15
-elseif itemName == "Пустынный орёл Маг" then
+elseif itemName == "Amunicja do Desert Eagle" then
 	itemPlus = 7
-elseif itemName == "PDW Mag" then
+elseif itemName == "Amunicja do PDW" then
 	itemPlus = 30
-elseif itemName == "MP5A5 Mag" then
+elseif itemName == "Amunicja do MP5A5" then
 	itemPlus = 20
-elseif itemName == "AK Маг" then
+elseif itemName == "Amunicja do AK" then
 	itemPlus = 30
-elseif itemName == "M4 Маг" then
+elseif itemName == "Amunicja do M4" then
 	itemPlus = 20
 elseif itemName == "1866 Slug" then
 	itemPlus = 7
 elseif itemName == "2Rnd. Slug" then
 	itemPlus = 2
-elseif itemName == "Гранотомёт Маг" then
+elseif itemName == "Amunicja do Granatnika" then
 	itemPlus = 7
-elseif itemName == "Снайперская винтовка Mag" then
+elseif itemName == "Amunicja do CZ550" then
 	itemPlus = 5
-elseif itemName == "Lee Enfield Mag" then
+elseif itemName == "Amunicja do Lee Enfield" then
 	itemPlus = 10
-elseif itemName == "M136 Rocket" then
+elseif itemName == "Amunicja do M136" then
 	itemPlus = 0
-elseif itemName == "M4" or itemName == "AK-47" or itemName == "Снайперская винтовка" or itemName == "Винчестер 1866" or itemName == "Гранатомёт" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "M136 Rocket Launcher" or itemName == "Lee Enfield" then
+elseif itemName == "M4" or itemName == "AK-47" or itemName == "CZ550" or itemName == "Winchester 1866" or itemName == "Granat" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "Amunicja do M136 Launcher" or itemName == "Lee Enfield" then
 	triggerServerEvent("removeBackWeaponOnDrop",getLocalPlayer())
 end
 if loot then 
 if not getElementData(loot,"itemloot") and getElementType(getElementData(loot,"parent")) == "vehicle" then
-	if itemName == "Наполненная канистра" then
+	if itemName == "Pełny kalnister" then
 		if getElementData(loot,"fuel")+20 < getVehicleMaxFuel(loot) then
 			addingfuel = 20
 		elseif getElementData(loot,"fuel")+20 > getVehicleMaxFuel(loot)+15 then
-			triggerEvent ("displayClientInfo", getLocalPlayer(),"Vehicle","Бензобак полон!",255,22,0)
+			triggerEvent ("displayClientInfo", getLocalPlayer(),"Vehicle","Zbiornik z paliwem jest pełny!",255,22,0)
 			return
 		else
 			addingfuel = getVehicleMaxFuel(loot)-getElementData(loot,"fuel")
 		end
 		setElementData(loot,"fuel",getElementData(loot,"fuel")+addingfuel)
 		setElementData(getLocalPlayer(),itemName,getElementData(getLocalPlayer(),itemName)-itemPlus)
-		setElementData(getLocalPlayer(),"Пустая канистра",(getElementData(getLocalPlayer(),"Пустая канистра") or 0)+itemPlus)
-		triggerEvent ("displayClientInfo", getLocalPlayer(),"Vehicle","Вы заправили транспорт на 20 литров!",22,255,0)
+		setElementData(getLocalPlayer(),"Pusty kalnister",(getElementData(getLocalPlayer(),"Pusty kalnister") or 0)+itemPlus)
+		triggerEvent ("displayClientInfo", getLocalPlayer(),"Vehicle","Wypełnia zbiornik o 20 litrów!",22,255,0)
 		return
 	end
 end
 end
 itemName2 = itemName
-if itemName == "Tire_inVehicle" then itemName2 = "Tire" end
-if itemName == "Engine_inVehicle" then itemName2 = "Engine" end
-if itemName == "Parts_inVehicle" then itemName2 = "Бензобак" end
+if itemName == "Tire_inVehicle" then itemName2 = "Koło" end
+if itemName == "Engine_inVehicle" then itemName2 = "Silnik" end
+if itemName == "Parts_inVehicle" then itemName2 = "Zbiornik benzyny" end
 if (getElementData(getLocalPlayer(),itemName2) or 0)/itemPlus < 1 then
-	triggerEvent ("displayClientInfo", getLocalPlayer(),"Inventory","Вы не можете использовать это!",255,22,0)
+	triggerEvent ("displayClientInfo", getLocalPlayer(),"Inventory","Użj narzędzi!",255,22,0)
 return
 end
 if itemName == "Assault Pack (ACU)" and          
     getElementData(getLocalPlayer(), "MAX_Slots") == 12 and          
     getElementData(getLocalPlayer(),"Assault Pack (ACU)") == 1 then
-    triggerEvent("displayClientInfo", getLocalPlayer(), "Инвентарь", "Нельзя выбросить!!", 255, 22, 0) 
+    triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Nie można rzucać!", 255, 22, 0) 
     return true 
 end 
 if itemName == "Alice Pack" and          
 getElementData(getLocalPlayer(), "MAX_Slots") == 16 and          
 getElementData(getLocalPlayer(),"Alice Pack") == 1 then 
-triggerEvent("displayClientInfo", getLocalPlayer(), "Инвентарь", "Нельзя выбросить!!", 255, 22, 0) 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Nie można rzucać!", 255, 22, 0) 
 return true 
 end 
 if itemName == "Czech Backpack" and          
 getElementData(getLocalPlayer(), "MAX_Slots") == 26 and          
 getElementData(getLocalPlayer(),"Czech Backpack") == 1 then 
-triggerEvent("displayClientInfo", getLocalPlayer(), "Инвентарь", "Нельзя выбросить!!", 255, 22, 0) 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Nie można rzucać!", 255, 22, 0) 
 return true 
 end 
 if itemName == "Montion Backpack" and          
 getElementData(getLocalPlayer(), "MAX_Slots") == 85 and          
 getElementData(getLocalPlayer(),"Czech Backpack") == 1 then 
-triggerEvent("displayClientInfo", getLocalPlayer(), "Инвентарь", "Нельзя выбросить!!", 255, 22, 0) 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Nie można rzucać!", 255, 22, 0) 
 return true 
 end 
 if itemName == "Army Backpack" and          
 getElementData(getLocalPlayer(), "MAX_Slots") == 69 and          
 getElementData(getLocalPlayer(),"Czech Backpack") == 1 then 
-triggerEvent("displayClientInfo", getLocalPlayer(), "Инвентарь", "Нельзя выбросить!!", 255, 22, 0) 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Nie można rzucać!", 255, 22, 0) 
 return true 
 end 
 if itemName == "Crash Backpack" and          
 getElementData(getLocalPlayer(), "MAX_Slots") == 47 and          
 getElementData(getLocalPlayer(),"Czech Backpack") == 1 then 
-triggerEvent("displayClientInfo", getLocalPlayer(), "Инвентарь", "Нельзя выбросить!!", 255, 22, 0) 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Nie można rzucać!", 255, 22, 0) 
 return true 
 end 
 if itemName == "Coyote Backpack" and          
 getElementData(getLocalPlayer(), "MAX_Slots") == 36 and          
 getElementData(getLocalPlayer(),"Coyote Backpack") == 1 then 
-triggerEvent("displayClientInfo", getLocalPlayer(), "Инвентарь", "Нельзя выбросить!!", 255, 22, 0) 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Nie można rzucać!", 255, 22, 0) 
 return true 
 end
 	if loot then
@@ -729,9 +729,9 @@ end
 	else
 		triggerServerEvent("playerDropAItem",getLocalPlayer(),itemName)
 	end
-	if itemName == "Tire_inVehicle" then itemName = "Tire" end
-	if itemName == "Engine_inVehicle" then itemName = "Engine" end
-	if itemName == "Parts_inVehicle" then itemName = "Бензобак" end
+	if itemName == "Tire_inVehicle" then itemName = "Koło" end
+	if itemName == "Engine_inVehicle" then itemName = "Silnik" end
+	if itemName == "Parts_inVehicle" then itemName = "Zbiornik benzyny" end
 	setElementData(getLocalPlayer(),itemName,getElementData(getLocalPlayer(),itemName)-itemPlus)
 	if loot and getElementData(loot,"itemloot") then
 		triggerServerEvent("refreshItemLoot",getRootElement(),loot,getElementData(loot,"parent"))
@@ -753,11 +753,11 @@ if isPlayerInLoot() then
 						playerMovedInInventory = false
 					end,700,1)
 				else
-					startRollMessage2("Inventory", "Не торопись!", 255, 22, 0 )
+					startRollMessage2("Inventory", "Nie śpiesz się!", 255, 22, 0 )
 					return
 				end	
 			else
-				startRollMessage2("Inventory", "Инвентарь полон!", 255, 22, 0 )
+				startRollMessage2("Inventory", "Inwentarz jest pełny!", 255, 22, 0 )
 				return
 			end
 		else
@@ -781,31 +781,31 @@ addEventHandler ( "onClientGUIClick", buttonItems["loot"], onPlayerMoveItemInInv
 
 function onPlayerMoveItemInInventory (itemName,loot)
 local itemPlus = 1
-if itemName == "M1911 Mag" then
+if itemName == "Amunicja do M1911" then
 	itemPlus = 7
-elseif itemName == "M9 SD Mag" then
+elseif itemName == "Amunicja do M9 SD" then
 	itemPlus = 15
-elseif itemName == "Пустынный орёл Маг" then
+elseif itemName == "Amunicja do Desert Eagle" then
 	itemPlus = 7
-elseif itemName == "PDW Mag" then
+elseif itemName == "Amunicja do PDW" then
 	itemPlus = 30
-elseif itemName == "MP5A5 Mag" then
+elseif itemName == "Amunicja do MP5A5" then
 	itemPlus = 20
-elseif itemName == "AK Маг" then
+elseif itemName == "Amunicja do AK" then
 	itemPlus = 30
-elseif itemName == "M4 Маг" then
+elseif itemName == "Amunicja do M4" then
 	itemPlus = 20
 elseif itemName == "1866 Slug" then
 	itemPlus = 7
 elseif itemName == "2Rnd. Slug" then
 	itemPlus = 2
-elseif itemName == "Гранотомёт Маг" then
+elseif itemName == "Amunicja do Granatnika" then
 	itemPlus = 7
-elseif itemName == "Снайперская винтовка Mag" then
+elseif itemName == "Amunicja do CZ550" then
 	itemPlus = 5
-elseif itemName == "Lee Enfield Mag" then
+elseif itemName == "Amunicja do Lee Enfield" then
 	itemPlus = 10
-elseif itemName == "M136 Rocket" then
+elseif itemName == "Amunicja do M136" then
 	itemPlus = 0
 end
 	if loot then
@@ -848,37 +848,37 @@ function onPlayerPressRightKeyInInventory ()
 local itemName = guiGridListGetItemText ( gridlistItems["inventory"], guiGridListGetSelectedItem ( gridlistItems["inventory"] ), 1 )
 local itemName,itemInfo = getInventoryInfosForRightClickMenu(itemName)
 	if isCursorShowing() and guiGetVisible(inventoryWindows) and itemInfo then
-		if itemName == "Спички" then
-			if getElementData(getLocalPlayer(),"Дрова") == 0 then
+		if itemName == "Zapałki" then
+			if getElementData(getLocalPlayer(),"Drewno opałowe") == 0 then
 				return
 			end
 		end
-		if itemName == "Бинт" then
+		if itemName == "Bandaż" then
 			if getElementData(getLocalPlayer(),"bleeding") == 0 then
 				return
 			end
 		end	
-		if itemName == "Аптечка" then
+		if itemName == "Apteczka" then
 			if getElementData(getLocalPlayer(),"blood") > 10500 then
 				return
 			end
 		end	
-		if itemName == "Грелка" then
+		if itemName == "Ciepła paczka" then
 			if getElementData(getLocalPlayer(),"temperature") > 35 then
 				return
 			end
 		end	
-		if itemName == "Болеутоляющие" then
+		if itemName == "Środki przeciwbólowe" then
 			if not getElementData(getLocalPlayer(),"pain") then
 				return
 			end
 		end	
-		if itemName == "Морфий" then
+		if itemName == "Morfina" then
 			if not getElementData(getLocalPlayer(),"brokenbone") then
 				return
 			end
 		end	
-		if itemName == "Пакет крови" then
+		if itemName == "Medyczna paczka" then
 			--if getElementData(getLocalPlayer(),"blood") < 1150 then
 				return
 			--end
@@ -891,17 +891,17 @@ bindKey("mouse2","down",onPlayerPressRightKeyInInventory)
 function getInventoryInfosForRightClickMenu(itemName)
 for i,itemInfo in ipairs(inventoryItems["Weapons"]["Primary Weapon"]) do
 	if itemName == itemInfo[1] then
-		return itemName,"Взять основное оружие"
+		return itemName,"Weź pierwszą broń"
 	end	
 end
 for i,itemInfo in ipairs(inventoryItems["Weapons"]["Secondary Weapon"]) do
 	if itemName == itemInfo[1] then
-		return itemName,"Взять дополнительное оружие"
+		return itemName,"Weź drugą broń"
 	end	
 end
 for i,itemInfo in ipairs(inventoryItems["Weapons"]["Specially Weapon"]) do
 	if itemName == itemInfo[1] then
-		return itemName,"Взять специальное оружие"
+		return itemName,"Weź specjalną broń"
 	end	
 end
 for i,itemInfo in ipairs(inventoryItems["Ammo"]) do
@@ -911,10 +911,10 @@ for i,itemInfo in ipairs(inventoryItems["Ammo"]) do
 end
 for i,itemInfo in ipairs(inventoryItems["Food"]) do
 	if itemName == itemInfo[1] then
-		if itemInfo[1] == "Фляга" or itemInfo[1] == "Молоко" or itemInfo[1] == "Банка соды" then
-			info = "Выпить"
+		if itemInfo[1] == "Manierka" or itemInfo[1] == "Mleko" or itemInfo[1] == "Puszka z napojem" then
+			info = "Wypij"
 		else
-			info = "Съесть"
+			info = "Zjedz"
 		end
 		return itemName,info
 	end	
@@ -969,42 +969,42 @@ addEventHandler("onClientGUIClick",headline["rightclickmenu"],onPlayerClickOnRig
 local playerFire = {}
 local fireCounter = 0
 function playerUseItem(itemName,itemInfo)
-	if itemInfo == "Выпить" then
+	if itemInfo == "Wypij" then
 		triggerServerEvent("onPlayerRequestChangingStats",getLocalPlayer(),itemName,itemInfo,"thirst")
-	elseif itemInfo == "Съесть" then
+	elseif itemInfo == "Zjedz" then
 		triggerServerEvent("onPlayerRequestChangingStats",getLocalPlayer(),itemName,itemInfo,"food")
-	elseif itemInfo == "Переодеться" then
+	elseif itemInfo == "Ubierz się" then
 		triggerServerEvent("onPlayerChangeSkin",getLocalPlayer(),itemName)
-	elseif itemName == "Пустая фляга" then
+	elseif itemName == "Pusta manierka" then
 		triggerServerEvent("onPlayerRefillWaterBottle",getLocalPlayer(),itemName)		
-	elseif itemName == "Палатка" then
+	elseif itemName == "Namiot" then
 		triggerServerEvent("onPlayerPitchATent",getLocalPlayer(),itemName)
-	elseif itemInfo == "Поставить проволоку"	then
+	elseif itemInfo == "Rozłóż"	then
 		triggerServerEvent("onPlayerBuildAWireFence",getLocalPlayer(),itemName)
-	elseif itemName == "Фаер" then
+	elseif itemName == "Ogień" then
 		triggerServerEvent("onPlayerPlaceRoadflare",getLocalPlayer(),itemName)	
-	elseif itemInfo == "Поджечь" then
+	elseif itemInfo == "Podpal" then
 		triggerServerEvent("onPlayerMakeAFire",getLocalPlayer(),itemName)	
-	elseif itemInfo == "Использовать." then
+	elseif itemInfo == "Użyj leków." then
 		triggerServerEvent("onPlayerUseMedicObject",getLocalPlayer(),itemName)
-	elseif itemName == "Бинт" then
+	elseif itemName == "Bandaż" then
 		triggerServerEvent("onPlayerUseMedicObject",getLocalPlayer(),itemName)	
-	elseif itemInfo == "Использовать. Googles" then
+	elseif itemInfo == "Użyj leków. Googles" then
 		triggerServerEvent("onPlayerChangeView",getLocalPlayer(),itemName)	
-	elseif itemInfo == "Взять основное оружие" then
+	elseif itemInfo == "Weź pierwszą broń" then
 		triggerServerEvent("onPlayerRearmWeapon",getLocalPlayer(),itemName,1)
-	elseif itemInfo == "Взять дополнительное оружие" then
+	elseif itemInfo == "Weź drugą broń" then
 		triggerServerEvent("onPlayerRearmWeapon",getLocalPlayer(),itemName,2)
-	elseif itemInfo == "Взять специальное оружие" then
+	elseif itemInfo == "Weź specjalną broń" then
 		triggerServerEvent("onPlayerRearmWeapon",getLocalPlayer(),itemName,3)
 	-------------------- 
     elseif itemName == "Assault Pack (ACU)" then 
              if getElementData(getLocalPlayer(), "MAX_Slots") == 12 then 
-               triggerEvent("displayClientInfo", getLocalPlayer(), "Инвентарь", "У вас уже одет этот рюкзак!", 255, 22, 0) 
+               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Masz już ten plecak!", 255, 22, 0) 
                return 
              end 
              if getElementData(getLocalPlayer(), "MAX_Slots") > 12 then 
-               triggerEvent("displayClientInfo", getLocalPlayer(), "Инвентарь", "Ваш рюкзак больше этого!", 255, 22, 0) 
+               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Twój plecak ma więcej slotów niż ten!!", 255, 22, 0) 
                return 
              end 
           setElementData(getLocalPlayer(),"MAX_Slots",12) 
@@ -1013,11 +1013,11 @@ function playerUseItem(itemName,itemInfo)
 -------------------- 
     elseif itemName == "Alice Pack" then 
              if getElementData(getLocalPlayer(), "MAX_Slots") == 16 then 
-               triggerEvent("displayClientInfo", getLocalPlayer(), "Инвентарь", "У вас уже одет этот рюкзак!", 255, 22, 0) 
+               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Masz już ten plecak!", 255, 22, 0) 
                return 
              end 
              if getElementData(getLocalPlayer(), "MAX_Slots") > 16 then 
-               triggerEvent("displayClientInfo", getLocalPlayer(), "Инвентарь", "Ваш рюкзак больше этого!", 255, 22, 0) 
+               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Twój plecak ma więcej slotów niż ten!!", 255, 22, 0) 
                return 
              end 
           setElementData(getLocalPlayer(),"MAX_Slots",16) 
@@ -1026,11 +1026,11 @@ function playerUseItem(itemName,itemInfo)
 -------------------- 
     elseif itemName == "Czech Backpack" then 
              if getElementData(getLocalPlayer(), "MAX_Slots") == 26 then 
-               triggerEvent("displayClientInfo", getLocalPlayer(), "Инвентарь", "У вас уже одет этот рюкзак!", 255, 22, 0) 
+               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Masz już ten plecak!", 255, 22, 0) 
                return 
              end 
              if getElementData(getLocalPlayer(), "MAX_Slots") > 26 then 
-               triggerEvent("displayClientInfo", getLocalPlayer(), "Инвентарь", "Ваш рюкзак больше этого!", 255, 22, 0) 
+               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Twój plecak ma więcej slotów niż ten!!", 255, 22, 0) 
                return 
              end 
           setElementData(getLocalPlayer(),"MAX_Slots",26) 
@@ -1039,11 +1039,11 @@ function playerUseItem(itemName,itemInfo)
 ---------------------
     elseif itemName == "Montion Backpack" then 
              if getElementData(getLocalPlayer(), "MAX_Slots") == 85 then 
-               triggerEvent("displayClientInfo", getLocalPlayer(), "Инвентарь", "У вас уже одет этот рюкзак!", 255, 22, 0) 
+               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Masz już ten plecak!", 255, 22, 0) 
                return 
              end 
              if getElementData(getLocalPlayer(), "MAX_Slots") > 85 then 
-               triggerEvent("displayClientInfo", getLocalPlayer(), "Инвентарь", "Ваш рюкзак больше этого!", 255, 22, 0) 
+               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Twój plecak ma więcej slotów niż ten!!", 255, 22, 0) 
                return 
              end 
           setElementData(getLocalPlayer(),"MAX_Slots",85) 
@@ -1052,11 +1052,11 @@ function playerUseItem(itemName,itemInfo)
 ---------------------
     elseif itemName == "Army Backpack" then 
              if getElementData(getLocalPlayer(), "MAX_Slots") == 69 then 
-               triggerEvent("displayClientInfo", getLocalPlayer(), "Инвентарь", "У вас уже одет этот рюкзак!", 255, 22, 0) 
+               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Masz już ten plecak!", 255, 22, 0) 
                return 
              end 
              if getElementData(getLocalPlayer(), "MAX_Slots") > 69 then 
-               triggerEvent("displayClientInfo", getLocalPlayer(), "Инвентарь", "Ваш рюкзак больше этого!", 255, 22, 0) 
+               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Twój plecak ma więcej slotów niż ten!!", 255, 22, 0) 
                return 
              end 
           setElementData(getLocalPlayer(),"MAX_Slots",69) 
@@ -1065,11 +1065,11 @@ function playerUseItem(itemName,itemInfo)
 ---------------------
     elseif itemName == "Crash Backpack" then 
              if getElementData(getLocalPlayer(), "MAX_Slots") == 47 then 
-               triggerEvent("displayClientInfo", getLocalPlayer(), "Инвентарь", "У вас уже одет этот рюкзак!", 255, 22, 0) 
+               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Masz już ten plecak!", 255, 22, 0) 
                return 
              end 
              if getElementData(getLocalPlayer(), "MAX_Slots") > 47 then 
-               triggerEvent("displayClientInfo", getLocalPlayer(), "Инвентарь", "Ваш рюкзак больше этого!", 255, 22, 0) 
+               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Twój plecak ma więcej slotów niż ten!!", 255, 22, 0) 
                return 
              end 
           setElementData(getLocalPlayer(),"MAX_Slots",47) 
@@ -1078,11 +1078,11 @@ function playerUseItem(itemName,itemInfo)
 --------------------- 
     elseif itemName == "Coyote Backpack" then 
              if getElementData(getLocalPlayer(), "MAX_Slots") == 36 then 
-               triggerEvent("displayClientInfo", getLocalPlayer(), "Инвентарь", "У вас уже одет этот рюкзак!", 255, 22, 0) 
+               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Masz już ten plecak!", 255, 22, 0) 
                return 
              end 
              if getElementData(getLocalPlayer(), "MAX_Slots") > 36 then 
-               triggerEvent("displayClientInfo", getLocalPlayer(), "Инвентарь", "Ваш рюкзак больше этого!", 255, 22, 0) 
+               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Twój plecak ma więcej slotów niż ten!!", 255, 22, 0) 
                return 
              end 
           setElementData(getLocalPlayer(),"MAX_Slots",36) 
@@ -1095,70 +1095,70 @@ end
 
 weaponAmmoTable = {
 
-["M1911 Mag"] = {
+["Amunicja do M1911"] = {
 {"M1911",22},
 },
 
-["M9 SD Mag"] = {
+["Amunicja do M9 SD"] = {
 {"M9 SD",23},
 },
 
-["Пустынный орёл Маг"] = {
-{"Пустынный орёл",24},
+["Amunicja do Desert Eagle"] = {
+{"Desert Eagle",24},
 },
 
-["PDW Mag"] = {
+["Amunicja do PDW"] = {
 {"PDW",28},
 },
 
-["MP5A5 Mag"] = {
+["Amunicja do MP5A5"] = {
 {"MP5A5",29},
 },
 
-["AK Маг"] = {
+["Amunicja do AK"] = {
 {"AK-47",30},
 },
 
-["M4 Маг"] = {
+["Amunicja do M4"] = {
 {"M4",31},
 },
 
 ["1866 Slug"] = {
-{"Винчестер 1866",25},
+{"Winchester 1866",25},
 },
 
 ["2Rnd. Slug"] = {
 {"Sawn-Off Shotgun",26},
 },
 
-["Гранотомёт Маг"] = {
-{"Гранатомёт",27},
+["Amunicja do Granatnika"] = {
+{"Granat",27},
 },
 
-["Снайперская винтовка Mag"] = {
-{"Снайперская винтовка",34},
+["Amunicja do CZ550"] = {
+{"CZ550",34},
 },
 
-["Lee Enfield Mag"] = {
+["Amunicja do Lee Enfield"] = {
 {"Lee Enfield",33},
 },
 
-["M136 Rocket"] = {
+["Amunicja do M136"] = {
 {"Heat-Seeking RPG",36},
-{"M136 Rocket Launcher",35},
+{"Amunicja do M136 Launcher",35},
 },
 
 ["others"] = {
-{"Парашют",46},
+{"Spadochron",46},
 {"Satchel",39},
-{"Tear Gas",17},
+{"Gas łzawiący",17},
 {"Оск. граната M67",16},
-{"Охотничий нож",4},
-{"Топор",8},
-{"Бинокль",43},
-{"Бейсбольная бита",5},
-{"Лопата",6},
-{"Клюшка для гольфа",2},
+{"Nóż",4},
+{"Topór",8},
+{"Lornetka",43},
+{"Kij bejsbolowy",5},
+{"Łopata",6},
+{"Kij golfowy",2},
 },
 }
 
@@ -1168,39 +1168,39 @@ function getWeaponAmmoType2 (weaponName)
 			return weaponData[1],weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["M1911 Mag"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do M1911"]) do
 		if weaponName == weaponData[2] then
-			return "M1911 Mag",weaponData[2]
+			return "Amunicja do M1911",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["M9 SD Mag"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do M9 SD"]) do
 		if weaponName == weaponData[2] then
-			return "M9 SD Mag",weaponData[2]
+			return "Amunicja do M9 SD",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["Пустынный орёл Маг"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do Desert Eagle"]) do
 		if weaponName == weaponData[2] then
-			return "Пустынный орёл Маг",weaponData[2]
+			return "Amunicja do Desert Eagle",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["PDW Mag"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do PDW"]) do
 		if weaponName == weaponData[2] then
-			return "PDW Mag",weaponData[2]
+			return "Amunicja do PDW",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["MP5A5 Mag"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do MP5A5"]) do
 		if weaponName == weaponData[2] then
-			return "MP5A5 Mag",weaponData[2]
+			return "Amunicja do MP5A5",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["AK Маг"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do AK"]) do
 		if weaponName == weaponData[2] then
-			return "AK Маг",weaponData[2]
+			return "Amunicja do AK",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["M4 Маг"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do M4"]) do
 		if weaponName == weaponData[2] then
-			return "M4 Маг",weaponData[2]
+			return "Amunicja do M4",weaponData[2]
 		end
 	end
 	for i,weaponData in ipairs(weaponAmmoTable["1866 Slug"]) do
@@ -1208,9 +1208,9 @@ function getWeaponAmmoType2 (weaponName)
 			return "1866 Slug",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["Гранотомёт Маг"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do Granatnika"]) do
 		if weaponName == weaponData[2] then
-			return "Гранотомёт Маг",weaponData[2]
+			return "Amunicja do Granatnika",weaponData[2]
 		end
 	end
 	for i,weaponData in ipairs(weaponAmmoTable["2Rnd. Slug"]) do
@@ -1218,19 +1218,19 @@ function getWeaponAmmoType2 (weaponName)
 			return "2Rnd. Slug",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["Снайперская винтовка Mag"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do CZ550"]) do
 		if weaponName == weaponData[2] then
-			return "Снайперская винтовка Mag",weaponData[2]
+			return "Amunicja do CZ550",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["Lee Enfield Mag"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do Lee Enfield"]) do
 		if weaponName == weaponData[2] then
-			return "Lee Enfield Mag",weaponData[2]
+			return "Amunicja do Lee Enfield",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["M136 Rocket"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do M136"]) do
 		if weaponName == weaponData[2] then
-			return "M136 Rocket",weaponData[2]
+			return "Amunicja do M136",weaponData[2]
 		end
 	end
 end

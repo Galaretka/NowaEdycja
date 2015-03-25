@@ -1,13 +1,15 @@
 --Gamemode Script Name
-addons = "[DayZ]"
+addons = "DayZ POLSKA"
+addons2 = "Dayz POLSKA"
 function addAddonInfo (name,description)
 	setGameType (addons)
+	setMapName (addons2)
 end
 
 --night addon
 function nightAddon1 ()
 	if gameplayVariables["enablenight"] then 
-		addAddonInfo ("night","Night time with fading effect.")
+		addAddonInfo ("night","Natąpiła pora nocna.")
 	end
 end
 

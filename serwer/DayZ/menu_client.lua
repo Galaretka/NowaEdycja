@@ -16,9 +16,9 @@ local spalteGuiText = {}
 
 local optionsTable = {
 ["player"] = {
-{"Дать болеутоляющие"},
-{"Перевязать"},
-{"Дать морфий"},
+{"Daj środki pzeciwbólowe"},
+{"Narzuć"},
+{"Daj morfinę"},
 },
 }
 
@@ -49,10 +49,10 @@ guiSetVisible(spalteGuiImage[4],false)
 --MENU
 function showClientMenuItem(arg1,arg2,arg3,arg4)
 	local number = 0
-	if arg1 == "Подобрать" then
+	if arg1 == "Podnieś" then
 		number = number+1
 		guiSetVisible(spalteGuiImage[number],true)
-		guiSetText(spalteGuiText[number],"Подобрать "..arg2)
+		guiSetText(spalteGuiText[number],"Podnieś "..arg2)
 		if number == 1 then
 			guiLabelSetColor (spalteGuiText[number],50,255,50)
 			setElementData(spalteGuiText[number],"markedMenuItem",true)
@@ -66,17 +66,17 @@ function showClientMenuItem(arg1,arg2,arg3,arg4)
 	if arg1 == "Helicrashsite" then
 		number = number+1
 		guiSetVisible(spalteGuiImage[number],true)
-		guiSetText(spalteGuiText[number],"Содержимое (Упавший вертолёт)")
+		guiSetText(spalteGuiText[number],"Zawartość (Śmigłowca)")
 		if number == 1 then
 			guiLabelSetColor (spalteGuiText[number],50,255,50)
 			setElementData(spalteGuiText[number],"markedMenuItem",true)
 		end
 		setElementData(spalteGuiText[number],"usedItem","helicrashsite")
 	end
-	if arg1 == "Медицинский коробок" then
+	if arg1 == "Skrzynki medyczne" then
 		number = number+1
 		guiSetVisible(spalteGuiImage[number],true)
-		guiSetText(spalteGuiText[number],"Содержимое (Медицинский коробок)")
+		guiSetText(spalteGuiText[number],"Zawartość (Skrzynek medycznych)")
 		if number == 1 then
 			guiLabelSetColor (spalteGuiText[number],50,255,50)
 			setElementData(spalteGuiText[number],"markedMenuItem",true)
@@ -86,14 +86,14 @@ function showClientMenuItem(arg1,arg2,arg3,arg4)
 	if arg1 == "Vehicle" then
 		number = number+1
 		guiSetVisible(spalteGuiImage[number],true)
-		guiSetText(spalteGuiText[number],"Содержимое ("..arg2..")")
+		guiSetText(spalteGuiText[number],"Zawartość ("..arg2..")")
 		guiLabelSetColor (spalteGuiText[number],50,255,50)
 		setElementData(spalteGuiText[number],"markedMenuItem",true)
 		setElementData(spalteGuiText[number],"usedItem","vehicle")
 		if getElementData(getElementData(arg3,"parent"),"tent") then
 			number = number+1
 			guiSetVisible(spalteGuiImage[number],true)
-			guiSetText(spalteGuiText[number],"Убрать палатку")
+			guiSetText(spalteGuiText[number],"Usuń namiot")
 			if number == 1 then
 				guiLabelSetColor (spalteGuiText[number],50,255,50)
 				setElementData(spalteGuiText[number],"markedMenuItem",true)
@@ -102,27 +102,27 @@ function showClientMenuItem(arg1,arg2,arg3,arg4)
 			return
 		end
 		--2
-		if getElementHealth(arg3) < 1000 and getElementHealth(arg3) >= 50 and getElementData(getLocalPlayer(),"Инструменты") >= 1 then
+		if getElementHealth(arg3) < 1000 and getElementHealth(arg3) >= 50 and getElementData(getLocalPlayer(),"Narzędzia") >= 1 then
 			number = number+1
 			guiSetVisible(spalteGuiImage[number],true)
-			guiSetText(spalteGuiText[number],"Поченить ("..arg2..")")
+			guiSetText(spalteGuiText[number],"Napraw ("..arg2..")")
 			setElementData(spalteGuiText[number],"usedItem","repairvehicle")
 		end
 	end
 	if arg1 == "Player" then
 		--1
-		if getElementData(arg2,"bleeding") > 0 and getElementData(getLocalPlayer(),"Бинт") >= 1 then
+		if getElementData(arg2,"bleeding") > 0 and getElementData(getLocalPlayer(),"Bandaż") >= 1 then
 			number = number+1
 			guiSetVisible(spalteGuiImage[number],true)
-			guiSetText(spalteGuiText[number],"Перевязать")
+			guiSetText(spalteGuiText[number],"Narzuć")
 			guiLabelSetColor (spalteGuiText[1],50,255,50)
 			setElementData(spalteGuiText[1],"markedMenuItem",true)
 			setElementData(spalteGuiText[number],"usedItem","bandage")
 		end	
-		if getElementData(arg2,"blood") < 11900 and getElementData(getLocalPlayer(),"Пакет крови") >= 1 then
+		if getElementData(arg2,"blood") < 11900 and getElementData(getLocalPlayer(),"Medyczna paczka") >= 1 then
 			number = number+1
 			guiSetVisible(spalteGuiImage[number],true)
-			guiSetText(spalteGuiText[number],"Перелить пакет крови")	
+			guiSetText(spalteGuiText[number],"Użyj apteczkę")	
 			setElementData(spalteGuiText[number],"usedItem","giveblood")
 			if number == 1 then
 				guiLabelSetColor (spalteGuiText[number],50,255,50)
@@ -133,7 +133,7 @@ function showClientMenuItem(arg1,arg2,arg3,arg4)
 	if arg1 == "Dead" then
 		number = number+1
 		guiSetVisible(spalteGuiImage[number],true)
-		guiSetText(spalteGuiText[number],"Содержимое ("..arg2..")")
+		guiSetText(spalteGuiText[number],"Zawartość ("..arg2..")")
 		if number == 1 then
 			guiLabelSetColor (spalteGuiText[number],50,255,50)
 			setElementData(spalteGuiText[number],"markedMenuItem",true)
@@ -142,23 +142,23 @@ function showClientMenuItem(arg1,arg2,arg3,arg4)
 		number = number+1
 		setElementData(spalteGuiText[number],"usedItem","deadreason")
 		guiSetVisible(spalteGuiImage[number],true)
-		guiSetText(spalteGuiText[number],"Осмотреть тело")
+		guiSetText(spalteGuiText[number],"Zbadaj ciało")
 	end
 	if arg1 == "Fireplace" then
-		if getElementData(getLocalPlayer(),"Жареное мясо") >= 1 then
+		if getElementData(getLocalPlayer(),"Pieczeń") >= 1 then
 		number = number+1
 		guiSetVisible(spalteGuiImage[number],true)
-		guiSetText(spalteGuiText[number],"Пожарить мясо")
+		guiSetText(spalteGuiText[number],"Pieczone mięso")
 		guiLabelSetColor (spalteGuiText[number],50,255,50)
 		setElementData(spalteGuiText[number],"markedMenuItem",true)
 		setElementData(spalteGuiText[number],"usedItem","fireplace")
 		end
 	end
 	if arg1 == "patrol" then
-		if getElementData(getLocalPlayer(),"Пустая канистра") >= 1 then
+		if getElementData(getLocalPlayer(),"Pusty kalnister") >= 1 then
 			number = number+1
 			guiSetVisible(spalteGuiImage[number],true)
-			guiSetText(spalteGuiText[number],"Наполнить (Пустая канистра)")
+			guiSetText(spalteGuiText[number],"Napełnij (Pusty kalnister)")
 			if number == 1 then
 				guiLabelSetColor (spalteGuiText[number],50,255,50)
 				setElementData(spalteGuiText[number],"markedMenuItem",true)
@@ -167,10 +167,10 @@ function showClientMenuItem(arg1,arg2,arg3,arg4)
 		end	
 	end
 	if arg1 == "Wirefence" then
-		if getElementData(getLocalPlayer(),"Инструменты") >= 1 then
+		if getElementData(getLocalPlayer(),"Narzędzia") >= 1 then
 			number = number+1
 			guiSetVisible(spalteGuiImage[number],true)
-			guiSetText(spalteGuiText[number],"Убрать колючую проволоку")
+			guiSetText(spalteGuiText[number],"Usuń drut kolczasty")
 			if number == 1 then
 				guiLabelSetColor (spalteGuiText[number],50,255,50)
 				setElementData(spalteGuiText[number],"markedMenuItem",true)
@@ -178,10 +178,10 @@ function showClientMenuItem(arg1,arg2,arg3,arg4)
 				setElementData(spalteGuiText[number],"usedItem","wirefence")
 		end	
 	end
-	if arg1 == "Содержимое" then
+	if arg1 == "Zawartość" then
 		number = number+1
 		guiSetVisible(spalteGuiImage[number],true)
-		guiSetText(spalteGuiText[number],"Содержимое")
+		guiSetText(spalteGuiText[number],"Zawartość")
 		if number == 1 then
 			guiLabelSetColor (spalteGuiText[number],50,255,50)
 			setElementData(spalteGuiText[number],"markedMenuItem",true)
@@ -282,21 +282,21 @@ function onPlayerTargetPickup (theElement)
 				showClientMenuItem("patrol")
 				setElementData(getLocalPlayer(),"currentCol",source)
 				setElementData(getLocalPlayer(),"loot",false)
-				setNewbieInfo (true,"Бензоколонка","Нажмите '-' или 'среднего мыши' чтобы наполнить канистру! \n Требуется: Пустая канистра",source)
+				setNewbieInfo (true,"Stacja benzynowa","Naciśnij '-' lub 'środkowy przycisk myszy' do napełnienia kalnistra! \n Wymaga: Pusty kalnister",source)
 				return
 			end
 			if getElementData(source,"wirefence") then
 				showClientMenuItem("Wirefence")
 				setElementData(getLocalPlayer(),"currentCol",source)
 				setElementData(getLocalPlayer(),"loot",false)
-				setNewbieInfo (true,"Колючая проволока","Нажмите '-' или 'среднего мыши' чтобы убрать колючую проволоку!\n Требуется: Инструменты",source)
+				setNewbieInfo (true,"Drut kolczasty","Naciśnij '-' lub 'środkowy przycisk myszy' aby usunąć drut kolczasty!\n Wymaga: Narzędzia",source)
 				return
 			end
 			if getElementData(source,"fireplace") then
 				showClientMenuItem("Костёр")
 				setElementData(getLocalPlayer(),"currentCol",source)
 				setElementData(getLocalPlayer(),"loot",false)
-				setNewbieInfo (true,"Костёр","Нажмите '-' или 'среднего мыши' чтобы приготовить мясо!\n Требуется: Сырое мясо",source)
+				setNewbieInfo (true,"Ognisko","Naciśnij '-' lub 'środkowy przycisk myszy' upiec mięso!\n Wymaga: Mięso",source)
 				isInFirePlace = true
 				return
 			end
@@ -304,49 +304,49 @@ function onPlayerTargetPickup (theElement)
 				showClientMenuItem("Dead",getElementData(source,"playername"))
 				setElementData(getLocalPlayer(),"currentCol",source)
 				setElementData(getLocalPlayer(),"loot",true)
-				setElementData(getLocalPlayer(),"lootname","Обыскать ("..getElementData(source,"playername")..")")
-				setNewbieInfo (true,"Обыскать","Нажмите 'J' что бы открыть инвентарь!",source)
+				setElementData(getLocalPlayer(),"lootname","Plądrujesz ("..getElementData(source,"playername")..")")
+				setNewbieInfo (true,"Poszukiwanie","Naciśnij 'J', aby włączyć inwentarz!",source)
 				return
 			end
 			if getElementData(source,"item") then
-				showClientMenuItem("Подобрать",getElementData(source,"item"))
+				showClientMenuItem("Podnieś",getElementData(source,"item"))
 				setElementData(getLocalPlayer(),"currentCol",source)
 				setElementData(getLocalPlayer(),"loot",false)
-				setNewbieInfo (true,"Подобрать","Нажмите '-' или 'среднего мыши' чтобы подобрать!",source)
+				setNewbieInfo (true,"Podnieś","Naciśnij '-' lub 'środkowy przycisk myszy' aby podnieść!",source)
 				return
 			end
 			if getElementData(source,"helicrash") then
 				showClientMenuItem("Helicrashsite","helicrash")
 				setElementData(getLocalPlayer(),"currentCol",source)
 				setElementData(getLocalPlayer(),"loot",true)
-				setElementData(getLocalPlayer(),"lootname","Обыскать (Упавший вертолёт)")
-				setNewbieInfo (true,"Обыскать","Нажмите 'J' что бы открыть инвентарь!",source)
+				setElementData(getLocalPlayer(),"lootname","Plądrujesz (Śmigłowiec)")
+				setNewbieInfo (true,"Plądrujesz","Naciśnij 'J', aby włączyć inwentarz!",source)
 				return
 			end
 			if getElementData(source,"hospitalbox") then
-				showClientMenuItem("Медицинский коробок","hospitalbox")
+				showClientMenuItem("Skrzynek medycznych","hospitalbox")
 				setElementData(getLocalPlayer(),"currentCol",source)
 				setElementData(getLocalPlayer(),"loot",true)
-				setElementData(getLocalPlayer(),"lootname","Обыскать (Медицинский коробок)")
-				setNewbieInfo (true,"Обыскать","Нажмите 'J' что бы открыть инвентарь!",source)
+				setElementData(getLocalPlayer(),"lootname","Plądrujesz (Skrzynki medyczne)")
+				setNewbieInfo (true,"Plądrujesz","Naciśnij 'J', aby włączyć inwentarz!",source)
 				return
 			end
 			if getElementData(source,"vehicle") then
 				if not getElementData(source,"deadVehicle") then
-				showClientMenuItem("Vehicle",(getVehicleName(getElementData(source,"parent")) or "Палатка"),getElementData(source,"parent"))
+				showClientMenuItem("Vehicle",(getVehicleName(getElementData(source,"parent")) or "Namiot"),getElementData(source,"parent"))
 				setElementData(getLocalPlayer(),"currentCol",source)
 				setElementData(getLocalPlayer(),"loot",true)
-				setElementData(getLocalPlayer(),"lootname","Обыскать ("..(getVehicleName(getElementData(source,"parent")) or "Палатка")..")")
-				setNewbieInfo (true,"Обыскать","Нажмите 'J' что бы открыть инвентарь!",source)
+				setElementData(getLocalPlayer(),"lootname","Plądrujesz ("..(getVehicleName(getElementData(source,"parent")) or "Namiot")..")")
+				setNewbieInfo (true,"Plądrujesz","Naciśnij 'J', aby włączyć inwentarz!",source)
 				return
 				end
 			end
 			if getElementData(source,"itemloot") then
-				showClientMenuItem("Обыскать")
+				showClientMenuItem("Plądrujesz")
 				setElementData(getLocalPlayer(),"loot",true)
-				setElementData(getLocalPlayer(),"lootname","Обыскать")
+				setElementData(getLocalPlayer(),"lootname","Plądrujesz")
 				setElementData(getLocalPlayer(),"currentCol",source)
-				setNewbieInfo (true,"Обыскать","Нажмите 'J' что бы открыть инвентарь!",source)
+				setNewbieInfo (true,"Plądrujesz","Naciśnij 'J', aby włączyć inwentarz!",source)
 				return
 			end
 		showClientMenuItem("stop")
@@ -385,7 +385,7 @@ addEventHandler("onClientRender", getRootElement(),
 function()
 	if newbieShow == false then return end
 	local x,y,z = getElementPosition(newbiePosition)
-	local x,y = getScreenFromWorldPosition (x,y,z)
+	--local x,y = getScreenFromWorldPosition (x,y,z)
 	local length = dxGetTextWidth(newbieText,1,"default-bold")
 	dxDrawRectangle ( x-length/2-screenWidth*0.01,y, screenWidth*0.02+length, screenHeight*0.1, tocolor (33,33,33,100) )
 	dxDrawingColorText(newbieHead,x-length/2-screenWidth*0.01,y, x+length/2+screenWidth*0.01, y+screenHeight*0.03, tocolor(22,255,22,120),0.5, 1.1, "default-bold", "center", "center")
@@ -411,35 +411,35 @@ function onPlayerPressMiddleMouse (key,keyState)
 		local itemName = getMenuMarkedItem()
 		if itemName == "helicrashsite" then
 			local col = getElementData(getLocalPlayer(),"currentCol")
-			local gearName = "Содержимое (Упавший вертолёт)"
+			local gearName = "Zawartość (Śmigłowca)"
 			refreshLoot(col,gearName)
 			showInventoryManual()
 			return
 		end
 		if itemName == "itemloot" then
 			local col = getElementData(getLocalPlayer(),"currentCol")
-			local gearName = "Содержимое"
+			local gearName = "Zawartość"
 			refreshLoot(col,gearName)
 			showInventoryManual()
 			return
 		end
 		if itemName == "wirefence" then
 			local col = getElementData(getLocalPlayer(),"currentCol")
-			local gearName = "Убрать проволоку"
+			local gearName = "Wyjmij przewód"
 			triggerServerEvent("removeWirefence",getLocalPlayer(),getElementData(col,"parent"))
 			disableMenu()
 			return
 		end
 		if itemName == "hospitalbox" then
 			local col = getElementData(getLocalPlayer(),"currentCol")
-			local gearName = "Содержимое (Медицинский коробок)"
+			local gearName = "Zawartość (Skrzynek medycznych)"
 			refreshLoot(col,gearName)
 			showInventoryManual()
 			return
 		end
 		if itemName == "vehicle" then
 			local col = getElementData(getLocalPlayer(),"currentCol")
-			local gearName = "Содержимое ("..(getVehicleName(getElementData(col,"parent")) or "Палатка")..")"
+			local gearName = "Zawartość ("..(getVehicleName(getElementData(col,"parent")) or "Namiot")..")"
 			refreshLoot(col,gearName)
 			showInventoryManual()
 			return
@@ -476,7 +476,7 @@ function onPlayerPressMiddleMouse (key,keyState)
 		end
 		if itemName == "dead" then
 			local col = getElementData(getLocalPlayer(),"currentCol")
-			local gearName = "Содержимое ("..getElementData(col,"playername")..")"
+			local gearName = "Zawartość ("..getElementData(col,"playername")..")"
 			refreshLoot(col,gearName)
 			showInventoryManual()
 			return
@@ -488,9 +488,9 @@ function onPlayerPressMiddleMouse (key,keyState)
 		end
 		if itemName == "patrolstation" then
 			local col = getElementData(getLocalPlayer(),"currentCol")
-				setElementData(getLocalPlayer(),"Пустая канистра",getElementData(getLocalPlayer(),"Пустая канистра")-1)
-				setElementData(getLocalPlayer(),"Наполненная канистра",(getElementData(getLocalPlayer(),"Наполненная канистра") or 0)+1)
-				triggerEvent ("displayClientInfo",getLocalPlayer(),"patrolstation","Вы наполнили канистру!",22,255,0)
+				setElementData(getLocalPlayer(),"Pusty kalnister",getElementData(getLocalPlayer(),"Pusty kalnister")-1)
+				setElementData(getLocalPlayer(),"Pełny kalnister",(getElementData(getLocalPlayer(),"Pełny kalnister") or 0)+1)
+				triggerEvent ("displayClientInfo",getLocalPlayer(),"patrolstation","Napełniłeś kalnister!",22,255,0)
 				disableMenu()
 			return
 		end
@@ -511,7 +511,7 @@ function onPlayerPressMiddleMouse (key,keyState)
 			triggerServerEvent("onPlayerTakeItemFromGround",getLocalPlayer(),itemName,col)
 			disableMenu()
 		else
-			startRollMessage2("Inventory", "Инвентарь полон!", 255, 22, 0 )
+			startRollMessage2("Inventory", "Inwentarz jest pełny!", 255, 22, 0 )
 		end
 	end
 end

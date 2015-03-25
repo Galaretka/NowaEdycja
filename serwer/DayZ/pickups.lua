@@ -24,7 +24,7 @@ function checkResourceRequirements ( res )
 		reason = "Too many slots (maximum: 77), stopping resource..."
 	end]]
 	if getResourceName(getThisResource()) ~= "DayZ" then
-		reason = "Игровой ник of resource does not match (DayZ)!"
+		reason = "Nick of resource does not match (DayZ)!"
 	end
 	if reason ~= false then
 		outputServerLog ( "Resource " .. getResourceName(res) .. " wasn't started: ("..reason..")." )
@@ -40,358 +40,358 @@ addEventHandler ( "onResourceStart", getResourceRootElement(getThisResource()), 
 local itemTable = {
 ----------------------
 ["farm"] = {
-{"Дрова",1463,0.4,0,13},
+{"Drewno opałowe",1463,0.4,0,13},
 {"Crash Backpack",2404,1,0,4},
 {"Montion Backpack",1550,1,0,4},
-{"Бинт",1578,0.5,0,4},
-{"Фляга",2683,1,0,6},
-{"Банка макарон",2770,1,0,6},
-{"Банка бобов",2601,1,0,6},
-{"Гамбургер",2768,1,0,6},
-{"Пустая банка соды",2673,0.5,0,12},
-{"Объедки",2675,0.5,0,12},
-{"Банка соды",2647,1,0,9},
-{"Пустая канистра",1650,1,0,10},
-{"Охотничий нож",335,1,90,4},
-{"Спички",328,0.4,90,8},
-{"Пустынный орёл",348,1,90,0.2},
-{"Морфий",1579,1,0,4},
-{"Палатка",1279,1,0,0.5},
+{"Bandaż",1578,0.5,0,4},
+{"Manierka",2683,1,0,6},
+{"Makaron",2770,1,0,6},
+{"Puszka fasoli",2601,1,0,6},
+{"Hamburger",2768,1,0,6},
+{"Pusta puszka z napojem",2673,0.5,0,12},
+{"Pozostałości",2675,0.5,0,12},
+{"Puszka z napojem",2647,1,0,9},
+{"Pusty kalnister",1650,1,0,10},
+{"Nóż",335,1,90,4},
+{"Zapałki",328,0.4,90,8},
+{"Desert Eagle",348,1,90,0.2},
+{"Morfina",1579,1,0,4},
+{"Namiot",1279,1,0,0.5},
 {"M1911",346,1,90,4},
-{"Болеутоляющие",2709,3,0,3.5},
+{"Środki przeciwbólowe",2709,3,0,3.5},
 {"Lee Enfield",357,1,90,0.3},
-{"Винчестер 1866",349,1,90,0.3},
-{"Tire",1073,1,0,2},
-{"Бензобак",1008,1,0.8,2},
-{"Карта",1277,0.8,90,6},
+{"Winchester 1866",349,1,90,0.3},
+{"Koło",1073,1,0,2},
+{"Zbiornik benzyny",1008,1,0.8,2},
+{"Mapa",1277,0.8,90,6},
 {"GPS",2976,0.15,0,2},
 },
 ----------------------
 ["residential"] = {
-{"Спички",328,0.4,90,5},
-{"Дрова",1463,0.4,0,5},
+{"Zapałki",328,0.4,90,5},
+{"Drewno opałowe",1463,0.4,0,5},
 {"M1911",346,1,90,1.5},
 {"M9 SD",347,1,90,1.9},
-{"Винчестер 1866",349,1,90,0.1},
+{"Winchester 1866",349,1,90,0.1},
 {"PDW",352,1,90,1},
-{"Охотничий нож",335,1,90,3},
-{"Топор",339,1,90,1},
-{"Пицца",1582,1,0,7},
-{"Банка соды",2647,1,0,7},
-{"Пустая канистра",1650,1,0,9},
-{"Фаер",324,1,90,9},
-{"Молоко",2856,1,0,7},
+{"Nóż",335,1,90,3},
+{"Topór",339,1,90,1},
+{"Pizza",1582,1,0,7},
+{"Puszka z napojem",2647,1,0,7},
+{"Pusty kalnister",1650,1,0,9},
+{"Ogień",324,1,90,9},
+{"Mleko",2856,1,0,7},
 {"Assault Pack (ACU)",3026,1,0,6},
-{"Болеутоляющие",2709,3,0,7},
-{"Пустая банка соды",2673,0.5,0,12},
-{"Объедки",2675,0.5,0,12},
+{"Środki przeciwbólowe",2709,3,0,7},
+{"Pusta puszka z napojem",2673,0.5,0,12},
+{"Pozostałości",2675,0.5,0,12},
 {"Оск. граната M67",342,1,0,0.01},
-{"Пустынный орёл",348,1,90,0.4},
+{"Desert Eagle",348,1,90,0.4},
 {"Sawn-Off Shotgun",350,1,90,0.3},
-{"Гранатомёт",351,1,90,0.4},
+{"Granat",351,1,90,0.4},
 {"MP5A5",353,1,90,0.4},
-{"Часы",2710,1,0,3},
-{"Грелка",1576,5,0,6},
-{"Колючая проволока",933,0.25,0,1},
+{"Zegarek",2710,1,0,3},
+{"Ciepła paczka",1576,5,0,6},
+{"Drut kolczasty",933,0.25,0,1},
 {"Lee Enfield",357,1,90,0.3},
 {"Alice Pack",1248,1,0,1.5},
-{"Tire",1073,1,0,1},
-{"Бензобак",1008,0.8,0,1},
-{"Морфий",1579,1,0,2},
-{"Карта",1277,0.8,90,10},
+{"Koło",1073,1,0,1},
+{"Zbiornik benzyny",1008,0.8,0,1},
+{"Morfina",1579,1,0,2},
+{"Mapa",1277,0.8,90,10},
 {"GPS",2976,0.15,0,3},
-{"Банка макарон",2770,1,0,7},
-{"Банка бобов",2601,1,0,7},
+{"Makaron",2770,1,0,7},
+{"Puszka fasoli",2601,1,0,7},
 {"TEC-9",372,1,90,0},
-{"Гамбургер",2768,1,0,7},
-{"Клюшка для гольфа",333,1,90,3},
-{"Бейсбольная бита",336,1,90,3},
-{"Лопата",337,1,90,3},
+{"Hamburger",2768,1,0,7},
+{"Kij golfowy",333,1,90,3},
+{"Kij bejsbolowy",336,1,90,3},
+{"Łopata",337,1,90,3},
 },
 ----------------------
 ["military"] = {
-{"Спички",328,0.4,90,2},
+{"Zapałki",328,0.4,90,2},
 {"Crash Backpack",2404,1,0,4},
 {"M1911",346,1,90,5},
 {"M9 SD",347,1,90,4},
-{"Винчестер 1866",349,1,90,3},
+{"Winchester 1866",349,1,90,3},
 {"PDW",352,1,90,4},
-{"Охотничий нож",335,1,90,2.4},
-{"Топор",339,1,90,2.1},
-{"Пицца",1582,1,0,2},
-{"Банка соды",2647,1,0,2},
-{"Пустая канистра",1650,1,0,4},
-{"Фаер",324,1,90,4},
-{"Молоко",2856,1,0,1},
-{"Болеутоляющие",2709,3,0,4},
-{"Пустая банка соды",2673,0.5,0,12},
-{"Объедки",2675,0.5,0,12},
+{"Nóż",335,1,90,2.4},
+{"Topór",339,1,90,2.1},
+{"Pizza",1582,1,0,2},
+{"Puszka z napojem",2647,1,0,2},
+{"Pusty kalnister",1650,1,0,4},
+{"Ogień",324,1,90,4},
+{"Mleko",2856,1,0,1},
+{"Środki przeciwbólowe",2709,3,0,4},
+{"Pusta puszka z napojem",2673,0.5,0,12},
+{"Pozostałości",2675,0.5,0,12},
 {"Оск. граната M67",342,1,0,0.5},
 {"Sawn-Off Shotgun",350,1,90,2.3},
-{"Гранатомёт",351,1,90,2.3},
+{"Granat",351,1,90,2.3},
 {"MP5A5",353,1,90,2.8},
-{"Часы",2710,1,0,4},
-{"Грелка",1576,5,0,3},
-{"Колючая проволока",933,0.25,0,1},
+{"Zegarek",2710,1,0,4},
+{"Ciepła paczka",1576,5,0,3},
+{"Drut kolczasty",933,0.25,0,1},
 {"Montion Backpack",1550,1,0,4},
 {"Lee Enfield",357,1,90,3.5},
 {"Alice Pack",1248,1,0,4},
-{"Очки ночного видения",368,1,90,4},
-{"Бинокль",369,1,0,4},
-{"Tire",1073,1,0,2},
-{"Бензобак",1008,0.8,0,2},
-{"Морфий",1579,1,0,4},
-{"Одежда Армейца",1247,2,0,4.5},
+{"Gogle noktowizyjne",368,1,90,4},
+{"Lornetka",369,1,0,4},
+{"Koło",1073,1,0,2},
+{"Zbiornik benzyny",1008,0.8,0,2},
+{"Morfina",1579,1,0,4},
+{"Skin przetrwania",1247,2,0,4.5},
 {"TEC-9",372,1,90,3},
 {"AK-47",355,1,90,3.8},
 {"GPS",2976,0.15,0,3},
-{"Карта",1277,0.8,90,7},
-{"Инструменты",2969,0.5,0,1},
-{"Engine",929,0.3,0,2},
-{"Палатка",1279,1,0,4.5},
-{"Одежда снайпера",1213,2,0,0.3},
+{"Mapa",1277,0.8,90,7},
+{"Narzędzia",2969,0.5,0,1},
+{"Silnik",929,0.3,0,2},
+{"Namiot",1279,1,0,4.5},
+{"Skin snajpera",1213,2,0,0.3},
 {"M4",356,1,90,2.4},
-{"Снайперская винтовка",358,1,90,0.4},
-{"Инфокрасные очки",369,1,90,3},
+{"CZ550",358,1,90,0.4},
+{"Gogle na podczerwień",369,1,90,3},
 {"Assault Pack (ACU)",3026,1,0,5},
 {"Czech Backpack",2406,1,0,2}, 
-{"Рация",330,1,0,6},
+{"Radio",330,1,0,6},
 {"Coyote Backpack",1252,1,0,0.9},
 {"Army Backpack",2410,1,0,4},
-{"Лопата",337,1,90,1},
+{"Łopata",337,1,90,1},
 },
 ----------------------
 ["industrial"] = {
-{"Колючая проволока",933,0.25,0,7},
-{"Инструменты",2969,0.5,0,3},
+{"Drut kolczasty",933,0.25,0,7},
+{"Narzędzia",2969,0.5,0,3},
 {"Montion Backpack",1550,1,0,4},
 {"Crash Backpack",2404,1,0,4},
-{"Tire",1073,1,0,4},
-{"Engine",929,0.3,0,3.5},
-{"Бензобак",1008,1,0.8,4},
-{"Винчестер 1866",349,1,90,3},
-{"Фляга",2683,1,0,4},
-{"Банка макарон",2770,1,0,4},
-{"Банка бобов",2601,1,0,4},
-{"Гамбургер",2768,1,0,4},
-{"Пустая банка соды",2673,0.5,0,12},
-{"Объедки",2675,0.5,0,10},
-{"Банка соды",2647,1,0,4},
-{"Пустая канистра",1650,1,0,6},
-{"Наполненная канистра",1650,1,0,1.5},
-{"Карта",1277,0.8,90,3},
-{"Часы",2710,1,0,2},
-{"Спички",328,0.4,90,5},
-{"Дрова",1463,0.4,0,2},
+{"Koło",1073,1,0,4},
+{"Silnik",929,0.3,0,3.5},
+{"Zbiornik benzyny",1008,1,0.8,4},
+{"Winchester 1866",349,1,90,3},
+{"Manierka",2683,1,0,4},
+{"Makaron",2770,1,0,4},
+{"Puszka fasoli",2601,1,0,4},
+{"Hamburger",2768,1,0,4},
+{"Pusta puszka z napojem",2673,0.5,0,12},
+{"Pozostałości",2675,0.5,0,10},
+{"Puszka z napojem",2647,1,0,4},
+{"Pusty kalnister",1650,1,0,6},
+{"Pełny kalnister",1650,1,0,1.5},
+{"Mapa",1277,0.8,90,3},
+{"Zegarek",2710,1,0,2},
+{"Zapałki",328,0.4,90,5},
+{"Drewno opałowe",1463,0.4,0,2},
 {"M1911",346,1,90,1.5},
 {"PDW",352,1,90,2},
-{"Охотничий нож",335,1,90,2},
-{"Топор",339,1,90,1.5},
-{"Пицца",1582,1,0,4},
-{"Фаер",324,1,90,5},
-{"Молоко",2856,1,0,4},
+{"Nóż",335,1,90,2},
+{"Topór",339,1,90,1.5},
+{"Pizza",1582,1,0,4},
+{"Ogień",324,1,90,5},
+{"Mleko",2856,1,0,4},
 {"Assault Pack (ACU)",3026,1,0,6},
 {"Coyote Backpack",1252,1,0,0.5},
-{"Рация",330,1,0,6},
-{"Клюшка для гольфа",333,1,90,1.5},
-{"Бейсбольная бита",336,1,90,1.5},
-{"Лопата",337,1,90,1.5},
-{"Очки ночного видения",368,1,90,1.5},
+{"Radio",330,1,0,6},
+{"Kij golfowy",333,1,90,1.5},
+{"Kij bejsbolowy",336,1,90,1.5},
+{"Łopata",337,1,90,1.5},
+{"Gogle noktowizyjne",368,1,90,1.5},
 {"Army Backpack",2410,1,0,4},
 },
 ----------------------
 ["supermarket"] = {
-{"Жареное мясо",2804,0.5,90,8},
-{"Спички",328,0.4,90,5},
-{"Дрова",1463,0.4,0,5},
+{"Pieczeń",2804,0.5,90,8},
+{"Zapałki",328,0.4,90,5},
+{"Drewno opałowe",1463,0.4,0,5},
 {"M1911",346,1,90,3.5},
 {"Crash Backpack",2404,1,0,4},
 {"Montion Backpack",1550,1,0,4},
 {"PDW",352,1,90,2},
-{"Охотничий нож",335,1,90,3},
-{"Топор",339,1,90,2.1},
-{"Пицца",1582,1,0,7},
-{"Банка соды",2647,1,0,7},
-{"Пустая канистра",1650,1,0,5},
-{"Фаер",324,1,90,6},
-{"Молоко",2856,1,0,7},
+{"Nóż",335,1,90,3},
+{"Topór",339,1,90,2.1},
+{"Pizza",1582,1,0,7},
+{"Puszka z napojem",2647,1,0,7},
+{"Pusty kalnister",1650,1,0,5},
+{"Ogień",324,1,90,6},
+{"Mleko",2856,1,0,7},
 {"Assault Pack (ACU)",3026,1,0,6},
-{"Банка макарон",2770,1,0,7},
-{"Банка бобов",2601,1,0,7},
-{"Гамбургер",2768,1,0,7},
-{"Болеутоляющие",2709,3,0,7},
-{"Пустая банка соды",2673,0.5,0,12},
-{"Объедки",2675,0.5,0,12},
+{"Makaron",2770,1,0,7},
+{"Puszka fasoli",2601,1,0,7},
+{"Hamburger",2768,1,0,7},
+{"Środki przeciwbólowe",2709,3,0,7},
+{"Pusta puszka z napojem",2673,0.5,0,12},
+{"Pozostałości",2675,0.5,0,12},
 {"MP5A5",353,1,90,0.5},
-{"Часы",2710,1,0,3},
-{"Грелка",1576,5,0,6},
-{"Колючая проволока",933,0.25,0,1},
+{"Zegarek",2710,1,0,3},
+{"Ciepła paczka",1576,5,0,6},
+{"Drut kolczasty",933,0.25,0,1},
 {"Lee Enfield",357,1,90,0.2},
 {"Alice Pack",1248,1,0,0.5},
 {"Army Backpack",2410,1,0,4},
-{"Tire",1073,1,0,1},
-{"Бензобак",1008,1,0.8,2},
-{"Морфий",1579,1,0,2},
-{"Карта",1277,0.8,90,4},
+{"Koło",1073,1,0,1},
+{"Zbiornik benzyny",1008,1,0.8,2},
+{"Morfina",1579,1,0,2},
+{"Mapa",1277,0.8,90,4},
 {"GPS",2976,0.15,0,1},
-{"Рация",330,1,0,6},
-{"Клюшка для гольфа",333,1,90,1.9},
-{"Бейсбольная бита",336,1,90,1.4},
-{"Лопата",337,1,90,0.3},
+{"Radio",330,1,0,6},
+{"Kij golfowy",333,1,90,1.9},
+{"Kij bejsbolowy",336,1,90,1.4},
+{"Łopata",337,1,90,0.3},
 },
 ["other"] = {
-{"Жареное мясо",2804,0.5,90},
+{"Pieczeń",2804,0.5,90},
 {"Montion Backpack",1550,1,0,4},
 {"Crash Backpack",2404,1,0,4},
 {"Army Backpack",2410,1,0,4},
-{"Сырое мясо",2806,0.5,90},
-{"Наполненная канистра",1650,1,0},
-{"Пустая фляга",2683,1,0},
-{"Одежда выжившего",1577,2,0},
-{"Очки ночного видения",368,1,90},
-{"Инфокрасные очки",369,1,90},
+{"Mięso",2806,0.5,90},
+{"Pełny kalnister",1650,1,0},
+{"Pusta manierka",2683,1,0},
+{"Podstawowy skin",1577,2,0},
+{"Gogle noktowizyjne",368,1,90},
+{"Gogle na podczerwień",369,1,90},
 {"1866 Slug",2358,2,0},
 {"2Rnd. Slug",2358,2,0},
-{"Гранотомёт Маг",2358,2,0},
-{"MP5A5 Mag",2358,2,0},
-{"AK Маг",1271,2,0},
-{"M4 Маг",1271,2,0},
-{"M1911 Mag",3013,2,0},
-{"M9 SD Mag",3013,2,0},
-{"Пустынный орёл Маг",3013,2,0},
-{"M136 Rocket",3082,0.7,90},
-{"Снайперская винтовка Mag",2358,2,0},
-{"Lee Enfield Mag",2358,2,0},
-{"PDW Mag",2041,2,0},
-{"MP5A5 Mag",2041,2,0},
-{"Спички",328,0.4,90,5},
-{"Дрова",1463,0.4,0,5},
+{"Amunicja do Granatnika",2358,2,0},
+{"Amunicja do MP5A5",2358,2,0},
+{"Amunicja do AK",1271,2,0},
+{"Amunicja do M4",1271,2,0},
+{"Amunicja do M1911",3013,2,0},
+{"Amunicja do M9 SD",3013,2,0},
+{"Amunicja do Desert Eagle",3013,2,0},
+{"Amunicja do M136",3082,0.7,90},
+{"Amunicja do CZ550",2358,2,0},
+{"Amunicja do Lee Enfield",2358,2,0},
+{"Amunicja do PDW",2041,2,0},
+{"Amunicja do MP5A5",2041,2,0},
+{"Zapałki",328,0.4,90,5},
+{"Drewno opałowe",1463,0.4,0,5},
 {"M1911",346,1,90,3.5},
 {"PDW",352,1,90,2},
-{"Охотничий нож",335,1,90,2.5},
-{"Топор",339,1,90,1.8},
-{"Пицца",1582,1,0,7},
-{"Банка соды",2647,1,0,7},
-{"Пустая канистра",1650,1,0,5},
-{"Фаер",324,1,90,6},
-{"Молоко",2856,1,0,5},
+{"Nóż",335,1,90,2.5},
+{"Topór",339,1,90,1.8},
+{"Pizza",1582,1,0,7},
+{"Puszka z napojem",2647,1,0,7},
+{"Pusty kalnister",1650,1,0,5},
+{"Ogień",324,1,90,6},
+{"Mleko",2856,1,0,5},
 {"Assault Pack (ACU)",3026,1,0,6},
-{"Болеутоляющие",2709,3,0,7},
-{"Пустая банка соды",2673,0.5,0,12},
-{"Объедки",2675,0.5,0,12},
+{"Środki przeciwbólowe",2709,3,0,7},
+{"Pusta puszka z napojem",2673,0.5,0,12},
+{"Pozostałości",2675,0.5,0,12},
 {"MP5A5",353,1,90,1.5},
-{"Часы",2710,1,0,3},
-{"Грелка",1576,5,0,6},
-{"Колючая проволока",933,0.25,0,1},
+{"Zegarek",2710,1,0,3},
+{"Ciepła paczka",1576,5,0,6},
+{"Drut kolczasty",933,0.25,0,1},
 {"Lee Enfield",357,1,90,1.5},
 {"Alice Pack",1248,1,0,1.5},
 {"Coyote Backpack",1252,1,0,0.7},
-{"Tire",1073,1,0,1},
-{"Бензобак",1008,1,0.8,4},
-{"Морфий",1579,1,0,2},
-{"Карта",1277,0.8,90,4},
-{"Инструменты",2969,0.5,0,3},
-{"Engine",929,0.3,0,3.5},
-{"Винчестер 1866",349,1,90,2},
-{"Фляга",2683,1,0,4},
+{"Koło",1073,1,0,1},
+{"Zbiornik benzyny",1008,1,0.8,4},
+{"Morfina",1579,1,0,2},
+{"Mapa",1277,0.8,90,4},
+{"Narzędzia",2969,0.5,0,3},
+{"Silnik",929,0.3,0,3.5},
+{"Winchester 1866",349,1,90,2},
+{"Manierka",2683,1,0,4},
 {"M9 SD",347,1,90,5},
 {"Оск. граната M67",342,1,0,0.5},
 {"Sawn-Off Shotgun",350,1,90,2},
-{"Гранатомёт",351,1,90,1.9},
-{"Бинокль",369,1,0,4},
-{"Одежда Армейца",1247,2,0,4.5},
+{"Granat",351,1,90,1.9},
+{"Lornetka",369,1,0,4},
+{"Skin przetrwania",1247,2,0,4.5},
 {"TEC-9",372,1,90,4},
 {"AK-47",355,1,90,0.9},
-{"M136 Rocket Launcher",359,1,90,0},
-{"Одежда снайпера",1213,2,0,0.01},
+{"Amunicja do M136 Launcher",359,1,90,0},
+{"Skin snajpera",1213,2,0,0.01},
 {"M4",356,1,90,0.9},
-{"Снайперская винтовка",358,1,90,0.3},
+{"CZ550",358,1,90,0.3},
 {"Heat-Seeking RPG",360,1,90,0},
-{"Бинт",1578,0.5,0,4},
-{"Банка макарон",2770,1,0,5},
-{"Банка бобов",2601,1,0,6},
-{"Гамбургер",2768,1,0,2},
-{"Палатка",1279,1,0,0.5},
+{"Bandaż",1578,0.5,0,4},
+{"Makaron",2770,1,0,5},
+{"Puszka fasoli",2601,1,0,6},
+{"Hamburger",2768,1,0,2},
+{"Namiot",1279,1,0,0.5},
 {"M1911",346,1,90,3},
-{"Пустынный орёл",348,1,90,3},
+{"Desert Eagle",348,1,90,3},
 {"GPS",2976,0.15,0,1},
-{"Аптечка",2891,2.2,0},
-{"Пакет крови",1580,1,0},
-{"Рация",2966,0.5,0,5},
-{"Клюшка для гольфа",333,1,90,1.9},
-{"Бейсбольная бита",336,1,90,1.4},
-{"Лопата",337,1,90,1.5},
+{"Apteczka",2891,2.2,0},
+{"Medyczna paczka",1580,1,0},
+{"Radio",2966,0.5,0,5},
+{"Kij golfowy",333,1,90,1.9},
+{"Kij bejsbolowy",336,1,90,1.4},
+{"Łopata",337,1,90,1.5},
 },
 }
 
 weaponAmmoTable = {
 
-["M1911 Mag"] = {
+["Amunicja do M1911"] = {
 {"M1911",22},
 },
 
-["M9 SD Mag"] = {
+["Amunicja do M9 SD"] = {
 {"M9 SD",23},
 },
 
-["Пустынный орёл Маг"] = {
-{"Пустынный орёл",24},
+["Amunicja do Desert Eagle"] = {
+{"Desert Eagle",24},
 },
 
-["PDW Mag"] = {
+["Amunicja do PDW"] = {
 {"PDW",28},
 },
 
-["MP5A5 Mag"] = {
+["Amunicja do MP5A5"] = {
 {"MP5A5",29},
 },
 
-["AK Маг"] = {
+["Amunicja do AK"] = {
 {"AK-47",30},
 },
 
-["M4 Маг"] = {
+["Amunicja do M4"] = {
 {"M4",31},
 },
 
 ["1866 Slug"] = {
-{"Винчестер 1866",25},
+{"Winchester 1866",25},
 },
 
 ["2Rnd. Slug"] = {
 {"Sawn-Off Shotgun",26},
 },
 
-["Гранотомёт Маг"] = {
-{"Гранатомёт",27},
+["Amunicja do Granatnika"] = {
+{"Granat",27},
 },
 
-["Снайперская винтовка Mag"] = {
-{"Снайперская винтовка",34},
+["Amunicja do CZ550"] = {
+{"CZ550",34},
 },
 
-["Lee Enfield Mag"] = {
+["Amunicja do Lee Enfield"] = {
 {"Lee Enfield",33},
 },
 
-["M136 Rocket"] = {
+["Amunicja do M136"] = {
 {"Heat-Seeking RPG",36},
-{"M136 Rocket Launcher",35},
+{"Amunicja do M136 Launcher",35},
 },
 
 
 ["others"] = {
-{"Парашют",46},
+{"Spadochron",46},
 {"Satchel",39},
-{"Tear Gas",17},
+{"Gas łzawiący",17},
 {"Оск. граната M67",16},
-{"Охотничий нож",4},
-{"Топор",8},
-{"Бинокль",43},
-{"Бейсбольная бита",5},
-{"Клюшка для гольфа",2},
-{"Лопата",6},
-{"Рация",1},
+{"Nóż",4},
+{"Topór",8},
+{"Lornetka",43},
+{"Kij bejsbolowy",5},
+{"Kij golfowy",2},
+{"Łopata",6},
+{"Radio",1},
 },
 }
 
@@ -403,39 +403,39 @@ function getWeaponAmmoType (weaponName,notOthers)
 			end
 		end
 	end	
-	for i,weaponData in ipairs(weaponAmmoTable["M1911 Mag"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do M1911"]) do
 		if weaponName == weaponData[1] then
-			return "M1911 Mag",weaponData[2]
+			return "Amunicja do M1911",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["M9 SD Mag"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do M9 SD"]) do
 		if weaponName == weaponData[1] then
-			return "M9 SD Mag",weaponData[2]
+			return "Amunicja do M9 SD",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["Пустынный орёл Маг"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do Desert Eagle"]) do
 		if weaponName == weaponData[1] then
-			return "Пустынный орёл Маг",weaponData[2]
+			return "Amunicja do Desert Eagle",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["PDW Mag"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do PDW"]) do
 		if weaponName == weaponData[1] then
-			return "PDW Mag",weaponData[2]
+			return "Amunicja do PDW",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["MP5A5 Mag"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do MP5A5"]) do
 		if weaponName == weaponData[1] then
-			return "MP5A5 Mag",weaponData[2]
+			return "Amunicja do MP5A5",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["AK Маг"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do AK"]) do
 		if weaponName == weaponData[1] then
-			return "AK Маг",weaponData[2]
+			return "Amunicja do AK",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["M4 Маг"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do M4"]) do
 		if weaponName == weaponData[1] then
-			return "M4 Маг",weaponData[2]
+			return "Amunicja do M4",weaponData[2]
 		end
 	end
 	for i,weaponData in ipairs(weaponAmmoTable["1866 Slug"]) do
@@ -448,24 +448,24 @@ function getWeaponAmmoType (weaponName,notOthers)
 			return "2Rnd. Slug",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["Гранотомёт Маг"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do Granatnika"]) do
 		if weaponName == weaponData[1] then
-			return "Гранотомёт Маг",weaponData[2]
+			return "Amunicja do Granatnika",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["Снайперская винтовка Mag"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do CZ550"]) do
 		if weaponName == weaponData[1] then
-			return "Снайперская винтовка Mag",weaponData[2]
+			return "Amunicja do CZ550",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["Lee Enfield Mag"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do Lee Enfield"]) do
 		if weaponName == weaponData[1] then
-			return "Lee Enfield Mag",weaponData[2]
+			return "Amunicja do Lee Enfield",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["M136 Rocket"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do M136"]) do
 		if weaponName == weaponData[1] then
-			return "M136 Rocket",weaponData[2]
+			return "Amunicja do M136",weaponData[2]
 		end
 	end
 	return false
@@ -673,12 +673,12 @@ elseif itemName == "Sniper Ammo" then
 	itemPlus = 10
 elseif itemName == "Shotgun Ammo" then
 	itemPlus = 7
-elseif itemName == "M4" or itemName == "AK-47" or itemName == "Sniper Rifle" or itemName == "Shotgun" or itemName == "Гранатомёт" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "Rocket Launcher" or itemName == "Country Rifle" then
+elseif itemName == "M4" or itemName == "AK-47" or itemName == "Sniper Rifle" or itemName == "Shotgun" or itemName == "Granat" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "Rocket Launcher" or itemName == "Country Rifle" then
 	removeBackWeaponOnDrop()
 end
 if loot then 
 if not getElementData(loot,"itemloot") and getElementType(getElementData(loot,"parent")) == "vehicle" then
-	if itemName == "Наполненная канистра" then
+	if itemName == "Pełny kalnister" then
 		if getElementData(loot,"fuel")+20 < getVehicleMaxFuel(loot) then
 			addingfuel = 20
 		elseif getElementData(loot,"fuel")+20 > getVehicleMaxFuel(loot)+15 then
@@ -689,7 +689,7 @@ if not getElementData(loot,"itemloot") and getElementType(getElementData(loot,"p
 		end
 		setElementData(loot,"fuel",getElementData(loot,"fuel")+addingfuel)
 		setElementData(source,itemName,getElementData(source,itemName)-itemPlus)
-		setElementData(source,"Пустая канистра",(getElementData(source,"Пустая канистра") or 0)+itemPlus)
+		setElementData(source,"Pusty kalnister",(getElementData(source,"Pusty kalnister") or 0)+itemPlus)
 		triggerClientEvent (source, "displayClientInfo", source,"Vehicle","Filled up the vehicles Бензин",22,255,0)
 		isVehicleReadyToStart2(getElementData(loot,"parent"))
 		return
@@ -697,8 +697,8 @@ if not getElementData(loot,"itemloot") and getElementType(getElementData(loot,"p
 end
 end
 itemName2 = itemName
-if itemName == "Tire_inVehicle" then itemName2 = "Tire" end
-if itemName == "Engine_inVehicle" then itemName2 = "Engine" end
+if itemName == "Tire_inVehicle" then itemName2 = "Koło" end
+if itemName == "Engine_inVehicle" then itemName2 = "Silnik" end
 if (getElementData(source,itemName2) or 0)/itemPlus < 1 then
 	triggerClientEvent (source, "displayClientInfo", source,"Inventory","You dont got a full Magazine to drop",255,22,0)
 return
@@ -714,8 +714,8 @@ end
 		local item,itemString = getItemTablePosition(itemName)
 		local itemPickup = createItemPickup(item,x+math.random(-1.25,1.25),y+math.random(-1.25,1.25),z,itemString)
 	end
-	if itemName == "Tire_inVehicle" then itemName = "Tire" end
-	if itemName == "Engine_inVehicle" then itemName = "Engine" end
+	if itemName == "Tire_inVehicle" then itemName = "Koło" end
+	if itemName == "Engine_inVehicle" then itemName = "Silnik" end
 	setElementData(source,itemName,getElementData(source,itemName)-itemPlus)
 	if loot and getElementData(loot,"itemloot") then
 		refreshItemLoot (loot,getElementData(loot,"parent"))
@@ -776,33 +776,33 @@ addEventHandler( "onPlayerMoveItemInInventory", getRootElement(), onPlayerMoveIt
 ]]
 function onPlayerTakeItemFromGround (itemName,col)
 	itemPlus = 1
-	if itemName == "M1911 Mag" then
+	if itemName == "Amunicja do M1911" then
 		itemPlus = 7
-	elseif itemName == "M9 SD Mag" then
+	elseif itemName == "Amunicja do M9 SD" then
 		itemPlus = 15
-	elseif itemName == "Пустынный орёл Маг" then
+	elseif itemName == "Amunicja do Desert Eagle" then
 		itemPlus = 7
-	elseif itemName == "PDW Mag" then
+	elseif itemName == "Amunicja do PDW" then
 		itemPlus = 30
-	elseif itemName == "MP5A5 Mag" then
+	elseif itemName == "Amunicja do MP5A5" then
 		itemPlus = 20
-	elseif itemName == "AK Маг" then
+	elseif itemName == "Amunicja do AK" then
 		itemPlus = 30
-	elseif itemName == "M4 Маг" then
+	elseif itemName == "Amunicja do M4" then
 		itemPlus = 20
 	elseif itemName == "1866 Slug" then
 		itemPlus = 7
 	elseif itemName == "2Rnd. Slug" then
 		itemPlus = 2
-	elseif itemName == "Гранотомёт Маг" then
+	elseif itemName == "Amunicja do Granatnika" then
 		itemPlus = 7
-	elseif itemName == "Снайперская винтовка Mag" then
+	elseif itemName == "Amunicja do CZ550" then
 		itemPlus = 5
-	elseif itemName == "Lee Enfield Mag" then
+	elseif itemName == "Amunicja do Lee Enfield" then
 		itemPlus = 10
-	elseif itemName == "M136 Rocket" then
+	elseif itemName == "Amunicja do M136" then
 		itemPlus = 0
-	elseif itemName == "M4" or itemName == "AK-47" or itemName == "Снайперская винтовка" or itemName == "Винчестер 1866" or itemName == "Гранатомёт" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "M136 Rocket Launcher" or itemName == "Lee Enfield" then
+	elseif itemName == "M4" or itemName == "AK-47" or itemName == "CZ550" or itemName == "Winchester 1866" or itemName == "Granat" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "Amunicja do M136 Launcher" or itemName == "Lee Enfield" then
 		removeBackWeaponOnDrop()	
 	end
 	local x,y,z = getElementPosition(source)
@@ -842,7 +842,7 @@ function getItemTablePosition (itema)
 end
 
 function refreshItemLoots ()
-	outputChatBox("#ffaa00Внимание! #ffffff - Респавн лута! Просим не выходить с сервера во время NETWORK!",getRootElement(),255,255,255,true)
+	outputChatBox("#ffaa00UWAGA! #ffffff - TRWA RESETOWANIE SPAWNÓW ITEMÓW! -- LAG --",getRootElement(),255,255,255,true)
 	for i, loots in ipairs(getElementsByType("colshape")) do
 		local itemloot = getElementData(loots,"itemloot")
 		if itemloot then
@@ -870,7 +870,7 @@ end
 function refreshItemLootPoints ()
 	local time = getRealTime()
 	local hour = time.hour
-	outputChatBox("#ff2200Внимание! #ffffff - Через 1 мин будет респавн лута!",getRootElement(),255,255,255,true)
+	outputChatBox("#ff2200UWAGA! #ffffff - RESPAWN ITEMÓW ZA 1 MINUTE!",getRootElement(),255,255,255,true)
 	setTimer(refreshItemLoots,60000,1)
 end
 setTimer(refreshItemLootPoints,gameplayVariables["itemrespawntimer"] ,1)

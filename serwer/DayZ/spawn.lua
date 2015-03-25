@@ -29,84 +29,84 @@ local playerDataTable = {
 {"headshots"},
 {"murders"},
 {"banditskilled"},
-{"Дрова"},
-{"Бинт"},
-{"Фляга"},
-{"Банка макарон"},
-{"Банка бобов"},
-{"Гамбургер"},
-{"Спички"},
-{"M1911 Mag"},
-{"M9 SD Mag"},
-{"Пустынный орёл Маг"},
+{"Drewno opałowe"},
+{"Bandaż"},
+{"Manierka"},
+{"Makaron"},
+{"Puszka fasoli"},
+{"Hamburger"},
+{"Zapałki"},
+{"Amunicja do M1911"},
+{"Amunicja do M9 SD"},
+{"Amunicja do Desert Eagle"},
 {"M1911"},
 {"M9 SD"},
-{"Винчестер 1866"},
+{"Winchester 1866"},
 {"PDW"},
-{"Охотничий нож"},
-{"Топор"},
-{"Пицца"},
-{"Морфий"},
-{"Банка соды"},
-{"Пустая канистра"},
-{"Наполненная канистра"},
-{"Фаер"},
-{"Молоко"},
-{"PDW Mag"},
-{"MP5A5 Mag"},
-{"AK Маг"},
-{"M4 Маг"},
-{"Tear Gas"},
+{"Nóż"},
+{"Topór"},
+{"Pizza"},
+{"Morfina"},
+{"Puszka z napojem"},
+{"Pusty kalnister"},
+{"Pełny kalnister"},
+{"Ogień"},
+{"Mleko"},
+{"Amunicja do PDW"},
+{"Amunicja do MP5A5"},
+{"Amunicja do AK"},
+{"Amunicja do M4"},
+{"Gas łzawiący"},
 {"Оск. граната M67"},
-{"Пустынный орёл"},
+{"Desert Eagle"},
 {"Sawn-Off Shotgun"},
-{"Гранатомёт"},
+{"Granat"},
 {"MP5A5"},
-{"Часы"},
-{"Аптечка"},
-{"Грелка"},
+{"Zegarek"},
+{"Apteczka"},
+{"Ciepła paczka"},
 {"Lee Enfield"},
 {"PDW"},
 {"TEC-9"},
 {"AK-47"},
-{"M136 Rocket Launcher"},
-{"Пакет крови"},
+{"Amunicja do M136 Launcher"},
+{"Medyczna paczka"},
 {"GPS"},
-{"Карта"},
-{"Инструменты"},
-{"Колючая проволока"},
-{"Tire"},
-{"Engine"},
-{"Бензобак"},
-{"M136 Rocket"},
-{"Снайперская винтовка Mag"},
-{"Lee Enfield Mag"},
+{"Mapa"},
+{"Narzędzia"},
+{"Drut kolczasty"},
+{"Koło"},
+{"Silnik"},
+{"Zbiornik benzyny"},
+{"Amunicja do M136"},
+{"Amunicja do CZ550"},
+{"Amunicja do Lee Enfield"},
 {"M4"},
-{"Снайперская винтовка"},
+{"CZ550"},
 {"Heat-Seeking RPG"},
 {"Satchel"},
-{"Инфокрасные очки"},
-{"Очки ночного видения"},
-{"Палатка"},
-{"Жареное мясо"},
-{"Сырое мясо"},
-{"Одежда Армейца"},
-{"Одежда снайпера"},
-{"Одежда Бандита"},
-{"Одежда выжившего"},
-{"Болеутоляющие"},
-{"Пустая фляга"},
-{"Пустая банка соды"},
-{"Объедки"},
+{"Gogle na podczerwień"},
+{"Gogle noktowizyjne"},
+{"Namiot"},
+{"Pieczeń"},
+{"Mięso"},
+{"Skin przetrwania"},
+{"Skin snajpera"},
+{"Skin bandyty"},
+{"Podstawowy skin"},
+{"Środki przeciwbólowe"},
+{"Pusta manierka"},
+{"Pusta puszka z napojem"},
+{"Pozostałości"},
 {"1866 Slug"},
 {"2Rnd. Slug"},
-{"Гранотомёт Маг"},
-{"Рация"},
-{"Бинокль"},
-{"Бейсбольная бита"},
-{"Лопата"},
-{"Клюшка для гольфа"},
-{"Парашют"},
+{"Amunicja do Granatnika"},
+{"Radio"},
+{"Lornetka"},
+{"Kij bejsbolowy"},
+{"Łopata"},
+{"Kij golfowy"},
+{"Spadochron"},
 }
 
 local vehicleDataTable = {
@@ -118,85 +118,85 @@ local vehicleDataTable = {
 {"Engine_inVehicle"},
 {"Parts_inVehicle"},
 {"fuel"},
-{"Дрова"},
-{"Бинт"},
-{"Фляга"},
-{"Банка макарон"},
-{"Банка бобов"},
-{"Гамбургер"},
-{"Спички"},
-{"M1911 Mag"},
+{"Drewno opałowe"},
+{"Bandaż"},
+{"Manierka"},
+{"Makaron"},
+{"Puszka fasoli"},
+{"Hamburger"},
+{"Zapałki"},
+{"Amunicja do M1911"},
 {"M1911"},
 {"M9 SD"},
-{"Пустынный орёл Маг"},
-{"Винчестер 1866"},
+{"Amunicja do Desert Eagle"},
+{"Winchester 1866"},
 {"PDW"},
-{"Охотничий нож"},
-{"Морфий"},
-{"Топор"},
-{"Пицца"},
-{"Банка соды"},
-{"Пустая канистра"},
-{"Наполненная канистра"},
-{"Фаер"},
-{"Молоко"},
-{"PDW Mag"},
-{"MP5A5 Mag"},
-{"AK Маг"},
-{"M4 Маг"},
-{"Tear Gas"},
+{"Nóż"},
+{"Morfina"},
+{"Topór"},
+{"Pizza"},
+{"Puszka z napojem"},
+{"Pusty kalnister"},
+{"Pełny kalnister"},
+{"Ogień"},
+{"Mleko"},
+{"Amunicja do PDW"},
+{"Amunicja do MP5A5"},
+{"Amunicja do AK"},
+{"Amunicja do M4"},
+{"Gas łzawiący"},
 {"Оск. граната M67"},
-{"Пустынный орёл"},
+{"Desert Eagle"},
 {"Sawn-Off Shotgun"},
-{"Гранатомёт"},
+{"Granat"},
 {"MP5A5"},
-{"Часы"},
-{"Аптечка"},
-{"Грелка"},
+{"Zegarek"},
+{"Apteczka"},
+{"Ciepła paczka"},
 {"Lee Enfield"},
 {"TEC-9"},
 {"AK-47"},
-{"M136 Rocket Launcher"},
-{"Пакет крови"},
+{"Amunicja do M136 Launcher"},
+{"Medyczna paczka"},
 {"GPS"},
-{"Карта"},
-{"Инструменты"},
-{"Колючая проволока"},
-{"Tire"},
-{"Engine"},
-{"Бензобак"},
-{"M136 Rocket"},
-{"Снайперская винтовка Mag"},
-{"Lee Enfield Mag"},
+{"Mapa"},
+{"Narzędzia"},
+{"Drut kolczasty"},
+{"Koło"},
+{"Silnik"},
+{"Zbiornik benzyny"},
+{"Amunicja do M136"},
+{"Amunicja do CZ550"},
+{"Amunicja do Lee Enfield"},
 {"M4"},
-{"Снайперская винтовка"},
+{"CZ550"},
 {"Heat-Seeking RPG"},
 {"Satchel"},
-{"Инфокрасные очки"},
-{"Очки ночного видения"},
-{"Палатка"},
-{"Жареное мясо"},
-{"Сырое мясо"},
-{"Одежда Армейца"},
-{"Одежда снайпера"},
-{"Одежда Бандита"},
-{"Одежда выжившего"},
-{"Болеутоляющие"},
-{"Бинокль"},
-{"Пустая фляга"},
-{"Пустая банка соды"},
-{"Объедки"},
+{"Gogle na podczerwień"},
+{"Gogle noktowizyjne"},
+{"Namiot"},
+{"Pieczeń"},
+{"Mięso"},
+{"Skin przetrwania"},
+{"Skin snajpera"},
+{"Skin bandyty"},
+{"Podstawowy skin"},
+{"Środki przeciwbólowe"},
+{"Lornetka"},
+{"Pusta manierka"},
+{"Pusta puszka z napojem"},
+{"Pozostałości"},
 {"1866 Slug"},
 {"2Rnd. Slug"},
-{"Гранотомёт Маг"},
+{"Amunicja do Granatnika"},
 {"Assault Pack (ACU)"},
 {"Alice Pack"},
-{"Рация"},
+{"Radio"},
 {"Coyote Backpack"},
 {"Czech Backpack"},
-{"Бейсбольная бита"},
-{"Лопата"},
-{"Клюшка для гольфа"},
+{"Kij bejsbolowy"},
+{"Łopata"},
+{"Kij golfowy"},
 }
 
 
@@ -227,9 +227,9 @@ function spawnDayZPlayer(player)
 	----------------------------------
 	--Player Items on Start
 	for i,data in ipairs(playerDataTable) do
-		if data[1] =="Бинт" then
+		if data[1] =="Bandaż" then
 			setElementData(player,data[1],2)	
-		elseif data[1] =="Болеутоляющие" then
+		elseif data[1] =="Środki przeciwbólowe" then
 			setElementData(player,data[1],1)		
 		elseif data[1] =="MAX_Slots" then
 			setElementData(player,data[1],8)	
@@ -278,7 +278,7 @@ function checkBuggedAccount()
 		if getElementData(player,"logedin") then
 			if getElementModel(player) == 0 then
 				spawnDayZPlayer(player)
-				outputChatBox(getPlayerName(player).."s Аккаунт был сброшен.",getRootElement(),22,255,22,true)
+				outputChatBox(getPlayerName(player).." konto zostało zresetowane. Powód: BUG",getRootElement(),22,255,22,true)
 			end
 		end
 	end	
@@ -323,7 +323,7 @@ function kilLDayZPlayer (killer,headshot,weapon)
 				local time = getRealTime()
 				local hours = time.hour
 				local minutes = time.minute
-				setElementData(pedCol,"deadreason",getPlayerName(source).." он мёртв. Причина смерти: "..(weapon or "Неизвестно")..". Время смерти: "..hours..":"..minutes.." часов.")
+				setElementData(pedCol,"deadreason",getPlayerName(source).." nie żyje. Przyczyna śmierci: "..(weapon or "nieznana")..". Zginął o: "..hours..":"..minutes.."")
 			end	
 		end
 	end
@@ -348,27 +348,27 @@ function kilLDayZPlayer (killer,headshot,weapon)
 	if pedCol then
 		for i,data in ipairs(playerDataTable) do
 			local plusData = getElementData(source,data[1])
-			if data[1] == "M1911 Mag" then
+			if data[1] == "Amunicja do M1911" then
 				plusData = math.floor(getElementData(source,data[1])/7)
-			elseif data[1] == "M9 SD Mag" then
+			elseif data[1] == "Amunicja do M9 SD" then
 				plusData = math.floor(getElementData(source,data[1])/15)
-			elseif data[1] == "Пустынный орёл Маг" then
+			elseif data[1] == "Amunicja do Desert Eagle" then
 				plusData = math.floor(getElementData(source,data[1])/7)
-			elseif data[1] == "PDW Mag" then
+			elseif data[1] == "Amunicja do PDW" then
 				plusData = math.floor(getElementData(source,data[1])/30)
-			elseif data[1] == "MP5A5 Mag" then
+			elseif data[1] == "Amunicja do MP5A5" then
 				plusData = math.floor(getElementData(source,data[1])/20)
-			elseif data[1] == "AK Маг" then
+			elseif data[1] == "Amunicja do AK" then
 				plusData = math.floor(getElementData(source,data[1])/30)
-			elseif data[1] == "M4 Маг" then
+			elseif data[1] == "Amunicja do M4" then
 				plusData = math.floor(getElementData(source,data[1])/20)
-			elseif data[1] == "Снайперская винтовка Mag" then
+			elseif data[1] == "Amunicja do CZ550" then
 				plusData = math.floor(getElementData(source,data[1])/5)
-			elseif data[1] == "Lee Enfield Mag" then
+			elseif data[1] == "Amunicja do Lee Enfield" then
 				plusData = math.floor(getElementData(source,data[1])/10)
 			elseif data[1] == "1866 Slug" then
 				plusData = math.floor(getElementData(source,data[1])/7)
-			elseif data[1] == "Гранотомёт Маг" then
+			elseif data[1] == "Amunicja do Granatnika" then
 				plusData = math.floor(getElementData(source,data[1])/7)
 			elseif data[1] == "2Rnd. Slug" then
 				plusData = math.floor(getElementData(source,data[1])/2)
@@ -401,7 +401,7 @@ function kilLDayZPlayer (killer,headshot,weapon)
 	triggerClientEvent(source,"onClientPlayerDeathInfo",source)
 	setAccountData(account,"isDead",true)
 	setElementData(source,"isDead",true)
-	triggerClientEvent ( "onRollMessageStart", getRootElement(),"#FFFFFF"..getPlayerName(source).." #FF0000был убит",0,22,255, "died")
+	triggerClientEvent ( "onRollMessageStart", getRootElement(),"#FFFFFF"..getPlayerName(source).." #FF0000 umarł.",0,22,255, "died")
 	destroyElement(getElementData(source,"playerCol"))
 	setTimer(spawnDayZPlayer,5000,1,source)
 end

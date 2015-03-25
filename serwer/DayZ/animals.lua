@@ -67,7 +67,7 @@ function createDeadAnimal()
 	setElementData(pedCol,"playername","Animal")
 	setElementData(pedCol,"deadman",true)
 	setElementData(pedCol,"MAX_Slots",8)
-	setElementData(pedCol,"deadreason","Это животное было убито в "..hours..":"..minutes.." часов.")
+	setElementData(pedCol,"deadreason","To zwierzę zosało zabite o godzinie "..hours..":"..minutes.."")
 	if getElementModel(source) == 12 then
 		setElementData(pedCol,"Raw Meat",8)
 	elseif getElementModel(source) == 13 then
