@@ -11,12 +11,20 @@
 inventoryItems = {
 ["Weapons"] = {
 ["Primary Weapon"] = {
-{"M4",3},
-{"CZ550",3},
+
 {"Winchester 1866",3},
 {"Granat",3},
 {"Sawn-Off Shotgun",3},
+
 {"AK-47",3},
+{"M4A1",3},
+{"PKM",3},
+{"CZ550",3},
+{"M107",3},
+{"SVD Camo",3},
+{"DMR",3},
+{"AKS-74 Kobra",3},
+
 {"Lee Enfield",3},
 {"Heat-Seeking RPG",5},
 {"Amunicja do M136 Launcher",5},
@@ -50,12 +58,19 @@ inventoryItems = {
 {"Amunicja do Desert Eagle",0.085},
 {"Amunicja do PDW",0.025},
 {"Amunicja do MP5A5",0.025},
-{"Amunicja do AK",0.035},
-{"Amunicja do M4",0.035},
+
+{"30Rnd. AK",0.035},
+{"30Rnd. STANAG",0.035},
+{"7,62 mm PKM/PKS",0.035},
+{"CZ550 Mag",0.1},
+{"M107 Mag",0.1},
+{"DMR Mag",0.1},
+{"SVD Mag",0.1},
+
 {"1866 Slug",0.067},
 {"2Rnd. Slug",0.067},
 {"Amunicja do Granatnika",0.067},
-{"Amunicja do CZ550",0.1},
+
 {"Amunicja do Lee Enfield",0.1},
 {"Amunicja do M136",2},
 },
@@ -620,34 +635,44 @@ addEventHandler ( "onClientGUIClick", buttonItems["inventory"], onPlayerMoveItem
 
 function onPlayerMoveItemOutOFInventory (itemName,loot)
 local itemPlus = 1
-if itemName == "Amunicja do M1911" then
-	itemPlus = 7
-elseif itemName == "Amunicja do M9 SD" then
-	itemPlus = 15
-elseif itemName == "Amunicja do Desert Eagle" then
-	itemPlus = 7
-elseif itemName == "Amunicja do PDW" then
-	itemPlus = 30
-elseif itemName == "Amunicja do MP5A5" then
-	itemPlus = 20
-elseif itemName == "Amunicja do AK" then
-	itemPlus = 30
-elseif itemName == "Amunicja do M4" then
-	itemPlus = 20
-elseif itemName == "1866 Slug" then
-	itemPlus = 7
-elseif itemName == "2Rnd. Slug" then
-	itemPlus = 2
-elseif itemName == "Amunicja do Granatnika" then
-	itemPlus = 7
-elseif itemName == "Amunicja do CZ550" then
-	itemPlus = 5
-elseif itemName == "Amunicja do Lee Enfield" then
-	itemPlus = 10
-elseif itemName == "Amunicja do M136" then
-	itemPlus = 0
-elseif itemName == "M4" or itemName == "AK-47" or itemName == "CZ550" or itemName == "Winchester 1866" or itemName == "Granat" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "Amunicja do M136 Launcher" or itemName == "Lee Enfield" then
-	triggerServerEvent("removeBackWeaponOnDrop",getLocalPlayer())
+	if itemName == "Amunicja do M1911" then
+		itemPlus = 7
+	elseif itemName == "Amunicja do M9 SD" then
+		itemPlus = 15
+	elseif itemName == "Amunicja do Desert Eagle" then
+		itemPlus = 7
+	elseif itemName == "Amunicja do PDW" then
+		itemPlus = 30
+	elseif itemName == "Amunicja do MP5A5" then
+		itemPlus = 20
+		elseif itemName == "1866 Slug" then
+		itemPlus = 7
+	elseif itemName == "2Rnd. Slug" then
+		itemPlus = 2
+	elseif itemName == "Amunicja do Granatnika" then
+		itemPlus = 7
+	
+	elseif itemName == "Amunicja do Lee Enfield" then
+		itemPlus = 10
+	elseif itemName == "Amunicja do M136" then
+		itemPlus = 0
+	elseif itemName == "CZ550 Mag" then
+		itemPlus = 10
+	elseif itemName == "M107 Mag" then
+		itemPlus = 10
+	elseif itemName == "SVD Mag" then
+		itemPlus = 10
+	elseif itemName == "DMR Mag" then
+		itemPlus = 10
+	elseif itemName == "30Rnd. STANAG" then
+		itemPlus = 30
+	elseif itemName == "30Rnd. AK" then
+		itemPlus = 30
+	elseif itemName == "7,62 mm PKM/PKS" then
+		itemPlus = 30
+	
+	elseif itemName == "M4A1" or itemName == "AK-47" or itemName == "AKS-74 Kobra" or itemName == "PKM" or itemName == "CZ550" or itemName == "SVD Camo" or itemName == "M107" or itemName == "DMR" or itemName == "Shotgun" or itemName == "Granat" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "Rocket Launcher" or itemName == "Country Rifle" then
+	removeBackWeaponOnDrop()	
 end
 if loot then 
 if not getElementData(loot,"itemloot") and getElementType(getElementData(loot,"parent")) == "vehicle" then
@@ -791,18 +816,27 @@ elseif itemName == "Amunicja do PDW" then
 	itemPlus = 30
 elseif itemName == "Amunicja do MP5A5" then
 	itemPlus = 20
-elseif itemName == "Amunicja do AK" then
+elseif itemName == "CZ550 Mag" then
+	itemPlus = 10
+elseif itemName == "M107 Mag" then
+	itemPlus = 10
+elseif itemName == "SVD Mag" then
+	itemPlus = 10
+elseif itemName == "DMR Mag" then
+	itemPlus = 10
+elseif itemName == "30Rnd. STANAG" then
 	itemPlus = 30
-elseif itemName == "Amunicja do M4" then
-	itemPlus = 20
+elseif itemName == "30Rnd. AK" then
+	itemPlus = 30
+elseif itemName == "7,62 mm PKM/PKS" then
+	itemPlus = 30
 elseif itemName == "1866 Slug" then
 	itemPlus = 7
 elseif itemName == "2Rnd. Slug" then
 	itemPlus = 2
 elseif itemName == "Amunicja do Granatnika" then
 	itemPlus = 7
-elseif itemName == "Amunicja do CZ550" then
-	itemPlus = 5
+
 elseif itemName == "Amunicja do Lee Enfield" then
 	itemPlus = 10
 elseif itemName == "Amunicja do M136" then
@@ -1115,13 +1149,38 @@ weaponAmmoTable = {
 {"MP5A5",29},
 },
 
-["Amunicja do AK"] = {
+["30Rnd. AK"] = {
 {"AK-47",30},
 },
 
-["Amunicja do M4"] = {
-{"M4",31},
+["30Rnd. AK"] = {
+{"AKS-74 Kobra",30},
 },
+
+["7,62 mm PKM/PKS"] = {
+{"PKM",30},
+},
+
+["30Rnd. STANAG"] = {
+{"M4A1",31},
+},
+
+["CZ550 Mag"] = {
+{"CZ550",34},
+},
+
+["SVD Mag"] = {
+{"SVD Camo",34},
+},
+
+["M107 Mag"] = {
+{"M107",34},
+},
+
+["DMR Mag"] = {
+{"DMR",34},
+},
+
 
 ["1866 Slug"] = {
 {"Winchester 1866",25},
@@ -1135,9 +1194,6 @@ weaponAmmoTable = {
 {"Granat",27},
 },
 
-["Amunicja do CZ550"] = {
-{"CZ550",34},
-},
 
 ["Amunicja do Lee Enfield"] = {
 {"Lee Enfield",33},
@@ -1193,14 +1249,39 @@ function getWeaponAmmoType2 (weaponName)
 			return "Amunicja do MP5A5",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do AK"]) do
-		if weaponName == weaponData[2] then
-			return "Amunicja do AK",weaponData[2]
+	for i,weaponData in ipairs(weaponAmmoTable["30Rnd. AK"]) do
+		if weaponName == weaponData[1] then
+			return "30Rnd. AK",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do M4"]) do
-		if weaponName == weaponData[2] then
-			return "Amunicja do M4",weaponData[2]
+    for i,weaponData in ipairs(weaponAmmoTable["30Rnd. STANAG"]) do
+		if weaponName == weaponData[1] then
+			return "30Rnd. STANAG",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["7,62 mm PKM/PKS"]) do
+		if weaponName == weaponData[1] then
+			return "7,62 mm PKM/PKS",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["SVD Mag"]) do
+		if weaponName == weaponData[1] then
+			return "SVD Mag",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["M107 MagK"]) do
+		if weaponName == weaponData[1] then
+			return "M107 Mag",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["DMR Mag"]) do
+		if weaponName == weaponData[1] then
+			return "DMR Mag",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["CZ550"]) do
+		if weaponName == weaponData[1] then
+			return "CZ550 Mag",weaponData[2]
 		end
 	end
 	for i,weaponData in ipairs(weaponAmmoTable["1866 Slug"]) do
@@ -1218,11 +1299,7 @@ function getWeaponAmmoType2 (weaponName)
 			return "2Rnd. Slug",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do CZ550"]) do
-		if weaponName == weaponData[2] then
-			return "Amunicja do CZ550",weaponData[2]
-		end
-	end
+
 	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do Lee Enfield"]) do
 		if weaponName == weaponData[2] then
 			return "Amunicja do Lee Enfield",weaponData[2]
@@ -1236,13 +1313,36 @@ function getWeaponAmmoType2 (weaponName)
 end
 
 
-function weaponSwitch (weapon)
-	if source == getLocalPlayer() then
-		local ammoName,_ = getWeaponAmmoType2 (weapon)
-		if getElementData(getLocalPlayer(),ammoName) > 0 then
-			setElementData(getLocalPlayer(),ammoName,getElementData(getLocalPlayer(),ammoName)-1)
-		end
-	end
+function weaponSwitch(weapon)
+    local current_1 = getElementData(getLocalPlayer(),"currentweapon_1")
+    if source == getLocalPlayer() then
+            if current_1 == "M107" then
+            if getElementData(getLocalPlayer(),"M107 Mag") > 0 then
+                setElementData(getLocalPlayer(),"M107 Mag",getElementData(getLocalPlayer(),"M107 Mag")-1)
+            end
+      		elseif current_1 == "SVD Camo" then
+            if getElementData(getLocalPlayer(),"SVD Mag") > 0 then
+                setElementData(getLocalPlayer(),"SVD Mag",getElementData(getLocalPlayer(),"SVD Mag")-1)
+            end
+			elseif current_1 == "PKM" then
+            if getElementData(getLocalPlayer(),"PKM Mag") > 0 then
+                setElementData(getLocalPlayer(),"PKM Mag",getElementData(getLocalPlayer(),"PKM Mag")-1)
+            end
+			elseif current_1 == "DMR" then
+            if getElementData(getLocalPlayer(),"DMR Mag") > 0 then
+                setElementData(getLocalPlayer(),"DMR Mag",getElementData(getLocalPlayer(),"DMR Mag")-1)
+            end
+			elseif current_1 == "AKS-74 Kobra" then
+            if getElementData(getLocalPlayer(),"30Rnd. AK") > 0 then
+                setElementData(getLocalPlayer(),"30Rnd. AK",getElementData(getLocalPlayer(),"30Rnd. AK")-1)
+            end
+        else
+        local ammoName, _ = getWeaponAmmoType2(weapon)
+            if getElementData(getLocalPlayer(), ammoName) > 0 then
+                setElementData(getLocalPlayer(), ammoName, getElementData(getLocalPlayer(), ammoName) - 1)
+            end
+        end
+    end
 end
 addEventHandler ( "onClientPlayerWeaponFire", getLocalPlayer(), weaponSwitch )
 

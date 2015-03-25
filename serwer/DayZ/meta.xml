@@ -230,6 +230,27 @@
     <file src="items/wirefence.dff" />
     <file src="items/camera.txd" />
     <file src="items/camera.dff" />
+    
+    <file src="items/svdcamo.txd" />
+    <file src="items/svdcamo.dff" />
+    <file src="items/m107.txd" />
+    <file src="items/m107.dff" />
+    <file src="items/ak47.txd" />
+    <file src="items/ak47.dff" />
+    <file src="items/aks-74.txd" />
+    <file src="items/aks-74.dff" />
+    <file src="items/m4.txd" />
+    <file src="items/m4.dff" />
+    <file src="items/dmr.txd" />
+    <file src="items/dmr.dff" />
+    <file src="items/cz550.txd" />
+    <file src="items/cz550.dff" />
+    <file src="items/snipa_fake.txd" />
+    <file src="items/snipa_fake.dff" />
+    <file src="items/pkm.txd" />
+    <file src="items/pkm.dff" />
+
+
     <script src="bone_attach/bone_attach.lua" />
     <script src="bone_attach/bone_attach_c.lua" type="client" />
     <script src="bone_attach/attach_func.lua" />

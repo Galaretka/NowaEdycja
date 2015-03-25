@@ -27,8 +27,28 @@
 {"Mleko"},
 {"Amunicja do PDW"},
 {"Amunicja do MP5A5"},
-{"AK"},
-{"Amunicja do M4"},
+
+
+
+{"7,62 mm PKM/PKS"},
+{"30Rnd. AK"},
+{"30Rnd. STANAG"},
+{"SVD Mag"},
+{"M107 Mag"},
+{"DMR Mag"},
+{"CZ550 Mag"},
+
+{"M4A1"},
+{"CZ550"},
+{"AK-47"},
+{"AKS-74 Kobra"},
+{"PKM"},
+{"SVD Camo"},
+{"DMR"},
+{"M107"},
+
+
+
 {"Gas łzawiący"},
 {"Оск. граната M67"},
 {"Desert Eagle"},
@@ -40,7 +60,7 @@
 {"Ciepła paczka"},
 {"Lee Enfield"},
 {"TEC-9"},
-{"AK-47"},
+
 {"Amunicja do M136 Launcher"},
 {"Medyczna paczka"},
 {"GPS"},
@@ -51,10 +71,9 @@
 {"Silnik"},
 {"Zbiornik benzyny"},
 {"Amunicja do M136"},
-{"Amunicja do CZ550"},
+
 {"Amunicja do Lee Enfield"},
-{"M4"},
-{"CZ550"},
+
 {"Heat-Seeking RPG"},
 {"Satchel"},
 {"Gogle na podczerwień"},
@@ -106,13 +125,39 @@ weaponAmmoTable = {
 {"MP5A5",29},
 },
 
-["Amunicja do AK"] = {
+
+["30Rnd. AK"] = {
 {"AK-47",30},
 },
 
-["Amunicja do M4"] = {
-{"M4",31},
+["30Rnd. AK"] = {
+{"AKS-74 Kobra",30},
 },
+
+["7,62 mm PKM/PKS"] = {
+{"PKM",30},
+},
+
+["30Rnd. STANAG"] = {
+{"M4A1",31},
+},
+
+["CZ550 Mag"] = {
+{"CZ550",34},
+},
+
+["SVD Mag"] = {
+{"SVD Camo",34},
+},
+
+["M107 Mag"] = {
+{"M107",34},
+},
+
+["DMR Mag"] = {
+{"DMR",34},
+},
+
 
 ["1866 Slug"] = {
 {"Winchester 1866",25},
@@ -188,14 +233,39 @@ function getWeaponAmmoType (weaponName,notOthers)
 			return "Amunicja do MP5A5",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do AK"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["30Rnd. AK"]) do
 		if weaponName == weaponData[1] then
-			return "Amunicja do AK",weaponData[2]
+			return "30Rnd. AK",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do M4"]) do
+    for i,weaponData in ipairs(weaponAmmoTable["30Rnd. STANAG"]) do
 		if weaponName == weaponData[1] then
-			return "Amunicja do M4",weaponData[2]
+			return "30Rnd. STANAG",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["7,62 mm PKM/PKS"]) do
+		if weaponName == weaponData[1] then
+			return "7,62 mm PKM/PKS",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["SVD Mag"]) do
+		if weaponName == weaponData[1] then
+			return "SVD Mag",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["M107 Mag"]) do
+		if weaponName == weaponData[1] then
+			return "M107 Mag",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["DMR Mag"]) do
+		if weaponName == weaponData[1] then
+			return "DMR Mag",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["CZ550 Mag"]) do
+		if weaponName == weaponData[1] then
+			return "CZ550 Mag",weaponData[2]
 		end
 	end
 	for i,weaponData in ipairs(weaponAmmoTable["1866 Slug"]) do
@@ -232,36 +302,42 @@ function getWeaponAmmoType (weaponName,notOthers)
 end
 
 function rearmPlayerWeapon (weaponName,slot)
-	takeAllWeapons (source)
-	--Rearm
-	local ammoData,weapID = getWeaponAmmoType (weaponName)
-	if getElementData(source,ammoData) <= 0 then triggerClientEvent (source, "displayClientInfo", source,"Rearm",shownInfos["nomag"],255,22,0) return end
-	setElementData(source,"currentweapon_"..slot,weaponName)
-	--Old Weapons
-	local weapon = getElementData(source,"currentweapon_1")
-	if weapon then
-		local ammoData,weapID = getWeaponAmmoType (weapon)
-		giveWeapon(source,weapID,getElementData(source,ammoData), true )
-	end
-	local weapon = getElementData(source,"currentweapon_2")
-	if weapon then
-		local ammoData,weapID = getWeaponAmmoType (weapon)
-		giveWeapon(source,weapID,getElementData(source,ammoData), false )
-	end
-	local weapon = getElementData(source,"currentweapon_3")
-	if weapon then
-		local ammoData,weapID = getWeaponAmmoType (weapon)
-		giveWeapon(source,weapID,getElementData(source,ammoData), false )
-	end
-	if elementWeaponBack[source] then
-		detachElementFromBone(elementWeaponBack[source])
-		destroyElement(elementWeaponBack[source])
-		elementWeaponBack[source] = false
-	end	
-	setElementModel(source, getElementData(source,"skin"))
+  takeAllWeapons (source)
+  local ammoData,weapID = getWeaponAmmoType (weaponName)
+  if getElementData(source,ammoData) <= 0 then
+  triggerClientEvent (source, "displayClientInfo", source,"Rearm",shownInfos["nomag"],255,22,0)
+  if elementWeaponRaplace[source] then
+  detachElementFromBone(elementWeaponRaplace[source])
+  destroyElement(elementWeaponRaplace[source])
+  elementWeaponRaplace[source] = false
+  end
+  return
+  end
+  setElementData(source,"currentweapon_"..slot,weaponName)
+  local weapon = getElementData(source, "currentweapon_1")
+  if weapon then
+  local ammoData, weapID = getWeaponAmmoType(weapon)
+    giveWeapon(source, weapID, getElementData(source, ammoData), false)
+  end
+  local weapon = getElementData(source, "currentweapon_2")
+  if weapon then
+    local ammoData, weapID = getWeaponAmmoType(weapon)
+    giveWeapon(source, weapID, getElementData(source, ammoData), false)
+  end
+  local weapon = getElementData(source, "currentweapon_3")
+  if weapon then
+    local ammoData, weapID = getWeaponAmmoType(weapon)
+    giveWeapon(source, weapID, getElementData(source, ammoData), false)
+  end
+  if elementWeaponBack[source] then
+    detachElementFromBone(elementWeaponBack[source])
+    destroyElement(elementWeaponBack[source])
+    elementWeaponBack[source] = false
+  end
+  setElementModel(source, getElementData(source, "skin"))
 end
-addEvent("onPlayerRearmWeapon",true)
-addEventHandler("onPlayerRearmWeapon",getRootElement(),rearmPlayerWeapon)
+addEvent("onPlayerRearmWeapon", true)
+addEventHandler("onPlayerRearmWeapon", getRootElement(), rearmPlayerWeapon)
 
 weaponIDtoObjectID = {
 {30,355},
@@ -346,37 +422,15 @@ function backpackRemoveQuit ()
 		destroyElement(elementWeaponBack[source])	
 		elementWeaponBack[source] = false
 	end	
+	if elementWeaponRaplace[source] then
+		detachElementFromBone(elementWeaponRaplace[source])
+		destroyElement(elementWeaponRaplace[source])
+		elementWeaponRaplace[source] = false
+end
 end
 addEventHandler ( "onPlayerQuit", getRootElement(), backpackRemoveQuit )
 
 elementWeaponBack = {}
---[[function weaponSwitchBack ( previousWeaponID, currentWeaponID )
-	local weapon1 = getElementData(source,"currentweapon_1")
-	if not weapon1 then return end
-	local ammoData1,weapID1 = getWeaponAmmoType(weapon1)
-	local x,y,z = getElementPosition(source)
-	local rx,ry,rz = getElementRotation(source)
-	if previousWeaponID == weapID1 then
-		if elementWeaponBack[source] then
-			detachElementFromBone(elementWeaponBack[source])
-			destroyElement(elementWeaponBack[source])
-			elementWeaponBack[source] = false
-		end
-		elementWeaponBack[source] = createObject(getWeaponObjectID(weapID1),x,y,z)
-		setObjectScale(elementWeaponBack[source],0.875)
-		if elementBackpack[source] then
-			attachElementToBone(elementWeaponBack[source],source,3,0.19,-0.31,-0.1,0,270,-90)
-		else
-			attachElementToBone(elementWeaponBack[source],source,3,0.19,-0.11,-0.1,0,270,10)
-		end
-	elseif currentWeaponID == weapID1 then
-		detachElementFromBone(elementWeaponBack[source])
-		destroyElement(elementWeaponBack[source])
-		elementWeaponBack[source] = false
-	end
-end
-addEventHandler ( "onPlayerWeaponSwitch", getRootElement(), weaponSwitchBack )]]--
-
 function weaponSwitchBack(previousWeaponID, currentWeaponID)
   local weapon1 = getElementData(source, "currentweapon_1")
   if not weapon1 then
@@ -407,6 +461,12 @@ function weaponSwitchBack(previousWeaponID, currentWeaponID)
 	elseif weapon1 == "AKS-74 Kobra" then
 	elementWeaponBack[source] = createObject(2919, x, y, z)
     setObjectScale(elementWeaponBack[source], 0.875)
+	elseif weapon1 == "AK-47" then
+	elementWeaponBack[source] = createObject(2912, x, y, z)
+    setObjectScale(elementWeaponBack[source], 0.875)
+	elseif weapon1 == "CZ550" then
+	elementWeaponBack[source] = createObject(2913, x, y, z)
+    setObjectScale(elementWeaponBack[source], 0.875)
 	else
     elementWeaponBack[source] = createObject(getWeaponObjectID(weapID1), x, y, z)
     setObjectScale(elementWeaponBack[source], 0.875)
@@ -418,6 +478,7 @@ function weaponSwitchBack(previousWeaponID, currentWeaponID)
       attachElementToBone(elementWeaponBack[source], source, 3, 0.19, -0.11, -0.1, 0, 270, 10)
     end
   elseif currentWeaponID == weapID1 then
+    setElementID(player, "elementWeaponBack[source]")
     detachElementFromBone(elementWeaponBack[source])
     destroyElement(elementWeaponBack[source])
     elementWeaponBack[source] = false
@@ -425,12 +486,60 @@ function weaponSwitchBack(previousWeaponID, currentWeaponID)
 end
 addEventHandler("onPlayerWeaponSwitch", getRootElement(), weaponSwitchBack)
 
+
+elementWeaponRaplace = {}
+function weaponReplace ( previousWeaponID, currentWeaponID )
+--local source = getRootElement()
+local weapon1 = getElementData(source,"currentweapon_1")
+if not weapon1 then return end
+local ammoData1,weapID1 = getWeaponAmmoType(weapon1)
+local x,y,z = getElementPosition(source)
+local rx,ry,rz = getElementRotation(source)
+if currentWeaponID == weapID1 then
+if elementWeaponRaplace[source] then
+detachElementFromBone(elementWeaponRaplace[source])
+destroyElement(elementWeaponRaplace[source])
+elementWeaponRaplace[source] = false
+end
+if weapon1 == "SVD Camo" then
+elementWeaponRaplace[source] = createObject(2916,x,y,z)
+elseif weapon1 == "M107" then
+elementWeaponRaplace[source] = createObject(2917,x,y,z)
+elseif weapon1 == "DMR" then
+elementWeaponRaplace[source] = createObject(2918,x,y,z)
+elseif weapon1 == "PKM" then
+elementWeaponRaplace[source] = createObject(2915,x,y,z)
+elseif weapon1 == "AKS-74 Kobra" then
+elementWeaponRaplace[source] = createObject(2919,x,y,z)
+elseif weapon1 == "AK-47" then
+elementWeaponRaplace[source] = createObject(2919,x,y,z)
+elseif weapon1 == "CZ550" then
+elementWeaponRaplace[source] = createObject(2913,x,y,z)
+end
+if elementBackpack[source] then
+attachElementToBone(elementWeaponRaplace[source],source,12,0,0,0,180,90,180)
+else
+attachElementToBone(elementWeaponRaplace[source],source,12,0,0,0,180,90,180)
+end
+elseif previousWeaponID == weapID1 then
+detachElementFromBone(elementWeaponRaplace[source])
+destroyElement(elementWeaponRaplace[source])
+elementWeaponRaplace[source] = false
+end
+end
+addEventHandler ( "onPlayerWeaponSwitch", getRootElement(), weaponReplace )
+
 function removeBackWeaponOnDrop ()
 	if elementWeaponBack[source] then
 		detachElementFromBone(elementWeaponBack[source])
 		destroyElement(elementWeaponBack[source])	
 		elementWeaponBack[source] = false
 	end
+	if elementWeaponRaplace[source] then
+	detachElementFromBone(elementWeaponRaplace[source])
+	destroyElement(elementWeaponRaplace[source])
+	elementWeaponRaplace[source] = false
+end
 end
 addEvent("removeBackWeaponOnDrop",true)
 addEventHandler("removeBackWeaponOnDrop",getRootElement(),removeBackWeaponOnDrop)
@@ -445,6 +554,11 @@ function removeAttachedOnDeath ()
 		destroyElement(elementWeaponBack[source])	
 		elementWeaponBack[source] = false
 	end	
+	if elementWeaponRaplace[source] then
+	detachElementFromBone(elementWeaponRaplace[source])
+	destroyElement(elementWeaponRaplace[source])
+	elementWeaponRaplace[source] = false
+  end
 end
 addEvent("kilLDayZPlayer",true)
 addEventHandler("kilLDayZPlayer",getRootElement(),removeAttachedOnDeath)

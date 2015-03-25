@@ -347,6 +347,64 @@ function stopZombieSound()
 	end
 end
 setTimer(stopZombieSound,5000,0)
+--Bronie
+
+itemTXD = engineLoadTXD("items/svdcamo.txd")
+engineImportTXD(itemTXD, 2916)
+itemDFF = engineLoadDFF("items/svdcamo.dff", 2916)
+engineReplaceModel(itemDFF, 2916)
+
+itemTXD = engineLoadTXD("items/m107.txd")
+engineImportTXD(itemTXD, 2917)
+itemDFF = engineLoadDFF("items/m107.dff", 2917)
+engineReplaceModel(itemDFF, 2917)
+
+snipertxd = engineLoadTXD("items/m4.txd")
+engineImportTXD(snipertxd, 356)
+sniperdff = engineLoadDFF("items/m4.dff", 356)
+engineReplaceModel(sniperdff, 356)
+
+snipertxd = engineLoadTXD("items/snipa_fake.txd")
+engineImportTXD(snipertxd, 355)
+sniperdff = engineLoadDFF("items/snipa_fake.dff", 355)
+engineReplaceModel(sniperdff, 355)
+
+snipertxd = engineLoadTXD("items/aks-74.txd")
+engineImportTXD(snipertxd, 2919)
+sniperdff = engineLoadDFF("items/aks-74.dff", 2919)
+engineReplaceModel(sniperdff, 2919)
+
+snipertxd = engineLoadTXD("items/pkm.txd")
+engineImportTXD(snipertxd, 2915)
+sniperdff = engineLoadDFF("items/pkm.dff", 2915)
+engineReplaceModel(sniperdff, 2915)
+
+
+snipertxd = engineLoadTXD("items/cz550.txd")
+engineImportTXD(snipertxd, 2913)
+sniperdff = engineLoadDFF("items/cz550.dff", 2913)
+engineReplaceModel(sniperdff, 2913)
+
+
+snipertxd = engineLoadTXD("items/ak47.txd")
+engineImportTXD(snipertxd, 2912)
+sniperdff = engineLoadDFF("items/ak47.dff", 2912)
+engineReplaceModel(sniperdff, 2912)
+
+snipertxd = engineLoadTXD("items/dmr.txd")
+engineImportTXD(snipertxd, 2918)
+sniperdff = engineLoadDFF("items/dmr.dff", 2918)
+engineReplaceModel(sniperdff, 2918)
+
+snipertxd = engineLoadTXD("items/snipa_fake.txd")
+engineImportTXD(snipertxd, 358)
+sniperdff = engineLoadDFF("items/snipa_fake.dff", 358)
+engineReplaceModel(sniperdff, 358)
+
+
+
+
+
 
 --SKIN REPLACEMENTS
 	local skin = engineLoadTXD ( "skins/22.txd" ) -- slashed 12 by Wall-E
@@ -647,12 +705,36 @@ weaponAmmoTable = {
 {"MP5A5",29},
 },
 
-["Amunicja do AK"] = {
+["30Rnd. AK"] = {
 {"AK-47",30},
 },
 
-["Amunicja do M4"] = {
-{"M4",31},
+["30Rnd. AK"] = {
+{"AKS-74 Kobra",30},
+},
+
+["7,62 mm PKM/PKS"] = {
+{"PKM",30},
+},
+
+["30Rnd. STANAG"] = {
+{"M4A1",31},
+},
+
+["CZ550 Mag"] = {
+{"CZ550",34},
+},
+
+["SVD Mag"] = {
+{"SVD Camo",34},
+},
+
+["M107 Mag"] = {
+{"M107",34},
+},
+
+["DMR Mag"] = {
+{"DMR",34},
 },
 
 ["1866 Slug"] = {
@@ -668,9 +750,7 @@ weaponAmmoTable = {
 {"Granat",27},
 },
 
-["Amunicja do CZ550"] = {
-{"CZ550",34},
-},
+
 
 ["Amunicja do Lee Enfield"] = {
 {"Lee Enfield",33},
@@ -728,14 +808,39 @@ function getWeaponAmmoType (weaponName)
 			return "Amunicja do MP5A5",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do AK"]) do
+    for i,weaponData in ipairs(weaponAmmoTable["30Rnd. AK"]) do
 		if weaponName == weaponData[1] then
-			return "Amunicja do AK",weaponData[2]
+			return "30Rnd. AK",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do M4"]) do
+    for i,weaponData in ipairs(weaponAmmoTable["30Rnd. STANAG"]) do
 		if weaponName == weaponData[1] then
-			return "Amunicja do M4",weaponData[2]
+			return "30Rnd. STANAG",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["7,62 mm PKM/PKS"]) do
+		if weaponName == weaponData[1] then
+			return "7,62 mm PKM/PKS",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["SVD Mag"]) do
+		if weaponName == weaponData[1] then
+			return "SVD Mag",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["M107 MagK"]) do
+		if weaponName == weaponData[1] then
+			return "M107 Mag",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["DMR Mag"]) do
+		if weaponName == weaponData[1] then
+			return "DMR Mag",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["CZ550"]) do
+		if weaponName == weaponData[1] then
+			return "CZ550 Mag",weaponData[2]
 		end
 	end
 	for i,weaponData in ipairs(weaponAmmoTable["1866 Slug"]) do
@@ -2034,3 +2139,37 @@ function playerPingCheck ()
 	end
 end	
 setTimer(playerPingCheck,4000,0)
+
+local alpha = 255
+------ <<< --------- >>> ----------
+bindKey ( "aim_weapon", "both",
+function ( _, state )
+weapon = getPedWeapon(localPlayer)
+if weapon == 34 then -- проверка не по слоту а по id
+if ( state == "down" ) then
+alpha = 0
+elseif ( state == "up" ) then
+alpha = 255
+end
+
+for _, v in ipairs ( getElementsByType ( "object", root, true ) ) do
+if isElementAttachedToBone ( v ) then
+local id = getElementModel ( v )
+local px,py,pz = getElementPosition (v)
+local x,y,z = getElementPosition(localPlayer)
+local pdistance = getDistanceBetweenPoints3D ( x,y,z,px,py,pz )
+if pdistance <= 1 then -- Проверка на дистанцию
+if ( id == 2916 ) then
+setElementAlpha ( v, alpha )
+elseif ( id == 2917 ) then
+setElementAlpha ( v, alpha )
+elseif ( id == 2918 ) then
+setElementAlpha ( v, alpha )
+end
+end
+end
+end
+end
+end
+)
+

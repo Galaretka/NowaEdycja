@@ -30,7 +30,7 @@ function checkResourceRequirements ( res )
 		outputServerLog ( "Resource " .. getResourceName(res) .. " wasn't started: ("..reason..")." )
 		outputChatBox ( "Resource " .. getResourceName(res) .. " wasn't started: ("..reason..").", getRootElement(), 255, 255, 255 )
 		outputConsole ( "Resource " .. getResourceName(res) .. " wasn't started: ("..reason..")." )
-		outputDebugString ( "Resource " .. getResourceName(res) .. " wasn't started: ("..reason..")." )
+		outputDebugString ( "Resource " .. getResourceName(res) .. " wasnt started: ("..reason..")." )
 		cancelEvent()
 	end	
 end
@@ -143,15 +143,30 @@ local itemTable = {
 {"Morfina",1579,1,0,4},
 {"Skin przetrwania",1247,2,0,4.5},
 {"TEC-9",372,1,90,3},
-{"AK-47",355,1,90,3.8},
+
+{"M4A1",356,1,90,2.4},
+
+{"CZ550",2913,1,90,0.4},
+{"M107",2917,1,90,0.4},
+{"SVD Camo",2916,1,90,0.4},
+{"DMR",2918,1,90,0.4},
+
+
+
+
+
+{"AK-47",2912,1,90,3.8},
+{"AKS-74 Kobra",2919,1,90,3.8},
+{"PKM",2915,1,90,3.8},
+
+
 {"GPS",2976,0.15,0,3},
 {"Mapa",1277,0.8,90,7},
 {"Narzędzia",2969,0.5,0,1},
 {"Silnik",929,0.3,0,2},
 {"Namiot",1279,1,0,4.5},
 {"Skin snajpera",1213,2,0,0.3},
-{"M4",356,1,90,2.4},
-{"CZ550",358,1,90,0.4},
+
 {"Gogle na podczerwień",369,1,90,3},
 {"Assault Pack (ACU)",3026,1,0,5},
 {"Czech Backpack",2406,1,0,2}, 
@@ -254,13 +269,32 @@ local itemTable = {
 {"2Rnd. Slug",2358,2,0},
 {"Amunicja do Granatnika",2358,2,0},
 {"Amunicja do MP5A5",2358,2,0},
-{"Amunicja do AK",1271,2,0},
-{"Amunicja do M4",1271,2,0},
+
+{"CZ550 Mag",2358,2,0},
+{"SVD Camo Mag",2358,2,0},
+{"M107 Mag",2358,2,0},
+{"DMR Mag",2358,2,0},
+
+{"7,62 mm PKM/PKS",1271,2,0},
+{"30Rnd. AK",1271,2,0},
+{"30Rnd. STANAG",1271,2,0},
+
+{"CZ550",2913,1,90,0.9},
+{"M107",2917,1,90,0.9},
+{"SVD Camo",2916,1,90,0.9},
+{"DMR",2918,1,90,0.9},
+
+{"AK-47",2912,1,90,0.9},
+{"AKS-74 Kobra",2919,1,90,0.9},
+{"PKM",2915,1,90,0.9},
+
+{"M4A1",356,1,90,0.9},
+
 {"Amunicja do M1911",3013,2,0},
 {"Amunicja do M9 SD",3013,2,0},
 {"Amunicja do Desert Eagle",3013,2,0},
 {"Amunicja do M136",3082,0.7,90},
-{"Amunicja do CZ550",2358,2,0},
+
 {"Amunicja do Lee Enfield",2358,2,0},
 {"Amunicja do PDW",2041,2,0},
 {"Amunicja do MP5A5",2041,2,0},
@@ -301,11 +335,10 @@ local itemTable = {
 {"Lornetka",369,1,0,4},
 {"Skin przetrwania",1247,2,0,4.5},
 {"TEC-9",372,1,90,4},
-{"AK-47",355,1,90,0.9},
+
 {"Amunicja do M136 Launcher",359,1,90,0},
 {"Skin snajpera",1213,2,0,0.01},
-{"M4",356,1,90,0.9},
-{"CZ550",358,1,90,0.3},
+
 {"Heat-Seeking RPG",360,1,90,0},
 {"Bandaż",1578,0.5,0,4},
 {"Makaron",2770,1,0,5},
@@ -346,12 +379,36 @@ weaponAmmoTable = {
 {"MP5A5",29},
 },
 
-["Amunicja do AK"] = {
+["30Rnd. AK"] = {
 {"AK-47",30},
 },
 
-["Amunicja do M4"] = {
-{"M4",31},
+["30Rnd. AK"] = {
+{"AKS-74 Kobra",30},
+},
+
+["7,62 mm PKM/PKS"] = {
+{"PKM",30},
+},
+
+["30Rnd. STANAG"] = {
+{"M4A1",31},
+},
+
+["CZ550 Mag"] = {
+{"CZ550",34},
+},
+
+["SVD Mag"] = {
+{"SVD Camo",34},
+},
+
+["M107 Mag"] = {
+{"M107",34},
+},
+
+["DMR Mag"] = {
+{"DMR",34},
 },
 
 ["1866 Slug"] = {
@@ -366,9 +423,7 @@ weaponAmmoTable = {
 {"Granat",27},
 },
 
-["Amunicja do CZ550"] = {
-{"CZ550",34},
-},
+
 
 ["Amunicja do Lee Enfield"] = {
 {"Lee Enfield",33},
@@ -428,14 +483,39 @@ function getWeaponAmmoType (weaponName,notOthers)
 			return "Amunicja do MP5A5",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do AK"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["30Rnd. AK"]) do
 		if weaponName == weaponData[1] then
-			return "Amunicja do AK",weaponData[2]
+			return "30Rnd. AK",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do M4"]) do
+    for i,weaponData in ipairs(weaponAmmoTable["30Rnd. STANAG"]) do
 		if weaponName == weaponData[1] then
-			return "Amunicja do M4",weaponData[2]
+			return "30Rnd. STANAG",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["7,62 mm PKM/PKS"]) do
+		if weaponName == weaponData[1] then
+			return "7,62 mm PKM/PKS",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["SVD Mag"]) do
+		if weaponName == weaponData[1] then
+			return "SVD Mag",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["M107 Mag"]) do
+		if weaponName == weaponData[1] then
+			return "M107 Mag",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["DMR Mag"]) do
+		if weaponName == weaponData[1] then
+			return "DMR Mag",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["CZ550 Mag"]) do
+		if weaponName == weaponData[1] then
+			return "CZ550 Mag",weaponData[2]
 		end
 	end
 	for i,weaponData in ipairs(weaponAmmoTable["1866 Slug"]) do
@@ -451,11 +531,6 @@ function getWeaponAmmoType (weaponName,notOthers)
 	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do Granatnika"]) do
 		if weaponName == weaponData[1] then
 			return "Amunicja do Granatnika",weaponData[2]
-		end
-	end
-	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do CZ550"]) do
-		if weaponName == weaponData[1] then
-			return "Amunicja do CZ550",weaponData[2]
 		end
 	end
 	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do Lee Enfield"]) do
@@ -671,9 +746,23 @@ elseif itemName == "Assault Ammo" then
 	itemPlus = 30
 elseif itemName == "Sniper Ammo" then
 	itemPlus = 10
+elseif itemName == "CZ550 Mag" then
+	itemPlus = 10
+elseif itemName == "M107 Mag" then
+	itemPlus = 10
+elseif itemName == "SVD Mag" then
+	itemPlus = 10
+elseif itemName == "DMR Mag" then
+	itemPlus = 10
+elseif itemName == "30Rnd. STANAG" then
+	itemPlus = 30
+elseif itemName == "30Rnd. AK" then
+	itemPlus = 30
+elseif itemName == "7,62 mm PKM/PKS" then
+	itemPlus = 30
 elseif itemName == "Shotgun Ammo" then
 	itemPlus = 7
-elseif itemName == "M4" or itemName == "AK-47" or itemName == "Sniper Rifle" or itemName == "Shotgun" or itemName == "Granat" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "Rocket Launcher" or itemName == "Country Rifle" then
+elseif itemName == "M4A1" or itemName == "AK-47" or itemName == "AKS-74 Kobra" or itemName == "PKM" or itemName == "CZ550" or itemName == "SVD Camo" or itemName == "M107" or itemName == "DMR" or itemName == "Shotgun" or itemName == "Granat" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "Rocket Launcher" or itemName == "Country Rifle" then
 	removeBackWeaponOnDrop()
 end
 if loot then 
@@ -737,6 +826,20 @@ elseif itemName == "Sniper Ammo" then
 	itemPlus = 10
 elseif itemName == "Shotgun Ammo" then
 	itemPlus = 7
+elseif itemName == "CZ550 Mag" then
+	itemPlus = 10
+elseif itemName == "M107 Mag" then
+	itemPlus = 10
+elseif itemName == "SVD Mag" then
+	itemPlus = 10
+elseif itemName == "DMR Mag" then
+	itemPlus = 10
+elseif itemName == "30Rnd. STANAG" then
+	itemPlus = 30
+elseif itemName == "30Rnd. AK" then
+	itemPlus = 30
+elseif itemName == "7,62 mm PKM/PKS" then
+	itemPlus = 30
 elseif itemName == "Small Backpack" then
 	if getElementData(source,"MAX_Slots") == 16 then triggerClientEvent (source, "displayClientInfo", source,"Inventory","You allready got a Small Backpack",255,22,0) return end
 	if getElementData(source,"MAX_Slots") == 28 then triggerClientEvent (source, "displayClientInfo", source,"Inventory","You allready got a bigger Backpack",255,22,0) return end
@@ -786,24 +889,34 @@ function onPlayerTakeItemFromGround (itemName,col)
 		itemPlus = 30
 	elseif itemName == "Amunicja do MP5A5" then
 		itemPlus = 20
-	elseif itemName == "Amunicja do AK" then
-		itemPlus = 30
-	elseif itemName == "Amunicja do M4" then
-		itemPlus = 20
-	elseif itemName == "1866 Slug" then
+		elseif itemName == "1866 Slug" then
 		itemPlus = 7
 	elseif itemName == "2Rnd. Slug" then
 		itemPlus = 2
 	elseif itemName == "Amunicja do Granatnika" then
 		itemPlus = 7
-	elseif itemName == "Amunicja do CZ550" then
-		itemPlus = 5
+	
 	elseif itemName == "Amunicja do Lee Enfield" then
 		itemPlus = 10
 	elseif itemName == "Amunicja do M136" then
 		itemPlus = 0
-	elseif itemName == "M4" or itemName == "AK-47" or itemName == "CZ550" or itemName == "Winchester 1866" or itemName == "Granat" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "Amunicja do M136 Launcher" or itemName == "Lee Enfield" then
-		removeBackWeaponOnDrop()	
+	elseif itemName == "CZ550 Mag" then
+		itemPlus = 10
+	elseif itemName == "M107 Mag" then
+		itemPlus = 10
+	elseif itemName == "SVD Mag" then
+		itemPlus = 10
+	elseif itemName == "DMR Mag" then
+		itemPlus = 10
+	elseif itemName == "30Rnd. STANAG" then
+		itemPlus = 30
+	elseif itemName == "30Rnd. AK" then
+		itemPlus = 30
+	elseif itemName == "7,62 mm PKM/PKS" then
+		itemPlus = 30
+	
+	elseif itemName == "M4A1" or itemName == "AK-47" or itemName == "AKS-74 Kobra" or itemName == "PKM" or itemName == "CZ550" or itemName == "SVD Camo" or itemName == "M107" or itemName == "DMR" or itemName == "Shotgun" or itemName == "Granat" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "Rocket Launcher" or itemName == "Country Rifle" then
+	removeBackWeaponOnDrop()	
 	end
 	local x,y,z = getElementPosition(source)
 	local id,ItemType = getItemTablePosition (itemName)

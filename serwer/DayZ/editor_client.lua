@@ -37,12 +37,23 @@ gameplayVariables = {}
 -- WEAPON DAMAGE
 damageTable = {
 ---{"WEAPON NAME",DAMAGE},
-{"M4",3500},
-{"CZ550",8000},
+{"AK-47",3500},
+{"AKS-74 Kobra",3600},
+{"M4A1",2722},
+{"PKM",2900},
+
+
+{"M107",13000},
+{"CZ550",8200},
+{"SVD Camo",13000},
+{"DMR",8200},
+
+
+
 {"Winchester 1866",4500},
 {"MP5A5",889},
 {"Granat",2000},
-{"AK-47",2722},
+
 {"Heat-Seeking RPG",0},
 {"Amunicja do M136 Launcher",0},
 {"Lee Enfield",8000},

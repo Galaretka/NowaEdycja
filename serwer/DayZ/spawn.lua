@@ -54,8 +54,12 @@ local playerDataTable = {
 {"Mleko"},
 {"Amunicja do PDW"},
 {"Amunicja do MP5A5"},
-{"Amunicja do AK"},
-{"Amunicja do M4"},
+
+
+
+
+
+
 {"Gas łzawiący"},
 {"Оск. граната M67"},
 {"Desert Eagle"},
@@ -68,7 +72,25 @@ local playerDataTable = {
 {"Lee Enfield"},
 {"PDW"},
 {"TEC-9"},
+
+
+{"7,62 mm PKM/PKS"},
+{"30Rnd. AK"},
+{"30Rnd. STANAG"},
+{"SVD Mag"},
+{"M107 Mag"},
+{"DMR Mag"},
+{"CZ550 Mag"},
+
+{"M4A1"},
+{"CZ550"},
 {"AK-47"},
+{"AKS-74 Kobra"},
+{"PKM"},
+{"SVD Camo"},
+{"DMR"},
+{"M107"},
+
 {"Amunicja do M136 Launcher"},
 {"Medyczna paczka"},
 {"GPS"},
@@ -79,10 +101,8 @@ local playerDataTable = {
 {"Silnik"},
 {"Zbiornik benzyny"},
 {"Amunicja do M136"},
-{"Amunicja do CZ550"},
 {"Amunicja do Lee Enfield"},
-{"M4"},
-{"CZ550"},
+
 {"Heat-Seeking RPG"},
 {"Satchel"},
 {"Gogle na podczerwień"},
@@ -142,8 +162,8 @@ local vehicleDataTable = {
 {"Mleko"},
 {"Amunicja do PDW"},
 {"Amunicja do MP5A5"},
-{"Amunicja do AK"},
-{"Amunicja do M4"},
+
+
 {"Gas łzawiący"},
 {"Оск. граната M67"},
 {"Desert Eagle"},
@@ -155,7 +175,26 @@ local vehicleDataTable = {
 {"Ciepła paczka"},
 {"Lee Enfield"},
 {"TEC-9"},
+
+{"7,62 mm PKM/PKS"},
+{"30Rnd. AK"},
+{"30Rnd. STANAG"},
+{"SVD Mag"},
+{"M107 Mag"},
+{"DMR Mag"},
+{"CZ550 Mag"},
+
+{"M4A1"},
+{"CZ550"},
 {"AK-47"},
+{"AKS-74 Kobra"},
+{"PKM"},
+{"SVD Camo"},
+{"DMR"},
+{"M107"},
+
+
+
 {"Amunicja do M136 Launcher"},
 {"Medyczna paczka"},
 {"GPS"},
@@ -166,10 +205,9 @@ local vehicleDataTable = {
 {"Silnik"},
 {"Zbiornik benzyny"},
 {"Amunicja do M136"},
-{"Amunicja do CZ550"},
+
 {"Amunicja do Lee Enfield"},
-{"M4"},
-{"CZ550"},
+
 {"Heat-Seeking RPG"},
 {"Satchel"},
 {"Gogle na podczerwień"},
@@ -358,11 +396,19 @@ function kilLDayZPlayer (killer,headshot,weapon)
 				plusData = math.floor(getElementData(source,data[1])/30)
 			elseif data[1] == "Amunicja do MP5A5" then
 				plusData = math.floor(getElementData(source,data[1])/20)
-			elseif data[1] == "Amunicja do AK" then
+			elseif data[1] == "30Rnd. AK" then
 				plusData = math.floor(getElementData(source,data[1])/30)
-			elseif data[1] == "Amunicja do M4" then
+			elseif data[1] == "7,62 mm PKM/PKS" then
+				plusData = math.floor(getElementData(source,data[1])/30)
+			elseif data[1] == "30Rnd. STANAG" then
 				plusData = math.floor(getElementData(source,data[1])/20)
-			elseif data[1] == "Amunicja do CZ550" then
+			elseif data[1] == "CZ550 Mag" then
+				plusData = math.floor(getElementData(source,data[1])/5)
+			elseif data[1] == "SVD Mag" then
+				plusData = math.floor(getElementData(source,data[1])/5)
+			elseif data[1] == "M107 Mag" then
+				plusData = math.floor(getElementData(source,data[1])/5)
+			elseif data[1] == "DMR Mag" then
 				plusData = math.floor(getElementData(source,data[1])/5)
 			elseif data[1] == "Amunicja do Lee Enfield" then
 				plusData = math.floor(getElementData(source,data[1])/10)
