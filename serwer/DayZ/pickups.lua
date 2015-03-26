@@ -155,9 +155,10 @@ local itemTable = {
 
 
 
-{"AK-47",2912,1,90,3.8},
-{"AKS-74 Kobra",2919,1,90,3.8},
-{"PKM",2915,1,90,3.8},
+{"AK-47",2912,1,90,2.5},
+{"AKS-74 Kobra",2919,1,90,3},
+{"AK-107",2914,1,90,3.2},
+{"FN FAL",2911,1,90,3.1},
 
 
 {"GPS",2976,0.15,0,3},
@@ -277,6 +278,11 @@ local itemTable = {
 
 {"7,62 mm PKM/PKS",1271,2,0},
 {"30Rnd. AK",1271,2,0},
+{"30Rnd. AKS",1271,2,0},
+
+{"AK-107 Mag",1271,2,0},
+{"FN Mag",1271,2,0},
+
 {"30Rnd. STANAG",1271,2,0},
 
 {"CZ550",2913,1,90,0.9},
@@ -287,6 +293,9 @@ local itemTable = {
 {"AK-47",2912,1,90,0.9},
 {"AKS-74 Kobra",2919,1,90,0.9},
 {"PKM",2915,1,90,0.9},
+{"AK-107",2914,1,90,0.9},
+{"FN FAL",2911,1,90,0.9},
+
 
 {"M4A1",356,1,90,0.9},
 
@@ -383,8 +392,16 @@ weaponAmmoTable = {
 {"AK-47",30},
 },
 
-["30Rnd. AK"] = {
+["30Rnd. AKS"] = {
 {"AKS-74 Kobra",30},
+},
+
+["AK-107 Mag"] = {
+{"AK-107",30},
+},
+
+["FN Mag"] = {
+{"FN FAL",30},
 },
 
 ["7,62 mm PKM/PKS"] = {
@@ -486,6 +503,21 @@ function getWeaponAmmoType (weaponName,notOthers)
 	for i,weaponData in ipairs(weaponAmmoTable["30Rnd. AK"]) do
 		if weaponName == weaponData[1] then
 			return "30Rnd. AK",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["30Rnd. AKS"]) do
+		if weaponName == weaponData[1] then
+			return "30Rnd. AKS",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["AK-107 Mag"]) do
+		if weaponName == weaponData[1] then
+			return "AK-107 Mag",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["FN Mag"]) do
+		if weaponName == weaponData[1] then
+			return "FN FAL",weaponData[2]
 		end
 	end
     for i,weaponData in ipairs(weaponAmmoTable["30Rnd. STANAG"]) do
@@ -758,11 +790,17 @@ elseif itemName == "30Rnd. STANAG" then
 	itemPlus = 30
 elseif itemName == "30Rnd. AK" then
 	itemPlus = 30
+elseif itemName == "30Rnd. AKS" then
+	itemPlus = 30
+elseif itemName == "AK-107 Mag" then
+	itemPlus = 30
+elseif itemName == "FN Mag" then
+	itemPlus = 30
 elseif itemName == "7,62 mm PKM/PKS" then
 	itemPlus = 30
 elseif itemName == "Shotgun Ammo" then
 	itemPlus = 7
-elseif itemName == "M4A1" or itemName == "AK-47" or itemName == "AKS-74 Kobra" or itemName == "PKM" or itemName == "CZ550" or itemName == "SVD Camo" or itemName == "M107" or itemName == "DMR" or itemName == "Shotgun" or itemName == "Granat" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "Rocket Launcher" or itemName == "Country Rifle" then
+elseif itemName == "M4A1" or itemName == "AK-47" or itemName == "AKS-74 Kobra"  or itemName == "AK-107" or itemName == "FN FAL" or itemName == "PKM" or itemName == "CZ550" or itemName == "SVD Camo" or itemName == "M107" or itemName == "DMR" or itemName == "Shotgun" or itemName == "Granat" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "Rocket Launcher" or itemName == "Country Rifle" then
 	removeBackWeaponOnDrop()
 end
 if loot then 
@@ -838,6 +876,12 @@ elseif itemName == "30Rnd. STANAG" then
 	itemPlus = 30
 elseif itemName == "30Rnd. AK" then
 	itemPlus = 30
+elseif itemName == "30Rnd. AKS" then
+	itemPlus = 30
+elseif itemName == "AK-107 Mag" then
+	itemPlus = 30
+elseif itemName == "FN Mag" then
+	itemPlus = 30
 elseif itemName == "7,62 mm PKM/PKS" then
 	itemPlus = 30
 elseif itemName == "Small Backpack" then
@@ -912,10 +956,16 @@ function onPlayerTakeItemFromGround (itemName,col)
 		itemPlus = 30
 	elseif itemName == "30Rnd. AK" then
 		itemPlus = 30
+	elseif itemName == "30Rnd. AKS" then
+		itemPlus = 30
+	elseif itemName == "AK-107 Mag" then
+		itemPlus = 30
+	elseif itemName == "FN Mag" then
+		itemPlus = 30
 	elseif itemName == "7,62 mm PKM/PKS" then
 		itemPlus = 30
 	
-	elseif itemName == "M4A1" or itemName == "AK-47" or itemName == "AKS-74 Kobra" or itemName == "PKM" or itemName == "CZ550" or itemName == "SVD Camo" or itemName == "M107" or itemName == "DMR" or itemName == "Shotgun" or itemName == "Granat" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "Rocket Launcher" or itemName == "Country Rifle" then
+	elseif itemName == "M4A1" or itemName == "AK-47" or itemName == "AKS-74 Kobra" or itemName == "FN FAL" or itemName == "AK-107" or itemName == "PKM" or itemName == "CZ550" or itemName == "SVD Camo" or itemName == "M107" or itemName == "DMR" or itemName == "Shotgun" or itemName == "Granat" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "Rocket Launcher" or itemName == "Country Rifle" then
 	removeBackWeaponOnDrop()	
 	end
 	local x,y,z = getElementPosition(source)

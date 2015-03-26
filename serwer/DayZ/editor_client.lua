@@ -39,7 +39,9 @@ damageTable = {
 ---{"WEAPON NAME",DAMAGE},
 {"AK-47",3500},
 {"AKS-74 Kobra",3600},
+{"AK-107",3650},
 {"M4A1",2722},
+{"FN FAL",2750},
 {"PKM",2900},
 
 

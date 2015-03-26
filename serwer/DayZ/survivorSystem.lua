@@ -32,12 +32,18 @@
 
 {"7,62 mm PKM/PKS"},
 {"30Rnd. AK"},
+{"30Rnd. AKS"},
 {"30Rnd. STANAG"},
 {"SVD Mag"},
 {"M107 Mag"},
 {"DMR Mag"},
 {"CZ550 Mag"},
+{"AK-107 Mag"},
+{"FN Mag"},
 
+
+{"FN FAL"},
+{"AK-107"},
 {"M4A1"},
 {"CZ550"},
 {"AK-47"},
@@ -130,8 +136,16 @@ weaponAmmoTable = {
 {"AK-47",30},
 },
 
-["30Rnd. AK"] = {
+["30Rnd. AKS"] = {
 {"AKS-74 Kobra",30},
+},
+
+["FN Mag"] = {
+{"FN FAL",30},
+},
+
+["AK-107 Mag"] = {
+{"AK-107",30},
 },
 
 ["7,62 mm PKM/PKS"] = {
@@ -236,6 +250,21 @@ function getWeaponAmmoType (weaponName,notOthers)
 	for i,weaponData in ipairs(weaponAmmoTable["30Rnd. AK"]) do
 		if weaponName == weaponData[1] then
 			return "30Rnd. AK",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["30Rnd. AKS"]) do
+		if weaponName == weaponData[1] then
+			return "30Rnd. AKS",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["AK-107 Mag"]) do
+		if weaponName == weaponData[1] then
+			return "AK-107 Mag",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["FN Mag"]) do
+		if weaponName == weaponData[1] then
+			return "FN Mag",weaponData[2]
 		end
 	end
     for i,weaponData in ipairs(weaponAmmoTable["30Rnd. STANAG"]) do
@@ -467,6 +496,12 @@ function weaponSwitchBack(previousWeaponID, currentWeaponID)
 	elseif weapon1 == "CZ550" then
 	elementWeaponBack[source] = createObject(2913, x, y, z)
     setObjectScale(elementWeaponBack[source], 0.875)
+	elseif weapon1 == "FN FAL" then
+	elementWeaponBack[source] = createObject(2911, x, y, z)
+    setObjectScale(elementWeaponBack[source], 0.875)
+	elseif weapon1 == "AK-107" then
+	elementWeaponBack[source] = createObject(2914, x, y, z)
+    setObjectScale(elementWeaponBack[source], 0.875)
 	else
     elementWeaponBack[source] = createObject(getWeaponObjectID(weapID1), x, y, z)
     setObjectScale(elementWeaponBack[source], 0.875)
@@ -478,7 +513,7 @@ function weaponSwitchBack(previousWeaponID, currentWeaponID)
       attachElementToBone(elementWeaponBack[source], source, 3, 0.19, -0.11, -0.1, 0, 270, 10)
     end
   elseif currentWeaponID == weapID1 then
-    setElementID(player, "elementWeaponBack[source]")
+    setElementData(player, "elementWeaponBack[source]")
     detachElementFromBone(elementWeaponBack[source])
     destroyElement(elementWeaponBack[source])
     elementWeaponBack[source] = false
@@ -512,9 +547,13 @@ elementWeaponRaplace[source] = createObject(2915,x,y,z)
 elseif weapon1 == "AKS-74 Kobra" then
 elementWeaponRaplace[source] = createObject(2919,x,y,z)
 elseif weapon1 == "AK-47" then
-elementWeaponRaplace[source] = createObject(2919,x,y,z)
+elementWeaponRaplace[source] = createObject(2912,x,y,z)
 elseif weapon1 == "CZ550" then
 elementWeaponRaplace[source] = createObject(2913,x,y,z)
+elseif weapon1 == "AK-107" then
+elementWeaponRaplace[source] = createObject(2914,x,y,z)
+elseif weapon1 == "FN FAL" then
+elementWeaponRaplace[source] = createObject(2911,x,y,z)
 end
 if elementBackpack[source] then
 attachElementToBone(elementWeaponRaplace[source],source,12,0,0,0,180,90,180)

@@ -379,6 +379,15 @@ engineImportTXD(snipertxd, 2915)
 sniperdff = engineLoadDFF("items/pkm.dff", 2915)
 engineReplaceModel(sniperdff, 2915)
 
+snipertxd = engineLoadTXD("items/fn.txd")
+engineImportTXD(snipertxd, 2911)
+sniperdff = engineLoadDFF("items/fn.dff", 2911)
+engineReplaceModel(sniperdff, 2911)
+
+snipertxd = engineLoadTXD("items/ak107.txd")
+engineImportTXD(snipertxd, 2914)
+sniperdff = engineLoadDFF("items/ak107.dff", 2911)
+engineReplaceModel(sniperdff, 2914)
 
 snipertxd = engineLoadTXD("items/cz550.txd")
 engineImportTXD(snipertxd, 2913)
@@ -808,9 +817,24 @@ function getWeaponAmmoType (weaponName)
 			return "Amunicja do MP5A5",weaponData[2]
 		end
 	end
-    for i,weaponData in ipairs(weaponAmmoTable["30Rnd. AK"]) do
+   for i,weaponData in ipairs(weaponAmmoTable["30Rnd. AK"]) do
 		if weaponName == weaponData[1] then
 			return "30Rnd. AK",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["30Rnd. AKS"]) do
+		if weaponName == weaponData[1] then
+			return "30Rnd. AKS",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["AK-107 Mag"]) do
+		if weaponName == weaponData[1] then
+			return "AK-107 Mag",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["FN Mag"]) do
+		if weaponName == weaponData[1] then
+			return "FN FAL",weaponData[2]
 		end
 	end
     for i,weaponData in ipairs(weaponAmmoTable["30Rnd. STANAG"]) do
@@ -828,7 +852,7 @@ function getWeaponAmmoType (weaponName)
 			return "SVD Mag",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["M107 MagK"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["M107 Mag"]) do
 		if weaponName == weaponData[1] then
 			return "M107 Mag",weaponData[2]
 		end
@@ -838,7 +862,7 @@ function getWeaponAmmoType (weaponName)
 			return "DMR Mag",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["CZ550"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["CZ550 Mag"]) do
 		if weaponName == weaponData[1] then
 			return "CZ550 Mag",weaponData[2]
 		end
@@ -2164,6 +2188,8 @@ setElementAlpha ( v, alpha )
 elseif ( id == 2917 ) then
 setElementAlpha ( v, alpha )
 elseif ( id == 2918 ) then
+setElementAlpha ( v, alpha )
+elseif ( id == 2913 ) then
 setElementAlpha ( v, alpha )
 end
 end

@@ -51,8 +51,7 @@ local playerDataTable = {
 {"Mleko"},
 {"Amunicja do PDW"},
 {"Amunicja do MP5A5"},
-{"Amunicja do AK"},
-{"30Rnd. STANAG"},
+
 {"Gas łzawiący"},
 {"Оск. граната M67"},
 {"Desert Eagle"},
@@ -65,7 +64,36 @@ local playerDataTable = {
 {"Lee Enfield"},
 {"PDW"},
 {"TEC-9"},
+
+
+
+{"7,62 mm PKM/PKS"},
+{"30Rnd. AK"},
+{"30Rnd. AKS"},
+{"AK-107 Mag"},
+{"FN Mag"},
+{"30Rnd. STANAG"},
+{"SVD Mag"},
+{"M107 Mag"},
+{"DMR Mag"},
+{"CZ550 Mag"},
+
+
+{"FN FAL"},
+{"AK-107"},
+{"M4A1"},
+{"CZ550"},
 {"AK-47"},
+{"AKS-74 Kobra"},
+{"PKM"},
+{"SVD Camo"},
+{"DMR"},
+{"M107"},
+
+
+
+
+
 {"Amunicja do M136 Launcher"},
 {"Medyczna paczka"},
 {"GPS"},
@@ -76,10 +104,9 @@ local playerDataTable = {
 {"Silnik"},
 {"Zbiornik benzyny"},
 {"Amunicja do M136"},
-{"Amunicja do CZ550"},
+
 {"Amunicja do Lee Enfield"},
-{"30Rnd. STANAG"},
-{"CZ550"},
+
 {"Heat-Seeking RPG"},
 {"Satchel"},
 {"Gogle na podczerwień"},

@@ -24,6 +24,8 @@ inventoryItems = {
 {"SVD Camo",3},
 {"DMR",3},
 {"AKS-74 Kobra",3},
+{"AK-107",3},
+{"FN FAL",3},
 
 {"Lee Enfield",3},
 {"Heat-Seeking RPG",5},
@@ -59,6 +61,9 @@ inventoryItems = {
 {"Amunicja do PDW",0.025},
 {"Amunicja do MP5A5",0.025},
 
+{"FN Mag",0.035},
+{"AK-107 Mag",0.035},
+{"30Rnd. AKS",0.035},
 {"30Rnd. AK",0.035},
 {"30Rnd. STANAG",0.035},
 {"7,62 mm PKM/PKS",0.035},
@@ -668,10 +673,16 @@ local itemPlus = 1
 		itemPlus = 30
 	elseif itemName == "30Rnd. AK" then
 		itemPlus = 30
+	elseif itemName == "30Rnd. AKS" then
+		itemPlus = 30
 	elseif itemName == "7,62 mm PKM/PKS" then
 		itemPlus = 30
+	elseif itemName == "AK-107 Mag" then
+		itemPlus = 30
+	elseif itemName == "FN Mag" then
+		itemPlus = 30
 	
-	elseif itemName == "M4A1" or itemName == "AK-47" or itemName == "AKS-74 Kobra" or itemName == "PKM" or itemName == "CZ550" or itemName == "SVD Camo" or itemName == "M107" or itemName == "DMR" or itemName == "Shotgun" or itemName == "Granat" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "Rocket Launcher" or itemName == "Country Rifle" then
+	elseif itemName == "M4A1" or itemName == "AK-47" or itemName == "AKS-74 Kobra" or itemName == "AK-107" or itemName == "FN FAL" or itemName == "PKM" or itemName == "CZ550" or itemName == "SVD Camo" or itemName == "M107" or itemName == "DMR" or itemName == "Shotgun" or itemName == "Granat" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "Rocket Launcher" or itemName == "Country Rifle" then
 	removeBackWeaponOnDrop()	
 end
 if loot then 
@@ -827,6 +838,12 @@ elseif itemName == "DMR Mag" then
 elseif itemName == "30Rnd. STANAG" then
 	itemPlus = 30
 elseif itemName == "30Rnd. AK" then
+	itemPlus = 30
+elseif itemName == "30Rnd. AKS" then
+	itemPlus = 30
+elseif itemName == "AK-107 Mag" then
+	itemPlus = 30
+elseif itemName == "FN Mag" then
 	itemPlus = 30
 elseif itemName == "7,62 mm PKM/PKS" then
 	itemPlus = 30
@@ -1153,8 +1170,16 @@ weaponAmmoTable = {
 {"AK-47",30},
 },
 
-["30Rnd. AK"] = {
+["30Rnd. AKS"] = {
 {"AKS-74 Kobra",30},
+},
+
+["AK-107 Mag"] = {
+{"AK-107",30},
+},
+
+["FN Mag"] = {
+{"FN FAL",30},
 },
 
 ["7,62 mm PKM/PKS"] = {
@@ -1254,6 +1279,21 @@ function getWeaponAmmoType2 (weaponName)
 			return "30Rnd. AK",weaponData[2]
 		end
 	end
+	for i,weaponData in ipairs(weaponAmmoTable["30Rnd. AKS"]) do
+		if weaponName == weaponData[1] then
+			return "30Rnd. AKS",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["AK-107 Mag"]) do
+		if weaponName == weaponData[1] then
+			return "AK-107 Mag",weaponData[2]
+		end
+	end
+	for i,weaponData in ipairs(weaponAmmoTable["FN FAL"]) do
+		if weaponName == weaponData[1] then
+			return "FN FAL",weaponData[2]
+		end
+	end
     for i,weaponData in ipairs(weaponAmmoTable["30Rnd. STANAG"]) do
 		if weaponName == weaponData[1] then
 			return "30Rnd. STANAG",weaponData[2]
@@ -1269,7 +1309,7 @@ function getWeaponAmmoType2 (weaponName)
 			return "SVD Mag",weaponData[2]
 		end
 	end
-	for i,weaponData in ipairs(weaponAmmoTable["M107 MagK"]) do
+	for i,weaponData in ipairs(weaponAmmoTable["M107 Mag"]) do
 		if weaponName == weaponData[1] then
 			return "M107 Mag",weaponData[2]
 		end
@@ -1324,17 +1364,37 @@ function weaponSwitch(weapon)
             if getElementData(getLocalPlayer(),"SVD Mag") > 0 then
                 setElementData(getLocalPlayer(),"SVD Mag",getElementData(getLocalPlayer(),"SVD Mag")-1)
             end
+			elseif current_1 == "CZ550" then
+            if getElementData(getLocalPlayer(),"CZ550 Mag") > 0 then
+                setElementData(getLocalPlayer(),"CZ550 Mag",getElementData(getLocalPlayer(),"CZ550 Mag")-1)
+            end
 			elseif current_1 == "PKM" then
-            if getElementData(getLocalPlayer(),"PKM Mag") > 0 then
-                setElementData(getLocalPlayer(),"PKM Mag",getElementData(getLocalPlayer(),"PKM Mag")-1)
+            if getElementData(getLocalPlayer(),"7,62 mm PKM/PKS") > 0 then
+                setElementData(getLocalPlayer(),"7,62 mm PKM/PKS",getElementData(getLocalPlayer(),"7,62 mm PKM/PKS")-1)
             end
 			elseif current_1 == "DMR" then
             if getElementData(getLocalPlayer(),"DMR Mag") > 0 then
                 setElementData(getLocalPlayer(),"DMR Mag",getElementData(getLocalPlayer(),"DMR Mag")-1)
             end
 			elseif current_1 == "AKS-74 Kobra" then
+            if getElementData(getLocalPlayer(),"30Rnd. AKS") > 0 then
+                setElementData(getLocalPlayer(),"30Rnd. AKS",getElementData(getLocalPlayer(),"30Rnd. AKS")-1)
+            end
+			elseif current_1 == "AK-47" then
             if getElementData(getLocalPlayer(),"30Rnd. AK") > 0 then
                 setElementData(getLocalPlayer(),"30Rnd. AK",getElementData(getLocalPlayer(),"30Rnd. AK")-1)
+            end
+			elseif current_1 == "AK-107" then
+            if getElementData(getLocalPlayer(),"AK-107 Mag") > 0 then
+                setElementData(getLocalPlayer(),"AK-107 Mag",getElementData(getLocalPlayer(),"AK-107 Mag")-1)
+            end
+			elseif current_1 == "FN FAL" then
+            if getElementData(getLocalPlayer(),"FN Mag") > 0 then
+                setElementData(getLocalPlayer(),"FN Mag",getElementData(getLocalPlayer(),"FN Mag")-1)
+            end
+			elseif current_1 == "M4A1" then
+            if getElementData(getLocalPlayer(),"30Rnd. STANAG") > 0 then
+                setElementData(getLocalPlayer(),"30Rnd. STANAG",getElementData(getLocalPlayer(),"30Rnd. STANAG")-1)
             end
         else
         local ammoName, _ = getWeaponAmmoType2(weapon)
