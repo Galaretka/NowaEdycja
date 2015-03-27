@@ -57,6 +57,27 @@ local playerDataTable = {
 
 
 
+{"Spodnie: Kamuflaz-Zielony"},
+{"Spodnie: Kamuflaz-Szary"},
+{"Spodnie: Sport-Zielony"},
+{"Spodnie: Sport-Niebieski"},
+{"Spodnie: Spodnie-Czarne"},
+{"Spodnie: Spodnie-Szary"},
+{"Buty: Trampki-Biale"},
+{"Buty: Trampki-Niebieskie"},
+{"Buty: Buty"},
+{"Bluza: Shirt-Czerwony"},
+{"Bluza: Shirt-Bialy"},
+{"Bluza: Shirt-Zielony"},
+{"Bluza: Shirt-Pomaranczowa"},
+{"Bluza: Bluza-Biala"},
+{"Bluza: Bluza-Niebieski"},
+{"Kurtka: Kurtka-Czarny"},
+{"Okulary"},
+
+
+
+
 
 
 
@@ -206,6 +227,24 @@ local vehicleDataTable = {
 {"M107"},
 
 
+{"Spodnie: Kamuflaz-Zielony"},
+{"Spodnie: Kamuflaz-Szary"},
+{"Spodnie: Sport-Zielony"},
+{"Spodnie: Sport-Niebieski"},
+{"Spodnie: Spodnie-Czarne"},
+{"Spodnie: Spodnie-Szary"},
+{"Buty: Trampki-Biale"},
+{"Buty: Trampki-Niebieskie"},
+{"Buty: Buty"},
+{"Bluza: Shirt-Czerwony"},
+{"Bluza: Shirt-Bialy"},
+{"Bluza: Shirt-Zielony"},
+{"Bluza: Shirt-Pomaranczowa"},
+{"Bluza: Bluza-Biala"},
+{"Bluza: Bluza-Niebieski"},
+{"Kurtka: Kurtka-Czarny"},
+{"Okulary"},
+
 
 {"Amunicja do M136 Launcher"},
 {"Medyczna paczka"},
@@ -253,7 +292,7 @@ local vehicleDataTable = {
 function spawnDayZPlayer(player)
 	local number = math.random(table.size(spawnPositions))
 	local x,y,z = spawnPositions[number][1],spawnPositions[number][2],spawnPositions[number][3]
-	spawnPlayer (player, x,y,z, math.random(0,360), 73, 0, 0)
+	spawnPlayer (player, x,y,z, math.random(0,360), 0, 0, 0)
 	setElementFrozen(player, true)
 	fadeCamera (player, true)
 	triggerClientEvent(player, "sex", player)
@@ -276,6 +315,27 @@ function spawnDayZPlayer(player)
 	setElementData(player,"supporter",getAccountData(account,"supporter") or false)
 	----------------------------------
 	--Player Items on Start
+	removePedClothes(player,0)
+	removePedClothes(player,2)
+	removePedClothes(player,3)
+	
+	local clothespack = math.random(1,2)
+	if clothespack == 1 then
+	addPedClothes (player, "tracktrgang", "tracktr", 2 )
+	addPedClothes (player, "bask2heatwht", "bask1", 3 )
+	addPedClothes (player, "shirtbplaid", "shirtb", 0)
+	setElementData( player, "Shoes", 1)
+	setElementData( player, "trousers", 3)
+	setElementData( player, "Shirt", 1)
+	end
+	if clothespack == 2 then
+	addPedClothes (player, "tracktrblue", "tracktr", 2 )
+	addPedClothes (player, "bask2heatwht", "bask1", 3 )
+	addPedClothes (player, "tshirtilovels", "tshirt", 0)
+	setElementData( player, "Shoes", 1)
+	setElementData( player, "trousers", 4)
+	setElementData( player, "Shirt", 2)
+	end
 	for i,data in ipairs(playerDataTable) do
 		if data[1] =="Bandaż" then
 			setElementData(player,data[1],2)	
@@ -284,7 +344,7 @@ function spawnDayZPlayer(player)
 		elseif data[1] =="MAX_Slots" then
 			setElementData(player,data[1],8)	
 		elseif data[1] =="skin" then
-			setElementData(player,data[1],73)
+			setElementData(player,data[1],0)
 		elseif data[1] =="blood" then
 			setElementData(player,data[1],12000)
 		elseif data[1] =="temperature" then
@@ -321,19 +381,6 @@ end
 --addEventHandler("onPlayerLoginToDayZ",getRootElement(),spawnDayZPlayer)
 --addEventHandler("onPlayerJoin",getRootElement(),spawnDayZPlayer)
 
-function checkBuggedAccount()
-	for i,player in ipairs(getElementsByType("player")) do
-		local account = getPlayerAccount(player)
-		if not account then return end
-		if getElementData(player,"logedin") then
-			if getElementModel(player) == 0 then
-				spawnDayZPlayer(player)
-				outputChatBox(getPlayerName(player).." konto zostało zresetowane. Powód: BUG",getRootElement(),22,255,22,true)
-			end
-		end
-	end	
-end
-setTimer(checkBuggedAccount,90000,0)
 
 function notifyAboutExplosion2()
 	for i,player in pairs(getVehicleOccupants(source)) do
@@ -440,9 +487,7 @@ function kilLDayZPlayer (killer,headshot,weapon)
 			setElementData(pedCol,data[1],plusData)
 		end
 		--Skin
-		local skinID = getElementData(source,"skin")
-		local skin = getSkinNameFromID(skinID)
-		setElementData(pedCol,skin,1)
+		
 		--Backpack
 		local backpackSlots = getElementData(source,"MAX_Slots")
 		if backpackSlots == 12 then

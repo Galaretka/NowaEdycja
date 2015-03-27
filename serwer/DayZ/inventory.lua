@@ -92,6 +92,26 @@ inventoryItems = {
 },
 
 ["Items"] = {
+
+{"Spodnie: Kamuflaz-Zielony",1,"Zaloz Zielone spodnie"},
+{"Spodnie: Kamuflaz-Szary",1,"Zaloz Szare spodnie"},
+{"Spodnie: Sport-Zielony",1,"Zaloz Sport-Zielony spodnie"},
+{"Spodnie: Sport-Niebieski",1,"Zaloz Sport-Niebieski spodnie"},
+{"Spodnie: Spodnie-Czarne",1,"Zaloz Spodnie-Czarne spodnie"},
+{"Spodnie: Spodnie-Szary",1,"Zaloz Spodnie-Szary spodnie"},
+{"Buty: Trampki-Biale",1,"Zaloz Trampki-Biale"},
+{"Buty: Trampki-Niebieskie",1,"Zaloz Trampki-Niebieskie"},
+{"Buty: Buty",1,"Zaloz buty"},
+{"Bluza: Shirt-Czerwony",1,"Zaloz Shirt-Czerwony"},
+{"Bluza: Shirt-Bialy",1,"Zaloz Shirt-Bialy"},
+{"Bluza: Shirt-Zielony",1,"Zaloz Shirt-Zielony"},
+{"Bluza: Shirt-Pomaranczowa",1,"Zaloz Shirt-Pomaranczowa"},
+{"Bluza: Bluza-Biala",1,"Zaloz Bluza-Biala"},
+{"Bluza: Bluza-Niebieski",1,"Zaloz Bluza-Niebieski"},
+{"Kurtka: Kurtka-Czarny",1,"Zaloz Kurtka-Czarny"},
+{"Okulary",1,"Zaloz okulary"},
+
+
 {"Montion Backpack",1,"Nałóż"},
 {"Drewno opałowe",2},
 {"Bandaż",1,"Zabandażuj"},
@@ -1049,6 +1069,64 @@ function playerUseItem(itemName,itemInfo)
 	elseif itemInfo == "Weź specjalną broń" then
 		triggerServerEvent("onPlayerRearmWeapon",getLocalPlayer(),itemName,3)
 	-------------------- 
+	
+	--Одежда
+	--Trousers
+	elseif itemInfo == "Zaloz Zielone spodnie" then
+	triggerServerEvent("onPlayerGreenChangeTrouses",getLocalPlayer(),itemName)
+	playSound("sounds/cloth.ogg")
+	elseif itemInfo == "Zaloz Szare spodnie" then
+	triggerServerEvent("onPlayerYellowChangeTrouses",getLocalPlayer(),itemName)
+	playSound("sounds/cloth.ogg")
+	elseif itemInfo == "Zaloz Sport-Zielony spodnie" then
+	triggerServerEvent("onPlayerChangeSportGreenTrouses",getLocalPlayer(),itemName)
+	playSound("sounds/cloth.ogg")
+	elseif itemInfo == "Zaloz Sport-Niebieski spodnie" then
+	triggerServerEvent("onPlayerChangeSportBlueTrouses",getLocalPlayer(),itemName)
+	playSound("sounds/cloth.ogg")
+	elseif itemInfo == "Zaloz Spodnie-Czarne spodnie" then
+	triggerServerEvent("onPlayerChangeSuitblakTrouses",getLocalPlayer(),itemName)
+	playSound("sounds/cloth.ogg")
+	elseif itemInfo == "Zaloz Spodnie-Szary spodnie" then
+	triggerServerEvent("onPlayerChangeGrybridzTrouses",getLocalPlayer(),itemName)
+	playSound("sounds/cloth.ogg")
+	--Капцы
+	elseif itemInfo == "Zaloz Trampki-Biale" then
+	triggerServerEvent("onPlayerChangeWhiteShoes",getLocalPlayer(),itemName)
+	playSound("sounds/cloth.ogg")
+	elseif itemInfo == "Zaloz Trampki-Niebieskie" then
+	triggerServerEvent("onPlayerChangeBlueShoes",getLocalPlayer(),itemName)
+	playSound("sounds/cloth.ogg")
+	elseif itemInfo == "Zaloz buty" then
+	triggerServerEvent("onPlayerChangeSuitShoes",getLocalPlayer(),itemName)
+	playSound("sounds/cloth.ogg")
+	--Тело
+	elseif itemInfo == "Zaloz Shirt-Czerwony" then
+	triggerServerEvent("onPlayerChangeRedtShirt",getLocalPlayer(),itemName)
+	playSound("sounds/cloth.ogg")
+	elseif itemInfo == "Zaloz Shirt-Bialy" then
+	triggerServerEvent("onPlayerChangeWhiteShirt",getLocalPlayer(),itemName)
+	playSound("sounds/cloth.ogg")
+	elseif itemInfo == "Zaloz Shirt-Zielony" then
+	triggerServerEvent("onPlayerChangeGreenShirt",getLocalPlayer(),itemName)
+	playSound("sounds/cloth.ogg")
+	elseif itemInfo == "Zaloz Shirt-Pomaranczowa" then
+	triggerServerEvent("onPlayerChangeOrangeShirt",getLocalPlayer(),itemName)
+	playSound("sounds/cloth.ogg")
+	elseif itemInfo == "Zaloz Bluza-Biala" then
+	triggerServerEvent("onPlayerChangeWhiteHoody",getLocalPlayer(),itemName)
+	playSound("sounds/cloth.ogg")
+	elseif itemInfo == "Zaloz Bluza-Niebieski" then
+	triggerServerEvent("onPlayerChangeBlueHoody",getLocalPlayer(),itemName)
+	playSound("sounds/cloth.ogg")
+	elseif itemInfo == "Zaloz Kurtka-Czarny" then
+	triggerServerEvent("onPlayerChangeSuitBlack",getLocalPlayer(),itemName)
+	playSound("sounds/cloth.ogg")
+	--Шляпы
+	--Очки
+	elseif itemInfo == "Zaloz okulary" then
+	triggerServerEvent("onPlayerChangeGlasses",getLocalPlayer(),itemName)
+	playSound("sounds/cloth.ogg")
     elseif itemName == "Assault Pack (ACU)" then 
              if getElementData(getLocalPlayer(), "MAX_Slots") == 12 then 
                triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Masz już ten plecak!", 255, 22, 0) 

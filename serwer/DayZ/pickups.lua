@@ -343,6 +343,28 @@ local itemTable = {
 {"Granat",351,1,90,1.9},
 {"Lornetka",369,1,0,4},
 {"Skin przetrwania",1247,2,0,4.5},
+
+
+{"Spodnie: Kamuflaz-Zielony",1247,2,0,4.5},
+{"Spodnie: Kamuflaz-Szary",1247,2,0,4.5},
+{"Spodnie: Sport-Zielony",1247,2,0,4.5},
+{"Spodnie: Sport-Niebieski",1247,2,0,4.5},
+{"Spodnie: Spodnie-Czarne",1247,2,0,4.5},
+{"Spodnie: Spodnie-Szary",1247,2,0,4.5},
+{"Buty: Trampki-Biale",1247,2,0,4.5},
+{"Buty: Trampki-Niebieskie",1247,2,0,4.5},
+{"Buty: Buty",1247,2,0,4.5},
+{"Bluza: Shirt-Czerwony",1247,2,0,4.5},
+{"Bluza: Shirt-Bialy",1247,2,0,4.5},
+{"Bluza: Shirt-Zielony",1247,2,0,4.5},
+{"Bluza: Shirt-Pomaranczowa",1247,2,0,4.5},
+{"Bluza: Bluza-Biala",1247,2,0,4.5},
+{"Bluza: Bluza-Niebieski",1247,2,0,4.5},
+{"Kurtka: Kurtka-Czarny",1247,2,0,4.5},
+{"Okulary",1247,2,0,4.5},
+
+
+
 {"TEC-9",372,1,90,4},
 
 {"Amunicja do M136 Launcher",359,1,90,0},
