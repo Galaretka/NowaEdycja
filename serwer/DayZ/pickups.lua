@@ -141,7 +141,7 @@ local itemTable = {
 {"Koło",1073,1,0,2},
 {"Bak",1008,0.8,0,2},
 {"Morfina",1579,1,0,4},
-{"Skin przetrwania",1247,2,0,4.5},
+--{"Skin przetrwania",1247,2,0,4.5},
 {"TEC-9",372,1,90,3},
 
 {"M4A1",356,1,90,2.4},
@@ -151,6 +151,24 @@ local itemTable = {
 {"SVD Camo",2916,1,90,0.4},
 {"DMR",2918,1,90,0.4},
 
+{"Spodnie: Kamuflaz-Zielony",1247,2,0,4.5},
+{"Spodnie: Kamuflaz-Szary",1247,2,0,4.5},
+{"Spodnie: Sport-Zielony",1247,2,0,4.5},
+{"Spodnie: Sport-Niebieski",1247,2,0,4.5},
+{"Spodnie: Spodnie-Czarne",1247,2,0,4.5},
+{"Spodnie: Spodnie-Szary",1247,2,0,4.5},
+{"Buty: Trampki-Biale",1247,2,0,4.5},
+{"Buty: Trampki-Niebieskie",1247,2,0,4.5},
+{"Buty: Buty",1247,2,0,4.5},
+{"Bluza: Kamuflaz-Zielony",1247,2,0,4.5},
+{"Bluza: Shirt-Czerwony",1247,2,0,4.5},
+{"Bluza: Shirt-Bialy",1247,2,0,4.5},
+{"Bluza: Shirt-Zielony",1247,2,0,4.5},
+{"Bluza: Shirt-Pomaranczowa",1247,2,0,4.5},
+{"Bluza: Bluza-Biala",1247,2,0,4.5},
+{"Bluza: Bluza-Niebieski",1247,2,0,4.5},
+{"Kurtka: Kurtka-Czarny",1247,2,0,4.5},
+{"Okulary",1247,2,0,4.5},
 
 
 
@@ -166,7 +184,7 @@ local itemTable = {
 {"Narzędzia",2969,0.5,0,1},
 {"Silnik",929,0.3,0,2},
 {"Namiot",1279,1,0,4.5},
-{"Skin snajpera",1213,2,0,0.3},
+--{"Skin snajpera",1213,2,0,0.3},
 
 {"Gogle na podczerwień",369,1,90,3},
 {"Assault Pack (ACU)",3026,1,0,5},
@@ -263,7 +281,7 @@ local itemTable = {
 {"Mięso",2806,0.5,90},
 {"Pełny kalnister",1650,1,0},
 {"Pusta manierka",2683,1,0},
-{"Podstawowy skin",1577,2,0},
+--{"Podstawowy skin",1577,2,0},
 {"Gogle noktowizyjne",368,1,90},
 {"Gogle na podczerwień",369,1,90},
 {"1866 Slug",2358,2,0},
@@ -342,11 +360,34 @@ local itemTable = {
 {"Sawn-Off Shotgun",350,1,90,2},
 {"Granat",351,1,90,1.9},
 {"Lornetka",369,1,0,4},
-{"Skin przetrwania",1247,2,0,4.5},
+--{"Skin przetrwania",1247,2,0,4.5},
+
+
+{"Spodnie: Kamuflaz-Zielony",1247,2,0,4.5},
+{"Spodnie: Kamuflaz-Szary",1247,2,0,4.5},
+{"Spodnie: Sport-Zielony",1247,2,0,4.5},
+{"Spodnie: Sport-Niebieski",1247,2,0,4.5},
+{"Spodnie: Spodnie-Czarne",1247,2,0,4.5},
+{"Spodnie: Spodnie-Szary",1247,2,0,4.5},
+{"Buty: Trampki-Biale",1247,2,0,4.5},
+{"Buty: Trampki-Niebieskie",1247,2,0,4.5},
+{"Buty: Buty",1247,2,0,4.5},
+{"Bluza: Kamuflaz-Zielony",1247,2,0,4.5},
+{"Bluza: Shirt-Czerwony",1247,2,0,4.5},
+{"Bluza: Shirt-Bialy",1247,2,0,4.5},
+{"Bluza: Shirt-Zielony",1247,2,0,4.5},
+{"Bluza: Shirt-Pomaranczowa",1247,2,0,4.5},
+{"Bluza: Bluza-Biala",1247,2,0,4.5},
+{"Bluza: Bluza-Niebieski",1247,2,0,4.5},
+{"Kurtka: Kurtka-Czarny",1247,2,0,4.5},
+{"Okulary",1247,2,0,4.5},
+
+
+
 {"TEC-9",372,1,90,4},
 
 {"Amunicja do M136 Launcher",359,1,90,0},
-{"Skin snajpera",1213,2,0,0.01},
+--{"Skin snajpera",1213,2,0,0.01},
 
 {"Heat-Seeking RPG",360,1,90,0},
 {"Bandaż",1578,0.5,0,4},

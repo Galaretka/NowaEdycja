@@ -5,6 +5,12 @@
 }
 
 local playerDataTable = {
+{"trousers"},
+{"Shirt"},
+{"Shoes"},
+{"head"},
+{"hats"},
+{"glases"},
 {"alivetime"},
 {"skin"},
 {"MAX_Slots"},
@@ -65,7 +71,24 @@ local playerDataTable = {
 {"PDW"},
 {"TEC-9"},
 
-
+{"Spodnie: Kamuflaz-Zielony"},
+{"Spodnie: Kamuflaz-Szary"},
+{"Spodnie: Sport-Zielony"},
+{"Spodnie: Sport-Niebieski"},
+{"Spodnie: Spodnie-Czarne"},
+{"Spodnie: Spodnie-Szary"},
+{"Buty: Trampki-Biale"},
+{"Buty: Trampki-Niebieskie"},
+{"Buty: Buty"},
+{"Bluza: Kamuflaz-Zielony"},
+{"Bluza: Shirt-Czerwony"},
+{"Bluza: Shirt-Bialy"},
+{"Bluza: Shirt-Zielony"},
+{"Bluza: Shirt-Pomaranczowa"},
+{"Bluza: Bluza-Biala"},
+{"Bluza: Bluza-Niebieski"},
+{"Kurtka: Kurtka-Czarny"},
+{"Okulary"},
 
 {"7,62 mm PKM/PKS"},
 {"30Rnd. AK"},
@@ -142,64 +165,129 @@ local playerDataTable = {
 
 
 function playerLogin(username, pass, player)
-	local playerID = getAccountData(getPlayerAccount(player),"playerID")
-	account = getPlayerAccount(player)
-	local x,y,z =  getAccountData(account,"last_x"),getAccountData(account,"last_y"),getAccountData(account,"last_z")
-	local skin = getAccountData(account,"skin")
-	createZombieTable (player)
-	if getAccountData(account,"isDead") then
-		spawnDayZPlayer(player)
-		return
-	end
-	spawnPlayer (player, x,y,z+0.5, math.random(0,360), skin, 0, 0)
-	setElementFrozen(player, true)
-	fadeCamera (player, true)
-	setCameraTarget (player, player)
-	setTimer( function(player)
-		if isElement(player) then
-			setElementFrozen(player, false)
-		end
-	end,500,1,player)
-	playerCol = createColSphere(x,y,z,1.5)
-	setElementData(player,"playerCol",playerCol)
-	attachElements ( playerCol, player, 0, 0, 0 )
-	setElementData(playerCol,"parent",player)
-	setElementData(playerCol,"player",true)
-	for i,data in ipairs(playerDataTable) do
-		local elementData = getAccountData(account,data[1])
-		if not elementData then
-			if data[1] == "brokenbone" or data[1] == "pain" or data[1] == "cold" or data[1] == "infection" or data[1] == "currentweapon_1" or data[1] == "currentweapon_2" or data[1] == "currentweapon_3" or data[1] == "bandit" then
-				elementData = elementData
-			else
-				elementData = 0
-			end
-		end
-		setElementData(player,data[1],elementData)
-	end
-	setElementData(player,"logedin",true)
-	--Weapons
-	--Old Weapons
-	local weapon = getElementData(player,"currentweapon_1")
-	if weapon then
-		local ammoData,weapID = getWeaponAmmoType (weapon)
-		giveWeapon(player,weapID,getElementData(player,ammoData), true )
-	end
-	local weapon = getElementData(player,"currentweapon_2")
-	if weapon then
-		local ammoData,weapID = getWeaponAmmoType (weapon)
-		giveWeapon(player,weapID,getElementData(player,ammoData), false )
-	end
-	local weapon = getElementData(player,"currentweapon_3")
-	if weapon then
-		local ammoData,weapID = getWeaponAmmoType (weapon)
-		giveWeapon(player,weapID,getElementData(player,ammoData), false )
-	end
-	setElementModel(player, getElementData(player,"skin"))
+local playerID = getAccountData(getPlayerAccount(player),"playerID")
+account = getPlayerAccount(player)
+local x,y,z = getAccountData(account,"last_x"),getAccountData(account,"last_y"),getAccountData(account,"last_z")
+local skin = getAccountData(account,"skin")
+createZombieTable (player)
+if getAccountData(account,"isDead") then
+spawnDayZPlayer(player)
+return
+end
+spawnPlayer (player, x,y,z+0.5, math.random(0,360), skin, 0, 0)
+removePedClothes(player,0)
+removePedClothes(player,2)
+removePedClothes(player,3)
+setElementFrozen(player, true)
+fadeCamera (player, true)
+setCameraTarget (player, player)
+setTimer( function(player)
+if isElement(player) then
+setElementFrozen(player, false)
+end
+end,500,1,player)
+playerCol = createColSphere(x,y,z,1.5)
+setElementData(player,"playerCol",playerCol)
+attachElements ( playerCol, player, 0, 0, 0 )
+setElementData(playerCol,"parent",player)
+setElementData(playerCol,"player",true)
+for i,data in ipairs(playerDataTable) do
+local elementData = getAccountData(account,data[1])
+if not elementData then
+if data[1] == "brokenbone" or data[1] == "pain" or data[1] == "cold" or data[1] == "infection" or data[1] == "currentweapon_1" or data[1] == "currentweapon_2" or data[1] == "currentweapon_3" or data[1] == "bandit" then
+elementData = elementData
+else
+elementData = 0
+end
+end
+setElementData(player,data[1],elementData)
+end
+setElementData(player,"logedin",true)
+-- 
+local trousers = getElementData(player, "trousers")
+local shoes = getElementData(player, "Shoes")
+local Shirt = getElementData(player, "Shirt")
+local glass = getElementData(player, "glases")
+if trousers == 1 then
+addPedClothes ( source, "worktrcamogrn", "worktr", 2 )
+end
+if trousers == 2 then
+addPedClothes ( source, "worktrcamogry", "worktr", 2 )
+end
+if trousers == 3 then
+addPedClothes ( source, "tracktrgang", "tracktr", 2 )
+end
+if trousers == 4 then
+addPedClothes ( source, "tracktrblue", "tracktr", 2 )
+end
+if trousers == 5 then
+addPedClothes ( source, "suit1trblk", "suit1tr", 2 )
+end
+if trousers == 6 then
+addPedClothes ( source, "chongergrey", "chonger", 2 )
+end
+--Shoes
+if shoes == 1 then
+addPedClothes ( source, "bask2heatwht", "bask1", 3 )
+end
+if shoes == 2 then
+addPedClothes ( source, "convproblu", "conv", 3 )
+end
+if shoes == 3 then
+addPedClothes ( source, "shoedressblk", "shoe", 3 )
+end
+--Shirt
+if Shirt == 1 then
+addPedClothes ( source, "shirtbplaid", "shirtb", 0 )
+end
+if Shirt == 2 then
+addPedClothes ( source, "tshirtilovels", "tshirt", 0 )
+end
+if Shirt == 3 then
+addPedClothes ( source, "tshirterisyell", "tshirt", 0 )
+end
+if Shirt == 4 then
+addPedClothes ( source, "tshirterisorn", "tshirt", 0 )
+end
+if Shirt == 5 then
+addPedClothes ( source, "hoodyarockstar", "hoodya", 0 )
+end
+if Shirt == 6 then
+addPedClothes ( source, "hoodyAblue", "hoodyA", 0 )
+end
+if Shirt == 7 then
+addPedClothes ( source, "tuxedo", "suit2", 0 )
+end
+if Shirt == 8 then
+addPedClothes ( source, "tshirtwhite", "tshirt", 0 )
+end
+--glass
+if glass == 1 then
+addPedClothes ( source, "glasses04dark", "glasses04", 15 )
+end
+--Weapons
+--Old Weapons
+local weapon = getElementData(player,"currentweapon_1")
+if weapon then
+local ammoData,weapID = getWeaponAmmoType (weapon)
+giveWeapon(player,weapID,getElementData(player,ammoData), true )
+end
+local weapon = getElementData(player,"currentweapon_2")
+if weapon then
+local ammoData,weapID = getWeaponAmmoType (weapon)
+giveWeapon(player,weapID,getElementData(player,ammoData), false )
+end
+local weapon = getElementData(player,"currentweapon_3")
+if weapon then
+local ammoData,weapID = getWeaponAmmoType (weapon)
+giveWeapon(player,weapID,getElementData(player,ammoData), false )
+end
+setElementModel(player, getElementData(player,"skin"))
 
-	setElementData(player,"admin",getAccountData(account,"admin") or false)
-	setElementData(player,"supporter",getAccountData(account,"supporter") or false)
-	triggerClientEvent(player, "onClientPlayerDayZLogin", player)
-	
+setElementData(player,"admin",getAccountData(account,"admin") or false)
+setElementData(player,"supporter",getAccountData(account,"supporter") or false)
+triggerClientEvent(player, "onClientPlayerDayZLogin", player)
+
 end
 addEvent("onPlayerDayZLogin", true)
 addEventHandler("onPlayerDayZLogin", getRootElement(), playerLogin)
@@ -208,7 +296,7 @@ addEventHandler("onPlayerDayZLogin", getRootElement(), playerLogin)
 function playerRegister(username, pass, player)
 	local number = math.random(table.size(spawnPositions))
 	local x,y,z = spawnPositions[number][1],spawnPositions[number][2],spawnPositions[number][3]
-	spawnPlayer (player, x,y,z, math.random(0,360), 73, 0, 0)
+	spawnPlayer (player, x,y,z, math.random(0,360), 0, 0, 0)
 	triggerClientEvent(player, "sex", player)
 	fadeCamera (player, true)
 	setCameraTarget (player, player)
@@ -218,6 +306,26 @@ function playerRegister(username, pass, player)
 	setElementData(playerCol,"player",true)
 	----------------------------------
 	--Player Items on Start
+	removePedClothes(player,0)
+	removePedClothes(player,2)
+	removePedClothes(player,3)
+	local clothespack = math.random(1,2)
+	if clothespack == 1 then
+	addPedClothes (player, "tracktrgang", "tracktr", 2 )
+	addPedClothes (player, "bask2heatwht", "bask1", 3 )
+	addPedClothes (player, "shirtbplaid", "shirtb", 0)
+	setElementData( player, "Shoes", 1)
+	setElementData( player, "trousers", 3)
+	setElementData( player, "Shirt", 1)
+	end
+	if clothespack == 2 then
+	addPedClothes (player, "tracktrblue", "tracktr", 2 )
+	addPedClothes (player, "bask2heatwht", "bask1", 3 )
+	addPedClothes (player, "tshirtilovels", "tshirt", 0)
+	setElementData( player, "Shoes", 1)
+	setElementData( player, "trousers", 4)
+	setElementData( player, "Shirt", 2)
+	end
 	for i,data in ipairs(playerDataTable) do
 		if data[1] =="Bandaż" then
 			setElementData(player,data[1],2)
@@ -226,7 +334,7 @@ function playerRegister(username, pass, player)
 		elseif data[1] =="MAX_Slots" then
 			setElementData(player,data[1],8)
 		elseif data[1] =="skin" then
-			setElementData(player,data[1],73)
+			setElementData(player,data[1],0)
 		elseif data[1] =="blood" then
 			setElementData(player,data[1],12000)
 		elseif data[1] =="temperature" then
@@ -353,6 +461,24 @@ local vehicleDataTable = {
 {"SVD Camo"},
 {"DMR"},
 {"M107"},
+
+{"Spodnie: Kamuflaz-Zielony"},
+{"Spodnie: Kamuflaz-Szary"},
+{"Spodnie: Sport-Zielony"},
+{"Spodnie: Sport-Niebieski"},
+{"Spodnie: Spodnie-Czarne"},
+{"Spodnie: Spodnie-Szary"},
+{"Buty: Trampki-Biale"},
+{"Buty: Trampki-Niebieskie"},
+{"Buty: Buty"},
+{"Bluza: Shirt-Czerwony"},
+{"Bluza: Shirt-Bialy"},
+{"Bluza: Shirt-Zielony"},
+{"Bluza: Shirt-Pomaranczowa"},
+{"Bluza: Bluza-Biala"},
+{"Bluza: Bluza-Niebieski"},
+{"Kurtka: Kurtka-Czarny"},
+{"Okulary"},
 
 {"Gas łzawiący"},
 {"Оск. граната M67"},

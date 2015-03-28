@@ -28,7 +28,24 @@
 {"Amunicja do PDW"},
 {"Amunicja do MP5A5"},
 
-
+{"Spodnie: Kamuflaz-Zielony"},
+{"Spodnie: Kamuflaz-Szary"},
+{"Spodnie: Sport-Zielony"},
+{"Spodnie: Sport-Niebieski"},
+{"Spodnie: Spodnie-Czarne"},
+{"Spodnie: Spodnie-Szary"},
+{"Buty: Trampki-Biale"},
+{"Buty: Trampki-Niebieskie"},
+{"Buty: Buty"},
+{"Bluza: Kamuflaz-Zielony"},
+{"Bluza: Shirt-Czerwony"},
+{"Bluza: Shirt-Bialy"},
+{"Bluza: Shirt-Zielony"},
+{"Bluza: Shirt-Pomaranczowa"},
+{"Bluza: Bluza-Biala"},
+{"Bluza: Bluza-Niebieski"},
+{"Kurtka: Kurtka-Czarny"},
+{"Okulary"},
 
 {"7,62 mm PKM/PKS"},
 {"30Rnd. AK"},
@@ -910,6 +927,170 @@ end
 addEvent("onPlayerChangeSkin",true)
 addEventHandler("onPlayerChangeSkin",getRootElement(),addPlayerSkin)
 
+function addPlayerGreenTrouses ()
+removePedClothes( source, 2)
+addPedClothes ( source, "worktrcamogrn", "worktr", 2 )
+setElementData( source, "trousers", 1) --ИД
+triggerClientEvent(source,"refreshInventoryManual",source)
+end
+addEvent("onPlayerGreenChangeTrouses",true)
+addEventHandler("onPlayerGreenChangeTrouses",getRootElement(),addPlayerGreenTrouses)
+
+function addPlayerYellowTrouses ()
+removePedClothes( source, 2)
+addPedClothes ( source, "worktrcamogry", "worktr", 2 )
+setElementData( source, "trousers", 2)
+triggerClientEvent(source,"refreshInventoryManual",source)
+end
+addEvent("onPlayerYellowChangeTrouses",true)
+addEventHandler("onPlayerYellowChangeTrouses",getRootElement(),addPlayerYellowTrouses)
+
+function addPlayerTrousesSportGreen ()
+removePedClothes( source, 2)
+addPedClothes ( source, "tracktrgang", "tracktr", 2 )
+setElementData( source, "trousers", 3)
+triggerClientEvent(source,"refreshInventoryManual",source)
+end
+addEvent("onPlayerChangeSportGreenTrouses",true)
+addEventHandler("onPlayerChangeSportGreenTrouses",getRootElement(),addPlayerTrousesSportGreen)
+
+function addPlayerTrousesSportBlue ()
+removePedClothes( source, 2)
+addPedClothes ( source, "tracktrblue", "tracktr", 2 )
+setElementData( source, "trousers", 4)
+triggerClientEvent(source,"refreshInventoryManual",source)
+end
+addEvent("onPlayerChangeSportBlueTrouses",true)
+addEventHandler("onPlayerChangeSportBlueTrouses",getRootElement(),addPlayerTrousesSportBlue)
+
+function addPlayerTrousesSportGry ()
+removePedClothes( source, 2)
+addPedClothes ( source, "suit1trblk", "suit1tr", 2 )
+setElementData( source, "trousers", 5)
+triggerClientEvent(source,"refreshInventoryManual",source)
+end
+addEvent("onPlayerChangeSuitblakTrouses",true)
+addEventHandler("onPlayerChangeSuitblakTrouses",getRootElement(),addPlayerTrousesSportGry)
+
+function addPlayerTrousesGrybridz ()
+removePedClothes( source, 2)
+addPedClothes ( source, "chongergrey", "chonger", 2 )
+setElementData( source, "trousers", 6)
+triggerClientEvent(source,"refreshInventoryManual",source)
+end
+addEvent("onPlayerChangeGrybridzTrouses",true)
+addEventHandler("onPlayerChangeGrybridzTrouses",getRootElement(),addPlayerTrousesGrybridz)
+
+--Обувь
+function addPlayerTrousesWhiteShoes ()
+removePedClothes( source, 3)
+addPedClothes ( source, "bask2heatwht", "bask1", 3 )
+setElementData( source, "Shoes", 1)
+triggerClientEvent(source,"refreshInventoryManual",source)
+end
+addEvent("onPlayerChangeWhiteShoes",true)
+addEventHandler("onPlayerChangeWhiteShoes",getRootElement(),addPlayerTrousesWhiteShoes)
+
+function addPlayerTrousesBlueShoes ()
+removePedClothes( source, 3)
+addPedClothes ( source, "convproblu", "conv", 3 )
+setElementData( source, "Shoes", 2)
+triggerClientEvent(source,"refreshInventoryManual",source)
+end
+addEvent("onPlayerChangeBlueShoes",true)
+addEventHandler("onPlayerChangeBlueShoes",getRootElement(),addPlayerTrousesBlueShoes)
+
+function addPlayerTrousesSuitShoes ()
+removePedClothes( source, 3)
+addPedClothes ( source, "shoedressblk", "shoe", 3 )
+setElementData( source, "Shoes", 3)
+triggerClientEvent(source,"refreshInventoryManual",source)
+end
+addEvent("onPlayerChangeSuitShoes",true)
+addEventHandler("onPlayerChangeSuitShoes",getRootElement(),addPlayerTrousesSuitShoes)
+
+--Тело
+
+function addPlayerGreenShirt ()
+removePedClothes( source, 0)
+addPedClothes ( source, "tshirtwhite", "tshirt", 0 )
+setElementData( source, "Shirt", 8) --ИД
+triggerClientEvent(source,"refreshInventoryManual",source)
+end
+addEvent("onPlayerGreenChangeShirt",true)
+addEventHandler("onPlayerGreenChangeShirt",getRootElement(),addPlayerGreenShirt)
+
+function onPlayerChangeRedtShirt ()
+removePedClothes( source, 0)
+addPedClothes ( source, "shirtbplaid", "shirtb", 0 )
+setElementData( source, "Shirt", 1)
+triggerClientEvent(source,"refreshInventoryManual",source)
+end
+addEvent("onPlayerChangeRedtShirt",true)
+addEventHandler("onPlayerChangeRedtShirt",getRootElement(),onPlayerChangeRedtShirt)
+
+function onPlayerChangeWhiteShirt ()
+removePedClothes( source, 0)
+addPedClothes ( source, "tshirtilovels", "tshirt", 0 )
+setElementData( source, "Shirt", 2)
+triggerClientEvent(source,"refreshInventoryManual",source)
+end
+addEvent("onPlayerChangeWhiteShirt",true)
+addEventHandler("onPlayerChangeWhiteShirt",getRootElement(),onPlayerChangeWhiteShirt)
+
+function onPlayerChangeGreenShirt ()
+removePedClothes( source, 0)
+addPedClothes ( source, "tshirterisyell", "tshirt", 0 )
+setElementData( source, "Shirt", 3)
+triggerClientEvent(source,"refreshInventoryManual",source)
+end
+addEvent("onPlayerChangeGreenShirt",true)
+addEventHandler("onPlayerChangeGreenShirt",getRootElement(),onPlayerChangeGreenShirt)
+
+function onPlayerChangeOrangeShirt ()
+removePedClothes( source, 0)
+addPedClothes ( source, "tshirterisorn", "tshirt", 0 )
+setElementData( source, "Shirt", 4)
+triggerClientEvent(source,"refreshInventoryManual",source)
+end
+addEvent("onPlayerChangeOrangeShirt",true)
+addEventHandler("onPlayerChangeOrangeShirt",getRootElement(),onPlayerChangeOrangeShirt)
+
+function onPlayerChangeWhiteHoody ()
+removePedClothes( source, 0)
+addPedClothes ( source, "hoodyarockstar", "hoodya", 0 )
+setElementData( source, "Shirt", 5)
+triggerClientEvent(source,"refreshInventoryManual",source)
+end
+addEvent("onPlayerChangeWhiteHoody",true)
+addEventHandler("onPlayerChangeWhiteHoody",getRootElement(),onPlayerChangeWhiteHoody)
+
+function onPlayerChangeBlueHoody ()
+removePedClothes( source, 0)
+addPedClothes ( source, "hoodyAblue", "hoodyA", 0 )
+setElementData( source, "Shirt", 6)
+triggerClientEvent(source,"refreshInventoryManual",source)
+end
+addEvent("onPlayerChangeBlueHoody",true)
+addEventHandler("onPlayerChangeBlueHoody",getRootElement(),onPlayerChangeBlueHoody)
+
+function onPlayerChangeSuitBlack ()
+removePedClothes( source, 0)
+addPedClothes ( source, "tuxedo", "suit2", 0 )
+setElementData( source, "Shirt", 7)
+triggerClientEvent(source,"refreshInventoryManual",source)
+end
+addEvent("onPlayerChangeSuitBlack",true)
+addEventHandler("onPlayerChangeSuitBlack",getRootElement(),onPlayerChangeSuitBlack)
+--Очки
+function onPlayerChangeGlasses ()
+removePedClothes( source, 15)
+addPedClothes ( source, "glasses04dark", "glasses04", 15 )
+setElementData( source, "glases", 1)
+triggerClientEvent(source,"refreshInventoryManual",source)
+end
+addEvent("onPlayerChangeGlasses",true)
+addEventHandler("onPlayerChangeGlasses",getRootElement(),onPlayerChangeGlasses) 
 
 function onPlayerRefillWaterBottle (itemName)
 	if isElementInWater(source) then
@@ -1120,27 +1301,7 @@ end
 addEventHandler( "onPlayerChat", getRootElement(), blockChatMessage )
 
 
-function checkBandit ()
-	for i, player in ipairs(getElementsByType("player")) do
-		if getElementData(player,"logedin") then
-			local current = getElementData(player,"skin")
-			if getElementData(player,"bandit") then
-				if current == 179 or current == 287 then
-					setElementModel(player,288)
-				elseif current == 73 then
-					setElementModel(player,180)
-				end
-			elseif getElementData(player,"humanity") == 5000 then
-				if current == 73 or current == 179 or current == 287 then
-					setElementModel(player,210)
-				end
-			else
-				setElementModel(player,getElementData(player,"skin"))
-			end
-		end
-	end
-end
-setTimer(checkBandit,20000,0)
+
 
 local infoTimer = 240000
 

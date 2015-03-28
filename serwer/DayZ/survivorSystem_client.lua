@@ -291,7 +291,22 @@ engineImportTXD (itemTXD, 983);
 itemDFF = engineLoadDFF ("items/wirefence.dff", 983);
 engineReplaceModel (itemDFF, 983);
 
+
+--Ubrania
+txd = engineLoadTXD("clothing/worktrcamogrn.txd")
+engineImportTXD( txd, 30537)
+
+txd = engineLoadTXD("clothing/worktrcamogry.txd")
+engineImportTXD( txd, 30538)
+
+txd = engineLoadTXD("clothing/tshirtwhite.txd")
+engineImportTXD( txd, 30515)
+
 --Weapons
+
+
+
+
 
 -- Camera -> Lornetka
 weaponTXD = engineLoadTXD ("items/camera.txd");
@@ -313,7 +328,7 @@ function playerStatsClientSite()
 		showPlayerHudComponent ("money",false) 
 		showPlayerHudComponent ("health",false) 
 		showPlayerHudComponent ("weapon",false) 
-		--showPlayerHudComponent ("ammo",false) 
+		showPlayerHudComponent ("ammo",false) 
 		showPlayerHudComponent ("breath",false) 
 		if getElementData(getLocalPlayer(),"Mapa") >= 1  then
 			toggleControl ("radar",true)
@@ -525,163 +540,22 @@ engineReplaceModel(sniperdff, 358)
 
 
 
---SKIN REPLACEMENTS
-	local skin = engineLoadTXD ( "skins/22.txd" ) -- slashed 12 by Wall-E
+
+	local skin = engineLoadTXD ( "skins/zombie.txd" ) -- slashed 12 by Wall-E
 	engineImportTXD ( skin, 22 )	
-	local skin = engineLoadTXD ( "skins/56.txd" ) --young and blue by Slothman
+	local skin = engineLoadTXD ( "skins/zombie2.txd" ) --young and blue by Slothman
 	engineImportTXD ( skin, 56 )
-	local skin = engineLoadTXD ( "skins/67.txd" ) -- slit r* employee
+	local skin = engineLoadTXD ( "skins/zombie3.txd" ) -- slit r* employee
 	engineImportTXD ( skin, 67 )
-	local skin = engineLoadTXD ( "skins/68.txd" ) -- shredded preist by Deixell
+	local skin = engineLoadTXD ( "skins/zombie4.txd" ) -- shredded preist by Deixell
 	engineImportTXD ( skin, 68 )
-	local skin = engineLoadTXD ( "skins/69.txd" ) --bleedin eyes in denim by Capitanazop
+	local skin = engineLoadTXD ( "skins/zombie5.txd" ) --bleedin eyes in denim by Capitanazop
 	engineImportTXD ( skin, 69 )
-	local skin = engineLoadTXD ( "skins/70.txd" ) --ultra gory scientist by 50p
+	local skin = engineLoadTXD ( "skins/zombie6.txd" ) --ultra gory scientist by 50p
 	engineImportTXD ( skin, 70 )
-	local skin = engineLoadTXD ( "skins/84.txd" ) --guitar wolf (nonzombie) by Slothman
+	local skin = engineLoadTXD ( "skins/zombie7.txd" ) --guitar wolf (nonzombie) by Slothman
 	engineImportTXD ( skin, 84 )
-	local skin = engineLoadTXD ( "skins/92.txd" ) -- peeled flesh by xbost
-	--[[engineImportTXD ( skin, 92 )
-	local skin = engineLoadTXD ( "skins/zomb9.txd" ) -- NEW
-	engineImportTXD ( skin, 97 )
-	local skinDFF = engineLoadDFF ("skins/zomb9.dff", 97 ) -- NEW
-	engineReplaceModel (skinDFF, 97);
-	local skin = engineLoadTXD ( "skins/zomb8.txd" ) -- NEW
-	engineImportTXD ( skin, 105 )
-	local skinDFF = engineLoadDFF ("skins/zomb8.dff", 105 )
-	engineReplaceModel (skinDFF, 105);
-	local skin = engineLoadTXD ( "skins/zomb7.txd" ) -- NEW
-	engineImportTXD ( skin, 107 )
-	local skinDFF = engineLoadDFF ("skins/zomb7.dff", 107 )
-	engineReplaceModel (skinDFF, 107);
-	local skin = engineLoadTXD ( "skins/zomb6.txd" ) -- NEW
-	engineImportTXD ( skin, 108 )
-	local skinDFF = engineLoadDFF ("skins/zomb6.dff", 108 )
-	engineReplaceModel (skinDFF, 108);
-	local skin = engineLoadTXD ( "skins/zomb5.txd" ) -- NEW
-	engineImportTXD ( skin, 111 )
-	local skinDFF = engineLoadDFF ("skins/zomb5.dff", 111 )
-	engineReplaceModel (skinDFF, 111);
-	local skin = engineLoadTXD ( "skins/zomb4.txd" ) -- NEW
-	engineImportTXD ( skin, 126 )
-	local skinDFF = engineLoadDFF ("skins/zomb4.dff", 126 )
-	engineReplaceModel (skinDFF, 126);
-	local skin = engineLoadTXD ( "skins/zomb3.txd" ) -- NEW
-	engineImportTXD ( skin, 127 );
-	local skinDFF = engineLoadDFF ("skins/zomb3.dff", 127 )
-	engineReplaceModel (skinDFF, 127);
-	local skin = engineLoadTXD ( "skins/zomb2.txd" ) -- NEW
-	engineImportTXD ( skin, 128 )
-	local skinDFF = engineLoadDFF ("skins/zomb2.dff", 128 )
-	engineReplaceModel (skinDFF, 128);
-	local skin = engineLoadTXD ( "skins/zomb16.txd" ) -- NEW
-	engineImportTXD ( skin, 152 )
-	local skinDFF = engineLoadDFF ("skins/zomb16.dff", 152 )
-	engineReplaceModel (skinDFF, 152);
-	local skin = engineLoadTXD ( "skins/zomb15.txd" ) -- NEW
-	engineImportTXD ( skin, 162 )
-	local skinDFF = engineLoadDFF ("skins/zomb15.dff", 162 )
-	engineReplaceModel (skinDFF, 162);
-	local skin = engineLoadTXD ("skins/zomb14.txd" ) -- NEW
-	engineImportTXD ( skin, 167 )
-	local skinDFF = engineLoadDFF ("skins/zomb14.dff", 167 )
-	engineReplaceModel (skinDFF, 167);
-	local skin = engineLoadTXD ( "skins/zomb13.txd" ) -- NEW
-	engineImportTXD ( skin, 188 )
-	local skinDFF = engineLoadDFF ("skins/zomb13.dff", 188 )
-	engineReplaceModel (skinDFF, 188);
-	local skin = engineLoadTXD ( "skins/zomb12.txd" ) -- NEW
-	engineImportTXD ( skin, 192 )
-	local skinDFF = engineLoadDFF ("skins/zomb12.dff", 192 )
-	engineReplaceModel (skinDFF, 192);
-	local skin = engineLoadTXD ( "skins/zomb10.txd" ) -- NEW
-	engineImportTXD ( skin, 195 )
-	local skinDFF = engineLoadDFF ("skins/zomb10.dff", 195 )
-	engineReplaceModel (skinDFF, 105);
-	local skin = engineLoadTXD ( "skins/zomb1.txd" ) -- NEW
-	engineImportTXD ( skin, 206 )
-	local skinDFF = engineLoadDFF ("skins/zomb1.dff", 206 )
-	engineReplaceModel (skinDFF, 206);
-	local skin = engineLoadTXD ( "skins/ptyzomb.txd" ) -- NEW
-	engineImportTXD ( skin, 209 )
-	local skinDFF = engineLoadDFF ("skins/ptyzomb.dff", 209 )
-	engineReplaceModel (skinDFF, 209);
-	local skin = engineLoadTXD ( "skins/rotzomb.txd" ) -- NEW
-	engineImportTXD ( skin, 212 )
-	local skinDFF = engineLoadDFF ("skins/rotzomb.dff", 212 )
-	engineReplaceModel (skinDFF, 212);
-	local skin = engineLoadTXD ( "skins/oldzomb.txd" ) -- NEW
-	engineImportTXD ( skin, 229 )
-	local skinDFF = engineLoadDFF ("skins/oldzomb.dff", 229 )
-	engineReplaceModel (skinDFF, 229);
-	local skin = engineLoadTXD ( "skins/fzomb.txd" ) -- NEW
-	engineImportTXD ( skin, 230 )
-	local skinDFF = engineLoadDFF ("skins/fzomb.dff", 230 )
-	engineReplaceModel (skinDFF, 230);
-	local skin = engineLoadTXD ( "skins/forzomb.txd" ) -- NEW
-	engineImportTXD ( skin, 258 )
-	local skinDFF = engineLoadDFF ("skins/forzomb.dff", 258 )
-	engineReplaceModel (skinDFF, 258);
-	local skin = engineLoadTXD ( "skins/fatzomb.txd" ) -- NEW
-	engineImportTXD ( skin, 264 ) 
-	local skinDFF = engineLoadDFF ("skins/fatzomb.dff", 264 )
-	engineReplaceModel (skinDFF, 264);
-	local skin = engineLoadTXD ( "skins/ddzomb.txd" ) -- NEW
-	engineImportTXD ( skin, 274 )
-	local skinDFF = engineLoadDFF ("skins/ddzomb.dff", 274 )
-	engineReplaceModel (skinDFF, 274);
-	local skin = engineLoadTXD ( "skins/dsczomb.txd" )  -- NEW
-	engineImportTXD ( skin, 277 )
-	local skinDFF = engineLoadDFF ("skins/dsczomb.dff", 277 )
-	engineReplaceModel (skinDFF, 277); ]]
-	local skin = engineLoadTXD ( "skins/97.txd" ) -- easterboy by Slothman
-	engineImportTXD ( skin, 97 )
-	local skin = engineLoadTXD ( "skins/105.txd" ) --Scarred Grove Gangster by Wall-E
-	engineImportTXD ( skin, 105 )
-	local skin = engineLoadTXD ( "skins/107.txd" ) --ripped and slashed grove by Wall-E
-	engineImportTXD ( skin, 107 )
-	local skin = engineLoadTXD ( "skins/108.txd" ) -- skeleton thug by Deixell
-	engineImportTXD ( skin, 108 )
-	local skin = engineLoadTXD ( "skins/111.txd" ) --Frank West from dead rising (nonzombie) by Slothman
-	engineImportTXD ( skin, 111 )
-	local skin = engineLoadTXD ( "skins/126.txd" ) -- bullet ridden wiseguy by Slothman
-	engineImportTXD ( skin, 126 )
-	local skin = engineLoadTXD ( "skins/127.txd" ) --flyboy from dawn of the dead by Slothman
-	engineImportTXD ( skin, 127 )
-	local skin = engineLoadTXD ( "skins/128.txd" ) --holy native by Slothman
-	engineImportTXD ( skin, 128 )
-	local skin = engineLoadTXD ( "skins/152.txd" ) --bitten schoolgirl by Slothman
-	engineImportTXD ( skin, 152 )
-	local skin = engineLoadTXD ( "skins/162.txd" ) --shirtless redneck by Slothman
-	engineImportTXD ( skin, 162 )
-	local skin = engineLoadTXD ( "skins/167.txd" ) --dead chickenman by 50p
-	engineImportTXD ( skin, 167 )
-	local skin = engineLoadTXD ( "skins/188.txd" ) --burnt greenshirt by Slothman
-	engineImportTXD ( skin, 188 )
-	local skin = engineLoadTXD ( "skins/192.txd" ) --Alice from resident evil (nonzombie) by Slothman
-	engineImportTXD ( skin, 192 )
-	local skin = engineLoadTXD ( "skins/195.txd" ) --bloody ex by Slothman
-	engineImportTXD ( skin, 195 )
-	local skin = engineLoadTXD ( "skins/206.txd" ) -- faceless zombie by Slothman
-	engineImportTXD ( skin, 206 )
-	local skin = engineLoadTXD ( "skins/209.txd" ) --Noodle vendor by 50p
-	engineImportTXD ( skin, 209 )
-	local skin = engineLoadTXD ( "skins/212.txd" ) --brainy hobo by Slothman
-	engineImportTXD ( skin, 212 )
-	local skin = engineLoadTXD ( "skins/229.txd" ) --infected tourist by Slothman
-	engineImportTXD ( skin, 229 )
-	local skin = engineLoadTXD ( "skins/230.txd" ) --will work for brains hobo by Slothman
-	engineImportTXD ( skin, 230 )
-	local skin = engineLoadTXD ( "skins/258.txd" ) --bloody sided suburbanite by Slothman
-	engineImportTXD ( skin, 258 )
-	local skin = engineLoadTXD ( "skins/264.txd" ) --scary clown by 50p
-	engineImportTXD ( skin, 264 )
-	local skin = engineLoadTXD ( "skins/274.txd" ) --Ash Williams (nonzombie) by Slothman
-	engineImportTXD ( skin, 274 )
-	local skin = engineLoadTXD ( "skins/277.txd" ) -- gutted firefighter by Wall-E
-	engineImportTXD ( skin, 277 )
-	local skin = engineLoadTXD ( "skins/280.txd" ) --infected cop by Lordy
-	engineImportTXD ( skin, 280 )
+	
 
 	
 -- PLAY ZOMBIE SOUNDS

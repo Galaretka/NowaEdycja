@@ -30,7 +30,7 @@ addEventHandler("onClientResourceStart",resourceRoot,initAttach)
 bone_0,bone_t,bone_f = {},{},{}
 bone_0[1],bone_t[1],bone_f[1] = 5,nil,6 --head
 bone_0[2],bone_t[2],bone_f[2] = 4,5,8 --neck
-bone_0[3],bone_t[3],bone_f[3] = 3,nil,31 --spine
+bone_0[3],bone_t[3],bone_f[3] = 3,nil,32 --spine
 bone_0[4],bone_t[4],bone_f[4] = 1,2,3 --pelvis
 bone_0[5],bone_t[5],bone_f[5] = 4,32,5 --left clavicle
 bone_0[6],bone_t[6],bone_f[6] = 4,22,5 --right clavicle

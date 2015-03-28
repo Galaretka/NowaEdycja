@@ -129,6 +129,7 @@
     <file src="mods/fox.dff" />
     <file src="mods/wolf.txd" />
     <file src="mods/wolf.dff" />
+<<<<<<< HEAD
 	<file src="mods/bobcat.txd" />
     <file src="mods/bobcat.dff" />
 	<file src="mods/phoenix.txd" />
@@ -206,6 +207,16 @@
     <file src="skins/277.txd" />
     <file src="skins/280.txd" />
     <file src="skins/287.txd" />
+=======
+    <file src="skins/zombie.txd" />
+    <file src="skins/zombie2.txd" />
+    <file src="skins/zombie3.txd" />
+    <file src="skins/zombie4.txd" />
+    <file src="skins/zombie5.txd" />
+    <file src="skins/zombie6.txd" />
+    <file src="skins/zombie7.txd" />
+
+>>>>>>> origin/master
     <file src="sounds/mgroan1.ogg" />
     <file src="sounds/mgroan2.ogg" />
     <file src="sounds/mgroan3.ogg" />
@@ -235,8 +246,11 @@
 	<file src="sounds/wav/weapon/shotgun.wav" />
 
 
-
-
+    <file src="clothing/worktrcamogrn.txd" />
+    <file src="clothing/worktrcamogry.txd" />
+    <file src="clothing/tshirtwhite.txd" />
+    <file src="clothing/gazmask.txd" />
+    <file src="clothing/gazmask.dff" />
 
 
     <file src="items/assault_ammo.txd" />
@@ -359,4 +373,18 @@
 	<file src="images/blood_4.png" type="client" />
 	<file src="images/blood_5.png" type="client" />
 	<file src="images/blood_6.png" type="client" />
+<<<<<<< HEAD
+=======
+	<script src="scripts/woda/client/CoreClassC.lua" type="client" cache="false"/>
+	
+	<!-- shared scripts -->
+	<script src="scripts/woda/shared/classlib.lua" type="shared" cache="false"/>
+		<script src="scripts/c/c.lua" type="client"/>
+	<!-- shaders -->
+	<file src="scripts/woda/res/shaders/waterEffects.fx" type="client"/>
+	
+	<!-- textures -->
+	<file src="scripts/woda/res/textures/waterNormal.png" type="client"/>
+	<file src="scripts/woda/res/textures/waterDrop.png" type="client"/>
+>>>>>>> origin/master
 </meta>
