@@ -11,7 +11,6 @@
     <script src="addon.mtaat" />
     <script src="editor_server.lua" type="server" />
 	<script src="TabPanel.lua" type="client" />
-	<script src="change_sex.lua" type="client" />
     <script src="editor_client.lua" type="client" />
     <script src="weapon_audio.lua" type="client" />
     <script src="pickups.lua" type="server" />

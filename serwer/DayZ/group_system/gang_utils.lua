@@ -1,14 +1,14 @@
 ﻿function addGang(gangName, gangLeader)
 	if not doesGangExists(gangName) then
 		if executeSQLInsert("gangs", "'" .. tostring(gangName) .. "','" .. tostring(gangLeader) .. "','0','[ ]'") then
-			outputDebugString("Gang system: Название группы: " .. tostring(gangName) .. ", Лидер: " .. tostring(gangLeader))
+			outputDebugString("System grup: Stworzono grupę o nazwie: " .. tostring(gangName) .. ", lider: " .. tostring(gangLeader))
 			addGangMember(gangName, gangLeader, "System")
 			return true
 		else
-			return false, "Произошла ошибка."
-		end
-	else
-		return false, "Группа уже существует."
+			return false, "Wystąpił błąd."
+        end
+    else
+        return false, "Grupa już istnieje."
 	end
 end
 
@@ -19,7 +19,7 @@ function removeGang(gangName)
 		end
 		return true
 	else
-		return false, "Произошла ошибка."
+		return false, "Wystąpił błąd."
 	end
 end
 
@@ -42,16 +42,16 @@ function getGangMembers(gangName)
 		local data = executeSQLQuery("SELECT * FROM gang_members WHERE gang_name = '" .. tostring(gangName) .. "'")
 		return data
 	else
-		return false, "Группа не существует."
+		return false, "Grupa nie istnieje."
 	end
 end
 
 function addGangMember(gangName, memberAccount, addedBy)
 	if not doesGangExists(gangName) then
-		return false, "Группа не существует."
+		return false, "Grupa nie istnieje."
 	end
 	if isGangMember(gangName, memberAccount) then
-		return false, "Этого пользователя уже существует."
+		return false, "Ten użytkownik jest już w grupie."
 	end
 	if executeSQLInsert("gang_members", "'" .. tostring(gangName) .. "','" .. tostring(memberAccount) .. "','" .. tostring(addedBy) .. "'") then
 		local account = getAccount(memberAccount)
@@ -59,10 +59,10 @@ function addGangMember(gangName, memberAccount, addedBy)
 			setElementData(getAccountPlayer(account), "gang", gangName)
 			setTimer(triggerEvent, 200, 1, "onPlayerJoinGang", getAccountPlayer(account), gangName)
 		end
-		outputDebugString("Gang system: Добавленные выжившие: " .. tostring(gangName) .. ", account: " .. tostring(memberAccount))
+		outputDebugString("System grup: Użytkownik dodany do: " .. tostring(gangName) .. ", konto: " .. tostring(memberAccount))
 		return true
 	else
-		return false, "Произошла ошибка."
+		return false, "Wystąpił błąd."
 	end
 end
 
@@ -73,9 +73,9 @@ function removeGangMember(gangName, memberAccount, kickerName)
 			local player = getAccountPlayer(account)
 			if player then
 				if player and kickerName then
-					outputChatBox("Gang system: Вы были изгнаны " .. tostring(gangName) .. " by " .. tostring(kickerName) .. ".", player, 255, 0, 0)
-				else
-					outputChatBox("Gang system: Вы покинули  " .. tostring(gangName) .. ".", player, 255, 0, 0)
+					outputChatBox("System grup: Zostałeś wyrzucony z grupy " .. tostring(gangName) .. " przez " .. tostring(kickerName) .. ".", player, 255, 0, 0)
+                else
+                    outputChatBox("System grup: Opuściłeś " .. tostring(gangName) .. ".", player, 255, 0, 0)
 				end
 				setTimer(triggerEvent, 200, 1, "onPlayerLeaveGang", player, gangName)
 				setElementData(player, "gang", "Brak")
@@ -85,7 +85,7 @@ function removeGangMember(gangName, memberAccount, kickerName)
 		end
 		return true
 	else
-		return false, "Произошла ошибка."
+		return false, "Wystąpił błąd."
 	end
 end
 
@@ -93,12 +93,12 @@ function isGangMember(gangName, memberAccount)
 	if doesGangExists(gangName) then
 		local check = executeSQLSelect("gang_members", "*", "gang_name = '" .. tostring(gangName) .. "' AND member_account = '" .. tostring(memberAccount) .. "'")
 		if type(check) == "table" and #check == 0 or not check then
-			return false, "Пользователь не существует."
-		else
-			return true
-		end
-	else
-		return false, "Группа не существует."
+			return false, "Członek nie istnieje."
+        else
+            return true
+        end
+    else
+        return false, "Grupa nie istnieje."
 	end
 end
 
@@ -116,7 +116,7 @@ function getGangLeader(gangName)
 		local data = executeSQLQuery("SELECT gang_leader FROM gangs WHERE gang_name='" .. tostring(gangName) .. "'")
 		return tostring(data[1].gang_leader)
 	else
-		return false, "Группа не существует."
+		return false, "Grupa nie istnieje."
 	end
 end
 
@@ -140,7 +140,7 @@ function editGangSubLeaders(gangName, memberAccount, addOrRemove)
 		end
 		return executeSQLUpdate("gangs", "gang_subleaders = '" .. toJSON(sLeaders) .. "'", "gang_name = '" .. gangName .. "'")
 	else
-		return false, "Группа не существует."
+		return false, "Grupa nie istnieje."
 	end
 end
 
@@ -149,7 +149,7 @@ function getGangSubLeaders(gangName)
 		local data = executeSQLQuery("SELECT gang_subleaders FROM gangs WHERE gang_name='" .. tostring(gangName) .. "'")
 		return tostring(data[1].gang_subleaders)
 	else
-		return false, "Группа не существует."
+		return false, "Grupa nie istnieje."
 	end
 end
 
@@ -170,10 +170,10 @@ function isGangSubLeader(gangName, memberAccount)
 		if isSubLeader then
 			return true
 		else
-			return false, "Этот выживший не имеет зам лидера."
+			return false, "Ten użytkownik nie jest sub liderem."
 		end
 	else
-		return false, "Группа не существует."
+		return false, "Grupa nie istnieje."
 	end
 end
 
