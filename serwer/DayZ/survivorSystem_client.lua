@@ -585,45 +585,50 @@ guiLabelSetHorizontalAlign (statsLabel["zombieskilled"],"center")
 guiSetFont (statsLabel["zombieskilled"], "default-bold-small" )
 setElementData(statsLabel["zombieskilled"],"identifikation","zombieskilled")
 --HeadShoty
-statsLabel["headshots"] = guiCreateLabel(0,0.15,1,0.15,"HeadShoty: 0",true,statsWindows)
+statsLabel["headshots"] = guiCreateLabel(0,0.14,1,0.15,"HeadShoty: 0",true,statsWindows)
 guiLabelSetHorizontalAlign (statsLabel["headshots"],"center")
 guiSetFont (statsLabel["headshots"], "default-bold-small" )
 setElementData(statsLabel["headshots"],"identifikation","headshots")
 --Убито выживших
-statsLabel["murders"] = guiCreateLabel(0,0.25,1,0.15,"Morderstw: 0",true,statsWindows)
+statsLabel["murders"] = guiCreateLabel(0,0.23,1,0.15,"Morderstw: 0",true,statsWindows)
 guiLabelSetHorizontalAlign (statsLabel["murders"],"center")
 guiSetFont (statsLabel["murders"], "default-bold-small" )
 setElementData(statsLabel["murders"],"identifikation","murders")
 --Bandits Killed
-statsLabel["banditskilled"] = guiCreateLabel(0,0.35,1,0.15,"Zabitych bandytów: 0",true,statsWindows)
+statsLabel["banditskilled"] = guiCreateLabel(0,0.32,1,0.15,"Zabitych bandytów: 0",true,statsWindows)
 guiLabelSetHorizontalAlign (statsLabel["banditskilled"],"center")
 guiSetFont (statsLabel["banditskilled"], "default-bold-small" )
 setElementData(statsLabel["banditskilled"],"identifikation","banditskilled")
 --Кровь
-statsLabel["blood"] = guiCreateLabel(0,0.45,1,0.15,"Krew: 12000",true,statsWindows)
+statsLabel["blood"] = guiCreateLabel(0,0.41,1,0.15,"Krew: 12000",true,statsWindows)
 guiLabelSetHorizontalAlign (statsLabel["blood"],"center")
 guiSetFont (statsLabel["blood"], "default-bold-small" )
 setElementData(statsLabel["blood"],"identifikation","blood")
 --Зомби
-statsLabel["zombies"] = guiCreateLabel(0,0.55,1,0.15,"Зомби (Актив/Всего): 0/0",true,statsWindows)
+statsLabel["zombies"] = guiCreateLabel(0,0.50,1,0.15,"Зомби (Актив/Всего): 0/0",true,statsWindows)
 guiLabelSetHorizontalAlign (statsLabel["zombies"],"center")
 guiSetFont (statsLabel["zombies"], "default-bold-small" )
 setElementData(statsLabel["zombies"],"identifikation","zombies")
 --Температура
-statsLabel["temperature"] = guiCreateLabel(0,0.65,1,0.15,"Temperatura: 37°C",true,statsWindows)
+statsLabel["temperature"] = guiCreateLabel(0,0.59,1,0.15,"Temperatura: 37°C",true,statsWindows)
 guiLabelSetHorizontalAlign (statsLabel["temperature"],"center")
 guiSetFont (statsLabel["temperature"], "default-bold-small" )
 setElementData(statsLabel["temperature"],"identifikation","temperature")
 --Карма
-statsLabel["humanity"] = guiCreateLabel(0,0.75,1,0.15,"Ludzkość: 2500",true,statsWindows)
+statsLabel["humanity"] = guiCreateLabel(0,0.68,1,0.15,"Ludzkość: 2500",true,statsWindows)
 guiLabelSetHorizontalAlign (statsLabel["humanity"],"center")
 guiSetFont (statsLabel["humanity"], "default-bold-small" )
 setElementData(statsLabel["humanity"],"identifikation","humanity")
 --Игровой ник
-statsLabel["name"] = guiCreateLabel(0,0.85,1,0.15,"Nick: "..getPlayerName(getLocalPlayer()),true,statsWindows)
+statsLabel["name"] = guiCreateLabel(0,0.77,1,0.15,"Nick: "..getPlayerName(getLocalPlayer()),true,statsWindows)
 guiLabelSetHorizontalAlign (statsLabel["name"],"center")
 guiSetFont (statsLabel["name"], "default-bold-small" )
 setElementData(statsLabel["name"],"identifikation","name")
+--kasa
+statsLabel["kasa"] = guiCreateLabel(0,0.86,1,0.15,"Kasa: "..getPlayerMoney(getLocalPlayer()),true,statsWindows)
+guiLabelSetHorizontalAlign (statsLabel["kasa"],"center")
+guiSetFont (statsLabel["kasa"], "default-bold-small" )
+setElementData(statsLabel["kasa"],"identifikation","kasa")
 
 if getElementData(localPlayer,"logedin") then
 	guiSetVisible(statsWindows,true)
@@ -671,6 +676,8 @@ function refreshDebugMonitor()
 		guiSetText(statsLabel["humanity"],"Ludzkość: "..math.round(value,2))
 		
 		guiSetText(statsLabel["name"],"Nick: "..getPlayerName(getLocalPlayer()))
+		
+		guiSetText(statsLabel["kasa"],"Kasa: "..getPlayerMoney(getLocalPlayer()))
 	end			
 end
 setTimer(refreshDebugMonitor,2000,0)
