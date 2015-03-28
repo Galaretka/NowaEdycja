@@ -102,6 +102,7 @@ inventoryItems = {
 {"Buty: Trampki-Biale",1,"Zaloz Trampki-Biale"},
 {"Buty: Trampki-Niebieskie",1,"Zaloz Trampki-Niebieskie"},
 {"Buty: Buty",1,"Zaloz buty"},
+{"Bluza: Kamuflaz-Zielony",1,"Zaloz Zielona bluza"},
 {"Bluza: Shirt-Czerwony",1,"Zaloz Shirt-Czerwony"},
 {"Bluza: Shirt-Bialy",1,"Zaloz Shirt-Bialy"},
 {"Bluza: Shirt-Zielony",1,"Zaloz Shirt-Zielony"},
@@ -1101,6 +1102,9 @@ function playerUseItem(itemName,itemInfo)
 	triggerServerEvent("onPlayerChangeSuitShoes",getLocalPlayer(),itemName)
 	playSound("sounds/cloth.ogg")
 	--Тело
+	elseif itemInfo == "Zaloz Zielona bluza" then
+	triggerServerEvent("onPlayerGreenChangeShirt",getLocalPlayer(),itemName)
+	playSound("sounds/cloth.ogg")
 	elseif itemInfo == "Zaloz Shirt-Czerwony" then
 	triggerServerEvent("onPlayerChangeRedtShirt",getLocalPlayer(),itemName)
 	playSound("sounds/cloth.ogg")

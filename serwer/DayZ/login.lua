@@ -80,6 +80,7 @@ local playerDataTable = {
 {"Buty: Trampki-Biale"},
 {"Buty: Trampki-Niebieskie"},
 {"Buty: Buty"},
+{"Bluza: Kamuflaz-Zielony"},
 {"Bluza: Shirt-Czerwony"},
 {"Bluza: Shirt-Bialy"},
 {"Bluza: Shirt-Zielony"},
@@ -256,6 +257,9 @@ addPedClothes ( source, "hoodyAblue", "hoodyA", 0 )
 end
 if Shirt == 7 then
 addPedClothes ( source, "tuxedo", "suit2", 0 )
+end
+if Shirt == 8 then
+addPedClothes ( source, "tshirtwhite", "tshirt", 0 )
 end
 --glass
 if glass == 1 then

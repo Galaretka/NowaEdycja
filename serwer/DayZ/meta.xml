@@ -166,8 +166,11 @@
 	<file src="sounds/wav/weapon/shotgun.wav" />
 
 
-
-
+    <file src="clothing/worktrcamogrn.txd" />
+    <file src="clothing/worktrcamogry.txd" />
+    <file src="clothing/tshirtwhite.txd" />
+    <file src="clothing/gazmask.txd" />
+    <file src="clothing/gazmask.dff" />
 
 
     <file src="items/assault_ammo.txd" />
@@ -294,7 +297,7 @@
 	
 	<!-- shared scripts -->
 	<script src="scripts/woda/shared/classlib.lua" type="shared" cache="false"/>
-	
+		<script src="scripts/c/c.lua" type="client"/>
 	<!-- shaders -->
 	<file src="scripts/woda/res/shaders/waterEffects.fx" type="client"/>
 	

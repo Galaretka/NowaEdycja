@@ -37,6 +37,7 @@
 {"Buty: Trampki-Biale"},
 {"Buty: Trampki-Niebieskie"},
 {"Buty: Buty"},
+{"Bluza: Kamuflaz-Zielony"},
 {"Bluza: Shirt-Czerwony"},
 {"Bluza: Shirt-Bialy"},
 {"Bluza: Shirt-Zielony"},
@@ -1009,6 +1010,15 @@ addEvent("onPlayerChangeSuitShoes",true)
 addEventHandler("onPlayerChangeSuitShoes",getRootElement(),addPlayerTrousesSuitShoes)
 
 --Тело
+
+function addPlayerGreenShirt ()
+removePedClothes( source, 0)
+addPedClothes ( source, "tshirtwhite", "tshirt", 0 )
+setElementData( source, "Shirt", 8) --ИД
+triggerClientEvent(source,"refreshInventoryManual",source)
+end
+addEvent("onPlayerGreenChangeShirt",true)
+addEventHandler("onPlayerGreenChangeShirt",getRootElement(),addPlayerGreenShirt)
 
 function onPlayerChangeRedtShirt ()
 removePedClothes( source, 0)

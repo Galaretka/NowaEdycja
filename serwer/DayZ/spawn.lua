@@ -236,6 +236,7 @@ local vehicleDataTable = {
 {"Buty: Trampki-Biale"},
 {"Buty: Trampki-Niebieskie"},
 {"Buty: Buty"},
+{"Bluza: Kamuflaz-Zielony"},
 {"Bluza: Shirt-Czerwony"},
 {"Bluza: Shirt-Bialy"},
 {"Bluza: Shirt-Zielony"},

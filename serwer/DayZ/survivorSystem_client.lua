@@ -181,7 +181,22 @@ engineImportTXD (itemTXD, 983);
 itemDFF = engineLoadDFF ("items/wirefence.dff", 983);
 engineReplaceModel (itemDFF, 983);
 
+
+--Ubrania
+txd = engineLoadTXD("clothing/worktrcamogrn.txd")
+engineImportTXD( txd, 30537)
+
+txd = engineLoadTXD("clothing/worktrcamogry.txd")
+engineImportTXD( txd, 30538)
+
+txd = engineLoadTXD("clothing/tshirtwhite.txd")
+engineImportTXD( txd, 30515)
+
 --Weapons
+
+
+
+
 
 -- Camera -> Lornetka
 weaponTXD = engineLoadTXD ("items/camera.txd");
@@ -203,7 +218,7 @@ function playerStatsClientSite()
 		showPlayerHudComponent ("money",false) 
 		showPlayerHudComponent ("health",false) 
 		showPlayerHudComponent ("weapon",false) 
-		--showPlayerHudComponent ("ammo",false) 
+		showPlayerHudComponent ("ammo",false) 
 		showPlayerHudComponent ("breath",false) 
 		if getElementData(getLocalPlayer(),"Mapa") >= 1  then
 			toggleControl ("radar",true)
