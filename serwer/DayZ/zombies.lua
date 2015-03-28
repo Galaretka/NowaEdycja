@@ -20,7 +20,7 @@ itemTableZombies = {
 {"Mleko",2856,1,0,5},
 {"Assault Pack (ACU)",3026,0.5,0,6},
 {"Środki przeciwbólowe",2709,0.5,0,7},
-{"Pusta puszka z napojem",2673,0.5,0,6},
+{"Pusta puszka po napoju",2673,0.5,0,6},
 {"Pozostałości",2675,0.5,0,6},
 {"Оск. граната M67",342,1,0,0.5},
 {"Desert Eagle",348,1,90,0.3},

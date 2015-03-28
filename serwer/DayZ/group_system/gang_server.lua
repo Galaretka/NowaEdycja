@@ -20,7 +20,7 @@ end)
 
 function showGangPanel(thePlayer)
 	local gangName = getElementData(thePlayer, "gang")
-	if gangName ~= "None" then
+	if gangName ~= "Brak" then
 		local memberList = getGangMembers(gangName)
 		triggerClientEvent(thePlayer, "gangSystem:openGangPanel", thePlayer, memberList)
 	end
@@ -42,7 +42,7 @@ addEventHandler("gangSystem:invitePlayer", root, function(playerName)
 	if getGangLeader(gangName) == accountName or isGangSubLeader(gangName, accountName) then
 		if player and isElement(player) then
 			local playerAccountName = getAccountName(getPlayerAccount(player))
-			if getAccountGang(gangName, playerAccountName) == "None" then
+			if getAccountGang(gangName, playerAccountName) == "Brak" then
 				invitations[player] = {gangName, source}
 				outputChatBox("Gang system: Вы пригласили " .. getPlayerName(player) .. " в группу.", source, 0, 255, 0)
 				outputChatBox("Gang system: Вы были приглашены в группу " .. gangName .. ", нажмите F1 внизу будет приглашение и согласитесь с ним.", player, 0, 255, 0)
@@ -75,7 +75,7 @@ addEvent("gangSystem:kickMember", true)
 addEventHandler("gangSystem:kickMember", root, function(memberAccount)
 	local gangName = getElementData(source, "gang")
 	local accountName = getAccountName(getPlayerAccount(source))
-	if gangName ~= "None" then
+	if gangName ~= "Brak" then
 		if getGangLeader(gangName) == accountName or isGangSubLeader(gangName, accountName) then
 			if getGangLeader(gangName) ~= memberAccount then
 				if removeGangMember(gangName, memberAccount, getPlayerName(source)) then
@@ -94,7 +94,7 @@ addEvent("gangSystem:leaveGang", true)
 addEventHandler("gangSystem:leaveGang", root, function()
 	local gangName = getElementData(source, "gang")
 	local accountName = getAccountName(getPlayerAccount(source))
-	if gangName ~= "None" and accountName ~= "Guest" then
+	if gangName ~= "Brak" and accountName ~= "Guest" then
 		if getGangLeader(gangName) ~= accountName then
 			if removeGangMember(gangName, accountName) then
 				outputChatBox("Gang system: Вы покинули  " .. gangName .. ".", source, 255, 50, 0)
@@ -109,7 +109,7 @@ addEvent("gangSystem:destroyGang", true)
 addEventHandler("gangSystem:destroyGang", root, function()
 	local gangName = getElementData(source, "gang")
 	local accountName = getAccountName(getPlayerAccount(source))
-	if gangName ~= "None" and accountName ~= "Guest" then
+	if gangName ~= "Brak" and accountName ~= "Guest" then
 		if getGangLeader(gangName) == accountName then
 			if removeGang(gangName) then
 				outputChatBox("Gang system: Вы удалили группу " .. gangName .. ".", source, 255, 50, 0)
@@ -149,7 +149,7 @@ end)
 addEvent("gangSystem:getSubLeaders", true)
 addEventHandler("gangSystem:getSubLeaders", root, function()
 	local gangName = getElementData(source, "gang")
-	if gangName and gangName ~= "None" then
+	if gangName and gangName ~= "Brak" then
 		local subLeaders = getGangSubLeaders(gangName)
 		triggerClientEvent(source, "gangSystem:returnSubLeaders", source, subLeaders)
 	end
@@ -159,7 +159,7 @@ addEvent("gangSystem:addSubLeader", true)
 addEventHandler("gangSystem:addSubLeader", root, function(memberAccount)
 	local gangName = getElementData(source, "gang")
 	local accountName = getAccountName(getPlayerAccount(source))
-	if gangName ~= "None" and accountName ~= "Guest" then
+	if gangName ~= "Brak" and accountName ~= "Guest" then
 		if getGangLeader(gangName) == accountName then
 			local isSubLeader, errorMsg = isGangSubLeader(gangName, memberAccount)
 			if not isSubLeader then
@@ -181,7 +181,7 @@ addEvent("gangSystem:removeSubLeader", true)
 addEventHandler("gangSystem:removeSubLeader", root, function(memberAccount)
 	local gangName = getElementData(source, "gang")
 	local accountName = getAccountName(getPlayerAccount(source))
-	if gangName ~= "None" and accountName ~= "Guest" then
+	if gangName ~= "Brak" and accountName ~= "Guest" then
 		if getGangLeader(gangName) == accountName then
 			local isSubLeader, errorMsg = isGangSubLeader(gangName, memberAccount)
 			if isSubLeader then

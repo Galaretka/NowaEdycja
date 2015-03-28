@@ -293,7 +293,7 @@ function onPlayerTargetPickup (theElement)
 				return
 			end
 			if getElementData(source,"fireplace") then
-				showClientMenuItem("Костёр")
+				showClientMenuItem("Ognisko")
 				setElementData(getLocalPlayer(),"currentCol",source)
 				setElementData(getLocalPlayer(),"loot",false)
 				setNewbieInfo (true,"Ognisko","Naciśnij '-' lub 'środkowy przycisk myszy' upiec mięso!\n Wymaga: Mięso",source)
@@ -385,7 +385,7 @@ addEventHandler("onClientRender", getRootElement(),
 function()
 	if newbieShow == false then return end
 	local x,y,z = getElementPosition(newbiePosition)
-	--local x,y = getScreenFromWorldPosition (x,y,z)
+	local x,y = getScreenFromWorldPosition (x,y,z)
 	local length = dxGetTextWidth(newbieText,1,"default-bold")
 	dxDrawRectangle ( x-length/2-screenWidth*0.01,y, screenWidth*0.02+length, screenHeight*0.1, tocolor (33,33,33,100) )
 	dxDrawingColorText(newbieHead,x-length/2-screenWidth*0.01,y, x+length/2+screenWidth*0.01, y+screenHeight*0.03, tocolor(22,255,22,120),0.5, 1.1, "default-bold", "center", "center")

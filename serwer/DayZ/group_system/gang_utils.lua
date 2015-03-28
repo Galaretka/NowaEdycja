@@ -78,7 +78,7 @@ function removeGangMember(gangName, memberAccount, kickerName)
 					outputChatBox("Gang system: Вы покинули  " .. tostring(gangName) .. ".", player, 255, 0, 0)
 				end
 				setTimer(triggerEvent, 200, 1, "onPlayerLeaveGang", player, gangName)
-				setElementData(player, "gang", "None")
+				setElementData(player, "gang", "Brak")
 			else
 				triggerEvent("onPlayerLeaveGang", memberAccount, gangName)
 			end
@@ -105,7 +105,7 @@ end
 function getAccountGang(memberAccount)
 	local check = executeSQLSelect("gang_members", "*", "member_account = '" .. tostring(memberAccount) .. "'")
 	if type(check) == "table" and #check == 0 or not check then
-		return "None"
+		return "Brak"
 	else
 		return tostring(check[1].gang_name)
 	end

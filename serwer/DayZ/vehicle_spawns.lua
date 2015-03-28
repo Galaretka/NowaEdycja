@@ -1,33 +1,27 @@
-﻿hunterSpawns = gameplayVariables["hunterspawns"]
-
+﻿hunterSpawns = gameplayVariables.hunterspawns
+tractorSpawns = gameplayVariables.tractorspawns
+dodoSpawns = gameplayVariables.dodospawns
 quadSpawns = gameplayVariables.quadspawns
-
-infernusSpawns = gameplayVariables.infernusspawns
-
-enforcerSpawns = gameplayVariables.enforcerspawns
-
-cloverSpawns = gameplayVariables.cloverspawns
-
-nrgSpawns = gameplayVariables.nrgspawns
-
-pickupSpawns = gameplayVariables["pickupspawns"]
-
-patriotSpawns = gameplayVariables["patriotspawns"]
-
-sanchezSpanws = gameplayVariables["sanchezspawns"]
-
-barracksSpawns = gameplayVariables["barracksspawns"]
-
-coachSpawns = gameplayVariables["coachspawns"]
-
-fisherBootSpawns = gameplayVariables["fisherboatspawns"]
-
-bikeSpawns = gameplayVariables["bikespawns"]
-
-maverikSpawns = gameplayVariables["maverickspawns"]
-
+phoenixSpawns = gameplayVariables.phoenixspawns
+mountainSpawns = gameplayVariables.mountainspawns
+camperSpawns = gameplayVariables.camperspawns
+pickupSpawns = gameplayVariables.pickupspawns
+mesaSpawns = gameplayVariables.mesaspawns
+patriotSpawns = gameplayVariables.patriotspawns
+sanchezSpanws = gameplayVariables.sanchezspawns
+freewaySpanws = gameplayVariables.freewayspawns
+barracksSpawns = gameplayVariables.barracksspawns
+fbiSpawns = gameplayVariables.fbispawns
+moonbeamSpawns = gameplayVariables.moonbeamspawns
+coachSpawns = gameplayVariables.coachspawns
+swatSpawns = gameplayVariables.swatspawns
+swattruckSpawns = gameplayVariables.swattruckspawns
+fisherBootSpawns = gameplayVariables.fisherboatspawns
+bikeSpawns = gameplayVariables.bikespawns
+maverikSpawns = gameplayVariables.maverickspawns
+cargobobSpawns = gameplayVariables.cargobobspawns
+raindanceSpawns = gameplayVariables.raindancespawns
 tentSpawns = gameplayVariables["tentsspawns"]
-
 heliCrashSites = gameplayVariables["helicrashsides"]
 
 hospitalPacks = {
@@ -168,7 +162,7 @@ lootItems = {
 {"Ogień",324,1,90,2},
 {"Mleko",2856,1,0,1},
 {"Środki przeciwbólowe",2709,0.5,0,4},
-{"Pusta puszka z napojem",2673,0.5,0,2},
+{"Pusta puszka po napoju",2673,0.5,0,2},
 {"Pozostałości",2675,0.5,0,3},
 {"Оск. граната M67",342,1,0,4},
 {"Spadochron",342,1,0,80},
@@ -215,6 +209,7 @@ lootItems = {
 }
 
 vehicleAddonsInfo = {
+-- {Model ID, Tires, Engine, Бензобак}
 {542,4,1,1},
 {522,2,1,1},
 {427,4,1,1},
@@ -223,12 +218,25 @@ vehicleAddonsInfo = {
 {422,4,1,1},
 {470,4,1,1},
 {468,2,1,1},
+{463,2,1,1},
 {433,6,1,1},
-{437,6,1,1},
+{431,6,1,1},
 {509,0,0,0},
 {487,0,1,1},
 {497,0,1,1},
 {453,0,1,1},
+{548,0,1,1},
+{563,0,1,1},
+{601,6,1,1},
+{528,4,1,1},
+{603,4,1,1},
+{531,4,1,1},
+{500,4,1,1},
+{510,0,0,0},
+{596,4,1,1},
+{593,3,1,1},
+{483,4,1,1},
+{418,4,1,1},
 }
 
 function getVehicleAddonInfos (id)
@@ -305,317 +313,518 @@ end
 
 dayzVehicles = {}
 function spawnDayZVehicles()
-    for i, veh in ipairs(quadSpawns) do 
-        local x, y, z = veh[1], veh[2], veh[3] 
-        veh = createVehicle(471, x, y, z) 
-        vehCol = createColSphere(x, y, z, 2.5) 
-        attachElements(vehCol, veh, 0, 0, 0) 
-        setElementData(vehCol, "parent", veh) 
-        setElementData(veh, "parent", vehCol) 
-        setElementData(vehCol, "vehicle", true) 
-        setElementData(vehCol, "MAX_Slots", 20) 
-        local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh)) 
-        setElementData(vehCol, "Tire_inVehicle", math.random(0, tires)) 
-        setElementData(vehCol, "Engine_inVehicle", math.random(0, engine)) 
-        setElementData(vehCol, "Parts_inVehicle", math.random(0, parts)) 
-        setElementData(vehCol, "spawn", { 
-        471, 
-        x, 
-        y, 
-        z 
-        }) 
-        setElementData(vehCol, "fuel", 5) 
-    end 
-	for i, veh in ipairs(cloverSpawns) do 
-        local x, y, z = veh[1], veh[2], veh[3] 
-        veh = createVehicle(542, x, y, z) 
-        vehCol = createColSphere(x, y, z, 2.5) 
-        attachElements(vehCol, veh, 0, 0, 0) 
-        setElementData(vehCol, "parent", veh) 
-        setElementData(veh, "parent", vehCol) 
-        setElementData(vehCol, "vehicle", true) 
-        setElementData(vehCol, "MAX_Slots", 40) 
-        local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh)) 
-        setElementData(vehCol, "Tire_inVehicle", math.random(0, tires)) 
-        setElementData(vehCol, "Engine_inVehicle", math.random(0, engine)) 
-        setElementData(vehCol, "Parts_inVehicle", math.random(0, parts)) 
-        setElementData(vehCol, "spawn", { 
-        542, 
-        x, 
-        y, 
-        z 
-        }) 
-        setElementData(vehCol, "fuel", 10) 
-    end 
-	for i, veh in ipairs(enforcerSpawns) do 
-        local x, y, z = veh[1], veh[2], veh[3] 
-        veh = createVehicle(427, x, y, z) 
-        vehCol = createColSphere(x, y, z, 2.5) 
-        attachElements(vehCol, veh, 0, 0, 0) 
-        setElementData(vehCol, "parent", veh) 
-        setElementData(veh, "parent", vehCol) 
-        setElementData(vehCol, "vehicle", true) 
-        setElementData(vehCol, "MAX_Slots", 100) 
-        local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh)) 
-        setElementData(vehCol, "Tire_inVehicle", math.random(0, tires)) 
-        setElementData(vehCol, "Engine_inVehicle", math.random(0, engine)) 
-        setElementData(vehCol, "Parts_inVehicle", math.random(0, parts)) 
-        setElementData(vehCol, "spawn", { 
-        427, 
-        x, 
-        y, 
-        z 
-        }) 
-        setElementData(vehCol, "fuel", 10) 
-    end 
-	for i, veh in ipairs(nrgSpawns) do 
-        local x, y, z = veh[1], veh[2], veh[3] 
-        veh = createVehicle(522, x, y, z) 
-        vehCol = createColSphere(x, y, z, 2.5) 
-        attachElements(vehCol, veh, 0, 0, 0) 
-        setElementData(vehCol, "parent", veh) 
-        setElementData(veh, "parent", vehCol) 
-        setElementData(vehCol, "vehicle", true) 
-        setElementData(vehCol, "MAX_Slots", 31) 
-        local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh)) 
-        setElementData(vehCol, "Tire_inVehicle", math.random(0, tires)) 
-        setElementData(vehCol, "Engine_inVehicle", math.random(0, engine)) 
-        setElementData(vehCol, "Parts_inVehicle", math.random(0, parts)) 
-        setElementData(vehCol, "spawn", { 
-        522, 
-        x, 
-        y, 
-        z 
-        }) 
-        setElementData(vehCol, "fuel", 2) 
-    end 
-    for i, veh in ipairs(infernusSpawns) do 
-        local x, y, z = veh[1], veh[2], veh[3] 
-        veh = createVehicle(411, x, y, z) 
-        vehCol = createColSphere(x, y, z, 2.5) 
-        attachElements(vehCol, veh, 0, 0, 0) 
-        setElementData(vehCol, "parent", veh) 
-        setElementData(veh, "parent", vehCol) 
-        setElementData(vehCol, "vehicle", true) 
-        setElementData(vehCol, "MAX_Slots", 100) 
-        local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh)) 
-        setElementData(vehCol, "Tire_inVehicle", math.random(0, tires)) 
-        setElementData(vehCol, "Engine_inVehicle", math.random(0, engine)) 
-        setElementData(vehCol, "Parts_inVehicle", math.random(0, parts)) 
-        setElementData(vehCol, "spawn", { 
-        411, 
-        x, 
-        y, 
-        z 
-        }) 
-        setElementData(vehCol, "fuel", 10) 
-    end 
-	if getElementData(getRootElement(),"serverhasloadvehicles") then return end
-	for i,veh in ipairs(pickupSpawns) do
-		local x,y,z = veh[1],veh[2],veh[3]
-		veh = createVehicle(422,x,y,z)
-		vehCol = createColSphere(x,y,z,2)
-		attachElements ( vehCol, veh, 0, 0, 0 )
-		setElementData(vehCol,"parent",veh)
-		setElementData(veh,"parent",vehCol)
-		setElementData(vehCol,"vehicle",true)
-		setElementData(vehCol,"MAX_Slots",20)
-		--Engine + Tires
-		local tires,engine,parts = getVehicleAddonInfos (getElementModel(veh))
-		setElementData(vehCol,"Tire_inVehicle",math.random(0,tires))
-		setElementData(vehCol,"Engine_inVehicle",math.random(0,engine))
-		setElementData(vehCol,"Parts_inVehicle",math.random(0,parts))
-		--vehicle_indentifikation
-		setElementData(vehCol,"spawn",{422,x,y,z})
-		--others
-		setElementData(vehCol,"fuel",10)
-	end
-	for i,veh in ipairs(patriotSpawns) do
-		local x,y,z = veh[1],veh[2],veh[3]
-		veh = createVehicle(470,x,y,z)
-		vehCol = createColSphere(x,y,z,2.5)
-		attachElements ( vehCol, veh, 0, 0, 0 )
-		setElementData(vehCol,"parent",veh)
-		setElementData(veh,"parent",vehCol)
-		setElementData(vehCol,"vehicle",true)
-		setElementData(vehCol,"MAX_Slots",38)
-		--Engine + Tires
-		local tires,engine,parts = getVehicleAddonInfos (getElementModel(veh))
-		setElementData(vehCol,"Tire_inVehicle",math.random(0,tires))
-		setElementData(vehCol,"Engine_inVehicle",math.random(0,engine))
-		setElementData(vehCol,"Parts_inVehicle",math.random(0,parts))
-		--vehicle_indentifikation
-		setElementData(vehCol,"spawn",{470,x,y,z})
-		--others
-		setElementData(vehCol,"fuel",10)
-		for i,items in ipairs(lootItems["helicrashsides"]) do
-			local randomNumber = math.random(1,10)
-			if randomNumber == 5 then
-				setElementData(vehCol,items[1],1)
-			end
-		end
-	end
-	for i,veh in ipairs(sanchezSpanws) do
-		local x,y,z = veh[1],veh[2],veh[3]
-		veh = createVehicle(468,x,y,z)
-		vehCol = createColSphere(x,y,z,1.5)
-		attachElements ( vehCol, veh, 0, 0, 0 )
-		setElementData(vehCol,"parent",veh)
-		setElementData(veh,"parent",vehCol)
-		setElementData(vehCol,"vehicle",true)
-		setElementData(vehCol,"MAX_Slots",6)
-		--Engine + Tires
-		local tires,engine,parts = getVehicleAddonInfos (getElementModel(veh))
-		setElementData(vehCol,"Tire_inVehicle",math.random(0,tires))
-		setElementData(vehCol,"Engine_inVehicle",math.random(0,engine))
-		setElementData(vehCol,"Parts_inVehicle",math.random(0,parts))
-		--vehicle_indentifikation
-		setElementData(vehCol,"spawn",{468,x,y,z})
-		--others
-		setElementData(vehCol,"fuel",10)
-	end
-	for i,veh in ipairs(barracksSpawns) do
-		local x,y,z = veh[1],veh[2],veh[3]
-		veh = createVehicle(433,x,y,z)
-		vehCol = createColSphere(x,y,z,4)
-		attachElements ( vehCol, veh, 0, 0, 0 )
-		setElementData(vehCol,"parent",veh)
-		setElementData(veh,"parent",vehCol)
-		setElementData(vehCol,"vehicle",true)
-		setElementData(vehCol,"MAX_Slots",64)
-		--Engine + Tires
-		local tires,engine,parts = getVehicleAddonInfos (getElementModel(veh))
-		setElementData(vehCol,"Tire_inVehicle",math.random(0,tires))
-		setElementData(vehCol,"Engine_inVehicle",math.random(0,engine))
-		setElementData(vehCol,"Parts_inVehicle",math.random(0,parts))
-		--vehicle_indentifikation
-		setElementData(vehCol,"spawn",{433,x,y,z})
-		--others
-		setElementData(vehCol,"fuel",10)
-		for i,items in ipairs(lootItems["helicrashsides"]) do
-			local randomNumber = math.random(1,10)
-			if randomNumber == 5 then
-				setElementData(vehCol,items[1],math.random(1,2))
-			end
-		end
-	end
-	for i,veh in ipairs(coachSpawns) do
-		local x,y,z = veh[1],veh[2],veh[3]
-		veh = createVehicle(437,x,y,z)
-		vehCol = createColSphere(x,y,z,4)
-		attachElements ( vehCol, veh, 0, 0, 0 )
-		setElementData(vehCol,"parent",veh)
-		setElementData(veh,"parent",vehCol)
-		setElementData(vehCol,"vehicle",true)
-		setElementData(vehCol,"MAX_Slots",56)
-		--Engine + Tires
-		local tires,engine,parts = getVehicleAddonInfos (getElementModel(veh))
-		setElementData(vehCol,"Tire_inVehicle",math.random(0,tires))
-		setElementData(vehCol,"Engine_inVehicle",math.random(0,engine))
-		setElementData(vehCol,"Parts_inVehicle",math.random(0,parts))
-		--vehicle_indentifikation
-		setElementData(vehCol,"spawn",{437,x,y,z})
-		--others
-		setElementData(vehCol,"fuel",10)
-	end
-	for i,veh in ipairs(fisherBootSpawns) do
-		local x,y,z = veh[1],veh[2],veh[3]
-		veh = createVehicle(453,x,y,z)
-		vehCol = createColSphere(x,y,z,4)
-		attachElements ( vehCol, veh, 0, 0, 0 )
-		setElementData(vehCol,"parent",veh)
-		setElementData(veh,"parent",vehCol)
-		setElementData(vehCol,"vehicle",true)
-		setElementData(vehCol,"MAX_Slots",30)
-		--Engine + Tires
-		local tires,engine,parts = getVehicleAddonInfos (getElementModel(veh))
-		setElementData(vehCol,"Tire_inVehicle",math.random(0,tires))
-		setElementData(vehCol,"Engine_inVehicle",math.random(0,engine))
-		setElementData(vehCol,"Parts_inVehicle",math.random(0,parts))
-		--vehicle_indentifikation
-		setElementData(vehCol,"spawn",{453,x,y,z})
-		--others
-		setElementData(vehCol,"fuel",10)
-	end
-	for i,veh in ipairs(bikeSpawns) do
-		local x,y,z = veh[1],veh[2],veh[3]
-		veh = createVehicle(509,x,y,z)
-		vehCol = createColSphere(x,y,z,2)
-		attachElements ( vehCol, veh, 0, 0, 0 )
-		setElementData(vehCol,"parent",veh)
-		setElementData(veh,"parent",vehCol)
-		setElementData(vehCol,"vehicle",true)
-		setElementData(vehCol,"MAX_Slots",0)
-		--Engine + Tires
-		local tires,engine,parts = getVehicleAddonInfos (getElementModel(veh))
-		setElementData(vehCol,"Tire_inVehicle",math.random(0,tires))
-		setElementData(vehCol,"Engine_inVehicle",math.random(0,engine))
-		setElementData(vehCol,"Parts_inVehicle",math.random(0,parts))
-		--vehicle_indentifikation
-		setElementData(vehCol,"spawn",{509,x,y,z})
-		--others
-		setElementData(vehCol,"fuel",0)
-	end
-	for i,tent in ipairs(tentSpawns) do
-		local x,y,z = tent[1],tent[2],tent[3]
-		tent = createObject(3243,x,y,z-1)
-		setObjectScale(tent,0.5)
-		tentCol = createColSphere(x,y,z,4)
-		attachElements ( tentCol, tent, 0, 0, 0 )
-		setElementData(tentCol,"parent",tent)
-		setElementData(tent,"parent",tentCol)
-		setElementData(tentCol,"tent",true)
-		setElementData(tentCol,"vehicle",true)
-		setElementData(tentCol,"MAX_Slots",30)
-	end
-		--Maverik
-		local item_id = math.random(table.size(maverikSpawns))
-		local x,y,z = maverikSpawns[item_id][1],maverikSpawns[item_id][2],maverikSpawns[item_id][3]
-		hunter = createVehicle(487,x,y,z)
-		vehCol = createColSphere(x,y,z,4)
-		attachElements ( vehCol, hunter, 0, 0, 0 )
-		setElementData(vehCol,"parent",hunter)
-		setElementData(hunter,"parent",vehCol)
-		setElementData(vehCol,"vehicle",true)
-		setElementData(vehCol,"MAX_Slots",10)
-		--Engine + Tires
-		local tires,engine,parts = getVehicleAddonInfos (487)
-		setElementData(vehCol,"Tire_inVehicle",math.random(0,tires))
-		setElementData(vehCol,"Engine_inVehicle",math.random(0,engine))
-		setElementData(vehCol,"Parts_inVehicle",math.random(0,parts))
-		--vehicle_indentifikation
-		setElementData(vehCol,"spawn",{487,x,y,z})
-		--others
-		setElementData(vehCol,"fuel",10)
-	
-		--Police Maverik
-		local item_id = math.random(table.size(hunterSpawns))
-		local x,y,z = hunterSpawns[item_id][1],hunterSpawns[item_id][2],hunterSpawns[item_id][3]
-		hunter = createVehicle(497,x,y,z)
-		vehCol = createColSphere(x,y,z,4)
-		attachElements ( vehCol, hunter, 0, 0, 0 )
-		setElementData(vehCol,"parent",hunter)
-		setElementData(hunter,"parent",vehCol)
-		setElementData(vehCol,"vehicle",true)
-		setElementData(vehCol,"MAX_Slots",10)
-		--Engine + Tires
-		local tires,engine,parts = getVehicleAddonInfos (497)
-		setElementData(vehCol,"Tire_inVehicle",math.random(0,tires))
-		setElementData(vehCol,"Engine_inVehicle",math.random(0,engine))
-		setElementData(vehCol,"Parts_inVehicle",math.random(0,parts))
-		--vehicle_indentifikation
-		setElementData(vehCol,"spawn",{497,x,y,z})
-		--others
-		setElementData(vehCol,"fuel",10)
+  if getElementData(getRootElement(), "serverhasloadvehicles") then
+    return
+  end
+  for i, veh in ipairs(pickupSpawns) do
+    local x, y, z = veh[1], veh[2], veh[3]
+    veh = createVehicle(422, x, y, z)
+    vehCol = createColSphere(x, y, z, 2)
+    attachElements(vehCol, veh, 0, 0, 0)
+    setElementData(vehCol, "parent", veh)
+    setElementData(veh, "parent", vehCol)
+    setElementData(vehCol, "vehicle", true)
+    setElementData(vehCol, "MAX_Slots", 20)
+    local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh))
+    setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
+    setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
+    setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
+    setElementData(vehCol, "spawn", {
+      422,
+      x,
+      y,
+      z
+    })
+    setElementData(vehCol, "fuel", 10)
+  end
+    for i, veh in ipairs(phoenixSpawns) do
+    local x, y, z = veh[1], veh[2], veh[3]
+    veh = createVehicle(603, x, y, z)
+    vehCol = createColSphere(x, y, z, 2)
+    attachElements(vehCol, veh, 0, 0, 0)
+    setElementData(vehCol, "parent", veh)
+    setElementData(veh, "parent", vehCol)
+    setElementData(vehCol, "vehicle", true)
+    setElementData(vehCol, "MAX_Slots", 30)
+    local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh))
+    setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
+    setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
+    setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
+    setElementData(vehCol, "spawn", {
+      603,
+      x,
+      y,
+      z
+    })
+    setElementData(vehCol, "fuel", 10)
+  end
+    for i, veh in ipairs(tractorSpawns) do
+    local x, y, z = veh[1], veh[2], veh[3]
+    veh = createVehicle(531, x, y, z)
+    vehCol = createColSphere(x, y, z, 2.5)
+    attachElements(vehCol, veh, 0, 0, 0)
+    setElementData(vehCol, "parent", veh)
+    setElementData(veh, "parent", vehCol)
+    setElementData(vehCol, "vehicle", true)
+    setElementData(vehCol, "MAX_Slots", 24)
+    local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh))
+    setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
+    setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
+    setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
+    setElementData(vehCol, "spawn", {
+      531,
+      x,
+      y,
+      z
+    })
+    setElementData(vehCol, "fuel", 10)
+  end
+   for i, veh in ipairs(mesaSpawns) do
+    local x, y, z = veh[1], veh[2], veh[3]
+    veh = createVehicle(500, x, y, z)
+    vehCol = createColSphere(x, y, z, 2.5)
+    attachElements(vehCol, veh, 0, 0, 0)
+    setElementData(vehCol, "parent", veh)
+    setElementData(veh, "parent", vehCol)
+    setElementData(vehCol, "vehicle", true)
+    setElementData(vehCol, "MAX_Slots", 20)
+    local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh))
+    setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
+    setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
+    setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
+    setElementData(vehCol, "spawn", {
+      500,
+      x,
+      y,
+      z
+    })
+    setElementData(vehCol, "fuel", 10)
+  end
+      for i, veh in ipairs(mountainSpawns) do
+    local x, y, z = veh[1], veh[2], veh[3]
+    veh = createVehicle(510, x, y, z)
+    vehCol = createColSphere(x, y, z, 2.5)
+    attachElements(vehCol, veh, 0, 0, 0)
+    setElementData(vehCol, "parent", veh)
+    setElementData(veh, "parent", vehCol)
+    setElementData(vehCol, "vehicle", true)
+    setElementData(vehCol, "MAX_Slots", 0)
+    local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh))
+    setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
+    setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
+    setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
+    setElementData(vehCol, "spawn", {
+      510,
+      x,
+      y,
+      z
+    })
+    setElementData(vehCol, "fuel", 0)
+  end
+      for i, veh in ipairs(moonbeamSpawns) do
+    local x, y, z = veh[1], veh[2], veh[3]
+    veh = createVehicle(418, x, y, z)
+    vehCol = createColSphere(x, y, z, 2.5)
+    attachElements(vehCol, veh, 0, 0, 0)
+    setElementData(vehCol, "parent", veh)
+    setElementData(veh, "parent", vehCol)
+    setElementData(vehCol, "vehicle", true)
+    setElementData(vehCol, "MAX_Slots", 40)
+    local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh))
+    setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
+    setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
+    setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
+    setElementData(vehCol, "spawn", {
+      418,
+      x,
+      y,
+      z
+    })
+    setElementData(vehCol, "fuel", 10)
+  end
+   for i, veh in ipairs(fbiSpawns) do
+    local x, y, z = veh[1], veh[2], veh[3]
+    veh = createVehicle(596, x, y, z)
+    vehCol = createColSphere(x, y, z, 2.5)
+    attachElements(vehCol, veh, 0, 0, 0)
+    setElementData(vehCol, "parent", veh)
+    setElementData(veh, "parent", vehCol)
+    setElementData(vehCol, "vehicle", true)
+    setElementData(vehCol, "MAX_Slots", 38)
+    local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh))
+    setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
+    setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
+    setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
+    setElementData(vehCol, "spawn", {
+      596,
+      x,
+      y,
+      z
+    })
+    setElementData(vehCol, "fuel", 10)
+  end
+    for i, veh in ipairs(dodoSpawns) do
+    local x, y, z = veh[1], veh[2], veh[3]
+    veh = createVehicle(593, x, y, z)
+    vehCol = createColSphere(x, y, z, 2.5)
+    attachElements(vehCol, veh, 0, 0, 0)
+    setElementData(vehCol, "parent", veh)
+    setElementData(veh, "parent", vehCol)
+    setElementData(vehCol, "vehicle", true)
+    setElementData(vehCol, "MAX_Slots", 10)
+    local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh))
+    setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
+    setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
+    setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
+    setElementData(vehCol, "spawn", {
+      593,
+      x,
+      y,
+      z
+    })
+    setElementData(vehCol, "fuel", 15)
+  end
+    for i, veh in ipairs(camperSpawns) do
+    local x, y, z = veh[1], veh[2], veh[3]
+    veh = createVehicle(483, x, y, z)
+    vehCol = createColSphere(x, y, z, 2.5)
+    attachElements(vehCol, veh, 0, 0, 0)
+    setElementData(vehCol, "parent", veh)
+    setElementData(veh, "parent", vehCol)
+    setElementData(vehCol, "vehicle", true)
+    setElementData(vehCol, "MAX_Slots", 100)
+    local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh))
+    setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
+    setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
+    setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
+    setElementData(vehCol, "spawn", {
+      483,
+      x,
+      y,
+      z
+    })
+    setElementData(vehCol, "fuel", 10)
+  end
+    for i, veh in ipairs(quadSpawns) do
+    local x, y, z = veh[1], veh[2], veh[3]
+    veh = createVehicle(471, x, y, z)
+    vehCol = createColSphere(x, y, z, 2.5)
+    attachElements(vehCol, veh, 0, 0, 0)
+    setElementData(vehCol, "parent", veh)
+    setElementData(veh, "parent", vehCol)
+    setElementData(vehCol, "vehicle", true)
+    setElementData(vehCol, "MAX_Slots", 12)
+    local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh))
+    setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
+    setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
+    setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
+    setElementData(vehCol, "spawn", {
+      471,
+      x,
+      y,
+      z
+    })
+    setElementData(vehCol, "fuel", 10)
+  end
+  for i, veh in ipairs(patriotSpawns) do
+    local x, y, z = veh[1], veh[2], veh[3]
+    veh = createVehicle(470, x, y, z)
+    vehCol = createColSphere(x, y, z, 2.5)
+    attachElements(vehCol, veh, 0, 0, 0)
+    setElementData(vehCol, "parent", veh)
+    setElementData(veh, "parent", vehCol)
+    setElementData(vehCol, "vehicle", true)
+    setElementData(vehCol, "MAX_Slots", 38)
+    local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh))
+    setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
+    setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
+    setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
+    setElementData(vehCol, "spawn", {
+      470,
+      x,
+      y,
+      z
+    })
+	setElementData(vehCol, "fuel", 30)
 end
---spawnDayZVehicles()
-function spawnVehiclePack (ps,cmd)
-	if getElementData(ps,"admin") then
-		spawnDayZVehicles()
-		outputChatBox("Vehicles have been respawned!",ps,255,0,0,true)
-	end
+  for i, veh in ipairs(sanchezSpanws) do
+    local x, y, z = veh[1], veh[2], veh[3]
+    veh = createVehicle(468, x, y, z)
+    vehCol = createColSphere(x, y, z, 1.5)
+    attachElements(vehCol, veh, 0, 0, 0)
+    setElementData(vehCol, "parent", veh)
+    setElementData(veh, "parent", vehCol)
+    setElementData(vehCol, "vehicle", true)
+    setElementData(vehCol, "MAX_Slots", 6)
+    local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh))
+    setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
+    setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
+    setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
+    setElementData(vehCol, "spawn", {
+      468,
+      x,
+      y,
+      z
+    })
+    setElementData(vehCol, "fuel", 10)
+  end
+  for i, veh in ipairs(freewaySpanws) do
+    local x, y, z = veh[1], veh[2], veh[3]
+    veh = createVehicle(463, x, y, z)
+    vehCol = createColSphere(x, y, z, 1.5)
+    attachElements(vehCol, veh, 0, 0, 0)
+    setElementData(vehCol, "parent", veh)
+    setElementData(veh, "parent", vehCol)
+    setElementData(vehCol, "vehicle", true)
+    setElementData(vehCol, "MAX_Slots", 6)
+    local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh))
+    setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
+    setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
+    setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
+    setElementData(vehCol, "spawn", {
+      463,
+      x,
+      y,
+      z
+    })
+    setElementData(vehCol, "fuel", 10)
+  end
+  for i, veh in ipairs(barracksSpawns) do
+    local x, y, z = veh[1], veh[2], veh[3]
+    veh = createVehicle(433, x, y, z)
+    vehCol = createColSphere(x, y, z, 4)
+    attachElements(vehCol, veh, 0, 0, 0)
+    setElementData(vehCol, "parent", veh)
+    setElementData(veh, "parent", vehCol)
+    setElementData(vehCol, "vehicle", true)
+    setElementData(vehCol, "MAX_Slots", 64)
+    local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh))
+    setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
+    setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
+    setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
+    setElementData(vehCol, "spawn", {
+      433,
+      x,
+      y,
+      z
+    })
+    setElementData(vehCol, "fuel", 10)
+    for i, items in ipairs(lootItems.helicrashsides) do
+      local randomNumber = math.random(1, 10)
+      if randomNumber == 5 then
+        setElementData(vehCol, items[1], math.random(1, 2))
+      end
+    end
+  end
+  for i, veh in ipairs(coachSpawns) do
+    local x, y, z = veh[1], veh[2], veh[3]
+    veh = createVehicle(431, x, y, z)
+    vehCol = createColSphere(x, y, z, 4)
+    attachElements(vehCol, veh, 0, 0, 0)
+    setElementData(vehCol, "parent", veh)
+    setElementData(veh, "parent", vehCol)
+    setElementData(vehCol, "vehicle", true)
+    setElementData(vehCol, "MAX_Slots", 56)
+    local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh))
+    setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
+    setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
+    setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
+    setElementData(vehCol, "spawn", {
+      431,
+      x,
+      y,
+      z
+    })
+    setElementData(vehCol, "fuel", 10)
+  end
+  for i, veh in ipairs(swatSpawns) do
+    local x, y, z = veh[1], veh[2], veh[3]
+    veh = createVehicle(601, x, y, z)
+    vehCol = createColSphere(x, y, z, 4)
+    attachElements(vehCol, veh, 0, 0, 0)
+    setElementData(vehCol, "parent", veh)
+    setElementData(veh, "parent", vehCol)
+    setElementData(vehCol, "vehicle", true)
+    setElementData(vehCol, "MAX_Slots", 56)
+    local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh))
+    setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
+    setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
+    setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
+    setElementData(vehCol, "spawn", {
+      601,
+      x,
+      y,
+      z
+    })
+    setElementData(vehCol, "fuel", 10)
+  end
+  for i, veh in ipairs(swattruckSpawns) do
+    local x, y, z = veh[1], veh[2], veh[3]
+    veh = createVehicle(528, x, y, z)
+    vehCol = createColSphere(x, y, z, 4)
+    attachElements(vehCol, veh, 0, 0, 0)
+    setElementData(vehCol, "parent", veh)
+    setElementData(veh, "parent", vehCol)
+    setElementData(vehCol, "vehicle", true)
+    setElementData(vehCol, "MAX_Slots", 56)
+    local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh))
+    setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
+    setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
+    setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
+    setElementData(vehCol, "spawn", {
+      528,
+      x,
+      y,
+      z
+    })
+    setElementData(vehCol, "fuel", 10)
+  end
+  for i, veh in ipairs(fisherBootSpawns) do
+    local x, y, z = veh[1], veh[2], veh[3]
+    veh = createVehicle(453, x, y, z)
+    vehCol = createColSphere(x, y, z, 4)
+    attachElements(vehCol, veh, 0, 0, 0)
+    setElementData(vehCol, "parent", veh)
+    setElementData(veh, "parent", vehCol)
+    setElementData(vehCol, "vehicle", true)
+    setElementData(vehCol, "MAX_Slots", 30)
+    local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh))
+    setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
+    setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
+    setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
+    setElementData(vehCol, "spawn", {
+      453,
+      x,
+      y,
+      z
+    })
+    setElementData(vehCol, "fuel", 10)
+  end
+  for i, veh in ipairs(bikeSpawns) do
+    local x, y, z = veh[1], veh[2], veh[3]
+    veh = createVehicle(509, x, y, z)
+    vehCol = createColSphere(x, y, z, 2)
+    attachElements(vehCol, veh, 0, 0, 0)
+    setElementData(vehCol, "parent", veh)
+    setElementData(veh, "parent", vehCol)
+    setElementData(vehCol, "vehicle", true)
+    setElementData(vehCol, "MAX_Slots", 0)
+    local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh))
+    setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
+    setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
+    setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
+    setElementData(vehCol, "spawn", {
+      509,
+      x,
+      y,
+      z
+    })
+    setElementData(vehCol, "fuel", 0)
+  end
+  for i, tent in ipairs(tentSpawns) do
+    local x, y, z = tent[1], tent[2], tent[3]
+    tent = createObject(3243, x, y, z - 1)
+    setObjectScale(tent, 0.5)
+    tentCol = createColSphere(x, y, z, 4)
+    attachElements(tentCol, tent, 0, 0, 0)
+    setElementData(tentCol, "parent", tent)
+    setElementData(tent, "parent", tentCol)
+    setElementData(tentCol, "tent", true)
+    setElementData(tentCol, "vehicle", true)
+    setElementData(tentCol, "MAX_Slots", 100)
+  end
+  for i, veh in ipairs(maverikSpawns) do
+    local x, y, z = veh[1], veh[2], veh[3]
+    veh = createVehicle(487, x, y, z)
+    vehCol = createColSphere(x, y, z, 2)
+    attachElements(vehCol, veh, 0, 0, 0)
+    setElementData(vehCol, "parent", veh)
+    setElementData(veh, "parent", vehCol)
+    setElementData(vehCol, "vehicle", true)
+    setElementData(vehCol, "MAX_Slots", 36)
+    local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh))
+    setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
+    setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
+    setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
+    setElementData(vehCol, "spawn", {
+      487,
+      x,
+      y,
+      z
+    })
+    setElementData(vehCol, "fuel", 10)
+  end
+  for i, veh in ipairs(hunterSpawns) do
+    local x, y, z = veh[1], veh[2], veh[3]
+    veh = createVehicle(497, x, y, z)
+    vehCol = createColSphere(x, y, z, 2)
+    attachElements(vehCol, veh, 0, 0, 0)
+    setElementData(vehCol, "parent", veh)
+    setElementData(veh, "parent", vehCol)
+    setElementData(vehCol, "vehicle", true)
+    setElementData(vehCol, "MAX_Slots", 36)
+    local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh))
+    setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
+    setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
+    setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
+    setElementData(vehCol, "spawn", {
+      497,
+      x,
+      y,
+      z
+    })
+    setElementData(vehCol, "fuel", 10)
+  end
+  for i, veh in ipairs(cargobobSpawns) do
+    local x, y, z = veh[1], veh[2], veh[3]
+    veh = createVehicle(548, x, y, z)
+    vehCol = createColSphere(x, y, z, 2)
+    attachElements(vehCol, veh, 0, 0, 0)
+    setElementData(vehCol, "parent", veh)
+    setElementData(veh, "parent", vehCol)
+    setElementData(vehCol, "vehicle", true)
+    setElementData(vehCol, "MAX_Slots", 36)
+    local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh))
+    setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
+    setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
+    setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
+    setElementData(vehCol, "spawn", {
+      548,
+      x,
+      y,
+      z
+    })
+    setElementData(vehCol, "fuel", 10)
+  end
+  for i, veh in ipairs(raindanceSpawns) do
+    local x, y, z = veh[1], veh[2], veh[3]
+    veh = createVehicle(563, x, y, z)
+    vehCol = createColSphere(x, y, z, 2)
+    attachElements(vehCol, veh, 0, 0, 0)
+    setElementData(vehCol, "parent", veh)
+    setElementData(veh, "parent", vehCol)
+    setElementData(vehCol, "vehicle", true)
+    setElementData(vehCol, "MAX_Slots", 56)
+    local tires, engine, parts = getVehicleAddonInfos(getElementModel(veh))
+    setElementData(vehCol, "Tire_inVehicle", math.random(0, tires))
+    setElementData(vehCol, "Engine_inVehicle", math.random(0, engine))
+    setElementData(vehCol, "Parts_inVehicle", math.random(0, parts))
+    setElementData(vehCol, "spawn", {
+      563,
+      x,
+      y,
+      z
+    })
+    setElementData(vehCol, "fuel", 10)
+  end
 end
-addCommandHandler("svp",spawnVehiclePack)
+function spawnVehiclePack(ps, cmd)
+  if isObjectInACLGroup ( "user." ..getAccountName(getPlayerAccount(ps)), aclGetGroup ( "Admin" ) ) then
+    spawnDayZVehicles()
+    outputChatBox("Pojazdy zostały zrespione!", ps, 255, 0, 0, true)
+  end
+end
+addCommandHandler("svp", spawnVehiclePack)
 
 function notifyAboutExplosion()
 	local col = getElementData(source,"parent")
@@ -697,6 +906,7 @@ function respawnDayZVehicle(id,x,y,z,veh,col,max_slots)
 end
 
 vehicleAddonsInfo = {
+-- {Model ID, Tires, Engine, Бензобак}
 {542,4,1,1},
 {522,2,1,1},
 {427,4,1,1},
@@ -705,12 +915,25 @@ vehicleAddonsInfo = {
 {422,4,1,1},
 {470,4,1,1},
 {468,2,1,1},
+{463,2,1,1},
 {433,6,1,1},
-{437,6,1,1},
+{431,6,1,1},
 {509,0,0,0},
 {487,0,1,1},
 {497,0,1,1},
 {453,0,1,1},
+{548,0,1,1},
+{563,0,1,1},
+{601,6,1,1},
+{528,4,1,1},
+{603,4,1,1},
+{531,4,1,1},
+{500,4,1,1},
+{510,0,0,0},
+{596,4,1,1},
+{593,3,1,1},
+{483,4,1,1},
+{418,4,1,1},
 }
 
 vehicleFuelInfo = {
@@ -722,12 +945,24 @@ vehicleFuelInfo = {
 {422,0.25},
 {470,0.1},
 {468,0.1},
+{463,0.1},
 {433,0.5},
 {437,0.5},
+{548,0.5},
+{563,0.5},
+{601,0.25},
+{528,0.25},
 {509,0},
 {487,0.25},
 {497,0.25},
 {453,0.1},
+{603,0.80},
+{531,0.100},
+{500,0.80},
+{510,0},
+{596,0.120},
+{593,0.80},
+{483,0.80},
 }
 
 function getVehicleAddonInfos (id)

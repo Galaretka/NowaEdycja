@@ -75,7 +75,7 @@
 {"Drut kolczasty"},
 {"Koło"},
 {"Silnik"},
-{"Zbiornik benzyny"},
+{"Bak"},
 {"Amunicja do M136"},
 
 {"Amunicja do Lee Enfield"},
@@ -94,7 +94,7 @@
 {"Środki przeciwbólowe"},
 {"Lornetka"},
 {"Pusta manierka"},
-{"Pusta puszka z napojem"},
+{"Pusta puszka po napoju"},
 {"Pozostałości"},
 {"1866 Slug"},
 {"2Rnd. Slug"},

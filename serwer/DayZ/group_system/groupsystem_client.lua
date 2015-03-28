@@ -64,7 +64,7 @@ end
 bindKey("F1","down",openPlayerGroupWindow)
 
 function openMemberGroupWindow ()
-	if getElementData(getLocalPlayer(),"gang") == "None" then return end
+	if getElementData(getLocalPlayer(),"gang") == "Brak" then return end
 	local showing = guiGetVisible(playerGroupWindow["member_window"])
 	if showing == false then
 		if isPlayerKeySpamming() then return end
@@ -159,7 +159,7 @@ addEventHandler("removePlayerInvites",getRootElement(),removePlayerInvites)
 function refreshPlayerInviteList ()
 	guiGridListClear(playerGroupWindow["invite_member_list"])
 	for i, player in ipairs(getElementsByType("player")) do
-		if getElementData(player,"gang") == "None" then
+		if getElementData(player,"gang") == "Brak" then
 			local row = guiGridListAddRow ( playerGroupWindow["invite_member_list"] )
 			guiGridListSetItemText ( playerGroupWindow["invite_member_list"], row, playerGroupWindow["invite_member_list_name"],getPlayerName(player), false, false )
 		end
@@ -244,7 +244,7 @@ function updateGPS ()
 			destroyElement(blip)
 		end
 	end
-	if getElementData(getLocalPlayer(),"gang") == "None" then return end	
+	if getElementData(getLocalPlayer(),"gang") == "Brak" then return end	
 	playerBlibs = {}	
 	for i, player in ipairs(getElementsByType("player")) do
 		if gangname == getElementData(player,"gang") and player ~= localPlayer then

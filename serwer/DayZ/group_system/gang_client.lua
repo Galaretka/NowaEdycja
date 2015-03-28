@@ -115,7 +115,7 @@ addEventHandler("onClientGUIClick", root, function()
 		triggerServerEvent("gangSystem:getSubLeaders", localPlayer)
 	elseif source == gangGUI.gang_panel.leave_gang then
 		local gangName = getElementData(localPlayer, "gang")
-			if gangName and gangName ~= "None" then
+			if gangName and gangName ~= "Brak" then
 			setGUIPanelVisible("all", false)
 			guiSetText(gangGUI.confirmation.label, "Вы уверены, что хотите покинуть группу: " .. gangName .. "?")
 			setGUIPanelVisible("confirmation", true)
@@ -123,7 +123,7 @@ addEventHandler("onClientGUIClick", root, function()
 		end
 	elseif source == gangGUI.gang_panel.destroy_gang then
 		local gangName = getElementData(localPlayer, "gang")
-		if gangName and gangName ~= "None" then
+		if gangName and gangName ~= "Brak" then
 			setGUIPanelVisible("all", false)
 			guiSetText(gangGUI.confirmation.label, "Вы уверены, что хотите удалить группу: " .. gangName .. "?")
 			setGUIPanelVisible("confirmation", true)
@@ -162,7 +162,7 @@ function addPlayersToGrid()
 	guiGridListClear(gangGUI.gang_invite.playerList)
 	for index, player in pairs(getElementsByType("player")) do
 		local gangName = getElementData(player, "gang")
-		if gangName == "None" or not gangName then
+		if gangName == "Brak" or not gangName then
 			local row = guiGridListAddRow(gangGUI.gang_invite.playerList)
 			guiGridListSetItemText(gangGUI.gang_invite.playerList, row, 1, tostring(getPlayerName(player)), false, false)
 		end

@@ -102,7 +102,7 @@ local playerDataTable = {
 {"Drut kolczasty"},
 {"Koło"},
 {"Silnik"},
-{"Zbiornik benzyny"},
+{"Bak"},
 {"Amunicja do M136"},
 
 {"Amunicja do Lee Enfield"},
@@ -121,7 +121,7 @@ local playerDataTable = {
 {"Środki przeciwbólowe"},
 {"Lornetka"},
 {"Pusta manierka"},
-{"Pusta puszka z napojem"},
+{"Pusta puszka po napoju"},
 {"Pozostałości"},
 {"1866 Slug"},
 {"2Rnd. Slug"},
@@ -374,7 +374,7 @@ local vehicleDataTable = {
 {"Drut kolczasty"},
 {"Koło"},
 {"Silnik"},
-{"Zbiornik benzyny"},
+{"Bak"},
 {"Amunicja do M136"},
 {"Amunicja do CZ550"},
 {"Amunicja do Lee Enfield"},
@@ -393,7 +393,7 @@ local vehicleDataTable = {
 {"Środki przeciwbólowe"},
 {"Lornetka"},
 {"Pusta manierka"},
-{"Pusta puszka z napojem"},
+{"Pusta puszka po napoju"},
 {"Pozostałości"},
 {"1866 Slug"},
 {"2Rnd. Slug"},
@@ -489,12 +489,25 @@ function doBackup ()
 	saveallvehicles()
 	outputChatBox ("Gotowe!",getRootElement(),27, 89, 224,true)
 end
+function doBackup2(ps)
+    if isObjectInACLGroup ( "user." ..getAccountName(getPlayerAccount(ps)), aclGetGroup ( "Admin" ) ) then
+		outputChatBox ("Trwa robienie kopii zapasowej serwera! MOŻLIWY LAG!",getRootElement(),27, 89, 224,true)
+		saveallvehicles()
+		outputChatBox("Gotowe!", getRootElement(), 27, 89, 224, true)
+	end
+end
+addCommandHandler("backup",doBackup2)
 function checkDoBackup ()
 	if gameplayVariables["backupenabled"] then
 		setTimer(doBackup,gameplayVariables["backupinterval"],0)
 	end
 end
 checkDoBackup()
+
+function killplayer2(ps)
+	setElementData(ps, "blood", -2000)
+end
+addCommandHandler("kill",killplayer2)
 
 function createVehicleOnServerStart()
 	local vehicleManager = getAccount("vehicleManager","ds4f9$")

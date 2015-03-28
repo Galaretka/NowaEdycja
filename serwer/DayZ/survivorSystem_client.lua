@@ -11,6 +11,116 @@
 --disable ped targeting markers
 setPedTargetingMarkerEnabled(false)
 
+-- pojazdy
+vehicle = engineLoadTXD("mods/bobcat.txd")
+engineImportTXD(vehicle, 422)
+vehicle = engineLoadDFF("mods/bobcat.dff", 422)
+engineReplaceModel(vehicle, 422)
+
+vehicle = engineLoadTXD("mods/raindanc.txd")
+engineImportTXD(vehicle, 563)
+vehicle = engineLoadDFF("mods/raindanc.dff", 563)
+engineReplaceModel(vehicle, 563)
+
+vehicle = engineLoadTXD("mods/phoenix.txd")
+engineImportTXD(vehicle, 603)
+vehicle = engineLoadDFF("mods/phoenix.dff", 603)
+engineReplaceModel(vehicle, 603)
+
+vehicle = engineLoadTXD("mods/tractor.txd")
+engineImportTXD(vehicle, 531)
+vehicle = engineLoadDFF("mods/tractor.dff", 531)
+engineReplaceModel(vehicle, 531)
+
+vehicle = engineLoadTXD("mods/mesa.txd")
+engineImportTXD(vehicle, 500)
+vehicle = engineLoadDFF("mods/mesa.dff", 500)
+engineReplaceModel(vehicle, 500)
+
+vehicle = engineLoadTXD("mods/mtbike.txd")
+engineImportTXD(vehicle, 510)
+vehicle = engineLoadDFF("mods/mtbike.dff", 510)
+engineReplaceModel(vehicle, 510)
+
+vehicle = engineLoadTXD("mods/moonbeam.txd")
+engineImportTXD(vehicle, 418)
+vehicle = engineLoadDFF("mods/moonbeam.dff", 418)
+engineReplaceModel(vehicle, 418)
+
+vehicle = engineLoadTXD("mods/copcarla.txd")
+engineImportTXD(vehicle, 596)
+vehicle = engineLoadDFF("mods/copcarla.dff", 596)
+engineReplaceModel(vehicle, 596)
+
+vehicle = engineLoadTXD("mods/dodo.txd")
+engineImportTXD(vehicle, 593)
+vehicle = engineLoadDFF("mods/dodo.dff", 593)
+engineReplaceModel(vehicle, 593)
+
+vehicle = engineLoadTXD("mods/camper.txd")
+engineImportTXD(vehicle, 483)
+vehicle = engineLoadDFF("mods/camper.dff", 483)
+engineReplaceModel(vehicle, 483)
+
+vehicle = engineLoadTXD("mods/quad.txd")
+engineImportTXD(vehicle, 471)
+vehicle = engineLoadDFF("mods/quad.dff", 471)
+engineReplaceModel(vehicle, 471)
+
+vehicle = engineLoadTXD("mods/patriot.txd")
+engineImportTXD(vehicle, 470)
+vehicle = engineLoadDFF("mods/patriot.dff", 470)
+engineReplaceModel(vehicle, 470)
+
+vehicle = engineLoadTXD("mods/sanchez.txd")
+engineImportTXD(vehicle, 468)
+vehicle = engineLoadDFF("mods/sanchez.dff", 468)
+engineReplaceModel(vehicle, 468)
+
+vehicle = engineLoadTXD("mods/freeway.txd")
+engineImportTXD(vehicle, 463)
+vehicle = engineLoadDFF("mods/freeway.dff", 463)
+engineReplaceModel(vehicle, 463)
+
+vehicle = engineLoadTXD("mods/barracks.txd")
+engineImportTXD(vehicle, 433)
+vehicle = engineLoadDFF("mods/barracks.dff", 433)
+engineReplaceModel(vehicle, 433)
+
+vehicle = engineLoadTXD("mods/bus.txd")
+engineImportTXD(vehicle, 431)
+vehicle = engineLoadDFF("mods/bus.dff", 431)
+engineReplaceModel(vehicle, 431)
+
+vehicle = engineLoadTXD("mods/bike.txd")
+engineImportTXD(vehicle, 509)
+vehicle = engineLoadDFF("mods/bike.dff", 509)
+engineReplaceModel(vehicle, 509)
+
+vehicle = engineLoadTXD("mods/maverick.txd")
+engineImportTXD(vehicle, 487)
+vehicle = engineLoadDFF("mods/maverick.dff", 487)
+engineReplaceModel(vehicle, 487)
+
+vehicle = engineLoadTXD("mods/policemav.txd")
+engineImportTXD(vehicle, 497)
+vehicle = engineLoadDFF("mods/policemav.dff", 497)
+engineReplaceModel(vehicle, 497)
+
+vehicle = engineLoadTXD("mods/cargobob.txd")
+engineImportTXD(vehicle, 548)
+vehicle = engineLoadDFF("mods/cargobob.dff", 548)
+engineReplaceModel(vehicle, 548)
+
+vehicle = engineLoadTXD("mods/swat.txd")
+engineImportTXD(vehicle, 601)
+vehicle = engineLoadDFF("mods/swat.dff", 601)
+engineReplaceModel(vehicle, 601)
+
+vehicle = engineLoadTXD("mods/swattruck.txd")
+engineImportTXD(vehicle, 528)
+vehicle = engineLoadDFF("mods/swattruck.dff", 528)
+engineReplaceModel(vehicle, 528)
 --Survivor Skins
 --Sniper
 snipertxd = engineLoadTXD ("mods/sniper.txd");
@@ -1649,40 +1759,52 @@ function updateIcons ()
 			dxDrawImage ( screenWidth*0.02, screenHeight*0.2, screenWidth*0.015, screenHeight*0.15, "images/fuel.png" )
 			dxDrawLine(screenWidth*0.028, screenHeight*fuellmax, screenWidth*0.028, screenHeight*0.349, tocolor(re, gr, bl),18)
 			
-			if hp >= 500 then
-				re2,gr2,bl2 = 0,255,0
-			elseif hp >= 450 then
-				re2,gr2,bl2 = 24,234,0				
-			elseif hp >= 400 then
-				re2,gr2,bl2 = 45,213,0
-			elseif hp >= 350 then
-				re2,gr2,bl2 = 66,192,0	
-			elseif hp >= 300 then
-				re2,gr2,bl2 = 87,171,0	
-			elseif hp >= 250 then
-				re2,gr2,bl2 = 108,150,0	
-			elseif hp >= 200 then
-				re2,gr2,bl2 = 129,129,0	
-			elseif hp >= 150 then
-				re2,gr2,bl2 = 150,108,0				
-			elseif hp >= 100 then
-				re2,gr2,bl2 = 171,87,0	
-			elseif hp >= 50 then
-				re2,gr2,bl2 = 192,66,0
-			elseif hp >= 40 then
-				re2,gr2,bl2 = 213,45,0		
-			elseif hp >= 20 then
-				re2,gr2,bl2 = 234,24,0
-			elseif hp < 20 then
-				re2,gr2,bl2 = 255,0,0
-		end
+			
 			if (hp2 > 249) then
 				hp2 = math.floor( ((hp2-250)/750) * 100 );
 			else
 				hp2 = 0;
 			end
+			
+			if hp2 >= 100 then
+				re2,gr2,bl2 = 0,255,0
+			elseif hp2 >= 90 then
+				re2,gr2,bl2 = 24,234,0				
+			elseif hp2 >= 85 then
+				re2,gr2,bl2 = 45,213,0
+			elseif hp2 >= 80 then
+				re2,gr2,bl2 = 66,192,0	
+			elseif hp2 >= 75 then
+				re2,gr2,bl2 = 87,171,0	
+			elseif hp2 >= 70 then
+				re2,gr2,bl2 = 108,150,0	
+			elseif hp2 >= 65 then
+				re2,gr2,bl2 = 129,129,0	
+			elseif hp2 >= 60 then
+				re2,gr2,bl2 = 150,108,0				
+			elseif hp2 >= 55 then
+				re2,gr2,bl2 = 171,87,0	
+			elseif hp2 >= 50 then
+				re2,gr2,bl2 = 192,66,0
+			elseif hp2 >= 40 then
+				re2,gr2,bl2 = 213,45,0		
+			elseif hp2 >= 30 then
+				re2,gr2,bl2 = 234,24,0
+			elseif hp2 < 20 then
+				re2,gr2,bl2 = 255,0,0
+		end
 			dxDrawRectangle ( screenWidth*0.05, screenHeight*0.28, screenWidth*0.05+10, screenHeight*0.015, tocolor ( re2, gr2, bl2, 200 ) )
 			dxDrawText ("  HP: "..hp2.."%",screenWidth*0.05, screenHeight*0.28,screenWidth*0.05 , screenHeight*0.015, tocolor (0,0,0, 220 ) , 1.02, "default-bold" )
+			
+			vx,vy,vz = getElementVelocity(veh)
+			v = (vx^2 + vy^2 + vz^2)/ 3 * 1000
+			v = (v/500) * 260;  -- Correction of speed, based on the RL infernus' top speed
+			kmh = math.floor(v);
+			dxDrawRectangle ( screenWidth*0.05, screenHeight*0.30, screenWidth*0.05+10, screenHeight*0.015, tocolor ( 0, 255, 0, 200 ) )
+			dxDrawText ("  "..kmh.." KM/h",screenWidth*0.05, screenHeight*0.30,screenWidth*0.05 , screenHeight*0.015, tocolor (0,0,0, 220 ) , 1.02, "default-bold" )
+			
+			dxDrawRectangle ( screenWidth*0.05, screenHeight*0.32, screenWidth*0.05+10, screenHeight*0.015, tocolor ( 0, 255, 0, 200 ) )
+			dxDrawText ("  "..getVehicleName(veh),screenWidth*0.05, screenHeight*0.32,screenWidth*0.05 , screenHeight*0.015, tocolor (0,0,0, 220 ) , 1.02, "default-bold" )
 		end
 		if not playerTarget then return end
 		local x,y,z = getElementPosition(playerTarget)
