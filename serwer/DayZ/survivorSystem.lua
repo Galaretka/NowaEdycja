@@ -1085,12 +1085,23 @@ addEventHandler("onPlayerChangeSuitBlack",getRootElement(),onPlayerChangeSuitBla
 --Очки
 function onPlayerChangeGlasses ()
 removePedClothes( source, 15)
+removePedClothes( source, 16)
 addPedClothes ( source, "glasses04dark", "glasses04", 15 )
 setElementData( source, "glases", 1)
 triggerClientEvent(source,"refreshInventoryManual",source)
 end
 addEvent("onPlayerChangeGlasses",true)
 addEventHandler("onPlayerChangeGlasses",getRootElement(),onPlayerChangeGlasses) 
+function onPlayerChangeMaskaGazowa ()
+removePedClothes( source, 16)
+removePedClothes( source, 15)
+addPedClothes ( source, "hockey", "hockeymask", 16 )
+setElementData( source, "glases", 2)
+triggerClientEvent(source,"refreshInventoryManual",source)
+end
+addEvent("onPlayerChangeMaskaGazowa",true)
+addEventHandler("onPlayerChangeMaskaGazowa",getRootElement(),onPlayerChangeMaskaGazowa) 
+
 
 function onPlayerRefillWaterBottle (itemName)
 	if isElementInWater(source) then

@@ -136,6 +136,13 @@
     <file src="skins/zombie5.txd" />
     <file src="skins/zombie6.txd" />
     <file src="skins/zombie7.txd" />
+    <file src="skins/zombie.dff" />
+    <file src="skins/zombie2.dff" />
+    <file src="skins/zombie3.dff" />
+    <file src="skins/zombie4.dff" />
+    <file src="skins/zombie5.dff" />
+    <file src="skins/zombie6.dff" />
+    <file src="skins/zombie7.dff" />
 
     <file src="sounds/mgroan1.ogg" />
     <file src="sounds/mgroan2.ogg" />
@@ -169,8 +176,8 @@
     <file src="clothing/worktrcamogrn.txd" />
     <file src="clothing/worktrcamogry.txd" />
     <file src="clothing/tshirtwhite.txd" />
-    <file src="clothing/gazmask.txd" />
-    <file src="clothing/gazmask.dff" />
+    <file src="clothing/hockey.txd" />
+    
 
 
     <file src="items/assault_ammo.txd" />

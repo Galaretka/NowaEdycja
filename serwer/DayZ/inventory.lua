@@ -111,7 +111,7 @@ inventoryItems = {
 {"Bluza: Bluza-Niebieski",1,"Zaloz Bluza-Niebieski"},
 {"Kurtka: Kurtka-Czarny",1,"Zaloz Kurtka-Czarny"},
 {"Okulary",1,"Zaloz okulary"},
-
+{"Maska gazowa",1,"Zaloz Maska gazowa"},
 
 {"Montion Backpack",1,"Nałóż"},
 {"Drewno opałowe",2},
@@ -1130,6 +1130,9 @@ function playerUseItem(itemName,itemInfo)
 	--Очки
 	elseif itemInfo == "Zaloz okulary" then
 	triggerServerEvent("onPlayerChangeGlasses",getLocalPlayer(),itemName)
+	playSound("sounds/cloth.ogg")
+	elseif itemInfo == "Zaloz Maska gazowa" then
+	triggerServerEvent("onPlayerChangeMaskaGazowa",getLocalPlayer(),itemName)
 	playSound("sounds/cloth.ogg")
     elseif itemName == "Assault Pack (ACU)" then 
              if getElementData(getLocalPlayer(), "MAX_Slots") == 12 then 

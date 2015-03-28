@@ -265,6 +265,9 @@ end
 if glass == 1 then
 addPedClothes ( source, "glasses04dark", "glasses04", 15 )
 end
+if glass == 2 then
+addPedClothes ( source, "hockey", "hockeymask", 16 )
+end
 --Weapons
 --Old Weapons
 local weapon = getElementData(player,"currentweapon_1")
@@ -479,6 +482,8 @@ local vehicleDataTable = {
 {"Bluza: Bluza-Niebieski"},
 {"Kurtka: Kurtka-Czarny"},
 {"Okulary"},
+{"Maska gazowa"},
+
 
 {"Gas łzawiący"},
 {"Оск. граната M67"},

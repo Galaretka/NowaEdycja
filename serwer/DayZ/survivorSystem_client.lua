@@ -192,6 +192,11 @@ engineImportTXD( txd, 30538)
 txd = engineLoadTXD("clothing/tshirtwhite.txd")
 engineImportTXD( txd, 30515)
 
+--itemTXD = engineLoadTXD ("clothing/hockey.txd")
+--engineImportTXD (itemTXD, 30376)
+
+
+
 --Weapons
 
 

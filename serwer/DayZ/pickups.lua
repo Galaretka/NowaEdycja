@@ -169,7 +169,7 @@ local itemTable = {
 {"Bluza: Bluza-Niebieski",1247,2,0,4.5},
 {"Kurtka: Kurtka-Czarny",1247,2,0,4.5},
 {"Okulary",1247,2,0,4.5},
-
+{"Maska gazowa",1247,2,0,4.5},
 
 
 
@@ -381,7 +381,7 @@ local itemTable = {
 {"Bluza: Bluza-Niebieski",1247,2,0,4.5},
 {"Kurtka: Kurtka-Czarny",1247,2,0,4.5},
 {"Okulary",1247,2,0,4.5},
-
+{"Maska gazowa",1247,2,0,4.5},
 
 
 {"TEC-9",372,1,90,4},

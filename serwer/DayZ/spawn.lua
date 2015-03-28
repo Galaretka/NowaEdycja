@@ -74,7 +74,7 @@ local playerDataTable = {
 {"Bluza: Bluza-Niebieski"},
 {"Kurtka: Kurtka-Czarny"},
 {"Okulary"},
-
+{"Maska gazowa"},
 
 
 
@@ -245,7 +245,7 @@ local vehicleDataTable = {
 {"Bluza: Bluza-Niebieski"},
 {"Kurtka: Kurtka-Czarny"},
 {"Okulary"},
-
+{"Maska gazowa"},
 
 {"Amunicja do M136 Launcher"},
 {"Medyczna paczka"},
