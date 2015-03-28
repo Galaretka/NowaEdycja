@@ -32,20 +32,20 @@ function playersexo()
     destroyElement(mulher)
     destroyElement(home)
     if(source ~= mulher) then
-        setElementModel(localPlayer, 73)
+        setElementModel(localPlayer, 0)
     for i, data in ipairs(playerDataTable) do
         if data[1] == "skin" then
         
-        setElementData(localPlayer, data[1], 73) -- "73" ID da sua skin homem.
+        setElementData(localPlayer, data[1], 1) -- "73" ID da sua skin homem.
    
       end
 end
     elseif(source ~= homem) then
-        setElementModel(localPlayer, 178)
+        setElementModel(localPlayer, 0)
     for i, data in ipairs(playerDataTable) do
         if data[1] == "skin" then
         
-        setElementData(localPlayer, data[1], 178) -- "178" ID da sua skin mulher.
+        setElementData(localPlayer, data[1], 1) -- "178" ID da sua skin mulher.
         
         end
       end

@@ -137,10 +137,10 @@ local playerDataTable = {
 {"Namiot"},
 {"Pieczeń"},
 {"Mięso"},
-{"Skin przetrwania"},
-{"Skin snajpera"},
-{"Skin bandyty"},
-{"Podstawowy skin"},
+--{"Skin przetrwania"},
+--{"Skin snajpera"},
+--{"Skin bandyty"},
+--{"Podstawowy skin"},
 {"Środki przeciwbólowe"},
 {"Lornetka"},
 {"Pusta manierka"},
@@ -168,13 +168,13 @@ function playerLogin(username, pass, player)
 local playerID = getAccountData(getPlayerAccount(player),"playerID")
 account = getPlayerAccount(player)
 local x,y,z = getAccountData(account,"last_x"),getAccountData(account,"last_y"),getAccountData(account,"last_z")
-local skin = getAccountData(account,"skin")
+--local skin = getAccountData(account,"skin")
 createZombieTable (player)
 if getAccountData(account,"isDead") then
 spawnDayZPlayer(player)
 return
 end
-spawnPlayer (player, x,y,z+0.5, math.random(0,360), skin, 0, 0)
+spawnPlayer (player, x,y,z+0.5, math.random(0,360), 0, 0, 0)
 removePedClothes(player,0)
 removePedClothes(player,2)
 removePedClothes(player,3)
@@ -512,10 +512,10 @@ local vehicleDataTable = {
 {"Namiot"},
 {"Pieczeń"},
 {"Mięso"},
-{"Skin przetrwania"},
-{"Skin snajpera"},
-{"Skin bandyty"},
-{"Podstawowy skin"},
+--{"Skin przetrwania"},
+--{"Skin snajpera"},
+--{"Skin bandyty"},
+--{"Podstawowy skin"},
 {"Środki przeciwbólowe"},
 {"Lornetka"},
 {"Pusta manierka"},
