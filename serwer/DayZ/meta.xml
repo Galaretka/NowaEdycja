@@ -11,7 +11,6 @@
     <script src="addon.mtaat" />
     <script src="editor_server.lua" type="server" />
 	<script src="TabPanel.lua" type="client" />
-	<script src="change_sex.lua" type="client" />
     <script src="editor_client.lua" type="client" />
     <script src="weapon_audio.lua" type="client" />
     <script src="pickups.lua" type="server" />
@@ -129,6 +128,50 @@
     <file src="mods/fox.dff" />
     <file src="mods/wolf.txd" />
     <file src="mods/wolf.dff" />
+	<file src="mods/bobcat.txd" />
+    <file src="mods/bobcat.dff" />
+	<file src="mods/phoenix.txd" />
+    <file src="mods/phoenix.dff" />
+	<file src="mods/tractor.txd" />
+    <file src="mods/tractor.dff" />
+	<file src="mods/mesa.txd" />
+    <file src="mods/mesa.dff" />
+	<file src="mods/mtbike.txd" />
+    <file src="mods/mtbike.dff" />
+	<file src="mods/moonbeam.txd" />
+    <file src="mods/moonbeam.dff" />
+	<file src="mods/copcarla.txd" />
+    <file src="mods/copcarla.dff" />
+	<file src="mods/dodo.txd" />
+    <file src="mods/dodo.dff" />
+	<file src="mods/camper.txd" />
+    <file src="mods/camper.dff" />
+	<file src="mods/quad.txd" />
+    <file src="mods/quad.dff" />
+	<file src="mods/patriot.txd" />
+    <file src="mods/patriot.dff" />
+	<file src="mods/sanchez.txd" />
+    <file src="mods/sanchez.dff" />
+	<file src="mods/barracks.txd" />
+    <file src="mods/barracks.dff" />
+	<file src="mods/bus.txd" />
+    <file src="mods/bus.dff" />
+	<file src="mods/bike.txd" />
+    <file src="mods/bike.dff" />
+	<file src="mods/maverick.txd" />
+    <file src="mods/maverick.dff" />
+	<file src="mods/policemav.txd" />
+    <file src="mods/policemav.dff" />
+	<file src="mods/cargobob.txd" />
+    <file src="mods/cargobob.dff" />
+	<file src="mods/raindanc.txd" />
+    <file src="mods/raindanc.dff" />
+	<file src="mods/swat.txd" />
+    <file src="mods/swat.dff" />
+	<file src="mods/swattruck.txd" />
+    <file src="mods/swattruck.dff" />
+	<file src="mods/freeway.txd" />
+    <file src="mods/freeway.dff" />
     <file src="skins/zombie.txd" />
     <file src="skins/zombie2.txd" />
     <file src="skins/zombie3.txd" />
@@ -136,6 +179,7 @@
     <file src="skins/zombie5.txd" />
     <file src="skins/zombie6.txd" />
     <file src="skins/zombie7.txd" />
+<<<<<<< HEAD
     <file src="skins/zombie.dff" />
     <file src="skins/zombie2.dff" />
     <file src="skins/zombie3.dff" />
@@ -144,6 +188,8 @@
     <file src="skins/zombie6.dff" />
     <file src="skins/zombie7.dff" />
 
+=======
+>>>>>>> origin/master
     <file src="sounds/mgroan1.ogg" />
     <file src="sounds/mgroan2.ogg" />
     <file src="sounds/mgroan3.ogg" />
@@ -300,15 +346,4 @@
 	<file src="images/blood_4.png" type="client" />
 	<file src="images/blood_5.png" type="client" />
 	<file src="images/blood_6.png" type="client" />
-	<script src="scripts/woda/client/CoreClassC.lua" type="client" cache="false"/>
-	
-	<!-- shared scripts -->
-	<script src="scripts/woda/shared/classlib.lua" type="shared" cache="false"/>
-		<script src="scripts/c/c.lua" type="client"/>
-	<!-- shaders -->
-	<file src="scripts/woda/res/shaders/waterEffects.fx" type="client"/>
-	
-	<!-- textures -->
-	<file src="scripts/woda/res/textures/waterNormal.png" type="client"/>
-	<file src="scripts/woda/res/textures/waterDrop.png" type="client"/>
 </meta>
