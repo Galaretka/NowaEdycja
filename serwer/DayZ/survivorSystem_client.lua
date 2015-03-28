@@ -11,6 +11,116 @@
 --disable ped targeting markers
 setPedTargetingMarkerEnabled(false)
 
+-- pojazdy
+vehicle = engineLoadTXD("mods/bobcat.txd")
+engineImportTXD(vehicle, 422)
+vehicle = engineLoadDFF("mods/bobcat.dff", 422)
+engineReplaceModel(vehicle, 422)
+
+vehicle = engineLoadTXD("mods/raindanc.txd")
+engineImportTXD(vehicle, 563)
+vehicle = engineLoadDFF("mods/raindanc.dff", 563)
+engineReplaceModel(vehicle, 563)
+
+vehicle = engineLoadTXD("mods/phoenix.txd")
+engineImportTXD(vehicle, 603)
+vehicle = engineLoadDFF("mods/phoenix.dff", 603)
+engineReplaceModel(vehicle, 603)
+
+vehicle = engineLoadTXD("mods/tractor.txd")
+engineImportTXD(vehicle, 531)
+vehicle = engineLoadDFF("mods/tractor.dff", 531)
+engineReplaceModel(vehicle, 531)
+
+vehicle = engineLoadTXD("mods/mesa.txd")
+engineImportTXD(vehicle, 500)
+vehicle = engineLoadDFF("mods/mesa.dff", 500)
+engineReplaceModel(vehicle, 500)
+
+vehicle = engineLoadTXD("mods/mtbike.txd")
+engineImportTXD(vehicle, 510)
+vehicle = engineLoadDFF("mods/mtbike.dff", 510)
+engineReplaceModel(vehicle, 510)
+
+vehicle = engineLoadTXD("mods/moonbeam.txd")
+engineImportTXD(vehicle, 418)
+vehicle = engineLoadDFF("mods/moonbeam.dff", 418)
+engineReplaceModel(vehicle, 418)
+
+vehicle = engineLoadTXD("mods/copcarla.txd")
+engineImportTXD(vehicle, 596)
+vehicle = engineLoadDFF("mods/copcarla.dff", 596)
+engineReplaceModel(vehicle, 596)
+
+vehicle = engineLoadTXD("mods/dodo.txd")
+engineImportTXD(vehicle, 593)
+vehicle = engineLoadDFF("mods/dodo.dff", 593)
+engineReplaceModel(vehicle, 593)
+
+vehicle = engineLoadTXD("mods/camper.txd")
+engineImportTXD(vehicle, 483)
+vehicle = engineLoadDFF("mods/camper.dff", 483)
+engineReplaceModel(vehicle, 483)
+
+vehicle = engineLoadTXD("mods/quad.txd")
+engineImportTXD(vehicle, 471)
+vehicle = engineLoadDFF("mods/quad.dff", 471)
+engineReplaceModel(vehicle, 471)
+
+vehicle = engineLoadTXD("mods/patriot.txd")
+engineImportTXD(vehicle, 470)
+vehicle = engineLoadDFF("mods/patriot.dff", 470)
+engineReplaceModel(vehicle, 470)
+
+vehicle = engineLoadTXD("mods/sanchez.txd")
+engineImportTXD(vehicle, 468)
+vehicle = engineLoadDFF("mods/sanchez.dff", 468)
+engineReplaceModel(vehicle, 468)
+
+vehicle = engineLoadTXD("mods/freeway.txd")
+engineImportTXD(vehicle, 463)
+vehicle = engineLoadDFF("mods/freeway.dff", 463)
+engineReplaceModel(vehicle, 463)
+
+vehicle = engineLoadTXD("mods/barracks.txd")
+engineImportTXD(vehicle, 433)
+vehicle = engineLoadDFF("mods/barracks.dff", 433)
+engineReplaceModel(vehicle, 433)
+
+vehicle = engineLoadTXD("mods/bus.txd")
+engineImportTXD(vehicle, 431)
+vehicle = engineLoadDFF("mods/bus.dff", 431)
+engineReplaceModel(vehicle, 431)
+
+vehicle = engineLoadTXD("mods/bike.txd")
+engineImportTXD(vehicle, 509)
+vehicle = engineLoadDFF("mods/bike.dff", 509)
+engineReplaceModel(vehicle, 509)
+
+vehicle = engineLoadTXD("mods/maverick.txd")
+engineImportTXD(vehicle, 487)
+vehicle = engineLoadDFF("mods/maverick.dff", 487)
+engineReplaceModel(vehicle, 487)
+
+vehicle = engineLoadTXD("mods/policemav.txd")
+engineImportTXD(vehicle, 497)
+vehicle = engineLoadDFF("mods/policemav.dff", 497)
+engineReplaceModel(vehicle, 497)
+
+vehicle = engineLoadTXD("mods/cargobob.txd")
+engineImportTXD(vehicle, 548)
+vehicle = engineLoadDFF("mods/cargobob.dff", 548)
+engineReplaceModel(vehicle, 548)
+
+vehicle = engineLoadTXD("mods/swat.txd")
+engineImportTXD(vehicle, 601)
+vehicle = engineLoadDFF("mods/swat.dff", 601)
+engineReplaceModel(vehicle, 601)
+
+vehicle = engineLoadTXD("mods/swattruck.txd")
+engineImportTXD(vehicle, 528)
+vehicle = engineLoadDFF("mods/swattruck.dff", 528)
+engineReplaceModel(vehicle, 528)
 --Survivor Skins
 --Sniper
 snipertxd = engineLoadTXD ("mods/sniper.txd");
@@ -433,23 +543,42 @@ engineReplaceModel(sniperdff, 358)
 
 
 
+snipertxd = engineLoadTXD("skins/zombie.txd")
+engineImportTXD(snipertxd, 22)
+sniperdff = engineLoadDFF("skins/zombie.dff", 22)
+engineReplaceModel(sniperdff, 22)
+
+snipertxd = engineLoadTXD("skins/zombie2.txd")
+engineImportTXD(snipertxd, 56)
+sniperdff = engineLoadDFF("skins/zombie2.dff", 56)
+engineReplaceModel(sniperdff, 56)
+
+snipertxd = engineLoadTXD("skins/zombie3.txd")
+engineImportTXD(snipertxd, 67)
+sniperdff = engineLoadDFF("skins/zombi3.dff", 67)
+engineReplaceModel(sniperdff, 67)
+
+snipertxd = engineLoadTXD("skins/zombie4.txd")
+engineImportTXD(snipertxd, 68)
+sniperdff = engineLoadDFF("skins/zombie4.dff", 68)
+engineReplaceModel(sniperdff, 68)
+
+snipertxd = engineLoadTXD("skins/zombie5.txd")
+engineImportTXD(snipertxd, 69)
+sniperdff = engineLoadDFF("skins/zombie5.dff", 69)
+engineReplaceModel(sniperdff, 69)
+
+snipertxd = engineLoadTXD("skins/zombie6.txd")
+engineImportTXD(snipertxd, 70)
+sniperdff = engineLoadDFF("skins/zombie6.dff", 70)
+engineReplaceModel(sniperdff, 70)
+
+snipertxd = engineLoadTXD("skins/zombie7.txd")
+engineImportTXD(snipertxd, 84)
+sniperdff = engineLoadDFF("skins/zombie7.dff", 84)
+engineReplaceModel(sniperdff, 84)
 
 
-
-	local skin = engineLoadTXD ( "skins/zombie.txd" ) -- slashed 12 by Wall-E
-	engineImportTXD ( skin, 22 )	
-	local skin = engineLoadTXD ( "skins/zombie2.txd" ) --young and blue by Slothman
-	engineImportTXD ( skin, 56 )
-	local skin = engineLoadTXD ( "skins/zombie3.txd" ) -- slit r* employee
-	engineImportTXD ( skin, 67 )
-	local skin = engineLoadTXD ( "skins/zombie4.txd" ) -- shredded preist by Deixell
-	engineImportTXD ( skin, 68 )
-	local skin = engineLoadTXD ( "skins/zombie5.txd" ) --bleedin eyes in denim by Capitanazop
-	engineImportTXD ( skin, 69 )
-	local skin = engineLoadTXD ( "skins/zombie6.txd" ) --ultra gory scientist by 50p
-	engineImportTXD ( skin, 70 )
-	local skin = engineLoadTXD ( "skins/zombie7.txd" ) --guitar wolf (nonzombie) by Slothman
-	engineImportTXD ( skin, 84 )
 	
 
 	
@@ -480,45 +609,50 @@ guiLabelSetHorizontalAlign (statsLabel["zombieskilled"],"center")
 guiSetFont (statsLabel["zombieskilled"], "default-bold-small" )
 setElementData(statsLabel["zombieskilled"],"identifikation","zombieskilled")
 --HeadShoty
-statsLabel["headshots"] = guiCreateLabel(0,0.15,1,0.15,"HeadShoty: 0",true,statsWindows)
+statsLabel["headshots"] = guiCreateLabel(0,0.14,1,0.15,"HeadShoty: 0",true,statsWindows)
 guiLabelSetHorizontalAlign (statsLabel["headshots"],"center")
 guiSetFont (statsLabel["headshots"], "default-bold-small" )
 setElementData(statsLabel["headshots"],"identifikation","headshots")
 --Убито выживших
-statsLabel["murders"] = guiCreateLabel(0,0.25,1,0.15,"Morderstw: 0",true,statsWindows)
+statsLabel["murders"] = guiCreateLabel(0,0.23,1,0.15,"Morderstw: 0",true,statsWindows)
 guiLabelSetHorizontalAlign (statsLabel["murders"],"center")
 guiSetFont (statsLabel["murders"], "default-bold-small" )
 setElementData(statsLabel["murders"],"identifikation","murders")
 --Bandits Killed
-statsLabel["banditskilled"] = guiCreateLabel(0,0.35,1,0.15,"Zabitych bandytów: 0",true,statsWindows)
+statsLabel["banditskilled"] = guiCreateLabel(0,0.32,1,0.15,"Zabitych bandytów: 0",true,statsWindows)
 guiLabelSetHorizontalAlign (statsLabel["banditskilled"],"center")
 guiSetFont (statsLabel["banditskilled"], "default-bold-small" )
 setElementData(statsLabel["banditskilled"],"identifikation","banditskilled")
 --Кровь
-statsLabel["blood"] = guiCreateLabel(0,0.45,1,0.15,"Krew: 12000",true,statsWindows)
+statsLabel["blood"] = guiCreateLabel(0,0.41,1,0.15,"Krew: 12000",true,statsWindows)
 guiLabelSetHorizontalAlign (statsLabel["blood"],"center")
 guiSetFont (statsLabel["blood"], "default-bold-small" )
 setElementData(statsLabel["blood"],"identifikation","blood")
 --Зомби
-statsLabel["zombies"] = guiCreateLabel(0,0.55,1,0.15,"Зомби (Актив/Всего): 0/0",true,statsWindows)
+statsLabel["zombies"] = guiCreateLabel(0,0.50,1,0.15,"Зомби (Актив/Всего): 0/0",true,statsWindows)
 guiLabelSetHorizontalAlign (statsLabel["zombies"],"center")
 guiSetFont (statsLabel["zombies"], "default-bold-small" )
 setElementData(statsLabel["zombies"],"identifikation","zombies")
 --Температура
-statsLabel["temperature"] = guiCreateLabel(0,0.65,1,0.15,"Temperatura: 37°C",true,statsWindows)
+statsLabel["temperature"] = guiCreateLabel(0,0.59,1,0.15,"Temperatura: 37°C",true,statsWindows)
 guiLabelSetHorizontalAlign (statsLabel["temperature"],"center")
 guiSetFont (statsLabel["temperature"], "default-bold-small" )
 setElementData(statsLabel["temperature"],"identifikation","temperature")
 --Карма
-statsLabel["humanity"] = guiCreateLabel(0,0.75,1,0.15,"Ludzkość: 2500",true,statsWindows)
+statsLabel["humanity"] = guiCreateLabel(0,0.68,1,0.15,"Ludzkość: 2500",true,statsWindows)
 guiLabelSetHorizontalAlign (statsLabel["humanity"],"center")
 guiSetFont (statsLabel["humanity"], "default-bold-small" )
 setElementData(statsLabel["humanity"],"identifikation","humanity")
 --Игровой ник
-statsLabel["name"] = guiCreateLabel(0,0.85,1,0.15,"Nick: "..getPlayerName(getLocalPlayer()),true,statsWindows)
+statsLabel["name"] = guiCreateLabel(0,0.77,1,0.15,"Nick: "..getPlayerName(getLocalPlayer()),true,statsWindows)
 guiLabelSetHorizontalAlign (statsLabel["name"],"center")
 guiSetFont (statsLabel["name"], "default-bold-small" )
 setElementData(statsLabel["name"],"identifikation","name")
+--kasa
+statsLabel["kasa"] = guiCreateLabel(0,0.86,1,0.15,"Kasa: "..getPlayerMoney(getLocalPlayer()),true,statsWindows)
+guiLabelSetHorizontalAlign (statsLabel["kasa"],"center")
+guiSetFont (statsLabel["kasa"], "default-bold-small" )
+setElementData(statsLabel["kasa"],"identifikation","kasa")
 
 if getElementData(localPlayer,"logedin") then
 	guiSetVisible(statsWindows,true)
@@ -566,6 +700,8 @@ function refreshDebugMonitor()
 		guiSetText(statsLabel["humanity"],"Ludzkość: "..math.round(value,2))
 		
 		guiSetText(statsLabel["name"],"Nick: "..getPlayerName(getLocalPlayer()))
+		
+		guiSetText(statsLabel["kasa"],"Kasa: "..getPlayerMoney(getLocalPlayer()))
 	end			
 end
 setTimer(refreshDebugMonitor,2000,0)
@@ -1528,40 +1664,52 @@ function updateIcons ()
 			dxDrawImage ( screenWidth*0.02, screenHeight*0.2, screenWidth*0.015, screenHeight*0.15, "images/fuel.png" )
 			dxDrawLine(screenWidth*0.028, screenHeight*fuellmax, screenWidth*0.028, screenHeight*0.349, tocolor(re, gr, bl),18)
 			
-			if hp >= 500 then
-				re2,gr2,bl2 = 0,255,0
-			elseif hp >= 450 then
-				re2,gr2,bl2 = 24,234,0				
-			elseif hp >= 400 then
-				re2,gr2,bl2 = 45,213,0
-			elseif hp >= 350 then
-				re2,gr2,bl2 = 66,192,0	
-			elseif hp >= 300 then
-				re2,gr2,bl2 = 87,171,0	
-			elseif hp >= 250 then
-				re2,gr2,bl2 = 108,150,0	
-			elseif hp >= 200 then
-				re2,gr2,bl2 = 129,129,0	
-			elseif hp >= 150 then
-				re2,gr2,bl2 = 150,108,0				
-			elseif hp >= 100 then
-				re2,gr2,bl2 = 171,87,0	
-			elseif hp >= 50 then
-				re2,gr2,bl2 = 192,66,0
-			elseif hp >= 40 then
-				re2,gr2,bl2 = 213,45,0		
-			elseif hp >= 20 then
-				re2,gr2,bl2 = 234,24,0
-			elseif hp < 20 then
-				re2,gr2,bl2 = 255,0,0
-		end
+			
 			if (hp2 > 249) then
 				hp2 = math.floor( ((hp2-250)/750) * 100 );
 			else
 				hp2 = 0;
 			end
+			
+			if hp2 >= 100 then
+				re2,gr2,bl2 = 0,255,0
+			elseif hp2 >= 90 then
+				re2,gr2,bl2 = 24,234,0				
+			elseif hp2 >= 85 then
+				re2,gr2,bl2 = 45,213,0
+			elseif hp2 >= 80 then
+				re2,gr2,bl2 = 66,192,0	
+			elseif hp2 >= 75 then
+				re2,gr2,bl2 = 87,171,0	
+			elseif hp2 >= 70 then
+				re2,gr2,bl2 = 108,150,0	
+			elseif hp2 >= 65 then
+				re2,gr2,bl2 = 129,129,0	
+			elseif hp2 >= 60 then
+				re2,gr2,bl2 = 150,108,0				
+			elseif hp2 >= 55 then
+				re2,gr2,bl2 = 171,87,0	
+			elseif hp2 >= 50 then
+				re2,gr2,bl2 = 192,66,0
+			elseif hp2 >= 40 then
+				re2,gr2,bl2 = 213,45,0		
+			elseif hp2 >= 30 then
+				re2,gr2,bl2 = 234,24,0
+			elseif hp2 < 20 then
+				re2,gr2,bl2 = 255,0,0
+		end
 			dxDrawRectangle ( screenWidth*0.05, screenHeight*0.28, screenWidth*0.05+10, screenHeight*0.015, tocolor ( re2, gr2, bl2, 200 ) )
 			dxDrawText ("  HP: "..hp2.."%",screenWidth*0.05, screenHeight*0.28,screenWidth*0.05 , screenHeight*0.015, tocolor (0,0,0, 220 ) , 1.02, "default-bold" )
+			
+			vx,vy,vz = getElementVelocity(veh)
+			v = (vx^2 + vy^2 + vz^2)/ 3 * 1000
+			v = (v/500) * 260;  -- Correction of speed, based on the RL infernus' top speed
+			kmh = math.floor(v);
+			dxDrawRectangle ( screenWidth*0.05, screenHeight*0.30, screenWidth*0.05+10, screenHeight*0.015, tocolor ( 0, 255, 0, 200 ) )
+			dxDrawText ("  "..kmh.." KM/h",screenWidth*0.05, screenHeight*0.30,screenWidth*0.05 , screenHeight*0.015, tocolor (0,0,0, 220 ) , 1.02, "default-bold" )
+			
+			dxDrawRectangle ( screenWidth*0.05, screenHeight*0.32, screenWidth*0.05+10, screenHeight*0.015, tocolor ( 0, 255, 0, 200 ) )
+			dxDrawText ("  "..getVehicleName(veh),screenWidth*0.05, screenHeight*0.32,screenWidth*0.05 , screenHeight*0.015, tocolor (0,0,0, 220 ) , 1.02, "default-bold" )
 		end
 		if not playerTarget then return end
 		local x,y,z = getElementPosition(playerTarget)
@@ -1597,6 +1745,7 @@ addEventHandler("onClientPlayerDeathInfo",getRootElement(),dayZDeathInfo)
 function showDayZDeathScreen()
 	setTimer ( fadeCamera, 1000, 1, true, 1.5 )
 	deadBackground = guiCreateStaticImage(0,0,1,1,"images/dead.jpg",true)
+	setElementData(player, "glases", 0)
 	deathText = guiCreateLabel(0,0.8,1,0.2,"Zginąłeś! \n Odrodzisz się za 5 sek.",true)
 	guiLabelSetHorizontalAlign (deathText,"center")
 	setTimer(guiSetVisible,5000,1,false)

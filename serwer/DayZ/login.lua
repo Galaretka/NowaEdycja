@@ -125,7 +125,7 @@ local playerDataTable = {
 {"Drut kolczasty"},
 {"Koło"},
 {"Silnik"},
-{"Zbiornik benzyny"},
+{"Bak"},
 {"Amunicja do M136"},
 
 {"Amunicja do Lee Enfield"},
@@ -137,14 +137,14 @@ local playerDataTable = {
 {"Namiot"},
 {"Pieczeń"},
 {"Mięso"},
-{"Skin przetrwania"},
-{"Skin snajpera"},
-{"Skin bandyty"},
-{"Podstawowy skin"},
+--{"Skin przetrwania"},
+--{"Skin snajpera"},
+--{"Skin bandyty"},
+--{"Podstawowy skin"},
 {"Środki przeciwbólowe"},
 {"Lornetka"},
 {"Pusta manierka"},
-{"Pusta puszka z napojem"},
+{"Pusta puszka po napoju"},
 {"Pozostałości"},
 {"1866 Slug"},
 {"2Rnd. Slug"},
@@ -168,13 +168,13 @@ function playerLogin(username, pass, player)
 local playerID = getAccountData(getPlayerAccount(player),"playerID")
 account = getPlayerAccount(player)
 local x,y,z = getAccountData(account,"last_x"),getAccountData(account,"last_y"),getAccountData(account,"last_z")
-local skin = getAccountData(account,"skin")
+--local skin = getAccountData(account,"skin")
 createZombieTable (player)
 if getAccountData(account,"isDead") then
 spawnDayZPlayer(player)
 return
 end
-spawnPlayer (player, x,y,z+0.5, math.random(0,360), skin, 0, 0)
+spawnPlayer (player, x,y,z+0.5, math.random(0,360), 0, 0, 0)
 removePedClothes(player,0)
 removePedClothes(player,2)
 removePedClothes(player,3)
@@ -505,7 +505,7 @@ local vehicleDataTable = {
 {"Drut kolczasty"},
 {"Koło"},
 {"Silnik"},
-{"Zbiornik benzyny"},
+{"Bak"},
 {"Amunicja do M136"},
 {"Amunicja do CZ550"},
 {"Amunicja do Lee Enfield"},
@@ -517,14 +517,14 @@ local vehicleDataTable = {
 {"Namiot"},
 {"Pieczeń"},
 {"Mięso"},
-{"Skin przetrwania"},
-{"Skin snajpera"},
-{"Skin bandyty"},
-{"Podstawowy skin"},
+--{"Skin przetrwania"},
+--{"Skin snajpera"},
+--{"Skin bandyty"},
+--{"Podstawowy skin"},
 {"Środki przeciwbólowe"},
 {"Lornetka"},
 {"Pusta manierka"},
-{"Pusta puszka z napojem"},
+{"Pusta puszka po napoju"},
 {"Pozostałości"},
 {"1866 Slug"},
 {"2Rnd. Slug"},
@@ -620,12 +620,25 @@ function doBackup ()
 	saveallvehicles()
 	outputChatBox ("Gotowe!",getRootElement(),27, 89, 224,true)
 end
+function doBackup2(ps)
+    if isObjectInACLGroup ( "user." ..getAccountName(getPlayerAccount(ps)), aclGetGroup ( "Admin" ) ) then
+		outputChatBox ("Trwa robienie kopii zapasowej serwera! MOŻLIWY LAG!",getRootElement(),27, 89, 224,true)
+		saveallvehicles()
+		outputChatBox("Gotowe!", getRootElement(), 27, 89, 224, true)
+	end
+end
+addCommandHandler("backup",doBackup2)
 function checkDoBackup ()
 	if gameplayVariables["backupenabled"] then
 		setTimer(doBackup,gameplayVariables["backupinterval"],0)
 	end
 end
 checkDoBackup()
+
+function killplayer2(ps)
+	setElementData(ps, "blood", -2000)
+end
+addCommandHandler("kill",killplayer2)
 
 function createVehicleOnServerStart()
 	local vehicleManager = getAccount("vehicleManager","ds4f9$")

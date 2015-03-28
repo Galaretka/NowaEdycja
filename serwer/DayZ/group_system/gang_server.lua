@@ -20,7 +20,7 @@ end)
 
 function showGangPanel(thePlayer)
 	local gangName = getElementData(thePlayer, "gang")
-	if gangName ~= "None" then
+	if gangName ~= "Brak" then
 		local memberList = getGangMembers(gangName)
 		triggerClientEvent(thePlayer, "gangSystem:openGangPanel", thePlayer, memberList)
 	end
@@ -42,18 +42,18 @@ addEventHandler("gangSystem:invitePlayer", root, function(playerName)
 	if getGangLeader(gangName) == accountName or isGangSubLeader(gangName, accountName) then
 		if player and isElement(player) then
 			local playerAccountName = getAccountName(getPlayerAccount(player))
-			if getAccountGang(gangName, playerAccountName) == "None" then
+			if getAccountGang(gangName, playerAccountName) == "Brak" then
 				invitations[player] = {gangName, source}
-				outputChatBox("Gang system: Вы пригласили " .. getPlayerName(player) .. " в группу.", source, 0, 255, 0)
-				outputChatBox("Gang system: Вы были приглашены в группу " .. gangName .. ", нажмите F1 внизу будет приглашение и согласитесь с ним.", player, 0, 255, 0)
-			else
-				outputChatBox("Gang system: Этот выживший уже состоит в группе!", source, 255, 0, 0)
+				outputChatBox("System grup: Zaprosiłeś " .. getPlayerName(player) .. " do grupy.", source, 0, 255, 0)
+				outputChatBox("System grup: Zostałeś zaproszony do grupy " .. gangName .. ", naciśnij F1 i akceptuj.", player, 0, 255, 0)
+            else
+				outputChatBox("System grup: Ten gracz jest już w grupie!", source, 255, 0, 0)
 			end
 		else
-			outputChatBox("Gang system: " .. playerName .. " не соответствует ни один из выживших!", source, 255, 0, 0)
+			outputChatBox("System grup: " .. playerName .. " mecze bez graczy!", source, 255, 0, 0)
 		end
 	else
-		outputChatBox("Gang system: Вы не можете использовать эту функцию.", source, 255, 0, 0)
+		outputChatBox("System grup: Nie wolno korzystać z tej funkcji.", source, 255, 0, 0)
 	end
 end)
 
@@ -64,9 +64,9 @@ addCommandHandler(get("gang_create_command"), function(thePlayer, command, ...)
 	if gangName and gangName ~= "" then
 		local added, errorMsg = addGang(gangName, accountName)
 		if added then
-			outputChatBox("Gang created: Название группы: " .. gangName .. "!", thePlayer, 0, 255, 0)
-		else
-			outputChatBox("Gang error: " .. errorMsg .. "!", thePlayer, 255, 0, 0)
+			outputChatBox("Grupa gotowa: nazwa grupy: " .. gangName .. "!", thePlayer, 0, 255, 0)
+        else
+            outputChatBox("Błąd grupy " .. errorMsg .. "!", thePlayer, 255, 0, 0)
 		end
 	end
 end)
@@ -75,17 +75,17 @@ addEvent("gangSystem:kickMember", true)
 addEventHandler("gangSystem:kickMember", root, function(memberAccount)
 	local gangName = getElementData(source, "gang")
 	local accountName = getAccountName(getPlayerAccount(source))
-	if gangName ~= "None" then
+	if gangName ~= "Brak" then
 		if getGangLeader(gangName) == accountName or isGangSubLeader(gangName, accountName) then
 			if getGangLeader(gangName) ~= memberAccount then
 				if removeGangMember(gangName, memberAccount, getPlayerName(source)) then
-					outputChatBox("Gang system: Вы были изгнаны " .. memberAccount .. " из группы.", source, 255, 50, 0)
-				end
-			else
-				outputChatBox("Gang system: Вы не можете изгнать лидера группы.", source, 255, 0, 0)
-			end
-		else
-			outputChatBox("Gang system: Вы не можете использовать эту функцию.", source, 255, 0, 0)
+					outputChatBox("System grup: Wyrzuciłeś " .. memberAccount .. " z grupy.", source, 255, 50, 0)
+                end
+            else
+                outputChatBox("System grup: Nie możesz wyrzucić lidera.", source, 255, 0, 0)
+            end
+        else
+            outputChatBox("System grup: Nie możesz użyć tej funkcji.", source, 255, 0, 0)
 		end
 	end
 end)
@@ -94,13 +94,13 @@ addEvent("gangSystem:leaveGang", true)
 addEventHandler("gangSystem:leaveGang", root, function()
 	local gangName = getElementData(source, "gang")
 	local accountName = getAccountName(getPlayerAccount(source))
-	if gangName ~= "None" and accountName ~= "Guest" then
+	if gangName ~= "Brak" and accountName ~= "Guest" then
 		if getGangLeader(gangName) ~= accountName then
 			if removeGangMember(gangName, accountName) then
-				outputChatBox("Gang system: Вы покинули  " .. gangName .. ".", source, 255, 50, 0)
-			end
-		else
-			outputChatBox("Gang system: Вы не можете покинуть группу, т.к вы лидер группы .", source, 255, 0, 0)
+				outputChatBox("System grup: Opuściłeś " .. gangName .. ".", source, 255, 50, 0)
+            end
+        else
+            outputChatBox("System grup: Nie pożesz opuśćić grupy gdy jesteś liderem!", source, 255, 0, 0)
 		end
 	end
 end)
@@ -109,13 +109,13 @@ addEvent("gangSystem:destroyGang", true)
 addEventHandler("gangSystem:destroyGang", root, function()
 	local gangName = getElementData(source, "gang")
 	local accountName = getAccountName(getPlayerAccount(source))
-	if gangName ~= "None" and accountName ~= "Guest" then
+	if gangName ~= "Brak" and accountName ~= "Guest" then
 		if getGangLeader(gangName) == accountName then
 			if removeGang(gangName) then
-				outputChatBox("Gang system: Вы удалили группу " .. gangName .. ".", source, 255, 50, 0)
-			end
-		else
-			outputChatBox("Gang system: Вы не можете использовать эту функцию.", source, 255, 0, 0)
+				outputChatBox("System grup: Usunąłeś grupę " .. gangName .. ".", source, 255, 50, 0)
+            end
+        else
+            outputChatBox("System grup: Nie możesz użyć tej funkcji.", source, 255, 0, 0)
 		end
 	end
 end)
@@ -124,9 +124,9 @@ addCommandHandler("accept", function(thePlayer)
 	local invited, theGang, inviter = isPlayerGangInvited(thePlayer)
 	if invited then
 		addGangMember(theGang, getAccountName(getPlayerAccount(thePlayer)), getAccountName(getPlayerAccount(inviter)))
-		outputChatBox("Gang system: Добро пожаловать в " .. tostring(theGang) .. "!", thePlayer, 0, 255, 0)
+		outputChatBox("System grup: Witamy w grupie " .. tostring(theGang) .. "!", thePlayer, 0, 255, 0)
 		for index, player in pairs(getPlayersByGang(theGang)) do
-			outputChatBox("Gang system: " .. getPlayerName(thePlayer) .. " присоединился к группе!", player, 0, 255, 0)
+			outputChatBox("System grup: " .. getPlayerName(thePlayer) .. " dołączył do grupy!", player, 0, 255, 0)
 		end
 		invitations[thePlayer] = false
 	end
@@ -149,7 +149,7 @@ end)
 addEvent("gangSystem:getSubLeaders", true)
 addEventHandler("gangSystem:getSubLeaders", root, function()
 	local gangName = getElementData(source, "gang")
-	if gangName and gangName ~= "None" then
+	if gangName and gangName ~= "Brak" then
 		local subLeaders = getGangSubLeaders(gangName)
 		triggerClientEvent(source, "gangSystem:returnSubLeaders", source, subLeaders)
 	end
@@ -159,20 +159,20 @@ addEvent("gangSystem:addSubLeader", true)
 addEventHandler("gangSystem:addSubLeader", root, function(memberAccount)
 	local gangName = getElementData(source, "gang")
 	local accountName = getAccountName(getPlayerAccount(source))
-	if gangName ~= "None" and accountName ~= "Guest" then
+	if gangName ~= "Brak" and accountName ~= "Guest" then
 		if getGangLeader(gangName) == accountName then
 			local isSubLeader, errorMsg = isGangSubLeader(gangName, memberAccount)
 			if not isSubLeader then
 				if editGangSubLeaders(gangName, memberAccount, true) then
-					outputChatBox("Gang system: Вы добавили " .. memberAccount .. " зам лидера.", source, 0, 255, 0)
-				else
-					outputChatBox("Gang system: " .. tostring(errorMsg), source, 255, 50, 0)
-				end
-			else
-				outputChatBox("Gang system: Этот выживший уже зам лидер.", source, 255, 50, 0)
-			end
-		else
-			outputChatBox("Gang system: Вы не можете использовать эту функцию.", source, 255, 0, 0)
+					outputChatBox("System grup: Dodałeś " .. memberAccount .. " na stanowisko sub-lidera.", source, 0, 255, 0)
+                else
+                    outputChatBox("System grup: " .. tostring(errorMsg), source, 255, 50, 0)
+                end
+            else
+                outputChatBox("System grup: Ten gracz jest już sub-liderem.", source, 255, 50, 0)
+            end
+        else
+            outputChatBox("System grup: Nie możesz użyć tej funkcji.", source, 255, 0, 0)
 		end
 	end
 end)
@@ -181,21 +181,21 @@ addEvent("gangSystem:removeSubLeader", true)
 addEventHandler("gangSystem:removeSubLeader", root, function(memberAccount)
 	local gangName = getElementData(source, "gang")
 	local accountName = getAccountName(getPlayerAccount(source))
-	if gangName ~= "None" and accountName ~= "Guest" then
+	if gangName ~= "Brak" and accountName ~= "Guest" then
 		if getGangLeader(gangName) == accountName then
 			local isSubLeader, errorMsg = isGangSubLeader(gangName, memberAccount)
 			if isSubLeader then
 				if editGangSubLeaders(gangName, memberAccount, false) then
 					triggerEvent("gangSystem:getSubLeaders", source)
-					outputChatBox("Gang system: Вы убрали " .. memberAccount .. " зам лидера.", source, 255, 50, 0)
-				else
-					outputChatBox("Gang system: " .. tostring(errorMsg), source, 255, 50, 0)
-				end
-			else
-				outputChatBox("Gang system: " .. tostring(errorMsg), source, 255, 50, 0)
-			end
-		else
-			outputChatBox("Gang system: Вы не можете использовать эту функцию.", source, 255, 0, 0)
+					outputChatBox("System grup: Usunąłeś " .. memberAccount .. " ze stanowiska sub-lidera.", source, 255, 50, 0)
+                else
+                    outputChatBox("System grup: " .. tostring(errorMsg), source, 255, 50, 0)
+                end
+            else
+                outputChatBox("System grup: " .. tostring(errorMsg), source, 255, 50, 0)
+            end
+        else
+            outputChatBox("System grup: Nie możesz użyć tej funkcji.", source, 255, 0, 0)
 		end
 	end
 end)

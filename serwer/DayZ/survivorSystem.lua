@@ -92,7 +92,7 @@
 {"Drut kolczasty"},
 {"Koło"},
 {"Silnik"},
-{"Zbiornik benzyny"},
+{"Bak"},
 {"Amunicja do M136"},
 
 {"Amunicja do Lee Enfield"},
@@ -104,14 +104,14 @@
 {"Namiot"},
 {"Pieczeń"},
 {"Mięso"},
-{"Skin przetrwania"},
-{"Skin snajpera"},
-{"Skin bandyty"},
-{"Podstawowy skin"},
+--{"Skin przetrwania"},
+--{"Skin snajpera"},
+--{"Skin bandyty"},
+--{"Podstawowy skin"},
 {"Środki przeciwbólowe"},
 {"Lornetka"},
 {"Pusta manierka"},
-{"Pusta puszka z napojem"},
+{"Pusta puszka po napoju"},
 {"Pozostałości"},
 {"1866 Slug"},
 {"2Rnd. Slug"},
@@ -891,7 +891,7 @@ addEvent("onPlayerGiveMedicObject",true)
 addEventHandler("onPlayerGiveMedicObject",getRootElement(),onPlayerGiveMedicObject)
 
 
-skinTable = {
+--[[skinTable = {
 {"Skin przetrwania",179},
 {"Skin snajpera",285},
 {"Skin bandyty",180},
@@ -912,7 +912,7 @@ function getSkinNameFromID(id)
 			return skin[1]
 		end
 	end
-end
+end]]--
 
 function addPlayerSkin (skin)
 	local current = getElementData(source,"skin")

@@ -22,12 +22,12 @@ function buildPlayerList()
 	guiSetAlpha(newmsg.img, 0)
 	--guiSetAlpha(newmsg.lbl, 0)
 	
-	wndPlayers = guiCreateWindow(-1,256,222,343, "Chat", false)
+	wndPlayers = guiCreateWindow(-1,256,222,343, "PRWYATNY CHAT", false)
 	fond = guiCreateStaticImage(0.0405,0.0525,0.9189,0.9213,"scripts/pmsg/image/mtalogo.png",true,wndPlayers)
 
 	grdPlayers = guiCreateGridList(0.0991,0.2449,0.8108,0.6968, true, wndPlayers)
 
-		colPlayers = guiGridListAddColumn(grdPlayers, "Player list", 0.85)
+		colPlayers = guiGridListAddColumn(grdPlayers, "Lista graczy", 0.85)
 
 	local players = getElementsByType("player")
 	for k,v in ipairs(players) do
@@ -166,8 +166,8 @@ function recieveChatMessage(ply, msg)
 	newmsg.tick = getTickCount()
 	
 	---guiSetText(newmsg.lbl, getPlayerName(ply) .. ": " .. msg .. "\n")
-guiSetText(newmsg.lbl, "PM from " .. getPlayerName(ply) .. "\n")
-	outputChatBox("#0096ffYeni Bir Mesajin Geldi !",255,255,255,true)
+guiSetText(newmsg.lbl, "Wiadomość od\n" .. getPlayerName(ply) .. "\n")
+	outputChatBox("#0096ffOtzymałeś nową prywatną wiadomość! Aby odczytać naciśnij 'F3'!",255,255,255,true)
 
 	anims.nmfadein:play()
 	anims.nmtextin:play()
@@ -182,7 +182,7 @@ end
 
 event_resource_start = function(res)
 	buildPlayerList()
-	outputChatBox("#f80000Press 'F3' to private message !",255,255,255,true)
+	outputChatBox("#f80000Naciśnij 'F3' aby pisać prywatne wiadomości!",255,255,255,true)
 end
 
 event_resource_stop = function(res)

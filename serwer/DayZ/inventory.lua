@@ -128,14 +128,14 @@ inventoryItems = {
 {"Pieczeń",1},
 {"Koło",2},
 {"Silnik",5},
-{"Zbiornik benzyny",3},
+{"Bak",3},
 {"Namiot",3,"Rozłóż"},
-{"Skin przetrwania",1,"Ubierz się"},
-{"Podstawowy skin",1,"Ubierz się"},
-{"Skin snajpera",1,"Ubierz się"},
-{"Skin bandyty",1,"Ubierz się"},
+--{"Skin przetrwania",1,"Ubierz się"},
+--{"Podstawowy skin",1,"Ubierz się"},
+--{"Skin snajpera",1,"Ubierz się"},
+--{"Skin bandyty",1,"Ubierz się"},
 {"Pusta manierka",1,"Napełnij"}, 
-{"Pusta puszka z napojem",1},
+{"Pusta puszka po napoju",1},
 {"Pozostałości",1},
 {"Assault Pack (ACU)",1},"Nałóż",
 {"Alice Pack",1},"Nałóż",
@@ -546,12 +546,25 @@ vehicleAddonsInfo = {
 {422,4,1,1},
 {470,4,1,1},
 {468,2,1,1},
+{463,2,1,1},
 {433,6,1,1},
-{437,6,1,1},
+{431,6,1,1},
 {509,0,0,0},
 {487,0,1,1},
 {497,0,1,1},
 {453,0,1,1},
+{548,0,1,1},
+{563,0,1,1},
+{601,6,1,1},
+{528,4,1,1},
+{603,4,1,1},
+{531,4,1,1},
+{500,4,1,1},
+{510,0,0,0},
+{596,4,1,1},
+{593,3,1,1},
+{483,4,1,1},
+{418,4,1,1},
 }
 
 function getVehicleAddonInfos (id)
@@ -564,23 +577,37 @@ end
 
 --OTHER ITEM STUFF
 vehicleFuelTable = {
--- {Model ID, Max fuel}
+-- {MODEL ID, MAX. FUEL},
 {542,140},
 {522,140},
 {427,140},
-{411,80},
-{500,80},
 {471,30},
+{411,80},
 {422,80},
 {470,100},
 {468,30},
-{433,140},
+{603,80},
+{531,100},
+{500,80},
+{510,0},
+{596,120},
+{593,80},
+{483,80},
+{463,30},
+{433,200},
+{601,140},
+{548,60},
+{563,60},
+{528, 80},
+{418,80},
+{431,140},
 {437,140},
 {509,0},
 {487,60},
 {497,60},
 {453,60},
 }
+
 
 function getVehicleMaxFuel(loot)
 	local modelID = getElementModel(getElementData(loot,"parent"))
@@ -602,8 +629,10 @@ local itemName = guiGridListGetItemText ( gridlistItems["inventory"], guiGridLis
 			if isVehicle and not isTent then
 				local veh = getElementData(isPlayerInLoot(),"parent")
 				local tires,engine,parts = getVehicleAddonInfos (getElementModel(veh))
-				if itemName == "Koło" and (getElementData(isPlayerInLoot(),"Tire_inVehicle") or 0) < tires  or itemName == "Silnik" and (getElementData(isPlayerInLoot(),"Engine_inVehicle") or 0)  < engine or itemName == "Zbiornik benzyny" and (getElementData(isPlayerInLoot(),"Parts_inVehicle") or 0) < parts then
-					if itemName == "Zbiornik benzyny" then itemName = "Parts" end
+				if itemName == "Koło" and (getElementData(isPlayerInLoot(),"Tire_inVehicle") or 0) < tires  or itemName == "Silnik" and (getElementData(isPlayerInLoot(),"Engine_inVehicle") or 0)  < engine or itemName == "Bak" and (getElementData(isPlayerInLoot(),"Parts_inVehicle") or 0) < parts then
+					if itemName == "Bak" then itemName = "Parts" end
+					if itemName == "Silnik" then itemName = "Engine" end
+					if itemName == "Koło" then itemName = "Tire" end
 					triggerEvent("onPlayerMoveItemOutOFInventory",getLocalPlayer(),itemName.."_inVehicle",isPlayerInLoot())
 					playerMovedInInventory = true
 					setTimer(function()
@@ -728,9 +757,9 @@ end
 itemName2 = itemName
 if itemName == "Tire_inVehicle" then itemName2 = "Koło" end
 if itemName == "Engine_inVehicle" then itemName2 = "Silnik" end
-if itemName == "Parts_inVehicle" then itemName2 = "Zbiornik benzyny" end
+if itemName == "Parts_inVehicle" then itemName2 = "Bak" end
 if (getElementData(getLocalPlayer(),itemName2) or 0)/itemPlus < 1 then
-	triggerEvent ("displayClientInfo", getLocalPlayer(),"Inventory","Użj narzędzi!",255,22,0)
+	triggerEvent ("displayClientInfo", getLocalPlayer(),"Inventory","Użyj narzędzi!",255,22,0)
 return
 end
 if itemName == "Assault Pack (ACU)" and          
@@ -788,7 +817,7 @@ end
 	end
 	if itemName == "Tire_inVehicle" then itemName = "Koło" end
 	if itemName == "Engine_inVehicle" then itemName = "Silnik" end
-	if itemName == "Parts_inVehicle" then itemName = "Zbiornik benzyny" end
+	if itemName == "Parts_inVehicle" then itemName = "Bak" end
 	setElementData(getLocalPlayer(),itemName,getElementData(getLocalPlayer(),itemName)-itemPlus)
 	if loot and getElementData(loot,"itemloot") then
 		triggerServerEvent("refreshItemLoot",getRootElement(),loot,getElementData(loot,"parent"))
