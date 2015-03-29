@@ -927,6 +927,16 @@ end
 addEvent("onPlayerChangeSkin",true)
 addEventHandler("onPlayerChangeSkin",getRootElement(),addPlayerSkin)
 
+function addPlayerGhillieTrouses ()
+removePedClothes( source, 2)
+addPedClothes ( source, "worktrgrey", "worktr", 2 )
+setElementData( source, "trousers", 7) --ИД
+triggerClientEvent(source,"refreshInventoryManual",source)
+end
+addEvent("onPlayerGhillieTrouses",true)
+addEventHandler("onPlayerGhillieTrouses",getRootElement(),addPlayerGhillieTrouses)
+
+
 function addPlayerGreenTrouses ()
 removePedClothes( source, 2)
 addPedClothes ( source, "worktrcamogrn", "worktr", 2 )
@@ -1010,6 +1020,15 @@ addEvent("onPlayerChangeSuitShoes",true)
 addEventHandler("onPlayerChangeSuitShoes",getRootElement(),addPlayerTrousesSuitShoes)
 
 --Тело
+function addPlayerGhillieShirt ()
+removePedClothes( source, 0)
+addPedClothes ( source, "denimfade", "denim", 0 )
+setElementData( source, "Shirt", 9) --ИД
+triggerClientEvent(source,"refreshInventoryManual",source)
+end
+addEvent("onPlayerGhillieChangeShirt",true)
+addEventHandler("onPlayerGhillieChangeShirt",getRootElement(),addPlayerGhillieShirt)
+
 
 function addPlayerGreenShirt ()
 removePedClothes( source, 0)

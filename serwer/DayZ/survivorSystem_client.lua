@@ -302,10 +302,11 @@ engineImportTXD( txd, 30538)
 txd = engineLoadTXD("clothing/tshirtwhite.txd")
 engineImportTXD( txd, 30515)
 
---itemTXD = engineLoadTXD ("clothing/hockey.txd")
---engineImportTXD (itemTXD, 30376)
+itemTXD = engineLoadTXD ("clothing/jeansdenim.txd")
+engineImportTXD (itemTXD, 30386)
 
-
+itemTXD = engineLoadTXD ("clothing/denimfade.txd")
+engineImportTXD (itemTXD, 30327)
 
 --Weapons
 

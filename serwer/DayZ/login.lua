@@ -71,6 +71,7 @@ local playerDataTable = {
 {"PDW"},
 {"TEC-9"},
 
+{"Spodnie: Ghillie"},
 {"Spodnie: Kamuflaz-Zielony"},
 {"Spodnie: Kamuflaz-Szary"},
 {"Spodnie: Sport-Zielony"},
@@ -80,6 +81,7 @@ local playerDataTable = {
 {"Buty: Trampki-Biale"},
 {"Buty: Trampki-Niebieskie"},
 {"Buty: Buty"},
+{"Bluza: Ghillie"},
 {"Bluza: Kamuflaz-Zielony"},
 {"Bluza: Shirt-Czerwony"},
 {"Bluza: Shirt-Bialy"},
@@ -226,6 +228,9 @@ end
 if trousers == 6 then
 addPedClothes ( source, "chongergrey", "chonger", 2 )
 end
+if trousers == 7 then
+addPedClothes ( source, "worktrgrey", "worktr", 2 )
+end
 --Shoes
 if shoes == 1 then
 addPedClothes ( source, "bask2heatwht", "bask1", 3 )
@@ -260,6 +265,9 @@ addPedClothes ( source, "tuxedo", "suit2", 0 )
 end
 if Shirt == 8 then
 addPedClothes ( source, "tshirtwhite", "tshirt", 0 )
+end
+if Shirt == 9 then
+addPedClothes ( source, "denimfade", "denim", 0 )
 end
 --glass
 if glass == 1 then
@@ -300,7 +308,7 @@ function playerRegister(username, pass, player)
 	local number = math.random(table.size(spawnPositions))
 	local x,y,z = spawnPositions[number][1],spawnPositions[number][2],spawnPositions[number][3]
 	spawnPlayer (player, x,y,z, math.random(0,360), 0, 0, 0)
-	triggerClientEvent(player, "sex", player)
+
 	fadeCamera (player, true)
 	setCameraTarget (player, player)
 	playerCol = createColSphere(x,y,z,1.5)
@@ -465,6 +473,7 @@ local vehicleDataTable = {
 {"DMR"},
 {"M107"},
 
+{"Spodnie: Ghillie"},
 {"Spodnie: Kamuflaz-Zielony"},
 {"Spodnie: Kamuflaz-Szary"},
 {"Spodnie: Sport-Zielony"},
@@ -474,6 +483,8 @@ local vehicleDataTable = {
 {"Buty: Trampki-Biale"},
 {"Buty: Trampki-Niebieskie"},
 {"Buty: Buty"},
+{"Bluza: Ghillie"},
+{"Bluza: Kamuflaz-Zielony"},
 {"Bluza: Shirt-Czerwony"},
 {"Bluza: Shirt-Bialy"},
 {"Bluza: Shirt-Zielony"},
@@ -482,7 +493,7 @@ local vehicleDataTable = {
 {"Bluza: Bluza-Niebieski"},
 {"Kurtka: Kurtka-Czarny"},
 {"Okulary"},
-{"Maska gazowa"},
+
 
 
 {"Gas łzawiący"},

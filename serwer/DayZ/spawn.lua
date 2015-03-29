@@ -80,6 +80,7 @@ local playerDataTable = {
 
 
 
+{"Spodnie: Ghillie"},
 {"Spodnie: Kamuflaz-Zielony"},
 {"Spodnie: Kamuflaz-Szary"},
 {"Spodnie: Sport-Zielony"},
@@ -89,6 +90,8 @@ local playerDataTable = {
 {"Buty: Trampki-Biale"},
 {"Buty: Trampki-Niebieskie"},
 {"Buty: Buty"},
+{"Bluza: Ghillie"},
+{"Bluza: Kamuflaz-Zielony"},
 {"Bluza: Shirt-Czerwony"},
 {"Bluza: Shirt-Bialy"},
 {"Bluza: Shirt-Zielony"},
@@ -97,7 +100,7 @@ local playerDataTable = {
 {"Bluza: Bluza-Niebieski"},
 {"Kurtka: Kurtka-Czarny"},
 {"Okulary"},
-{"Maska gazowa"},
+
 
 
 
@@ -180,6 +183,7 @@ local playerDataTable = {
 }
 
 local vehicleDataTable = {
+
 {"Montion Backpack"},
 {"MAX_Slots"},
 {"Crash Backpack"},
@@ -249,7 +253,7 @@ local vehicleDataTable = {
 {"DMR"},
 {"M107"},
 
-
+{"Spodnie: Ghillie"},
 {"Spodnie: Kamuflaz-Zielony"},
 {"Spodnie: Kamuflaz-Szary"},
 {"Spodnie: Sport-Zielony"},
@@ -259,6 +263,7 @@ local vehicleDataTable = {
 {"Buty: Trampki-Biale"},
 {"Buty: Trampki-Niebieskie"},
 {"Buty: Buty"},
+{"Bluza: Ghillie"},
 {"Bluza: Kamuflaz-Zielony"},
 {"Bluza: Shirt-Czerwony"},
 {"Bluza: Shirt-Bialy"},
@@ -268,7 +273,7 @@ local vehicleDataTable = {
 {"Bluza: Bluza-Niebieski"},
 {"Kurtka: Kurtka-Czarny"},
 {"Okulary"},
-{"Maska gazowa"},
+
 
 {"Amunicja do M136 Launcher"},
 {"Medyczna paczka"},

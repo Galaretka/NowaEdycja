@@ -151,6 +151,7 @@ local itemTable = {
 {"SVD Camo",2916,1,90,0.4},
 {"DMR",2918,1,90,0.4},
 
+{"Spodnie: Ghillie",1247,2,0,4.5},
 {"Spodnie: Kamuflaz-Zielony",1247,2,0,4.5},
 {"Spodnie: Kamuflaz-Szary",1247,2,0,4.5},
 {"Spodnie: Sport-Zielony",1247,2,0,4.5},
@@ -160,6 +161,7 @@ local itemTable = {
 {"Buty: Trampki-Biale",1247,2,0,4.5},
 {"Buty: Trampki-Niebieskie",1247,2,0,4.5},
 {"Buty: Buty",1247,2,0,4.5},
+{"Bluza: Ghillie",1247,2,0,4.5},
 {"Bluza: Kamuflaz-Zielony",1247,2,0,4.5},
 {"Bluza: Shirt-Czerwony",1247,2,0,4.5},
 {"Bluza: Shirt-Bialy",1247,2,0,4.5},
@@ -169,7 +171,7 @@ local itemTable = {
 {"Bluza: Bluza-Niebieski",1247,2,0,4.5},
 {"Kurtka: Kurtka-Czarny",1247,2,0,4.5},
 {"Okulary",1247,2,0,4.5},
-{"Maska gazowa",1247,2,0,4.5},
+
 
 
 
@@ -362,7 +364,7 @@ local itemTable = {
 {"Lornetka",369,1,0,4},
 --{"Skin przetrwania",1247,2,0,4.5},
 
-
+{"Spodnie: Ghillie",1247,2,0,4.5},
 {"Spodnie: Kamuflaz-Zielony",1247,2,0,4.5},
 {"Spodnie: Kamuflaz-Szary",1247,2,0,4.5},
 {"Spodnie: Sport-Zielony",1247,2,0,4.5},
@@ -372,6 +374,7 @@ local itemTable = {
 {"Buty: Trampki-Biale",1247,2,0,4.5},
 {"Buty: Trampki-Niebieskie",1247,2,0,4.5},
 {"Buty: Buty",1247,2,0,4.5},
+{"Bluza: Ghillie",1247,2,0,4.5},
 {"Bluza: Kamuflaz-Zielony",1247,2,0,4.5},
 {"Bluza: Shirt-Czerwony",1247,2,0,4.5},
 {"Bluza: Shirt-Bialy",1247,2,0,4.5},
@@ -381,7 +384,7 @@ local itemTable = {
 {"Bluza: Bluza-Niebieski",1247,2,0,4.5},
 {"Kurtka: Kurtka-Czarny",1247,2,0,4.5},
 {"Okulary",1247,2,0,4.5},
-{"Maska gazowa",1247,2,0,4.5},
+
 
 
 {"TEC-9",372,1,90,4},

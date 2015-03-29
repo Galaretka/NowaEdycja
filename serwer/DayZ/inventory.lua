@@ -93,25 +93,8 @@ inventoryItems = {
 
 ["Items"] = {
 
-{"Spodnie: Kamuflaz-Zielony",1,"Zaloz Zielone spodnie"},
-{"Spodnie: Kamuflaz-Szary",1,"Zaloz Szare spodnie"},
-{"Spodnie: Sport-Zielony",1,"Zaloz Sport-Zielony spodnie"},
-{"Spodnie: Sport-Niebieski",1,"Zaloz Sport-Niebieski spodnie"},
-{"Spodnie: Spodnie-Czarne",1,"Zaloz Spodnie-Czarne spodnie"},
-{"Spodnie: Spodnie-Szary",1,"Zaloz Spodnie-Szary spodnie"},
-{"Buty: Trampki-Biale",1,"Zaloz Trampki-Biale"},
-{"Buty: Trampki-Niebieskie",1,"Zaloz Trampki-Niebieskie"},
-{"Buty: Buty",1,"Zaloz buty"},
-{"Bluza: Kamuflaz-Zielony",1,"Zaloz Zielona bluza"},
-{"Bluza: Shirt-Czerwony",1,"Zaloz Shirt-Czerwony"},
-{"Bluza: Shirt-Bialy",1,"Zaloz Shirt-Bialy"},
-{"Bluza: Shirt-Zielony",1,"Zaloz Shirt-Zielony"},
-{"Bluza: Shirt-Pomaranczowa",1,"Zaloz Shirt-Pomaranczowa"},
-{"Bluza: Bluza-Biala",1,"Zaloz Bluza-Biala"},
-{"Bluza: Bluza-Niebieski",1,"Zaloz Bluza-Niebieski"},
-{"Kurtka: Kurtka-Czarny",1,"Zaloz Kurtka-Czarny"},
-{"Okulary",1,"Zaloz okulary"},
-{"Maska gazowa",1,"Zaloz Maska gazowa"},
+
+
 
 {"Montion Backpack",1,"Nałóż"},
 {"Drewno opałowe",2},
@@ -155,9 +138,31 @@ inventoryItems = {
 {"Narzędzia",1},
 {"Radio",1},
 },
+
+
+["Ubrania"] = {
+{"Spodnie: Ghillie",1,"Zaloz Ghillie spodnie"},
+{"Spodnie: Kamuflaz-Zielony",1,"Zaloz Zielone spodnie"},
+{"Spodnie: Kamuflaz-Szary",1,"Zaloz Szare spodnie"},
+{"Spodnie: Sport-Zielony",1,"Zaloz Sport-Zielony spodnie"},
+{"Spodnie: Sport-Niebieski",1,"Zaloz Sport-Niebieski spodnie"},
+{"Spodnie: Spodnie-Czarne",1,"Zaloz Spodnie-Czarne spodnie"},
+{"Spodnie: Spodnie-Szary",1,"Zaloz Spodnie-Szary spodnie"},
+{"Buty: Trampki-Biale",1,"Zaloz Trampki-Biale"},
+{"Buty: Trampki-Niebieskie",1,"Zaloz Trampki-Niebieskie"},
+{"Buty: Buty",1,"Zaloz buty"},
+{"Bluza: Ghillie",1,"Zaloz Ghillie bluza"},
+{"Bluza: Kamuflaz-Zielony",1,"Zaloz Zielona bluza"},
+{"Bluza: Shirt-Czerwony",1,"Zaloz Shirt-Czerwony"},
+{"Bluza: Shirt-Bialy",1,"Zaloz Shirt-Bialy"},
+{"Bluza: Shirt-Zielony",1,"Zaloz Shirt-Zielony"},
+{"Bluza: Shirt-Pomaranczowa",1,"Zaloz Shirt-Pomaranczowa"},
+{"Bluza: Bluza-Biala",1,"Zaloz Bluza-Biala"},
+{"Bluza: Bluza-Niebieski",1,"Zaloz Bluza-Niebieski"},
+{"Kurtka: Kurtka-Czarny",1,"Zaloz Kurtka-Czarny"},
+{"Okulary",1,"Zaloz okulary"},
+},
 }
-
-
 ------------------------------------------------------------------------------
 --Inwentarz
 local headline = {}
@@ -319,6 +324,15 @@ if ( gridlistItems["inventory_colum"] ) then --If the column has been created, f
 				guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum_amount"],getElementData(getLocalPlayer(),item[1]), false, false )
 			end
 		end
+			local row = guiGridListAddRow ( gridlistItems["inventory"] )
+			guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],"8. Ubrania", true, false )
+		for id, item in ipairs(inventoryItems["Ubrania"]) do
+			if getElementData(getLocalPlayer(),item[1]) and getElementData(getLocalPlayer(),item[1]) >= 1 then
+				local row = guiGridListAddRow ( gridlistItems["inventory"] )
+				guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum"],item[1], false, false )
+				guiGridListSetItemText ( gridlistItems["inventory"], row, gridlistItems["inventory_colum_amount"],getElementData(getLocalPlayer(),item[1]), false, false )
+			end
+		end
 		if row1 and column1 then
 			guiGridListSetSelectedItem ( gridlistItems["inventory"], row1,column1)
 		end
@@ -403,7 +417,15 @@ if ( gridlistItems["loot_colum"] ) then
 				guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum_amount"],getElementData(loot,item[1]), false, false )
 			end
 		end
-
+			local row = guiGridListAddRow ( gridlistItems["loot"] )
+			guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],"8. Ubrania", true, false )
+		for id, item in ipairs(inventoryItems["Ubrania"]) do
+			if getElementData(loot,item[1]) and getElementData(loot,item[1]) >= 1 then
+				local row = guiGridListAddRow ( gridlistItems["loot"] )
+				guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum"],item[1], false, false )
+				guiGridListSetItemText ( gridlistItems["loot"], row, gridlistItems["loot_colum_amount"],getElementData(loot,item[1]), false, false )
+			end
+		end
 		if row2 and column2 then
 			--guiGridListSetSelectedItem ( gridlistItems["loot"], row2,column2)
 		end
@@ -452,6 +474,11 @@ local current_SLOTS = 0
 			current_SLOTS = current_SLOTS + item[2]*getElementData(getLocalPlayer(),item[1])
 		end
 	end
+	for id, item in ipairs(inventoryItems["Ubrania"]) do
+		if getElementData(getLocalPlayer(),item[1]) and getElementData(getLocalPlayer(),item[1]) >= 1 then
+			current_SLOTS = current_SLOTS + item[2]*getElementData(getLocalPlayer(),item[1])
+		end
+	end
 	return math.floor(current_SLOTS)
 end
 
@@ -488,6 +515,11 @@ local current_SLOTS = 0
 			current_SLOTS = current_SLOTS + item[2]*getElementData(loot,item[1])
 		end
 	end
+	for id, item in ipairs(inventoryItems["Ubrania"]) do
+		if getElementData(loot,item[1]) and getElementData(loot,item[1]) >= 1 then
+			current_SLOTS = current_SLOTS + item[2]*getElementData(loot,item[1])
+		end
+	end
 	return math.floor(current_SLOTS)
 end
 
@@ -519,6 +551,11 @@ local current_SLOTS = 0
 		end
 	end
 	for id, item in ipairs(inventoryItems["Items"]) do
+		if itema == item[1] then 
+			return item[2]
+		end
+	end
+	for id, item in ipairs(inventoryItems["Ubrania"]) do
 		if itema == item[1] then 
 			return item[2]
 		end
@@ -1030,6 +1067,11 @@ for i,itemInfo in ipairs(inventoryItems["Toolbelt"]) do
 		return itemName,itemInfo[3] or false
 	end
 end
+for i,itemInfo in ipairs(inventoryItems["Ubrania"]) do
+	if itemName == itemInfo[1] then
+		return itemName,itemInfo[3] or false
+	end
+end
 end
 
 rightclickWindow = guiCreateStaticImage(0,0,0.05,0.0215,"images/scrollmenu_1.png",true)
@@ -1102,6 +1144,9 @@ function playerUseItem(itemName,itemInfo)
 	
 	--Одежда
 	--Trousers
+	elseif itemInfo == "Zaloz Ghillie spodnie" then
+	triggerServerEvent("onPlayerGhillieTrouses",getLocalPlayer(),itemName)
+	playSound("sounds/cloth.ogg")
 	elseif itemInfo == "Zaloz Zielone spodnie" then
 	triggerServerEvent("onPlayerGreenChangeTrouses",getLocalPlayer(),itemName)
 	playSound("sounds/cloth.ogg")
@@ -1131,6 +1176,9 @@ function playerUseItem(itemName,itemInfo)
 	triggerServerEvent("onPlayerChangeSuitShoes",getLocalPlayer(),itemName)
 	playSound("sounds/cloth.ogg")
 	--Тело
+	elseif itemInfo == "Zaloz Ghillie bluza" then
+	triggerServerEvent("onPlayerGhillieChangeShirt",getLocalPlayer(),itemName)
+	playSound("sounds/cloth.ogg")
 	elseif itemInfo == "Zaloz Zielona bluza" then
 	triggerServerEvent("onPlayerGreenChangeShirt",getLocalPlayer(),itemName)
 	playSound("sounds/cloth.ogg")
