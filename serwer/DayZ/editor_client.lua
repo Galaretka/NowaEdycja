@@ -56,9 +56,9 @@ damageTable = {
 {"MP5A5",889},
 {"Granat",2000},
 
-{"Heat-Seeking RPG",0},
+--[[{"Heat-Seeking RPG",0},
 {"Amunicja do M136 Launcher",0},
-{"Lee Enfield",8000},
+{"Lee Enfield",8000},]]--
 {"Nóż",1500},
 {"Topór",1006},
 {"M1911",889},
