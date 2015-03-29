@@ -68,6 +68,22 @@ local itemTable = {
 },
 ----------------------
 ["residential"] = {
+
+
+
+{"Spodnie: Sport-Zielony",1247,2,0,2},
+
+{"Spodnie: Spodnie-Szary",1247,2,0,2},
+{"Buty: Trampki-Biale",1247,2,0,2},
+{"Buty: Trampki-Niebieskie",1247,2,0,2},
+{"Buty: Buty",1247,2,0,4.5},
+{"Bluza: Shirt-Czerwony",1247,2,0,2},
+{"Bluza: Shirt-Bialy",1247,2,0,2},
+
+{"Bluza: Bluza-Niebieski",1247,2,0,2},
+{"Kurtka: Kurtka-Czarny",1247,2,0,2},
+{"Okulary",1247,2,0,1},
+
 {"Zapałki",328,0.4,90,5},
 {"Drewno opałowe",1463,0.4,0,5},
 {"M1911",346,1,90,1.5},
@@ -151,29 +167,14 @@ local itemTable = {
 {"SVD Camo",2916,1,90,0.4},
 {"DMR",2918,1,90,0.4},
 
+
+
+
 {"Spodnie: Ghillie",1247,2,0,4.5},
 {"Spodnie: Kamuflaz-Zielony",1247,2,0,4.5},
 {"Spodnie: Kamuflaz-Szary",1247,2,0,4.5},
-{"Spodnie: Sport-Zielony",1247,2,0,4.5},
-{"Spodnie: Sport-Niebieski",1247,2,0,4.5},
-{"Spodnie: Spodnie-Czarne",1247,2,0,4.5},
-{"Spodnie: Spodnie-Szary",1247,2,0,4.5},
-{"Buty: Trampki-Biale",1247,2,0,4.5},
-{"Buty: Trampki-Niebieskie",1247,2,0,4.5},
-{"Buty: Buty",1247,2,0,4.5},
 {"Bluza: Ghillie",1247,2,0,4.5},
 {"Bluza: Kamuflaz-Zielony",1247,2,0,4.5},
-{"Bluza: Shirt-Czerwony",1247,2,0,4.5},
-{"Bluza: Shirt-Bialy",1247,2,0,4.5},
-{"Bluza: Shirt-Zielony",1247,2,0,4.5},
-{"Bluza: Shirt-Pomaranczowa",1247,2,0,4.5},
-{"Bluza: Bluza-Biala",1247,2,0,4.5},
-{"Bluza: Bluza-Niebieski",1247,2,0,4.5},
-{"Kurtka: Kurtka-Czarny",1247,2,0,4.5},
-{"Okulary",1247,2,0,4.5},
-
-
-
 
 {"AK-47",2912,1,90,2.5},
 {"AKS-74 Kobra",2919,1,90,3},
@@ -237,6 +238,11 @@ local itemTable = {
 },
 ----------------------
 ["supermarket"] = {
+{"Spodnie: Sport-Niebieski",1247,2,0,2},
+{"Spodnie: Spodnie-Czarne",1247,2,0,2},
+{"Bluza: Shirt-Zielony",1247,2,0,2},
+{"Bluza: Shirt-Pomaranczowa",1247,2,0,2},
+{"Bluza: Bluza-Biala",1247,2,0,2},
 {"Pieczeń",2804,0.5,90,8},
 {"Zapałki",328,0.4,90,5},
 {"Drewno opałowe",1463,0.4,0,5},

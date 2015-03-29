@@ -303,7 +303,7 @@ txd = engineLoadTXD("clothing/tshirtwhite.txd")
 engineImportTXD( txd, 30515)
 
 itemTXD = engineLoadTXD ("clothing/jeansdenim.txd")
-engineImportTXD (itemTXD, 30386)
+engineImportTXD (itemTXD, 30539)
 
 itemTXD = engineLoadTXD ("clothing/denimfade.txd")
 engineImportTXD (itemTXD, 30327)
