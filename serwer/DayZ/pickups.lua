@@ -66,24 +66,7 @@ local itemTable = {
 {"Mapa",1277,0.8,90,6},
 {"GPS",2976,0.15,0,2},
 },
-----------------------
 ["residential"] = {
-
-
-
-{"Spodnie: Sport-Zielony",1247,2,0,2},
-
-{"Spodnie: Spodnie-Szary",1247,2,0,2},
-{"Buty: Trampki-Biale",1247,2,0,2},
-{"Buty: Trampki-Niebieskie",1247,2,0,2},
-{"Buty: Buty",1247,2,0,4.5},
-{"Bluza: Shirt-Czerwony",1247,2,0,2},
-{"Bluza: Shirt-Bialy",1247,2,0,2},
-
-{"Bluza: Bluza-Niebieski",1247,2,0,2},
-{"Kurtka: Kurtka-Czarny",1247,2,0,2},
-{"Okulary",1247,2,0,1},
-
 {"Zapałki",328,0.4,90,5},
 {"Drewno opałowe",1463,0.4,0,5},
 {"M1911",346,1,90,1.5},
@@ -94,6 +77,11 @@ local itemTable = {
 {"Topór",339,1,90,1},
 {"Pizza",1582,1,0,7},
 {"Puszka z napojem",2647,1,0,7},
+{"Spodnie: Sport-Zielony",1247,2,0,2},
+{"Spodnie: Spodnie-Szary",1247,2,0,2},
+{"Buty: Trampki-Biale",1247,2,0,2},
+{"Buty: Trampki-Niebieskie",1247,2,0,2},
+{"Buty: Buty",1247,2,0,4.5},
 {"Pusty kalnister",1650,1,0,9},
 {"Ogień",324,1,90,9},
 {"Mleko",2856,1,0,7},
@@ -116,6 +104,11 @@ local itemTable = {
 {"Morfina",1579,1,0,2},
 {"Mapa",1277,0.8,90,10},
 {"GPS",2976,0.15,0,3},
+{"Bluza: Shirt-Czerwony",1247,2,0,2},
+{"Bluza: Shirt-Bialy",1247,2,0,2},
+{"Bluza: Bluza-Niebieski",1247,2,0,2},
+{"Kurtka: Kurtka-Czarny",1247,2,0,2},
+{"Okulary",1247,2,0,1},
 {"Makaron",2770,1,0,7},
 {"Puszka fasoli",2601,1,0,7},
 {"TEC-9",372,1,90,0},
@@ -124,7 +117,6 @@ local itemTable = {
 {"Kij bejsbolowy",336,1,90,3},
 {"Łopata",337,1,90,3},
 },
-----------------------
 ["military"] = {
 {"Zapałki",328,0.4,90,2},
 {"Crash Backpack",2404,1,0,4},
@@ -159,36 +151,26 @@ local itemTable = {
 {"Morfina",1579,1,0,4},
 --{"Skin przetrwania",1247,2,0,4.5},
 {"TEC-9",372,1,90,3},
-
 {"M4A1",356,1,90,2.4},
-
 {"CZ550",2913,1,90,0.4},
 {"M107",2917,1,90,0.4},
 {"SVD Camo",2916,1,90,0.4},
 {"DMR",2918,1,90,0.4},
-
-
-
-
 {"Spodnie: Ghillie",1247,2,0,4.5},
 {"Spodnie: Kamuflaz-Zielony",1247,2,0,4.5},
 {"Spodnie: Kamuflaz-Szary",1247,2,0,4.5},
 {"Bluza: Ghillie",1247,2,0,4.5},
 {"Bluza: Kamuflaz-Zielony",1247,2,0,4.5},
-
 {"AK-47",2912,1,90,2.5},
 {"AKS-74 Kobra",2919,1,90,3},
 {"AK-107",2914,1,90,3.2},
 {"FN FAL",2911,1,90,3.1},
-
-
 {"GPS",2976,0.15,0,3},
 {"Mapa",1277,0.8,90,7},
 {"Narzędzia",2969,0.5,0,1},
 {"Silnik",929,0.3,0,2},
 {"Namiot",1279,1,0,4.5},
 --{"Skin snajpera",1213,2,0,0.3},
-
 {"Gogle na podczerwień",369,1,90,3},
 {"Assault Pack (ACU)",3026,1,0,5},
 {"Czech Backpack",2406,1,0,2}, 
@@ -197,7 +179,6 @@ local itemTable = {
 {"Army Backpack",2410,1,0,4},
 {"Łopata",337,1,90,1},
 },
-----------------------
 ["industrial"] = {
 {"Drut kolczasty",933,0.25,0,7},
 {"Narzędzia",2969,0.5,0,3},
@@ -236,7 +217,6 @@ local itemTable = {
 {"Gogle noktowizyjne",368,1,90,1.5},
 {"Army Backpack",2410,1,0,4},
 },
-----------------------
 ["supermarket"] = {
 {"Spodnie: Sport-Niebieski",1247,2,0,2},
 {"Spodnie: Spodnie-Czarne",1247,2,0,2},
@@ -296,40 +276,30 @@ local itemTable = {
 {"2Rnd. Slug",2358,2,0},
 {"Amunicja do Granatnika",2358,2,0},
 {"Amunicja do MP5A5",2358,2,0},
-
 {"CZ550 Mag",2358,2,0},
 {"SVD Camo Mag",2358,2,0},
 {"M107 Mag",2358,2,0},
 {"DMR Mag",2358,2,0},
-
 {"7,62 mm PKM/PKS",1271,2,0},
 {"30Rnd. AK",1271,2,0},
 {"30Rnd. AKS",1271,2,0},
-
 {"AK-107 Mag",1271,2,0},
 {"FN Mag",1271,2,0},
-
 {"30Rnd. STANAG",1271,2,0},
-
 {"CZ550",2913,1,90,0.9},
 {"M107",2917,1,90,0.9},
 {"SVD Camo",2916,1,90,0.9},
 {"DMR",2918,1,90,0.9},
-
 {"AK-47",2912,1,90,0.9},
 {"AKS-74 Kobra",2919,1,90,0.9},
 {"PKM",2915,1,90,0.9},
 {"AK-107",2914,1,90,0.9},
 {"FN FAL",2911,1,90,0.9},
-
-
 {"M4A1",356,1,90,0.9},
-
 {"Amunicja do M1911",3013,2,0},
 {"Amunicja do M9 SD",3013,2,0},
 {"Amunicja do Desert Eagle",3013,2,0},
 {"Amunicja do M136",3082,0.7,90},
-
 {"Amunicja do Lee Enfield",2358,2,0},
 {"Amunicja do PDW",2041,2,0},
 {"Amunicja do MP5A5",2041,2,0},
@@ -369,7 +339,6 @@ local itemTable = {
 {"Granat",351,1,90,1.9},
 {"Lornetka",369,1,0,4},
 --{"Skin przetrwania",1247,2,0,4.5},
-
 {"Spodnie: Ghillie",1247,2,0,4.5},
 {"Spodnie: Kamuflaz-Zielony",1247,2,0,4.5},
 {"Spodnie: Kamuflaz-Szary",1247,2,0,4.5},
@@ -390,14 +359,9 @@ local itemTable = {
 {"Bluza: Bluza-Niebieski",1247,2,0,4.5},
 {"Kurtka: Kurtka-Czarny",1247,2,0,4.5},
 {"Okulary",1247,2,0,4.5},
-
-
-
 {"TEC-9",372,1,90,4},
-
 {"Amunicja do M136 Launcher",359,1,90,0},
 --{"Skin snajpera",1213,2,0,0.01},
-
 {"Heat-Seeking RPG",360,1,90,0},
 {"Bandaż",1578,0.5,0,4},
 {"Makaron",2770,1,0,5},
@@ -525,7 +489,7 @@ function getWeaponAmmoType (weaponName,notOthers)
 			end
 		end
 	end	
-	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do M1911"]) do
+--[[	for i,weaponData in ipairs(weaponAmmoTable["Amunicja do M1911"]) do
 		if weaponName == weaponData[1] then
 			return "Amunicja do M1911",weaponData[2]
 		end
@@ -624,7 +588,7 @@ function getWeaponAmmoType (weaponName,notOthers)
 		if weaponName == weaponData[1] then
 			return "Amunicja do M136",weaponData[2]
 		end
-	end
+	end]]
 	return false
 end
 
