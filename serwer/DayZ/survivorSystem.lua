@@ -1705,18 +1705,22 @@ function globalMessage(thePlayer, cmd, ...)
     end
 	if isObjectInACLGroup ( "user." ..getAccountName(getPlayerAccount(thePlayer)), aclGetGroup ( "Admin" ) ) then
 		outputChatBox("#FF0000[ADMIN] #990033"..name..": #FFFFFF"..message,v, 255, 255, 255, true)
+		outputDebugString("[CHAT][ADMIN] "..name..": "..message)
 		return
 	end
 	if isObjectInACLGroup ( "user." ..getAccountName(getPlayerAccount(thePlayer)), aclGetGroup ( "Moderator" ) ) then
 		outputChatBox("#006600[MOD-CHAT] #00FF00"..name..": #FFFFFF"..message,v, 255, 255, 255, true)
+		outputDebugString("[CHAT][MOD-CHAT] "..name..": "..message)
 		return
 	end
 	if isObjectInACLGroup ( "user." ..getAccountName(getPlayerAccount(thePlayer)), aclGetGroup ( "SuperModerator" ) ) then
 		outputChatBox("#00CC00[MODERATOR] #00FF00"..name..": #FFFFFF"..message,v, 255, 255, 255, true)
+		outputDebugString("[CHAT][MODERATOR] "..name..": "..message)
  		return
  	end
 for _,v in ipairs(getElementsByType("player")) do
     outputChatBox("#CC6600[GLOBALNY] #00FF00"..name..": #FFFFFF"..message,v, 255, 255, 255, true)
+	outputDebugString("[CHAT][GLOBALNY] "..name..": "..message)
     end
 end
 addCommandHandler("global",  globalMessage);
