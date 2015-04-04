@@ -2193,6 +2193,8 @@ function playerPingCheck ()
 end	
 setTimer(playerPingCheck,4000,0)
 
+bindKey("b", "down", "chatbox", "global" )
+
 local alpha = 255
 ------ <<< --------- >>> ----------
 bindKey ( "aim_weapon", "both",

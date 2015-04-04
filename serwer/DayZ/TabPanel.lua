@@ -26,7 +26,7 @@ function calculateWidth()
 	return width + 60
 end 
 
-local max_players = 0
+local max_players = 60
 local ploff = 0
 local width = calculateWidth()
 local baseX = sw/2-width/2

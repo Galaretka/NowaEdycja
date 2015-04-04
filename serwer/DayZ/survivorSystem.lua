@@ -1696,6 +1696,31 @@ function bindTheKeys ()
 end
 addEventHandler("onPlayerLogin", getRootElement(), bindTheKeys)
 
+function globalMessage(thePlayer, cmd, ...)
+    local message = table.concat ( { ... }, " " );
+    local name = getPlayerName(thePlayer);
+	if isPlayerMuted ( thePlayer ) then
+            outputChatBox ("global: jesteś uciszony!", thePlayer, 255, 128, 22, true)
+            return
+    end
+	if isObjectInACLGroup ( "user." ..getAccountName(getPlayerAccount(thePlayer)), aclGetGroup ( "Admin" ) ) then
+		outputChatBox("#FF0000[ADMIN] #990033"..name..": #FFFFFF"..message,v, 255, 255, 255, true)
+		return
+	end
+	if isObjectInACLGroup ( "user." ..getAccountName(getPlayerAccount(thePlayer)), aclGetGroup ( "Moderator" ) ) then
+		outputChatBox("#006600[MOD-CHAT] #00FF00"..name..": #FFFFFF"..message,v, 255, 255, 255, true)
+		return
+	end
+	if isObjectInACLGroup ( "user." ..getAccountName(getPlayerAccount(thePlayer)), aclGetGroup ( "SuperModerator" ) ) then
+		outputChatBox("#00CC00[MODERATOR] #00FF00"..name..": #FFFFFF"..message,v, 255, 255, 255, true)
+ 		return
+ 	end
+for _,v in ipairs(getElementsByType("player")) do
+    outputChatBox("#CC6600[GLOBALNY] #00FF00"..name..": #FFFFFF"..message,v, 255, 255, 255, true)
+    end
+end
+addCommandHandler("global",  globalMessage);
+
 
 function makeRadioStayOff()
     setRadioChannel(0)
