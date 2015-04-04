@@ -115,7 +115,7 @@ addEventHandler("onClientGUIClick", root, function()
 		triggerServerEvent("gangSystem:getSubLeaders", localPlayer)
 	elseif source == gangGUI.gang_panel.leave_gang then
 		local gangName = getElementData(localPlayer, "gang")
-			if gangName and gangName ~= "Brak" then
+		if gangName and gangName ~= "Brak" then
 			setGUIPanelVisible("all", false)
 			guiSetText(gangGUI.confirmation.label, "Czy na pewno chcesz opuścić grupę: " .. gangName .. "?")
 			setGUIPanelVisible("confirmation", true)

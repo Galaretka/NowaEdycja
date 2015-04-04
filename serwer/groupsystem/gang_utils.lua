@@ -6,9 +6,9 @@
 			return true
 		else
 			return false, "Wystąpił błąd."
-        end
-    else
-        return false, "Grupa już istnieje."
+		end
+	else
+		return false, "Grupa już istnieje."
 	end
 end
 
@@ -94,11 +94,11 @@ function isGangMember(gangName, memberAccount)
 		local check = executeSQLSelect("gang_members", "*", "gang_name = '" .. tostring(gangName) .. "' AND member_account = '" .. tostring(memberAccount) .. "'")
 		if type(check) == "table" and #check == 0 or not check then
 			return false, "Członek nie istnieje."
-        else
-            return true
-        end
-    else
-        return false, "Grupa nie istnieje."
+		else
+			return true
+		end
+	else
+		return false, "Grupa nie istnieje."
 	end
 end
 

@@ -4,7 +4,7 @@
 {"Crash Backpack"},
 {"Army Backpack"},
 {"Bandaż"},
-{"Manierka"},
+{"Pełna manierka"},
 {"Makaron"},
 {"Puszka fasoli"},
 {"Hamburger"},
@@ -21,9 +21,9 @@
 {"Topór"},
 {"Pizza"},
 {"Puszka z napojem"},
-{"Pusty kalnister"},
-{"Pełny kalnister"},
-{"Ogień"},
+{"Pusty kanister"},
+{"Pełny kanister"},
+{"Flara"},
 {"Mleko"},
 {"Amunicja do PDW"},
 {"Amunicja do MP5A5"},
@@ -44,7 +44,7 @@
 {"Bluza: Shirt-Pomaranczowa"},
 {"Bluza: Bluza-Biala"},
 {"Bluza: Bluza-Niebieski"},
-{"Kurtka: Kurtka-Czarny"},
+{"Kurtka: Garnitur"},
 {"Okulary"},
 
 {"7,62 mm PKM/PKS"},
@@ -73,10 +73,10 @@
 
 
 {"Gas łzawiący"},
-{"Оск. граната M67"},
+--{"Granat"},
 {"Desert Eagle"},
 {"Sawn-Off Shotgun"},
-{"Granat"},
+{"Granatnik"},
 {"MP5A5"},
 {"Zegarek"},
 {"Apteczka"},
@@ -199,7 +199,7 @@ weaponAmmoTable = {
 },
 
 ["Amunicja do Granatnika"] = {
-{"Granat",27},
+{"Granatnik",27},
 },
 
 ["Amunicja do CZ550"] = {
@@ -220,7 +220,7 @@ weaponAmmoTable = {
 {"Spadochron",46},
 {"Satchel",39},
 {"Gas łzawiący",17},
-{"Оск. граната M67",16},
+--{"Granat",16},
 {"Nóż",4},
 {"Topór",8},
 {"Lornetka",43},
@@ -831,7 +831,7 @@ function onPlayerRequestChangingStats(itemName,itemInfo,data)
 		setElementData(source,itemName,getElementData(source,itemName)-1)
 		addPlayerStats (source,data,gameplayVariables["thirstrestore"])
 		setPedAnimation (source,"VENDING","VEND_Drink2_P",-1, false, false, false, false) 
-		if itemName == "Manierka" then
+		if itemName == "Pełna manierka" then
 			setElementData(source,"Pusta manierka",(getElementData(source,"Pusta manierka") or 0)+1)
 		end
 	end
@@ -1124,12 +1124,12 @@ addEventHandler("onPlayerChangeMaskaGazowa",getRootElement(),onPlayerChangeMaska
 
 function onPlayerRefillWaterBottle (itemName)
 	if isElementInWater(source) then
-		setElementData(source,"Manierka",getElementData(source,"Manierka")+1)
+		setElementData(source,"Pełna manierka",getElementData(source,"Pełna manierka")+1)
 		setElementData(source,itemName,getElementData(source,itemName)-1)
 		triggerClientEvent(source,"refreshInventoryManual",source)
-		triggerClientEvent (source, "displayClientInfo", source,"Manierka",shownInfos["filledup"],22,255,0)
+		triggerClientEvent (source, "displayClientInfo", source,"Pełna manierka",shownInfos["filledup"],22,255,0)
 	else
-		triggerClientEvent (source, "displayClientInfo", source,"Manierka",shownInfos["needwatersource"],255,22,0)
+		triggerClientEvent (source, "displayClientInfo", source,"Pełna manierka",shownInfos["needwatersource"],255,22,0)
 	end	
 end
 addEvent("onPlayerRefillWaterBottle",true)
@@ -1511,7 +1511,7 @@ botSupportTable = {
 {"how","open","inven","By pressing 'J', you can open your inventory.","","James"},
 --Cyxno
 {"drop","item","","Press 'J' to open your inventory, select the item you want to drop and press the arrow pointing to the left.","","Paul"},
-{"fuel","car","how","You need an 'Pusty kalnister'. You can fill it at a gas station.","","Sandra"},
+{"fuel","car","how","You need an 'Pusty kanister'. You can fill it at a gas station.","","Sandra"},
 {"pick","items","how","Press the middle mouse button (or '-') when the name of the item is written on the left of your screen.","","Sandra"},
 {"fence","wire","destroy","You need a toolbox to destroy a wirefence.","","James"},
 {"register","how","to","You need to fill in your name and password. Afterwards, press 'Register'. If it doesn't work, reconnect.","","James"},

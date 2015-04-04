@@ -2,6 +2,7 @@
 
 addEventHandler("onResourceStart", resourceRoot, function()
 	local columnName = get("column_name")
+--	exports.scoreboard:scoreboardAddColumn("gang", root, columnName:len() * 12, columnName)
 	executeSQLCreateTable("gangs", "gang_name STRING, gang_leader STRING, gang_members, gang_subleaders STRING")
 	executeSQLCreateTable("gang_members", "gang_name STRING, member_account STRING, added_by STRING")
 	checkPlayerGroupDetails()	

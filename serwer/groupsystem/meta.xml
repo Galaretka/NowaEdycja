@@ -1,0 +1,15 @@
+<meta>
+	<info author="DayZSA" version="0.1" name="groupsystem" type="script" />
+    <script src="gang_client.lua" type="client" cache="false" />
+    <script src="gang_utils.lua"  />
+    <script src="gang_server.lua"  />
+    <script src="groupsystem.lua"  />
+    <script src="groupsystem_client.lua" type="client" cache="false" />
+    <settings>
+        <setting name="*column_name" value="Group" />
+        <setting name="*gang_list_command" value="gangs" />
+        <setting name="*gang_create_command" value="creategang" />
+    </settings>
+
+    <export function="addGang"/>
+</meta>

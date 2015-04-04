@@ -224,8 +224,8 @@ local openGangTick = getTickCount()
 
 function isPlayerKeySpamming()
 	local passed = getTickCount() - openGangTick
-	if passed < 3000 then
-		outputChatBox("Musisz odczekać "..math.floor(t/1000+1).." sek. aby włączyć panel!", 255, 255, 0,true)
+	if passed < 1000 then
+		outputChatBox("Musisz odczekać "..math.floor((1500-passed)/1000+1).." sek. aby włączyć panel!", 255, 255, 0,true)
 		return true
 	else
 		openGangTick = getTickCount()
@@ -233,7 +233,7 @@ function isPlayerKeySpamming()
 	end
 end
 
---GPS
+--[[GPS
 playerBlibs = {}
 amouunt = 0
 function updateGPS ()
@@ -254,4 +254,4 @@ function updateGPS ()
 		end
 	end
 end
-setTimer(updateGPS,10000,0)
+setTimer(updateGPS,10000,0)--]]

@@ -158,16 +158,16 @@ lootItems = {
 {"Topór",339,1,90,3},
 {"Pizza",1582,1,0,2},
 {"Puszka z napojem",2647,1,0,2},
-{"Pusty kalnister",1650,1,0,2},
-{"Ogień",324,1,90,2},
+{"Pusty kanister",1650,1,0,2},
+{"Flara",324,1,90,2},
 {"Mleko",2856,1,0,1},
 {"Środki przeciwbólowe",2709,0.5,0,4},
 {"Pusta puszka po napoju",2673,0.5,0,2},
 {"Pozostałości",2675,0.5,0,3},
-{"Оск. граната M67",342,1,0,4},
+--{"Granat",342,1,0,4},
 {"Spadochron",342,1,0,80},
 {"Sawn-Off Shotgun",350,1,90,5},
-{"Granat",351,1,90,4},
+--{"Granatnik",351,1,90,4},
 {"MP5A5",353,1,90,6},
 {"Zegarek",2710,1,0,4},
 {"Ciepła paczka",1576,1,0,3},
@@ -833,10 +833,10 @@ function notifyAboutExplosion()
     setTimer(respawnDayZVehicle,1800000,1,id,x,y,z,source,col,getElementData(col,"MAX_Slots"))
 	setElementData(col,"deadVehicle",true)
 	setElementData(source,"isExploded",true)
-	createExplosion (x1+4,y1+1,z1,4)
-	createExplosion (x1+2,y1-4,z1,4)
-	createExplosion (x1-1,y1+5,z1,4)
-	createExplosion (x1-4,y1,z1-2,4)
+--	createExplosion (x1+4,y1+1,z1,4)
+--	createExplosion (x1+2,y1-4,z1,4)
+--	createExplosion (x1-1,y1+5,z1,4)
+--	createExplosion (x1-4,y1,z1-2,4)
 end
 addEventHandler("onVehicleExplode", getRootElement(), notifyAboutExplosion)
 

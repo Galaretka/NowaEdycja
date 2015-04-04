@@ -772,7 +772,7 @@ weaponAmmoTable = {
 },
 
 ["Amunicja do Granatnika"] = {
-{"Granat",27},
+{"Granatnik",27},
 },
 
 
@@ -791,7 +791,7 @@ weaponAmmoTable = {
 {"Spadochron",46},
 {"Satchel",39},
 {"Gas łzawiący",17},
-{"Оск. граната M67",16},
+--{"Granat",16},
 {"Nóż",4},
 {"Topór",8},
 {"Lornetka",43},

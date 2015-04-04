@@ -11,11 +11,9 @@
 inventoryItems = {
 ["Weapons"] = {
 ["Primary Weapon"] = {
-
 {"Winchester 1866",3},
-{"Granat",3},
+{"Granatnik",3},
 {"Sawn-Off Shotgun",3},
-
 {"AK-47",3},
 {"M4A1",3},
 {"PKM",3},
@@ -26,7 +24,6 @@ inventoryItems = {
 {"AKS-74 Kobra",3},
 {"AK-107",3},
 {"FN FAL",3},
-
 {"Lee Enfield",3},
 {"Heat-Seeking RPG",5},
 {"Amunicja do M136 Launcher",5},
@@ -49,10 +46,9 @@ inventoryItems = {
 ["Specially Weapon"] = {
 {"Spadochron",1},
 {"Gas łzawiący",1},
-{"Оск. граната M67",1},
+--{"Granat",1},
 {"Lornetka",1}
 },
-
 },
 ["Ammo"] = {
 {"Amunicja do M1911",0.085},
@@ -60,7 +56,6 @@ inventoryItems = {
 {"Amunicja do Desert Eagle",0.085},
 {"Amunicja do PDW",0.025},
 {"Amunicja do MP5A5",0.025},
-
 {"FN Mag",0.035},
 {"AK-107 Mag",0.035},
 {"30Rnd. AKS",0.035},
@@ -71,17 +66,15 @@ inventoryItems = {
 {"M107 Mag",0.1},
 {"DMR Mag",0.1},
 {"SVD Mag",0.1},
-
 {"1866 Slug",0.067},
 {"2Rnd. Slug",0.067},
 {"Amunicja do Granatnika",0.067},
-
 {"Amunicja do Lee Enfield",0.1},
 {"Amunicja do M136",2},
 },
 
 ["Food"] = {
-{"Manierka",1},
+{"Pełna manierka",1},
 {"Makaron",1},
 {"Puszka fasoli",1},
 {"Hamburger",1},
@@ -92,16 +85,12 @@ inventoryItems = {
 },
 
 ["Items"] = {
-
-
-
-
 {"Montion Backpack",1,"Nałóż"},
 {"Drewno opałowe",2},
 {"Bandaż",1,"Zabandażuj"},
-{"Ogień",1,"Podpal"},
-{"Pusty kalnister",2},
-{"Pełny kalnister",2},
+{"Flara",1,"Połóż"},
+{"Pusty kanister",2},
+{"Pełny kanister",2},
 {"Apteczka",2,"Użyj leków."},
 {"Ciepła paczka",1,"Użyj leków."},
 {"Środki przeciwbólowe",1,"Użyj leków."},
@@ -120,8 +109,8 @@ inventoryItems = {
 {"Pusta manierka",1,"Napełnij"}, 
 {"Pusta puszka po napoju",1},
 {"Pozostałości",1},
-{"Assault Pack (ACU)",1},"Nałóż",
-{"Alice Pack",1},"Nałóż",
+{"Assault Pack (ACU)",1,"Nałóż"},
+{"Alice Pack",1,"Nałóż"},
 {"Czech Backpack",1,"Nałóż"},
 {"Coyote Backpack",1,"Nałóż"},
 {"Crash Backpack",1,"Nałóż"},
@@ -138,7 +127,6 @@ inventoryItems = {
 {"Narzędzia",1},
 {"Radio",1},
 },
-
 
 ["Ubrania"] = {
 {"Spodnie: Ghillie",1,"Zaloz Ghillie spodnie"},
@@ -159,7 +147,7 @@ inventoryItems = {
 {"Bluza: Shirt-Pomaranczowa",1,"Zaloz Shirt-Pomaranczowa"},
 {"Bluza: Bluza-Biala",1,"Zaloz Bluza-Biala"},
 {"Bluza: Bluza-Niebieski",1,"Zaloz Bluza-Niebieski"},
-{"Kurtka: Kurtka-Czarny",1,"Zaloz Kurtka-Czarny"},
+{"Kurtka: Garnitur",1,"Zaloz Kurtka-Czarny"},
 {"Okulary",1,"Zaloz okulary"},
 },
 }
@@ -737,13 +725,12 @@ local itemPlus = 1
 		itemPlus = 30
 	elseif itemName == "Amunicja do MP5A5" then
 		itemPlus = 20
-		elseif itemName == "1866 Slug" then
+	elseif itemName == "1866 Slug" then
 		itemPlus = 7
 	elseif itemName == "2Rnd. Slug" then
 		itemPlus = 2
 	elseif itemName == "Amunicja do Granatnika" then
 		itemPlus = 7
-	
 	elseif itemName == "Amunicja do Lee Enfield" then
 		itemPlus = 10
 	elseif itemName == "Amunicja do M136" then
@@ -769,12 +756,13 @@ local itemPlus = 1
 	elseif itemName == "FN Mag" then
 		itemPlus = 30
 	
-	elseif itemName == "M4A1" or itemName == "AK-47" or itemName == "AKS-74 Kobra" or itemName == "AK-107" or itemName == "FN FAL" or itemName == "PKM" or itemName == "CZ550" or itemName == "SVD Camo" or itemName == "M107" or itemName == "DMR" or itemName == "Shotgun" or itemName == "Granat" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "Rocket Launcher" or itemName == "Country Rifle" then
-	removeBackWeaponOnDrop()	
+	elseif itemName == "M4A1" or itemName == "AK-47" or itemName == "AKS-74 Kobra" or itemName == "AK-107" or itemName == "FN FAL" or itemName == "PKM" or itemName == "CZ550" or itemName == "SVD Camo" or itemName == "M107" or itemName == "DMR" or itemName == "Shotgun" or itemName == "Granatnik" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "Rocket Launcher" or itemName == "Country Rifle" then
+	--removeBackWeaponOnDrop()	
+	triggerServerEvent("removeBackWeaponOnDrop", getLocalPlayer())
 end
 if loot then 
 if not getElementData(loot,"itemloot") and getElementType(getElementData(loot,"parent")) == "vehicle" then
-	if itemName == "Pełny kalnister" then
+	if itemName == "Pełny kanister" then
 		if getElementData(loot,"fuel")+20 < getVehicleMaxFuel(loot) then
 			addingfuel = 20
 		elseif getElementData(loot,"fuel")+20 > getVehicleMaxFuel(loot)+15 then
@@ -785,7 +773,7 @@ if not getElementData(loot,"itemloot") and getElementType(getElementData(loot,"p
 		end
 		setElementData(loot,"fuel",getElementData(loot,"fuel")+addingfuel)
 		setElementData(getLocalPlayer(),itemName,getElementData(getLocalPlayer(),itemName)-itemPlus)
-		setElementData(getLocalPlayer(),"Pusty kalnister",(getElementData(getLocalPlayer(),"Pusty kalnister") or 0)+itemPlus)
+		setElementData(getLocalPlayer(),"Pusty kanister",(getElementData(getLocalPlayer(),"Pusty kanister") or 0)+itemPlus)
 		triggerEvent ("displayClientInfo", getLocalPlayer(),"Vehicle","Wypełnia zbiornik o 20 litrów!",22,255,0)
 		return
 	end
@@ -800,45 +788,165 @@ if (getElementData(getLocalPlayer(),itemName2) or 0)/itemPlus < 1 then
 return
 end
 if itemName == "Assault Pack (ACU)" and          
-    getElementData(getLocalPlayer(), "MAX_Slots") == 12 and          
-    getElementData(getLocalPlayer(),"Assault Pack (ACU)") == 1 then
-    triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Nie można rzucać!", 255, 22, 0) 
-    return true 
+getElementData(getLocalPlayer(), "MAX_Slots") == 12 and          
+getElementData(getLocalPlayer(),"Assault Pack (ACU)") == 1 then 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Ten plecak masz na sobie! Nie możesz go wyrzucić!", 255, 22, 0) 
+return true 
 end 
 if itemName == "Alice Pack" and          
 getElementData(getLocalPlayer(), "MAX_Slots") == 16 and          
 getElementData(getLocalPlayer(),"Alice Pack") == 1 then 
-triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Nie można rzucać!", 255, 22, 0) 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Ten plecak masz na sobie! Nie możesz go wyrzucić!", 255, 22, 0) 
 return true 
 end 
 if itemName == "Czech Backpack" and          
 getElementData(getLocalPlayer(), "MAX_Slots") == 26 and          
 getElementData(getLocalPlayer(),"Czech Backpack") == 1 then 
-triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Nie można rzucać!", 255, 22, 0) 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Ten plecak masz na sobie! Nie możesz go wyrzucić!", 255, 22, 0) 
 return true 
 end 
 if itemName == "Montion Backpack" and          
 getElementData(getLocalPlayer(), "MAX_Slots") == 85 and          
-getElementData(getLocalPlayer(),"Czech Backpack") == 1 then 
-triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Nie można rzucać!", 255, 22, 0) 
+getElementData(getLocalPlayer(),"Montion Backpack") == 1 then 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Ten plecak masz na sobie! Nie możesz go wyrzucić!", 255, 22, 0) 
 return true 
 end 
 if itemName == "Army Backpack" and          
 getElementData(getLocalPlayer(), "MAX_Slots") == 69 and          
-getElementData(getLocalPlayer(),"Czech Backpack") == 1 then 
-triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Nie można rzucać!", 255, 22, 0) 
+getElementData(getLocalPlayer(),"Army Backpack") == 1 then 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Ten plecak masz na sobie! Nie możesz go wyrzucić!", 255, 22, 0) 
 return true 
 end 
 if itemName == "Crash Backpack" and          
 getElementData(getLocalPlayer(), "MAX_Slots") == 47 and          
-getElementData(getLocalPlayer(),"Czech Backpack") == 1 then 
-triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Nie można rzucać!", 255, 22, 0) 
+getElementData(getLocalPlayer(),"Crash Backpack") == 1 then 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Ten plecak masz na sobie! Nie możesz go wyrzucić!", 255, 22, 0) 
 return true 
 end 
 if itemName == "Coyote Backpack" and          
 getElementData(getLocalPlayer(), "MAX_Slots") == 36 and          
 getElementData(getLocalPlayer(),"Coyote Backpack") == 1 then 
-triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Nie można rzucać!", 255, 22, 0) 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Ten plecak masz na sobie! Nie możesz go wyrzucić!", 255, 22, 0) 
+return true 
+end
+if itemName == "Spodnie: Ghillie" and          
+getElementData(getLocalPlayer(), "trousers") == 7 and          
+getElementData(getLocalPlayer(),"Spodnie: Ghillie") == 1 then 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Te spodnie masz na nogach! Nie możesz je wyrzucić!", 255, 22, 0) 
+return true 
+end
+if itemName == "Spodnie: Kamuflaz-Zielony" and          
+getElementData(getLocalPlayer(), "trousers") == 1 and          
+getElementData(getLocalPlayer(),"Spodnie: Kamuflaz-Zielony") == 1 then 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Te spodnie masz na nogach! Nie możesz je wyrzucić!", 255, 22, 0) 
+return true 
+end
+if itemName == "Spodnie: Kamuflaz-Szary" and          
+getElementData(getLocalPlayer(), "trousers") == 2 and          
+getElementData(getLocalPlayer(),"Spodnie: Kamuflaz-Szary") == 1 then 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Te spodnie masz na nogach! Nie możesz je wyrzucić!", 255, 22, 0) 
+return true 
+end
+if itemName == "Spodnie: Sport-Zielony" and          
+getElementData(getLocalPlayer(), "trousers") == 3 and          
+getElementData(getLocalPlayer(),"Spodnie: Sport-Zielony") == 1 then 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Te spodnie masz na nogach! Nie możesz je wyrzucić!", 255, 22, 0) 
+return true 
+end
+if itemName == "Spodnie: Sport-Niebieski" and          
+getElementData(getLocalPlayer(), "trousers") == 4 and          
+getElementData(getLocalPlayer(),"Spodnie: Sport-Niebieski") == 1 then 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Te spodnie masz na nogach! Nie możesz je wyrzucić!", 255, 22, 0) 
+return true 
+end
+if itemName == "Spodnie: Spodnie-Czarne" and          
+getElementData(getLocalPlayer(), "trousers") == 5 and          
+getElementData(getLocalPlayer(),"Spodnie: Spodnie-Czarne") == 1 then 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Te spodnie masz na nogach! Nie możesz je wyrzucić!", 255, 22, 0) 
+return true 
+end
+if itemName == "Spodnie: Spodnie-Szary" and          
+getElementData(getLocalPlayer(), "trousers") == 6 and          
+getElementData(getLocalPlayer(),"Spodnie: Spodnie-Szary") == 1 then 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Te spodnie masz na nogach! Nie możesz je wyrzucić!", 255, 22, 0) 
+return true 
+end
+if itemName == "Buty: Trampki-Biale" and          
+getElementData(getLocalPlayer(), "Shoes") == 1 and          
+getElementData(getLocalPlayer(),"Buty: Trampki-Biale") == 1 then 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Te buty masz na nogach! Nie możesz je wyrzucić!", 255, 22, 0) 
+return true 
+end
+if itemName == "Buty: Trampki-Niebieskie" and          
+getElementData(getLocalPlayer(), "Shoes") == 2 and          
+getElementData(getLocalPlayer(),"Buty: Trampki-Niebieskie") == 1 then 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Te buty masz na nogach! Nie możesz je wyrzucić!", 255, 22, 0) 
+return true 
+end
+if itemName == "Buty: Buty" and          
+getElementData(getLocalPlayer(), "Shoes") == 3 and          
+getElementData(getLocalPlayer(),"Buty: Buty") == 1 then 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Te buty masz na nogach! Nie możesz je wyrzucić!", 255, 22, 0) 
+return true 
+end
+if itemName == "Bluza: Ghillie" and          
+getElementData(getLocalPlayer(), "Shirt") == 9 and          
+getElementData(getLocalPlayer(),"Bluza: Ghillie") == 1 then 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Masz już tę bluzę na sobie! Nie możesz ją wyrzucić!", 255, 22, 0) 
+return true 
+end
+if itemName == "Bluza: Kamuflaz-Zielony" and          
+getElementData(getLocalPlayer(), "Shirt") == 8 and          
+getElementData(getLocalPlayer(),"Bluza: Kamuflaz-Zielony") == 1 then 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Masz już tę bluzę na sobie! Nie możesz ją wyrzucić!", 255, 22, 0) 
+return true 
+end
+if itemName == "Bluza: Shirt-Czerwony" and          
+getElementData(getLocalPlayer(), "Shirt") == 1 and          
+getElementData(getLocalPlayer(),"Bluza: Shirt-Czerwony") == 1 then 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Masz już tę bluzę na sobie! Nie możesz ją wyrzucić!", 255, 22, 0) 
+return true 
+end
+if itemName == "Bluza: Shirt-Bialy" and          
+getElementData(getLocalPlayer(), "Shirt") == 2 and          
+getElementData(getLocalPlayer(),"Bluza: Shirt-Bialy") == 1 then 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Masz już tę bluzę na sobie! Nie możesz ją wyrzucić!", 255, 22, 0) 
+return true 
+end
+if itemName == "Bluza: Shirt-Zielony" and          
+getElementData(getLocalPlayer(), "Shirt") == 3 and          
+getElementData(getLocalPlayer(),"Bluza: Shirt-Zielony") == 1 then 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Masz już tę bluzę na sobie! Nie możesz ją wyrzucić!", 255, 22, 0) 
+return true 
+end
+if itemName == "Bluza: Shirt-Pomaranczowa" and          
+getElementData(getLocalPlayer(), "Shirt") == 4 and          
+getElementData(getLocalPlayer(),"Bluza: Shirt-Pomaranczowa") == 1 then 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Masz już tę bluzę na sobie! Nie możesz ją wyrzucić!", 255, 22, 0) 
+return true 
+end
+if itemName == "Bluza: Bluza-Biala" and          
+getElementData(getLocalPlayer(), "Shirt") == 5 and          
+getElementData(getLocalPlayer(),"Bluza: Bluza-Biala") == 1 then 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Masz już tę bluzę na sobie! Nie możesz ją wyrzucić!", 255, 22, 0) 
+return true 
+end
+if itemName == "Bluza: Bluza-Niebieski" and          
+getElementData(getLocalPlayer(), "Shirt") == 6 and          
+getElementData(getLocalPlayer(),"Bluza: Bluza-Niebieski") == 1 then 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Masz już tę bluzę na sobie! Nie możesz ją wyrzucić!", 255, 22, 0) 
+return true 
+end
+if itemName == "Kurtka: Garnitur" and          
+getElementData(getLocalPlayer(), "Shirt") == 7 and          
+getElementData(getLocalPlayer(),"Kurtka: Garnitur") == 1 then 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Masz już tę bluzę na sobie! Nie możesz ją wyrzucić!", 255, 22, 0) 
+return true 
+end
+if itemName == "Okulary" and          
+getElementData(getLocalPlayer(), "glases") == 1 and          
+getElementData(getLocalPlayer(),"Okulary") == 1 then 
+triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Masz już te okulary na głowie! Nie możesz ją wyrzucić!", 255, 22, 0) 
 return true 
 end
 	if loot then
@@ -1049,7 +1157,7 @@ for i,itemInfo in ipairs(inventoryItems["Ammo"]) do
 end
 for i,itemInfo in ipairs(inventoryItems["Food"]) do
 	if itemName == itemInfo[1] then
-		if itemInfo[1] == "Manierka" or itemInfo[1] == "Mleko" or itemInfo[1] == "Puszka z napojem" then
+		if itemInfo[1] == "Pełna manierka" or itemInfo[1] == "Mleko" or itemInfo[1] == "Puszka z napojem" then
 			info = "Wypij"
 		else
 			info = "Zjedz"
@@ -1124,7 +1232,7 @@ function playerUseItem(itemName,itemInfo)
 		triggerServerEvent("onPlayerPitchATent",getLocalPlayer(),itemName)
 	elseif itemInfo == "Rozłóż"	then
 		triggerServerEvent("onPlayerBuildAWireFence",getLocalPlayer(),itemName)
-	elseif itemName == "Ogień" then
+	elseif itemName == "Flara" then
 		triggerServerEvent("onPlayerPlaceRoadflare",getLocalPlayer(),itemName)	
 	elseif itemInfo == "Podpal" then
 		triggerServerEvent("onPlayerMakeAFire",getLocalPlayer(),itemName)	
@@ -1213,7 +1321,7 @@ function playerUseItem(itemName,itemInfo)
 	playSound("sounds/cloth.ogg")
     elseif itemName == "Assault Pack (ACU)" then 
              if getElementData(getLocalPlayer(), "MAX_Slots") == 12 then 
-               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Masz już ten plecak!", 255, 22, 0) 
+               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Ten plecak masz na sobie! Nie możesz założyć go drugi raz!", 255, 22, 0) 
                return 
              end 
              if getElementData(getLocalPlayer(), "MAX_Slots") > 12 then 
@@ -1226,7 +1334,7 @@ function playerUseItem(itemName,itemInfo)
 -------------------- 
     elseif itemName == "Alice Pack" then 
              if getElementData(getLocalPlayer(), "MAX_Slots") == 16 then 
-               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Masz już ten plecak!", 255, 22, 0) 
+               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Ten plecak masz na sobie! Nie możesz założyć go drugi raz!", 255, 22, 0) 
                return 
              end 
              if getElementData(getLocalPlayer(), "MAX_Slots") > 16 then 
@@ -1239,7 +1347,7 @@ function playerUseItem(itemName,itemInfo)
 -------------------- 
     elseif itemName == "Czech Backpack" then 
              if getElementData(getLocalPlayer(), "MAX_Slots") == 26 then 
-               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Masz już ten plecak!", 255, 22, 0) 
+               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Ten plecak masz na sobie! Nie możesz założyć go drugi raz!", 255, 22, 0) 
                return 
              end 
              if getElementData(getLocalPlayer(), "MAX_Slots") > 26 then 
@@ -1252,7 +1360,7 @@ function playerUseItem(itemName,itemInfo)
 ---------------------
     elseif itemName == "Montion Backpack" then 
              if getElementData(getLocalPlayer(), "MAX_Slots") == 85 then 
-               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Masz już ten plecak!", 255, 22, 0) 
+               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Ten plecak masz na sobie! Nie możesz założyć go drugi raz!", 255, 22, 0) 
                return 
              end 
              if getElementData(getLocalPlayer(), "MAX_Slots") > 85 then 
@@ -1265,7 +1373,7 @@ function playerUseItem(itemName,itemInfo)
 ---------------------
     elseif itemName == "Army Backpack" then 
              if getElementData(getLocalPlayer(), "MAX_Slots") == 69 then 
-               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Masz już ten plecak!", 255, 22, 0) 
+               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Ten plecak masz na sobie! Nie możesz założyć go drugi raz!", 255, 22, 0) 
                return 
              end 
              if getElementData(getLocalPlayer(), "MAX_Slots") > 69 then 
@@ -1278,7 +1386,7 @@ function playerUseItem(itemName,itemInfo)
 ---------------------
     elseif itemName == "Crash Backpack" then 
              if getElementData(getLocalPlayer(), "MAX_Slots") == 47 then 
-               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Masz już ten plecak!", 255, 22, 0) 
+               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Ten plecak masz na sobie! Nie możesz założyć go drugi raz!", 255, 22, 0) 
                return 
              end 
              if getElementData(getLocalPlayer(), "MAX_Slots") > 47 then 
@@ -1291,7 +1399,7 @@ function playerUseItem(itemName,itemInfo)
 --------------------- 
     elseif itemName == "Coyote Backpack" then 
              if getElementData(getLocalPlayer(), "MAX_Slots") == 36 then 
-               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Masz już ten plecak!", 255, 22, 0) 
+               triggerEvent("displayClientInfo", getLocalPlayer(), "Inwentarz", "Ten plecak masz na sobie! Nie możesz założyć go drugi raz!", 255, 22, 0) 
                return 
              end 
              if getElementData(getLocalPlayer(), "MAX_Slots") > 36 then 
@@ -1378,7 +1486,7 @@ weaponAmmoTable = {
 },
 
 ["Amunicja do Granatnika"] = {
-{"Granat",27},
+{"Granatnik",27},
 },
 
 
@@ -1395,7 +1503,7 @@ weaponAmmoTable = {
 {"Spadochron",46},
 {"Satchel",39},
 {"Gas łzawiący",17},
-{"Оск. граната M67",16},
+--{"Granat",16},
 {"Nóż",4},
 {"Topór",8},
 {"Lornetka",43},

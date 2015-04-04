@@ -155,10 +155,10 @@ function showClientMenuItem(arg1,arg2,arg3,arg4)
 		end
 	end
 	if arg1 == "patrol" then
-		if getElementData(getLocalPlayer(),"Pusty kalnister") >= 1 then
+		if getElementData(getLocalPlayer(),"Pusty kanister") >= 1 then
 			number = number+1
 			guiSetVisible(spalteGuiImage[number],true)
-			guiSetText(spalteGuiText[number],"Napełnij (Pusty kalnister)")
+			guiSetText(spalteGuiText[number],"Napełnij (Pusty kanister)")
 			if number == 1 then
 				guiLabelSetColor (spalteGuiText[number],50,255,50)
 				setElementData(spalteGuiText[number],"markedMenuItem",true)
@@ -282,7 +282,7 @@ function onPlayerTargetPickup (theElement)
 				showClientMenuItem("patrol")
 				setElementData(getLocalPlayer(),"currentCol",source)
 				setElementData(getLocalPlayer(),"loot",false)
-				setNewbieInfo (true,"Stacja benzynowa","Naciśnij '-' lub 'środkowy przycisk myszy' do napełnienia kalnistra! \n Wymaga: Pusty kalnister",source)
+				setNewbieInfo (true,"Stacja benzynowa","Naciśnij '-' lub 'środkowy przycisk myszy' do napełnienia kalnistra! \n Wymaga: Pusty kanister",source)
 				return
 			end
 			if getElementData(source,"wirefence") then
@@ -488,9 +488,9 @@ function onPlayerPressMiddleMouse (key,keyState)
 		end
 		if itemName == "patrolstation" then
 			local col = getElementData(getLocalPlayer(),"currentCol")
-				setElementData(getLocalPlayer(),"Pusty kalnister",getElementData(getLocalPlayer(),"Pusty kalnister")-1)
-				setElementData(getLocalPlayer(),"Pełny kalnister",(getElementData(getLocalPlayer(),"Pełny kalnister") or 0)+1)
-				triggerEvent ("displayClientInfo",getLocalPlayer(),"patrolstation","Napełniłeś kalnister!",22,255,0)
+				setElementData(getLocalPlayer(),"Pusty kanister",getElementData(getLocalPlayer(),"Pusty kanister")-1)
+				setElementData(getLocalPlayer(),"Pełny kanister",(getElementData(getLocalPlayer(),"Pełny kanister") or 0)+1)
+				triggerEvent ("displayClientInfo",getLocalPlayer(),"patrolstation","Napełniłeś kanister!",22,255,0)
 				disableMenu()
 			return
 		end

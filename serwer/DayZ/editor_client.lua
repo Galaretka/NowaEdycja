@@ -54,7 +54,7 @@ damageTable = {
 
 {"Winchester 1866",4500},
 {"MP5A5",889},
-{"Granat",2000},
+{"Granatnik",2000},
 
 --[[{"Heat-Seeking RPG",0},
 {"Amunicja do M136 Launcher",0},
@@ -67,7 +67,7 @@ damageTable = {
 {"TEC-9",889},
 {"Sawn-Off Shotgun",2000},
 {"Desert Eagle",1389},
-{"Оск. граната M67",17998},
+{"Granat",17998},
 {"Kij bejsbolowy",953},
 {"Łopata",953},
 {"Kij golfowy",953},

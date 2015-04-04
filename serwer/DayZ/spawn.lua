@@ -54,7 +54,7 @@ local playerDataTable = {
 {"banditskilled"},
 {"Drewno opałowe"},
 {"Bandaż"},
-{"Manierka"},
+{"Pełna manierka"},
 {"Makaron"},
 {"Puszka fasoli"},
 {"Hamburger"},
@@ -71,9 +71,9 @@ local playerDataTable = {
 {"Pizza"},
 {"Morfina"},
 {"Puszka z napojem"},
-{"Pusty kalnister"},
-{"Pełny kalnister"},
-{"Ogień"},
+{"Pusty kanister"},
+{"Pełny kanister"},
+{"Flara"},
 {"Mleko"},
 {"Amunicja do PDW"},
 {"Amunicja do MP5A5"},
@@ -98,20 +98,13 @@ local playerDataTable = {
 {"Bluza: Shirt-Pomaranczowa"},
 {"Bluza: Bluza-Biala"},
 {"Bluza: Bluza-Niebieski"},
-{"Kurtka: Kurtka-Czarny"},
+{"Kurtka: Garnitur"},
 {"Okulary"},
-
-
-
-
-
-
-
 {"Gas łzawiący"},
-{"Оск. граната M67"},
+--{"Granat"},
 {"Desert Eagle"},
 {"Sawn-Off Shotgun"},
-{"Granat"},
+{"Granatnik"},
 {"MP5A5"},
 {"Zegarek"},
 {"Apteczka"},
@@ -119,8 +112,6 @@ local playerDataTable = {
 {"Lee Enfield"},
 {"PDW"},
 {"TEC-9"},
-
-
 {"7,62 mm PKM/PKS"},
 {"30Rnd. AK"},
 {"30Rnd. AKS"},
@@ -194,7 +185,7 @@ local vehicleDataTable = {
 {"fuel"},
 {"Drewno opałowe"},
 {"Bandaż"},
-{"Manierka"},
+{"Pełna manierka"},
 {"Makaron"},
 {"Puszka fasoli"},
 {"Hamburger"},
@@ -210,26 +201,23 @@ local vehicleDataTable = {
 {"Topór"},
 {"Pizza"},
 {"Puszka z napojem"},
-{"Pusty kalnister"},
-{"Pełny kalnister"},
-{"Ogień"},
+{"Pusty kanister"},
+{"Pełny kanister"},
+{"Flara"},
 {"Mleko"},
 {"Amunicja do PDW"},
 {"Amunicja do MP5A5"},
-
-
 {"Gas łzawiący"},
-{"Оск. граната M67"},
+--{"Granat"},
 {"Desert Eagle"},
 {"Sawn-Off Shotgun"},
-{"Granat"},
+{"Granatnik"},
 {"MP5A5"},
 {"Zegarek"},
 {"Apteczka"},
 {"Ciepła paczka"},
 {"Lee Enfield"},
 {"TEC-9"},
-
 {"7,62 mm PKM/PKS"},
 {"30Rnd. AK"},
 {"30Rnd. AKS"},
@@ -271,7 +259,7 @@ local vehicleDataTable = {
 {"Bluza: Shirt-Pomaranczowa"},
 {"Bluza: Bluza-Biala"},
 {"Bluza: Bluza-Niebieski"},
-{"Kurtka: Kurtka-Czarny"},
+{"Kurtka: Garnitur"},
 {"Okulary"},
 
 

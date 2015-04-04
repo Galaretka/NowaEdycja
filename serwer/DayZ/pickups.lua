@@ -44,14 +44,14 @@ local itemTable = {
 {"Crash Backpack",2404,1,0,4},
 {"Montion Backpack",1550,1,0,4},
 {"Bandaż",1578,0.5,0,4},
-{"Manierka",2683,1,0,6},
+{"Pełna manierka",2683,1,0,6},
 {"Makaron",2770,1,0,6},
 {"Puszka fasoli",2601,1,0,6},
 {"Hamburger",2768,1,0,6},
 {"Pusta puszka po napoju",2673,0.5,0,12},
 {"Pozostałości",2675,0.5,0,12},
 {"Puszka z napojem",2647,1,0,9},
-{"Pusty kalnister",1650,1,0,10},
+{"Pusty kanister",1650,1,0,10},
 {"Nóż",335,1,90,4},
 {"Zapałki",328,0.4,90,8},
 {"Desert Eagle",348,1,90,0.2},
@@ -82,17 +82,17 @@ local itemTable = {
 {"Buty: Trampki-Biale",1247,2,0,2},
 {"Buty: Trampki-Niebieskie",1247,2,0,2},
 {"Buty: Buty",1247,2,0,4.5},
-{"Pusty kalnister",1650,1,0,9},
-{"Ogień",324,1,90,9},
+{"Pusty kanister",1650,1,0,9},
+{"Flara",324,1,90,9},
 {"Mleko",2856,1,0,7},
 {"Assault Pack (ACU)",3026,1,0,6},
 {"Środki przeciwbólowe",2709,3,0,7},
 {"Pusta puszka po napoju",2673,0.5,0,12},
 {"Pozostałości",2675,0.5,0,12},
-{"Оск. граната M67",342,1,0,0.01},
+--{"Granat",342,1,0,0.01},
 {"Desert Eagle",348,1,90,0.4},
 {"Sawn-Off Shotgun",350,1,90,0.3},
-{"Granat",351,1,90,0.4},
+--{"Granatnik",351,1,90,0.4},
 {"MP5A5",353,1,90,0.4},
 {"Zegarek",2710,1,0,3},
 {"Ciepła paczka",1576,5,0,6},
@@ -107,7 +107,7 @@ local itemTable = {
 {"Bluza: Shirt-Czerwony",1247,2,0,2},
 {"Bluza: Shirt-Bialy",1247,2,0,2},
 {"Bluza: Bluza-Niebieski",1247,2,0,2},
-{"Kurtka: Kurtka-Czarny",1247,2,0,2},
+{"Kurtka: Garnitur",1247,2,0,2},
 {"Okulary",1247,2,0,1},
 {"Makaron",2770,1,0,7},
 {"Puszka fasoli",2601,1,0,7},
@@ -128,15 +128,15 @@ local itemTable = {
 {"Topór",339,1,90,2.1},
 {"Pizza",1582,1,0,2},
 {"Puszka z napojem",2647,1,0,2},
-{"Pusty kalnister",1650,1,0,4},
-{"Ogień",324,1,90,4},
+{"Pusty kanister",1650,1,0,4},
+{"Flara",324,1,90,4},
 {"Mleko",2856,1,0,1},
 {"Środki przeciwbólowe",2709,3,0,4},
 {"Pusta puszka po napoju",2673,0.5,0,12},
 {"Pozostałości",2675,0.5,0,12},
-{"Оск. граната M67",342,1,0,0.5},
+--{"Granat",342,1,0,0.5},
 {"Sawn-Off Shotgun",350,1,90,2.3},
-{"Granat",351,1,90,2.3},
+--{"Granatnik",351,1,90,2.3},
 {"MP5A5",353,1,90,2.8},
 {"Zegarek",2710,1,0,4},
 {"Ciepła paczka",1576,5,0,3},
@@ -188,15 +188,15 @@ local itemTable = {
 {"Silnik",929,0.3,0,3.5},
 {"Bak",1008,1,0.8,4},
 {"Winchester 1866",349,1,90,3},
-{"Manierka",2683,1,0,4},
+{"Pełna manierka",2683,1,0,4},
 {"Makaron",2770,1,0,4},
 {"Puszka fasoli",2601,1,0,4},
 {"Hamburger",2768,1,0,4},
 {"Pusta puszka po napoju",2673,0.5,0,12},
 {"Pozostałości",2675,0.5,0,10},
 {"Puszka z napojem",2647,1,0,4},
-{"Pusty kalnister",1650,1,0,6},
-{"Pełny kalnister",1650,1,0,1.5},
+{"Pusty kanister",1650,1,0,6},
+{"Pełny kanister",1650,1,0,1.5},
 {"Mapa",1277,0.8,90,3},
 {"Zegarek",2710,1,0,2},
 {"Zapałki",328,0.4,90,5},
@@ -206,7 +206,7 @@ local itemTable = {
 {"Nóż",335,1,90,2},
 {"Topór",339,1,90,1.5},
 {"Pizza",1582,1,0,4},
-{"Ogień",324,1,90,5},
+{"Flara",324,1,90,5},
 {"Mleko",2856,1,0,4},
 {"Assault Pack (ACU)",3026,1,0,6},
 {"Coyote Backpack",1252,1,0,0.5},
@@ -234,8 +234,8 @@ local itemTable = {
 {"Topór",339,1,90,2.1},
 {"Pizza",1582,1,0,7},
 {"Puszka z napojem",2647,1,0,7},
-{"Pusty kalnister",1650,1,0,5},
-{"Ogień",324,1,90,6},
+{"Pusty kanister",1650,1,0,5},
+{"Flara",324,1,90,6},
 {"Mleko",2856,1,0,7},
 {"Assault Pack (ACU)",3026,1,0,6},
 {"Makaron",2770,1,0,7},
@@ -267,14 +267,14 @@ local itemTable = {
 {"Crash Backpack",2404,1,0,4},
 {"Army Backpack",2410,1,0,4},
 {"Mięso",2806,0.5,90},
-{"Pełny kalnister",1650,1,0},
+{"Pełny kanister",1650,1,0},
 {"Pusta manierka",2683,1,0},
 --{"Podstawowy skin",1577,2,0},
 {"Gogle noktowizyjne",368,1,90},
 {"Gogle na podczerwień",369,1,90},
 {"1866 Slug",2358,2,0},
 {"2Rnd. Slug",2358,2,0},
-{"Amunicja do Granatnika",2358,2,0},
+--{"Amunicja do Granatnika",2358,2,0},
 {"Amunicja do MP5A5",2358,2,0},
 {"CZ550 Mag",2358,2,0},
 {"SVD Camo Mag",2358,2,0},
@@ -311,8 +311,8 @@ local itemTable = {
 {"Topór",339,1,90,1.8},
 {"Pizza",1582,1,0,7},
 {"Puszka z napojem",2647,1,0,7},
-{"Pusty kalnister",1650,1,0,5},
-{"Ogień",324,1,90,6},
+{"Pusty kanister",1650,1,0,5},
+{"Flara",324,1,90,6},
 {"Mleko",2856,1,0,5},
 {"Assault Pack (ACU)",3026,1,0,6},
 {"Środki przeciwbólowe",2709,3,0,7},
@@ -332,11 +332,11 @@ local itemTable = {
 {"Narzędzia",2969,0.5,0,3},
 {"Silnik",929,0.3,0,3.5},
 {"Winchester 1866",349,1,90,2},
-{"Manierka",2683,1,0,4},
+{"Pełna manierka",2683,1,0,4},
 {"M9 SD",347,1,90,5},
-{"Оск. граната M67",342,1,0,0.5},
+--{"Granat",342,1,0,0.5},
 {"Sawn-Off Shotgun",350,1,90,2},
-{"Granat",351,1,90,1.9},
+--{"Granatnik",351,1,90,1.9},
 {"Lornetka",369,1,0,4},
 --{"Skin przetrwania",1247,2,0,4.5},
 {"Spodnie: Ghillie",1247,2,0,4.5},
@@ -357,7 +357,7 @@ local itemTable = {
 {"Bluza: Shirt-Pomaranczowa",1247,2,0,4.5},
 {"Bluza: Bluza-Biala",1247,2,0,4.5},
 {"Bluza: Bluza-Niebieski",1247,2,0,4.5},
-{"Kurtka: Kurtka-Czarny",1247,2,0,4.5},
+{"Kurtka: Garnitur",1247,2,0,4.5},
 {"Okulary",1247,2,0,4.5},
 {"TEC-9",372,1,90,4},
 {"Amunicja do M136 Launcher",359,1,90,0},
@@ -451,7 +451,7 @@ weaponAmmoTable = {
 },
 
 ["Amunicja do Granatnika"] = {
-{"Granat",27},
+{"Granatnik",27},
 },
 
 
@@ -470,7 +470,7 @@ weaponAmmoTable = {
 {"Spadochron",46},
 {"Satchel",39},
 {"Gas łzawiący",17},
-{"Оск. граната M67",16},
+--{"Granat",16},
 {"Nóż",4},
 {"Topór",8},
 {"Lornetka",43},
@@ -828,12 +828,12 @@ elseif itemName == "7,62 mm PKM/PKS" then
 	itemPlus = 30
 elseif itemName == "Shotgun Ammo" then
 	itemPlus = 7
-elseif itemName == "M4A1" or itemName == "AK-47" or itemName == "AKS-74 Kobra"  or itemName == "AK-107" or itemName == "FN FAL" or itemName == "PKM" or itemName == "CZ550" or itemName == "SVD Camo" or itemName == "M107" or itemName == "DMR" or itemName == "Shotgun" or itemName == "Granat" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "Rocket Launcher" or itemName == "Country Rifle" then
+elseif itemName == "M4A1" or itemName == "AK-47" or itemName == "AKS-74 Kobra"  or itemName == "AK-107" or itemName == "FN FAL" or itemName == "PKM" or itemName == "CZ550" or itemName == "SVD Camo" or itemName == "M107" or itemName == "DMR" or itemName == "Shotgun" or itemName == "Granatnik" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "Rocket Launcher" or itemName == "Country Rifle" then
 	removeBackWeaponOnDrop()
 end
 if loot then 
 if not getElementData(loot,"itemloot") and getElementType(getElementData(loot,"parent")) == "vehicle" then
-	if itemName == "Pełny kalnister" then
+	if itemName == "Pełny kanister" then
 		if getElementData(loot,"fuel")+20 < getVehicleMaxFuel(loot) then
 			addingfuel = 20
 		elseif getElementData(loot,"fuel")+20 > getVehicleMaxFuel(loot)+15 then
@@ -844,7 +844,7 @@ if not getElementData(loot,"itemloot") and getElementType(getElementData(loot,"p
 		end
 		setElementData(loot,"fuel",getElementData(loot,"fuel")+addingfuel)
 		setElementData(source,itemName,getElementData(source,itemName)-itemPlus)
-		setElementData(source,"Pusty kalnister",(getElementData(source,"Pusty kalnister") or 0)+itemPlus)
+		setElementData(source,"Pusty kanister",(getElementData(source,"Pusty kanister") or 0)+itemPlus)
 		triggerClientEvent (source, "displayClientInfo", source,"Vehicle","Filled up the vehicles Бензин",22,255,0)
 		isVehicleReadyToStart2(getElementData(loot,"parent"))
 		return
@@ -961,13 +961,12 @@ function onPlayerTakeItemFromGround (itemName,col)
 		itemPlus = 30
 	elseif itemName == "Amunicja do MP5A5" then
 		itemPlus = 20
-		elseif itemName == "1866 Slug" then
+	elseif itemName == "1866 Slug" then
 		itemPlus = 7
 	elseif itemName == "2Rnd. Slug" then
 		itemPlus = 2
 	elseif itemName == "Amunicja do Granatnika" then
 		itemPlus = 7
-	
 	elseif itemName == "Amunicja do Lee Enfield" then
 		itemPlus = 10
 	elseif itemName == "Amunicja do M136" then
@@ -993,7 +992,7 @@ function onPlayerTakeItemFromGround (itemName,col)
 	elseif itemName == "7,62 mm PKM/PKS" then
 		itemPlus = 30
 	
-	elseif itemName == "M4A1" or itemName == "AK-47" or itemName == "AKS-74 Kobra" or itemName == "FN FAL" or itemName == "AK-107" or itemName == "PKM" or itemName == "CZ550" or itemName == "SVD Camo" or itemName == "M107" or itemName == "DMR" or itemName == "Shotgun" or itemName == "Granat" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "Rocket Launcher" or itemName == "Country Rifle" then
+	elseif itemName == "M4A1" or itemName == "AK-47" or itemName == "AKS-74 Kobra" or itemName == "FN FAL" or itemName == "AK-107" or itemName == "PKM" or itemName == "CZ550" or itemName == "SVD Camo" or itemName == "M107" or itemName == "DMR" or itemName == "Shotgun" or itemName == "Granatnik" or itemName == "Sawn-Off Shotgun" or itemName == "Heat-Seeking RPG" or itemName == "Rocket Launcher" or itemName == "Country Rifle" then
 	removeBackWeaponOnDrop()	
 	end
 	local x,y,z = getElementPosition(source)

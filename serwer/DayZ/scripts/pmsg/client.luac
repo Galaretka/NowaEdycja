@@ -167,7 +167,7 @@ function recieveChatMessage(ply, msg)
 	
 	---guiSetText(newmsg.lbl, getPlayerName(ply) .. ": " .. msg .. "\n")
 guiSetText(newmsg.lbl, "Wiadomość od\n" .. getPlayerName(ply) .. "\n")
-	outputChatBox("#0096ffOtzymałeś nową prywatną wiadomość! Aby odczytać naciśnij 'F3'!",255,255,255,true)
+	outputChatBox("#0096ffOtrzymałeś nową prywatną wiadomość! Aby odczytać naciśnij 'F3'!",255,255,255,true)
 
 	anims.nmfadein:play()
 	anims.nmtextin:play()

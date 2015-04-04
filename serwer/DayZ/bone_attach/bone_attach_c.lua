@@ -59,6 +59,9 @@ function putAttachedElementsOnBones()
 			local xx,xy,xz,yx,yy,yz,zx,zy,zz = getBoneMatrix(ped,bone)
 			local offx,offy,offz = attached_x[element],attached_y[element],attached_z[element]
 			local offrx,offry,offrz = attached_rx[element],attached_ry[element],attached_rz[element]
+			-- outputChatBox ( '1: '..offy )
+			-- outputChatBox ( '2: '..yy )
+			-- outputChatBox ( '3: '..yz )
 			local objx = x+offx*xx+offy*yx+offz*zx
 			local objy = y+offx*xy+offy*yy+offz*zy
 			local objz = z+offx*xz+offy*yz+offz*zz
@@ -75,6 +78,8 @@ function putAttachedElementsOnBones()
 			local tzz = rzx*xz+rzy*yz+rzz*zz
 			offrx,offry,offrz = getEulerAnglesFromMatrix(txx,txy,txz,tyx,tyy,tyz,tzx,tzy,tzz)
 			
+			if (not tonumber(tostring(objx)) or not tonumber(tostring(objy)) or not tonumber(tostring(objz))) then return end
+            if (not tonumber(tostring(offrx)) or not tonumber(tostring(offry)) or not tonumber(tostring(offrz))) then return end
 			setElementPosition(element,objx,objy,objz)
 			setElementRotation(element,offrx,offry,offrz,"ZXY")
 		else

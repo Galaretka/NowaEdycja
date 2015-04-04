@@ -34,7 +34,7 @@ local playerDataTable = {
 {"banditskilled"},
 {"Drewno opałowe"},
 {"Bandaż"},
-{"Manierka"},
+{"Pełna manierka"},
 {"Makaron"},
 {"Puszka fasoli"},
 {"Hamburger"},
@@ -51,18 +51,18 @@ local playerDataTable = {
 {"Pizza"},
 {"Morfina"},
 {"Puszka z napojem"},
-{"Pusty kalnister"},
-{"Pełny kalnister"},
-{"Ogień"},
+{"Pusty kanister"},
+{"Pełny kanister"},
+{"Flara"},
 {"Mleko"},
 {"Amunicja do PDW"},
 {"Amunicja do MP5A5"},
 
 {"Gas łzawiący"},
-{"Оск. граната M67"},
+--{"Granat"},
 {"Desert Eagle"},
 {"Sawn-Off Shotgun"},
-{"Granat"},
+{"Granatnik"},
 {"MP5A5"},
 {"Zegarek"},
 {"Apteczka"},
@@ -89,7 +89,7 @@ local playerDataTable = {
 {"Bluza: Shirt-Pomaranczowa"},
 {"Bluza: Bluza-Biala"},
 {"Bluza: Bluza-Niebieski"},
-{"Kurtka: Kurtka-Czarny"},
+{"Kurtka: Garnitur"},
 {"Okulary"},
 
 {"7,62 mm PKM/PKS"},
@@ -211,70 +211,70 @@ local shoes = getElementData(player, "Shoes")
 local Shirt = getElementData(player, "Shirt")
 local glass = getElementData(player, "glases")
 if trousers == 1 then
-addPedClothes ( source, "worktrcamogrn", "worktr", 2 )
+addPedClothes ( player, "worktrcamogrn", "worktr", 2 )
 end
 if trousers == 2 then
-addPedClothes ( source, "worktrcamogry", "worktr", 2 )
+addPedClothes ( player, "worktrcamogry", "worktr", 2 )
 end
 if trousers == 3 then
-addPedClothes ( source, "tracktrgang", "tracktr", 2 )
+addPedClothes ( player, "tracktrgang", "tracktr", 2 )
 end
 if trousers == 4 then
-addPedClothes ( source, "tracktrblue", "tracktr", 2 )
+addPedClothes ( player, "tracktrblue", "tracktr", 2 )
 end
 if trousers == 5 then
-addPedClothes ( source, "suit1trblk", "suit1tr", 2 )
+addPedClothes ( player, "suit1trblk", "suit1tr", 2 )
 end
 if trousers == 6 then
-addPedClothes ( source, "chongergrey", "chonger", 2 )
+addPedClothes ( player, "chongergrey", "chonger", 2 )
 end
 if trousers == 7 then
-addPedClothes ( source, "worktrgrey", "worktr", 2 )
+addPedClothes ( player, "worktrgrey", "worktr", 2 )
 end
 --Shoes
 if shoes == 1 then
-addPedClothes ( source, "bask2heatwht", "bask1", 3 )
+addPedClothes ( player, "bask2heatwht", "bask1", 3 )
 end
 if shoes == 2 then
-addPedClothes ( source, "convproblu", "conv", 3 )
+addPedClothes ( player, "convproblu", "conv", 3 )
 end
 if shoes == 3 then
-addPedClothes ( source, "shoedressblk", "shoe", 3 )
+addPedClothes ( player, "shoedressblk", "shoe", 3 )
 end
 --Shirt
 if Shirt == 1 then
-addPedClothes ( source, "shirtbplaid", "shirtb", 0 )
+addPedClothes ( player, "shirtbplaid", "shirtb", 0 )
 end
 if Shirt == 2 then
-addPedClothes ( source, "tshirtilovels", "tshirt", 0 )
+addPedClothes ( player, "tshirtilovels", "tshirt", 0 )
 end
 if Shirt == 3 then
-addPedClothes ( source, "tshirterisyell", "tshirt", 0 )
+addPedClothes ( player, "tshirterisyell", "tshirt", 0 )
 end
 if Shirt == 4 then
-addPedClothes ( source, "tshirterisorn", "tshirt", 0 )
+addPedClothes ( player, "tshirterisorn", "tshirt", 0 )
 end
 if Shirt == 5 then
-addPedClothes ( source, "hoodyarockstar", "hoodya", 0 )
+addPedClothes ( player, "hoodyarockstar", "hoodya", 0 )
 end
 if Shirt == 6 then
-addPedClothes ( source, "hoodyAblue", "hoodyA", 0 )
+addPedClothes ( player, "hoodyAblue", "hoodyA", 0 )
 end
 if Shirt == 7 then
-addPedClothes ( source, "tuxedo", "suit2", 0 )
+addPedClothes ( player, "tuxedo", "suit2", 0 )
 end
 if Shirt == 8 then
-addPedClothes ( source, "tshirtwhite", "tshirt", 0 )
+addPedClothes ( player, "tshirtwhite", "tshirt", 0 )
 end
 if Shirt == 9 then
-addPedClothes ( source, "denimfade", "denim", 0 )
+addPedClothes ( player, "denimfade", "denim", 0 )
 end
 --glass
 if glass == 1 then
-addPedClothes ( source, "glasses04dark", "glasses04", 15 )
+addPedClothes ( player, "glasses04dark", "glasses04", 15 )
 end
 if glass == 2 then
-addPedClothes ( source, "hockey", "hockeymask", 16 )
+addPedClothes ( player, "hockey", "hockeymask", 16 )
 end
 --Weapons
 --Old Weapons
@@ -433,7 +433,7 @@ local vehicleDataTable = {
 {"fuel"},
 {"Drewno opałowe"},
 {"Bandaż"},
-{"Manierka"},
+{"Pełna manierka"},
 {"Makaron"},
 {"Puszka fasoli"},
 {"Hamburger"},
@@ -449,9 +449,9 @@ local vehicleDataTable = {
 {"Topór"},
 {"Pizza"},
 {"Puszka z napojem"},
-{"Pusty kalnister"},
-{"Pełny kalnister"},
-{"Ogień"},
+{"Pusty kanister"},
+{"Pełny kanister"},
+{"Flara"},
 {"Mleko"},
 {"Amunicja do PDW"},
 {"Amunicja do MP5A5"},
@@ -491,13 +491,10 @@ local vehicleDataTable = {
 {"Bluza: Shirt-Pomaranczowa"},
 {"Bluza: Bluza-Biala"},
 {"Bluza: Bluza-Niebieski"},
-{"Kurtka: Kurtka-Czarny"},
+{"Kurtka: Garnitur"},
 {"Okulary"},
-
-
-
 {"Gas łzawiący"},
-{"Оск. граната M67"},
+--{"Granat"},
 {"Desert Eagle"},
 {"Sawn-Off Shotgun"},
 {"Wyrzutnia"},
