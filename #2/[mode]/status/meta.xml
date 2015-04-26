@@ -1,0 +1,29 @@
+<meta>
+	<info author="DayZSA" name="status" version="1.0" type="script" />
+	<script src="build.lua"/>
+	<script src="check_s.lua"/>
+	<script src="changing_ped.lua"/>
+
+    <file src="data/weap.png"/>
+    <file src="data/default.png"/>
+	<file src="data/cough_0.ogg"/>
+	<file src="data/cough_1.ogg"/>
+	<file src="data/cough_2.ogg"/>
+	<file src="data/trap.ogg"/>
+	<file src="data/refuel_0.ogg"/>
+	<file src="data/repair_0.ogg"/>
+	<file src="data/tentpack_0.ogg"/>
+	<file src="data/cook_0.ogg"/>
+	<file src="data/cook_1.ogg"/>
+	<file src="data/cook_2.ogg"/>
+	<script src="check_c.lua" type="client" cache="false"/>
+
+	<script src="anim.lua"/>
+	<script src="textlib.lua" type="client" cache="false"/>
+	<script src="jq_client.lua" type="client" cache="false"/>
+
+	<script src="menu_client/menu_client.lua" type="client" cache="false"/>
+
+	<export function="addPlayerStats" type="server"/>
+	<!--include resource="screen"/-->
+</meta>

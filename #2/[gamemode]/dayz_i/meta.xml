@@ -1,0 +1,168 @@
+<meta>
+    <info author="DayZSA" version="0.1" />
+	<script src="settings.lua" type="client" cache="false" />
+	<script src="client.lua" type="client" cache="false"/>
+	<script src="boxes.lua" type="client"/>
+	<script src="use.lua" type="client" cache="false"/>
+	<script src="use2.lua" type="client" cache="false"/>
+	<export function="itemFitsInInventory" type="client" />	
+	<export function="maxSlotsChanged" type="client" />	
+	<export function="showNewInventoryManual" type="client" />	
+	<export function="isToolbeltItem" type="client" />	
+	<export function="loadPlayerBoxesItems" type="client" />	
+	<export function="unShowNewInventory" type="client" />	
+	<export function="refreshItemsInNewInventory" type="client" />
+	<export function="checkIfMainWeap" type="client" />
+	<export function="weapFitsInInventory" type="client" />
+	<export function="useItems" type="client" />
+	<export function="useBoxes" type="client" />
+
+	<!--include resource="design"/>
+	<include resource="text"/>
+	<include resource="gps"/-->
+
+	<script src="inventory_panel.lua" type="client" cache="false" />
+	<file src="images/red.png" />
+	<file src="images/use.png" />
+	<file src="images/90.png" />
+
+    <file src="icons/kevlar.png" />
+    <file src="icons/epin.png" />
+    <file src="icons/headtroch.png" />
+    <file src="icons/handcuffs.png" />
+    <file src="icons/handcuff_key.png" />
+    <file src="icons/buckshot.png" />
+    <file src="icons/22round.png" />
+    <file src="icons/blaze.png" />
+    <file src="icons/sporter.png" />
+    <file src="icons/22.png" />
+    <file src="icons/vodka.png" />
+    <file src="icons/molotov.png" />
+    <file src="icons/battery.png" />
+    <file src="icons/huna.png" />
+    <file src="icons/paleno.png" />
+    <file src="icons/stone.png" />
+    <file src="icons/pila.png" />
+    <file src="icons/burlap.png" />
+    <file src="icons/rope.png" />
+    <file src="icons/branch.png" />
+    <file src="icons/pepsi.png" />
+    <file src="icons/cola.png" />
+    <file src="icons/beans.png" />
+    <file src="icons/sardins.png" />
+    <file src="icons/spaghetti.png" />
+    <file src="icons/tuna.png" />
+    <file src="icons/waterbottle.png" />
+    <file src="icons/child.png" />
+    <file src="icons/courier.png" />
+    <file src="icons/improvised.png" />
+    <file src="icons/taloon.png" />
+    <file src="icons/hunting.png" />
+    <file src="icons/mountain.png" />
+    <file src="icons/ped.png" />
+    <file src="icons/medic.png" />
+    <file src="icons/matchbox.png" />
+    <file src="icons/crossbar.png" />
+    <file src="icons/shotgun.png" />
+    <file src="icons/knife.png" />
+    <file src="icons/hatchet.png" />
+    <file src="icons/hatchet2.png" />
+    <file src="icons/akm.png" />
+    <file src="icons/gradus.png" />
+    <file src="icons/pain.png" />
+    <file src="icons/tetrakcilin.png" />
+    <file src="icons/ibuprof.png" />
+    <file src="icons/albendazol.png" />
+    <file src="icons/beret.png" />
+    <file src="icons/camo.png" />
+    <file src="icons/cap.png" />
+    <file src="icons/cowboy.png" />
+    <file src="icons/dallas.png" />
+    <file src="icons/flatcap.png" />
+    <file src="icons/gasmask.png" />
+    <file src="icons/helmet.png" />
+    <file src="icons/hoxton.png" />
+    <file src="icons/motobike.png" />
+    <file src="icons/radarcap.png" />
+    <file src="icons/respirator.png" />
+    <file src="icons/rocketavia.png" />
+    <file src="icons/tactvest.png" />
+    <file src="icons/ushanka.png" />
+    <file src="icons/wolf.png" />
+    <file src="icons/open_can.png" />
+    <file src="icons/axe.png" />
+    <file src="icons/machete.png" />
+    <file src="icons/bolt.png" />
+    <file src="icons/sks.png" />
+    <file src="icons/crossbow.png" />
+
+    <file src="icons/ugol.png" />
+    <file src="icons/emptycan.png" />
+    <file src="icons/emptysoda.png" />
+    <file src="icons/faer.png" />
+    <file src="icons/5_56p.png" />
+    <file src="icons/7_39p.png" />
+    <file src="icons/7_62p.png" />
+    <file src="icons/9mmp.png" />
+    <file src="icons/45acpp.png" />
+    <file src="icons/357p.png" />
+    <file src="icons/bacon.png" />
+    <file src="icons/chips.png" />
+    <file src="icons/flag.png" />
+    <file src="icons/kvas.png" />
+    <file src="icons/milk_pow.png" />
+    <file src="icons/rice.png" />
+    <file src="icons/sardins2.png" />
+    <file src="icons/sprite.png" />
+
+    <file src="icons/not.png" />
+
+    <file src="icons/5_56.png" />
+    <file src="icons/7_62.png" />
+    <file src="icons/7_39.png" />
+    <file src="icons/9mm.png" />
+    <file src="icons/45acp.png" />
+    <file src="icons/.357.png" />
+    <file src="icons/pellet.png" />
+    <file src="icons/slug.png" />
+    <file src="icons/cr75.png" />
+    <file src="icons/fnx45.png" />
+    <file src="icons/m4a1.png" />
+    <file src="icons/mosin.png" />
+    <file src="icons/radio.png" />
+    <file src="icons/sawedoff.png" />
+    <file src="icons/magnum.png" />
+
+    <file src="icons/sniper.png" />
+    <file src="icons/mp5.png" />
+    <file src="icons/pdw.png" />
+    <file src="icons/bat.png" />
+    <file src="icons/shovel.png" />
+    <file src="icons/parachute.png" />
+    <file src="icons/gas.png" />
+    <file src="icons/grenade.png" />
+    <file src="icons/binocular.png" />
+    <file src="icons/mag.png" />
+    <file src="icons/meat.png" />
+    <file src="icons/wood.png" />
+    <file src="icons/bandage.png" />
+    <file src="icons/flashlight.png" />
+    <file src="icons/kan.png" />
+    <file src="icons/heater.png" />
+    <file src="icons/morphine.png" />
+    <file src="icons/blood.png" />
+    <file src="icons/wirefence.png" />
+    <file src="icons/flesh.png" />
+    <file src="icons/wheel.png" />
+    <file src="icons/engine.png" />
+    <file src="icons/engine_part.png" />
+    <file src="icons/tent.png" />
+
+    <file src="icons/injection.png" />
+    <file src="icons/night.png" />
+    <file src="icons/ir.png" />
+    <file src="icons/map.png" />
+    <file src="icons/watch.png" />
+    <file src="icons/gps.png" />
+    <file src="icons/tool.png" />
+</meta>

@@ -1,0 +1,25 @@
+<meta>
+	<info author="DayZSA" version="1.0" type="script"/>
+	<file src="data/font.ttf"/>
+	<file src="data/leave1.png"/>
+	<file src="data/enter1.png"/>
+	<file src="data/leave2.png"/>
+	<file src="data/enter2.png"/>
+	<file src="data/leave3.png"/>
+	<file src="data/enter3.png"/>
+	<file src="data/leave4.png"/>
+	<file src="data/enter4.png"/>
+	<file src="data/down.png"/>
+	<script src="standaloneButton.lua" type="client" cache="false"/>
+	<script src="standaloneBlock.lua" type="client" cache="false"/>
+	<script src="standartButton.lua" type="client" cache="false"/>
+	<script src="standaloneInfo.lua" type="client" cache="false"/>
+	<script src="standaloneCrest.lua" type="client" cache="false"/>
+	<script src="standaloneRClick.lua" type="client" cache="false"/>
+	<export function="standaloneButton" type="client" />
+	<export function="standaloneBlock" type="client" />
+	<export function="standartButton" type="client" />
+	<export function="standaloneInfo" type="client" />
+	<export function="standaloneCrest" type="client" />
+	<export function="standaloneRClick" type="client" />
+</meta>

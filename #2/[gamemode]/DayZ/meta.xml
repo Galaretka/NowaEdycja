@@ -1,0 +1,8 @@
+<meta>
+    <info author="DayZSA" description="DayZ Standalone" version="0.1.87" type="gamemode" />
+    <script src="config.lua" />
+    <script src="spawn.lua" />
+    <script src="login.lua" />
+	<script src="debug.lua" type="client" cache="false"/>
+	<file src="images/scrollmenu_1.png" />
+</meta>

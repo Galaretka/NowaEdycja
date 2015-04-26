@@ -1,0 +1,8 @@
+<meta>
+	<info author="DayZSA" name="pickups" version="1.0" type="script"/>
+	<include resource="weapon"/>
+	<script src="itemTable.lua"/>
+	<script src="pickupPositions.lua"/>
+	<script src="pickups.lua"/>
+	<script src="data.lua"/>
+</meta>

@@ -1,0 +1,5 @@
+<meta>
+	<info author="DayZSA" name="parent" version="1.0" type="script" />
+	<script src="config.lua" />
+	<script src="server.lua" />
+</meta>

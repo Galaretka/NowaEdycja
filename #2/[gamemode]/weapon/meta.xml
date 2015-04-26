@@ -1,0 +1,22 @@
+<meta>
+	<info author="DayZSA" name="weapon" version="1.0" type="script" />
+	<script src="backpack/server.lua" />
+	<script src="clothing/server.lua" />
+	<script src="weapon/property.lua" />
+	<script src="weapon/server.lua" />
+	<script src="weapon/weapon.lua" />
+	<script src="weapon/weapon.lua" type="client" cache="false" />
+	<script src="weapon/weap_c.lua" type="client" cache="false" />
+	<script src="damage_c.lua" type="client" cache="false" />
+
+    <file src="data/white.png" />
+	<file src="data/hit1.ogg" />
+	<file src="data/hit2.ogg" />
+	<file src="data/hit3.ogg" />
+	<file src="data/brokenbone.ogg" />
+
+	<export function="getWeaponAmmoType2" type="client" />
+	<export function="getWeaponAmmoType" type="client" />
+	<export function="getWeaponAmmoType" type="server" />
+	<export function="getWeaponDamage" type="client" />
+</meta>

@@ -1,0 +1,55 @@
+<meta>
+    <info author="DayZSA" name="system" version="0.1" type="script"/>
+	<script src="reload/reload_c.lua" type="client" cache="false" />
+	<script src="reload/reload_s.lua" />
+	<script src="resource/system_c.lua" type="client" cache="false" />
+	<!--script src="resource/headmove_c.lua" type="client" cache="false" /-->
+	<script src="resource/defaultstats_s.lua" />
+	<script src="resource/weather_s.lua" />
+	<script src="resource/hud_s.lua" />
+	<script src="chat/chat_c.lua" type="client" cache="false" />
+	<script src="chat/chat_s.lua" />
+	<script src="chat/output.lua" />
+
+	<script src="data.lua" />
+	<script src="data2.lua" type="client" cache="false" />
+
+	<script src="parachute/utility.lua" type="client" cache="false"/>
+	<script src="parachute/parachute.lua"/>
+	<script src="parachute/parachute_cl.lua" type="client" cache="false"/>
+	<script src="parachute/skydiving_cl.lua" type="client" cache="false"/>
+	<script src="parachute/openChute.lua" type="client" cache="false"/>
+	<script src="parachute/client_anim.lua" type="client" cache="false"/>
+	<export function="removeParachute" type="client"/>
+	<export function="stopSkyDiving" type="client"/>
+	<export function="isPlayerSkyDiving" type="client"/>
+	<export function="isPlayerParachuting" type="client"/>
+
+	<file src="data/parachuteopen.mp3" />
+	<file src="data/music.ogg"/>
+	<file src="data/drink_0.ogg" />
+	<file src="data/eat_0.ogg" />
+	<file src="data/eat_1.ogg" />
+	<file src="data/eat_2.ogg" />
+	<file src="data/eat_3.ogg" />
+	<file src="data/fillwater_0.ogg" />
+	<file src="data/soda_0.ogg" />
+	<file src="data/bandage_0.ogg" />
+	<file src="data/bandage_01.ogg" />
+	<file src="data/bandage_02.ogg" />
+	<file src="data/fire.mp3" />
+	<file src="data/morphine_01.ogg" />
+	<file src="data/painkiller_01.ogg" />
+	<file src="data/painkiller_02.ogg" />
+	<file src="data/painkiller_03.ogg" />
+	<file src="data/painkiller_04.ogg" />
+
+	<file src="data/iron1.mp3" />
+	<file src="data/iron14.mp3" />
+	<file src="data/whine_4.ogg" />
+	<file src="data/whine01.ogg" />
+
+	<!--file src="data/images/1.png" />
+	<file src="data/images/2.png" /-->
+	<file src="data/default.png" />
+</meta>

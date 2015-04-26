@@ -1,0 +1,12 @@
+<meta>
+	<info author="iPanda" name="screen" version="1.0" type="script" />
+	<script src="fxScreenSA.lua" type="client" cache="false" />
+	<script src="client.lua" type="client" cache="false" />
+
+	<file src="fx/blackwhite.fx" />
+	<file src="fx/motion.fx" />
+	<!--script src="client2.lua" type="client" cache="false" />
+	<file src="fx/vignette.fx" /-->
+
+	<export function="fxScreenSA" type="client" />
+</meta>

@@ -1,0 +1,7 @@
+<meta>
+	<info author="DayZSA" name="vehicle" version="1.0" type="script" />
+	<script src="config.lua" />
+	<script src="server.lua" />
+	<script src="client.lua" type="client" cache="false" />
+	<script src="vehicle_spawns.lua" />
+</meta>

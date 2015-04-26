@@ -1,0 +1,11 @@
+<meta>
+	<info author="iPanda" nam="Standalone GPS"  version="0.2" type="script" />
+	<file src="images/radar.fx" />
+	<file src="images/texture.fx" />
+	<file src="images/gps.png" />
+	<file src="images/player.png" />
+	<file src="images/radar.jpg" />
+
+	<script src="gps_c.lua" type="client" cache="false"/>
+	<export function="showGPS" type="client" />
+</meta>
